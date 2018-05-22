@@ -1,89 +1,89 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { CatService } from '../services/cat.service';
+import { CityService } from '../services/city.service';
 import { ToastComponent } from '../shared/toast/toast.component';
-import { Cat } from '../shared/models/cat.model';
+import { City } from '../shared/models/city.model';
 
 @Component({
-  selector: 'app-cats',
-  templateUrl: './cats.component.html',
-  styleUrls: ['./cats.component.css'],
+  selector: 'app-cities',
+  templateUrl: './cities.component.html',
+  styleUrls: ['./cities.component.css'],
 })
-export class CatsComponent implements OnInit {
+export class CitiesComponent implements OnInit {
 
-  cat = new Cat();
-  cats: Cat[] = [];
+  city = new City();
+  cities: City[] = [];
   isLoading = true;
   isEditing = false;
 
-  addCatForm: FormGroup;
+  addCityForm: FormGroup;
   name = new FormControl('', Validators.required);
   age = new FormControl('', Validators.required);
   weight = new FormControl('', Validators.required);
 
-  constructor(private catService: CatService,
+  constructor(private cityService: CityService,
               private formBuilder: FormBuilder,
               public toast: ToastComponent) { }
 
   ngOnInit() {
-    this.getCats();
-    this.addCatForm = this.formBuilder.group({
+    this.getCity();
+    this.addCityForm = this.formBuilder.group({
       name: this.name,
       age: this.age,
       weight: this.weight,
     });
   }
 
-  getCats() {
-    this.catService.getCats().subscribe(
-      data => this.cats = data,
+  getCity() {
+    this.cityService.getCities().subscribe(
+      data => this.cities = data,
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
 
-  addCat() {
-    this.catService.addCat(this.addCatForm.value).subscribe(
+  addCity() {
+    this.cityService.addCity(this.addCityForm.value).subscribe(
       (res) => {
-        this.cats.push(res);
-        this.addCatForm.reset();
+        this.cities.push(res);
+        this.addCityForm.reset();
         this.toast.setMessage('item added successfully.', 'success');
       },
       error => console.log(error),
     );
   }
 
-  enableEditing(cat: Cat) {
+  enableEditing(city: City) {
     this.isEditing = true;
-    this.cat = cat;
+    this.city = city;
   }
 
   cancelEditing() {
     this.isEditing = false;
-    this.cat = new Cat();
+    this.city = new City();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cats to reset the editing
-    this.getCats();
+    this.getCity();
   }
 
-  editCat(cat: Cat) {
-    this.catService.editCat(cat).subscribe(
+  editCity(city: City) {
+    this.cityService.editCity(city).subscribe(
       () => {
         this.isEditing = false;
-        this.cat = cat;
+        this.city = city;
         this.toast.setMessage('item edited successfully.', 'success');
       },
       error => console.log(error),
     );
   }
 
-  deleteCat(cat: Cat) {
+  deleteCity(city: City) {
     if (window.confirm('Are you sure you want to permanently delete this item?')) {
-      this.catService.deleteCat(cat).subscribe(
+      this.cityService.deleteCity(city).subscribe(
         () => {
-          const pos = this.cats.map(elem => elem._id).indexOf(cat._id);
-          this.cats.splice(pos, 1);
+          const pos = this.cities.map(elem => elem._id).indexOf(city._id);
+          this.cities.splice(pos, 1);
           this.toast.setMessage('item deleted successfully.', 'success');
         },
         error => console.log(error),
