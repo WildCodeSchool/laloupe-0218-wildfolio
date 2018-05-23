@@ -1,0 +1,15 @@
+.presentation {
+    background-color: #f1f1f1;
+    height: 70vh;
+}
+.titlePresentation {
+    font-size: 34px;
+    color: #1fa597;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+.pPresentation {
+    display: flex;
+    justify-content: center;
+}
