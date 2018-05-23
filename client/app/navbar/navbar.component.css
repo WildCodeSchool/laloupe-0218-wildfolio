@@ -161,27 +161,7 @@ header.masthead p {
 /* debut de acceuil */
 
 /* A retirer plus tard*/
-.containeracceuil {
-  width: 100% ;
-  height: 100vh ;
-  position: relative;
-  display: block ;
- /*  background: url("../../assets/bgacceuil.jpg"); */
-  background-size: cover;
-  z-index:5;
-  background-attachment: fixed;
-}
-
-.containeracceuil::before{
-  content:"";
-  position: absolute;
-  width:100%;
-  height:100%;
-  background-color:rgba(16, 16, 66, 0.81);
-  left:0;
-  top:0;
-  z-index:-1;
-} /* here */
+ /* here */
 
 .navbar {
   display: flex;
@@ -209,7 +189,6 @@ header.masthead p {
 }
 
 .navitem{
-  flex:1;
   color:white;
   width:150px;
   text-align:center;
@@ -222,9 +201,26 @@ header.masthead p {
   font-family: 'Fjalla One', sans-serif;
   font-style:italic;
 }
-
+.navitemCampus{
+  color:white;
+  width:150px;
+  text-align:center;
+  padding:10px;
+  cursor:pointer;
+  height:100%;
+  line-height:40px;
+  transition:1s;
+  font-size:17px;
+  font-family: 'Fjalla One', sans-serif;
+  font-style:italic;
+  padding-top: 1vw;
+}
 .navitem:hover{
-  border-bottom:2px solid red;
+  color: orange;
+
+}
+.liCampus {
+  display: block;
 }
 
 #demo {
@@ -235,20 +231,8 @@ header.masthead p {
   display:block;
 }
 
-.timer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align:center;
-  font-family: 'Bungee', cursive;
-}
-
-.txttimer{
-  z-index: 10;
-  color: white;
-  font-size: 25px;
-  font-weight:bold;
-}
-
 /* fin de acceuil */
+/* Navbar */
+/* #navbarNavDropdown {
+  justify-content: flex-end;
+} */
