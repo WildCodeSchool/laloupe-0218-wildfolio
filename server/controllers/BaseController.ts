@@ -7,7 +7,6 @@ abstract class BaseController {
     this.model.find({}, (err, docs) => {
       if (err) { return console.error(err); }
       // console.log(docs);
-      
       res.status(200).json(docs);
     });
   }

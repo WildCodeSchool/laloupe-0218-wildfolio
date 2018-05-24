@@ -49,12 +49,10 @@ export class NavbarComponent implements OnInit {
 
   getCity() {
     this.cityService.getCities().subscribe(
-      data => {
+      (data) => {
         console.log(data);
         this.cities = data;
       },
     );
   }
-  
-
 }

@@ -21,21 +21,19 @@ export class CitiesComponent implements OnInit {
   name = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
 
-  constructor(private cityService: CityService,
-    private formBuilder: FormBuilder,
-    public toast: ToastComponent) { }
+  constructor(private cityService: CityService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
 
   ngOnInit() {
     this.getCity();
     this.addCityForm = this.formBuilder.group({
       name: this.name,
-      link: this.link
+      link: this.link,
     });
   }
 
   getCity() {
     this.cityService.getCities().subscribe(
-      data => {
+      (data) => {
         console.log(data);
         this.cities = data;
       },
@@ -98,8 +96,8 @@ export class CitiesComponent implements OnInit {
   }
 
   canAddCity() {
-    for (let i = 0; i < this.cities.length; i++) {
-      if(this.cities[i].name === this.addCityForm.value.name) {
+    for (const i = 0; i < this.cities.length; i + 1) {
+      if (this.cities[i].name === this.addCityForm.value.name) {
         return false;
       }
     }

@@ -40,7 +40,7 @@ describe('cities', () => {
     });
 
     it('should create new city', (done) => {
-      const newCity = new cityModel({ name: 'Fluffy'});
+      const newCity = new cityModel({ name: 'Fluffy' });
       chai.request(app)
         .post('/api/city')
         .send(newCity)
@@ -53,7 +53,7 @@ describe('cities', () => {
     });
 
     it('should get a city by its id', (done) => {
-      const newCat = new cityModel({ name: 'city'});
+      const newCat = new cityModel({ name: 'city' });
       newCat.save((error, newcity) => {
         chai.request(app)
           .get(`/api/city/${newcity.id}`)
@@ -68,7 +68,7 @@ describe('cities', () => {
     });
 
     it('should update a city by its id', (done) => {
-      const newCity = new cityModel({ name: 'city'});
+      const newCity = new cityModel({ name: 'city' });
       newCity.save((error, newcity) => {
         chai.request(app)
           .put(`/api/city/${newcity.id}`)
@@ -81,7 +81,7 @@ describe('cities', () => {
     });
 
     it('should delete a city by its id', (done) => {
-      const newCity = new cityModel({ name: 'city'});
+      const newCity = new cityModel({ name: 'city' });
       newCity.save((error, newcity) => {
         chai.request(app)
           .delete(`/api/city/${newcity.id}`)
@@ -94,5 +94,3 @@ describe('cities', () => {
   });
 
 });
-
-
