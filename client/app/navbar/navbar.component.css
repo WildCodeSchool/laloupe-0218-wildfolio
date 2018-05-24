@@ -215,6 +215,11 @@ header.masthead p {
   font-style:italic;
   padding-top: 1vw;
 }
+
+.navbar li{
+  list-style-type: none;
+}
+
 .navitem:hover{
   color: orange;
 
