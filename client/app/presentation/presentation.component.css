@@ -1,3 +1,42 @@
+/* Barre de recherche */
+.acceuil {
+    width: 100% ;
+    height: 100vh;
+    position: relative;
+    display: block;
+   /*  background: url("../../assets/bgacceuil.jpg"); */
+    background-size: cover;
+    z-index:5;
+    background-attachment: fixed;
+  }
+.imgAccueil {
+    background-image: url('https://cdn.radiofrance.fr/s3/cruiser-production/2016/05/8bc8d069-9d1b-4f97-a117-92db6509c59b/870x489__mg_8551.jpg');
+    width: 100% ;
+    height: 55vh;
+    background-size: cover;
+}
+.titreWilder {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 7vh;
+}
+
+.selectInput {
+    display: inline-flex;
+    flex-direction: row;
+    position: absolute;
+    top: 35vh;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    color: white;
+}
+
 /* presentation */
 .presentation {
     height: 42vh;
@@ -15,10 +54,9 @@
     justify-content: center;
     text-align: center;
     margin-top: 5vh;
+    word-spacing: normal;
 }
-span {
-    font-weight: bold;
-}
+
 /* Projet */
 .projet {
     background-color: #f1f1f1;
@@ -41,7 +79,10 @@ span {
     transform: translateX(-50%) translateY(-50%);
     left: 50%;
     margin-top: 10vh;
+    background-color: #1fa597;
+    color: white;
 }
+/* fin projet */
 .delimited {
     width: 7%;
     margin-left: auto;
