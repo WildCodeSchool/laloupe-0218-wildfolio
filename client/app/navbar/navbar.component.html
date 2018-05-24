@@ -53,16 +53,32 @@
     <span class="navitemlogo">
       <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
     </span>
-    <span id="textcolor1" class="navitem">ACCUEIL</span>
-    <ul id="textcolor6" class="navitemCampus">NOS CAMPUS
-      <li class="liCampus">La Loupe</li>
-      <li class="liCampus">Paris</li>
-      <li class="liCampus">Toulouse</li>
-    </ul>
-    <span id="textcolor2" class="navitem">NOS WILDERS</span>
-    <span id="textcolor3" class="navitem">NOS PROJETS</span>
-    <span id="textcolor4" class="navitem">ENTREPRISE</span>
-    <span id="textcolor5" class="navitem">CONTACT</span>
+    <span class="dropdownColor"><a class="nav-link" id="textcolor1" routerLink="">ACCUEIL</a></span>
+    <span>
+      <li class="nav-item navcampus dropdown drop-cursor-t">
+        <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor2" data-toggle="dropdown">
+          NOS CAMPUS
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item overGreen" *ngFor="let city of cities" href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+        </div>
+      </li>
+    </span>
+    <span class="dropdownColor"><a class="nav-link" id="textcolor3" >NOS WILDERS</a></span>
+    <span class="dropdownColor"><a class="nav-link" id="textcolor4" >NOS PROJETS</a></span>
+    <span>
+      <li class="nav-item dropdown drop-cursor-t">
+        <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor5" data-toggle="dropdown">
+          ENTREPRISES
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item overGreen" href="#">A</a>
+          <a class="dropdown-item overGreen" href="#"></a>
+          <a class="dropdown-item overGreen" href="#"></a>
+        </div>
+      </li>
+    </span>
+    <span class="dropdownColor"><a class="nav-link" id="textcolor6">CONTACT</a></span>
   </header>
 </div>
 

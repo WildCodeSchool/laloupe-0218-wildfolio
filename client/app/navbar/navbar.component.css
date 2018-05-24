@@ -163,7 +163,8 @@ header.masthead p {
 /* A retirer plus tard*/
  /* here */
 
-.navbar {
+.navbar 
+{
   display: flex;
   width: 100%;
   height: 60px;
@@ -177,58 +178,43 @@ header.masthead p {
 }
 
 
-.logo{
+.logo
+{
   width: 4vh;
   /* margin-top: 40px; */
   margin-left: 3vw;
 }
 
-.navitemlogo{
+.navitemlogo
+{
   flex:8;
   color:white;
 }
 
-.navitem{
-  color:white;
-  width:150px;
-  text-align:center;
-  padding:10px;
-  cursor:pointer;
-  height:100%;
-  line-height:40px;
-  transition:1s;
-  font-size:17px;
-  font-family: 'Fjalla One', sans-serif;
-  font-style:italic;
-}
-.navitemCampus{
-  color:white;
-  width:150px;
-  text-align:center;
-  padding:10px;
-  cursor:pointer;
-  height:100%;
-  line-height:40px;
-  transition:1s;
-  font-size:17px;
-  font-family: 'Fjalla One', sans-serif;
-  font-style:italic;
-  padding-top: 1vw;
-}
-.navitem:hover{
-  color: orange;
-
-}
-.liCampus {
-  display: block;
+.navbar li 
+{
+  list-style-type: none;
 }
 
 #demo {
   z-index: 10;
-  color: white;
+  color: black;
   font-size: 70px;
   font-weight: bold;
   display:block;
+}
+
+.dropdownColor
+{
+  color: white;
+  transition: 0.5s;
+}
+
+.dropdownColor a
+{
+  cursor: pointer;
+  color: white;
+  transition: 0.5s;
 }
 
 /* fin de acceuil */
