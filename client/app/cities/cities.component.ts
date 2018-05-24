@@ -54,6 +54,9 @@ export class CitiesComponent implements OnInit {
         },
         error => console.log(error),
       );
+    } else {
+      this.addCityForm.reset();
+      this.toast.setMessage('campus already exist.', 'warning');
     }
   }
 
@@ -95,10 +98,11 @@ export class CitiesComponent implements OnInit {
   }
 
   canAddCity() {
-    for (let index = 0; index < this.cities.length; index++) {
-      if(this.cities[index].name === this.cities[index].name) {
+    for (let i = 0; i < this.cities.length; i++) {
+      if(this.cities[i].name === this.addCityForm.value.name) {
         return false;
       }
     }
+    return true;
   }
 }
