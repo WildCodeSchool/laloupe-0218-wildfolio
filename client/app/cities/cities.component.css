@@ -2,3 +2,13 @@
 .table th {
   width: 25%;
 }
+
+.titleAdmin 
+{
+  font-weight: bold;
+}
+
+.backgroundNav 
+{
+  background-color: #f9a02e;
+}
