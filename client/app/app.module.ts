@@ -3,13 +3,13 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
-import { CatService } from './services/cat.service';
+import { CityService } from './services/city.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { AppComponent } from './app.component';
-import { CatsComponent } from './cats/cats.component';
+import { CitiesComponent } from './cities/cities.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +17,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -25,7 +27,7 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    CatsComponent,
+    CitiesComponent,
     AboutComponent,
     RegisterComponent,
     LoginComponent,
@@ -33,6 +35,8 @@ export function tokenGetter() {
     AccountComponent,
     AdminComponent,
     NotFoundComponent,
+    NavbarComponent,
+    PresentationComponent,
   ],
   imports: [
     RoutingModule,
@@ -48,7 +52,7 @@ export function tokenGetter() {
     AuthService,
     AuthGuardLogin,
     AuthGuardAdmin,
-    CatService,
+    CityService,
     UserService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

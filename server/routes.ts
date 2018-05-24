@@ -1,24 +1,24 @@
 import * as express from 'express';
 
-import CatController from './controllers/CatController';
+import CityController from './controllers/CityController';
 import UserController from './controllers/UserController';
-// import cat from './models/cat';
+// import city from './models/city';
 // import user from './models/user';
 
 export default function routes(app) {
 
   const router = express.Router();
 
-  const cat = new CatController();
+  const city = new CityController();
   const user = new UserController();
 
-  // cats
-  router.route('/cats').get(cat.getAll);
-  router.route('/cats/count').get(cat.count);
-  router.route('/cat').post(cat.insert);
-  router.route('/cat/:id').get(cat.get);
-  router.route('/cat/:id').put(cat.update);
-  router.route('/cat/:id').delete(cat.delete);
+  // cities
+  router.route('/cities').get(city.getAll);
+  router.route('/cities/count').get(city.count);
+  router.route('/city').post(city.insert);
+  router.route('/city/:id').get(city.get);
+  router.route('/city/:id').put(city.update);
+  router.route('/city/:id').delete(city.delete);
 
   // users
   router.route('/login').post(user.login);
