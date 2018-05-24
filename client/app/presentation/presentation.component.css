@@ -90,3 +90,18 @@
     margin-top: 0px;
     color: orange;
 }
+
+/* Wilders */
+.dernierWilder {
+    display: flex;
+    justify-content: center;
+    padding-top: 6vh;
+}
+.card-content {
+    display: inline-grid;
+    justify-content: center;
+    padding-top: 6vh;
+}
+.card-action {
+    margin-top: -6vh;
+}
