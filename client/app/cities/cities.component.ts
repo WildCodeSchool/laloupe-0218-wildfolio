@@ -19,39 +19,43 @@ export class CitiesComponent implements OnInit {
 
   addCityForm: FormGroup;
   name = new FormControl('', Validators.required);
-  age = new FormControl('', Validators.required);
-  weight = new FormControl('', Validators.required);
+  link = new FormControl('', Validators.required);
 
-  constructor(private cityService: CityService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent) { }
+  constructor(private cityService: CityService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
 
   ngOnInit() {
     this.getCity();
     this.addCityForm = this.formBuilder.group({
       name: this.name,
-      age: this.age,
-      weight: this.weight,
+      link: this.link,
     });
   }
 
   getCity() {
     this.cityService.getCities().subscribe(
-      data => this.cities = data,
+      (data) => {
+        console.log(data);
+        this.cities = data;
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
 
   addCity() {
-    this.cityService.addCity(this.addCityForm.value).subscribe(
-      (res) => {
-        this.cities.push(res);
-        this.addCityForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      error => console.log(error),
-    );
+    if (this.canAddCity()) {
+      this.cityService.addCity(this.addCityForm.value).subscribe(
+        (res) => {
+          this.cities.push(res);
+          this.addCityForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
+      );
+    } else {
+      this.addCityForm.reset();
+      this.toast.setMessage('campus already exist.', 'warning');
+    }
   }
 
   enableEditing(city: City) {
@@ -91,4 +95,12 @@ export class CitiesComponent implements OnInit {
     }
   }
 
+  canAddCity() {
+    for (const i = 0; i < this.cities.length; i + 1) {
+      if (this.cities[i].name === this.addCityForm.value.name) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
