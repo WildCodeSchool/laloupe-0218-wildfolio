@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
         document.getElementById('textcolor6').style.color = 'white';
       } else {
         document.getElementById('changecolor').style.backgroundColor = 'white';
+        document.getElementById('changecolor').style.borderBottom = '2px solid gray';
         document.getElementById('textcolor1').style.color = 'black';
         document.getElementById('textcolor2').style.color = 'black';
         document.getElementById('textcolor3').style.color = 'black';
