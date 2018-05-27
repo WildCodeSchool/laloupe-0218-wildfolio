@@ -1,20 +1,22 @@
 <!-- Image + titre -->
 <div class="accueil">
-  <img class="imgAccueil" src="https://cdn.radiofrance.fr/s3/cruiser-production/2016/05/8bc8d069-9d1b-4f97-a117-92db6509c59b/870x489__mg_8551.jpg"
-    alt="Alt">
-  <h2 class="titreWilder">Rechercher un Wilder ?</h2>
+  <img class="imgAccueil" src="./assets/image_home.jpg" alt="image_accueil">
+  <h2 class="titreWilder">Rechercher un développeur</h2>
 </div>
+
 <!-- Les select et input  -->
 <div class="selectInput">
   <div class="tehnologie">
     <h3>Technologie </h3>
-    <select id="techno">
-      <option value="valeur1">PHP</option>
-      <option value="valeur1" selected>Js</option>
-      <option value="valeur1">Angular</option>
-      <option value="valeur1">NodeJS</option>
-      <option value="valeur1">Symphony</option>
-    </select>
+    <div class="custom-select" style="width:200px;">
+      <select id="techno">
+        <option value="0">PHP</option>
+        <option value="1" selected>Js</option>
+        <option value="3">Angular</option>
+        <option value="4">NodeJS</option>
+        <option value="5">Symphony</option>
+      </select>
+    </div>
   </div>
 
   <div class="posteActuel">
@@ -27,9 +29,9 @@
 
   <div class="region">
     <h3>Zone géographique</h3>
-      <form>
-          <input type="text" name="firstname" placeholder="region">
-        </form> 
+    <form>
+      <input type="text" name="firstname" placeholder="region">
+    </form>
   </div>
 
 </div>
