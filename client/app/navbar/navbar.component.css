@@ -185,6 +185,11 @@ header.masthead p {
   margin-left: 3vw;
 }
 
+.iconcolor 
+{
+  color: #FBA858;
+}
+
 .navitemlogo
 {
   flex:8;
