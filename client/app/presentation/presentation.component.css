@@ -9,12 +9,13 @@
     z-index:5;
     background-attachment: fixed;
   }
+  
 .imgAccueil {
-    background-image: url('https://cdn.radiofrance.fr/s3/cruiser-production/2016/05/8bc8d069-9d1b-4f97-a117-92db6509c59b/870x489__mg_8551.jpg');
+    background-image: url('/../assets/image_home.jpg');
     width: 100% ;
-    height: 55vh;
+    height: 53vh;
     background-size: cover;
-    filter: brightness(0.2)
+    filter: brightness(0.28)
 }
 .titreWilder {
     display: flex;
@@ -27,15 +28,14 @@
     font-size: 7vh;
 }
 
-.selectInput {
-    display: inline-flex;
-    flex-direction: row;
+.search {
     position: absolute;
     top: 35vh;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: center;
     color: white;
+}
+
+.searchDev{
+    background-color: orange;
 }
 
 /* presentation */

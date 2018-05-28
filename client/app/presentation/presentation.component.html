@@ -3,43 +3,51 @@
 <!-- Image + titre -->
 <div class="accueil">
   <div class="imgAccueil"></div>
-  <h2 class="titreWilder">Rechercher un Wilder ?</h2>
+  <h2 class="titreWilder">Rechercher un Développeur </h2>
 </div>
 <!-- Les select et input  -->
-<div class="selectInput">
-  <div class="technologie">
-    <h3>Technologie </h3>
-    <select id="techno">
-      <option value="valeur1">PHP</option>
-      <option value="valeur1" selected>Js</option>
-      <option value="valeur1">Angular</option>
-      <option value="valeur1">NodeJS</option>
-      <option value="valeur1">Symphony</option>
-    </select>
-  </div>
+<div class="row">
+  <div class="offset-lg-1">
+  <form class="form-inline search">
+    <div class="langages ml-sm-3">
+      <h3>Langages/Frameworks</h3>
+      <select class="custom-select" id="techno">
+        <option selected>Select</option>
+        <option value="1">PHP Symfony</option>
+        <option value="2">JavaScript Angular</option>
+        <option value="3">JavaScript React</option>
+        <option value="4">JavaScript VueJS</option>
+        <option value="5">JavaScript NodeJS</option>
+        <option value="6">Java J2EE Android</option>
+      </select>
+    </div>
 
-  <div class="posteActuel">
-    <h3>Poste Actuel</h3>
-    <select id="poste">
-      <option value="valeur1">Stage/Formation</option>
-      <option value="valeur1">Développeur Confirmé</option>
-    </select>
-  </div>
+    <div class="posteActuel ml-sm-3">
+      <h3>Poste Actuel</h3>
+      <select class="custom-select" id="poste">
+        <option selected>Select</option>
+        <option value="valeur1">Stagiaire</option>
+        <option value="valeur1">Développeur</option>
+      </select>
+    </div>
 
-  <div class="region">
-    <h3>Zone géographique</h3>
-      <form>
-          <input type="text" name="firstname" placeholder="region">
-        </form> 
-  </div>
+    <div class="zone ml-sm-3">
+      <h3>Zone géographique</h3>
+      <label class="sr-only" for="inlineFormInput">Zone géographique</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
+    </div>
 
+    <div class="buttonSearch ml-sm-5">
+      <button type="submit" class="btn btn-primary searchDev">Chercher un Développeur</button>
+    </div>
+  </form>
+  </div>
 </div>
 
 <div class="presentation">
   <h1 class="titlePresentation">Vous cherchez à recruter un développeur ?</h1>
   <div class="delimited">________________</div>
-  <p class="pPresentation">Vous voulez recruter un développeur pour travailler sur votre site web,créer votre
-    produit et accompagner votre croissance.
+  <p class="pPresentation">Vous voulez recruter un développeur pour travailler sur votre site web,créer votre produit et accompagner votre croissance.
   </p>
   <p class="pPresentation"> Vous recherchez un développeur web stagiaire, un collaborateur pour votre équipe technique ou votre futur associé
     <br> dans la France entière ? Alors ne cherchez plus, vous êtes au bonne endroit.</p>
@@ -70,11 +78,13 @@
       <div class="col s12 m7">
         <div class="card">
           <div class="card-image">
-            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg" alt="alt"><!-- Modifer par la base de donnés plus tard -->
-           
+            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg"
+              alt="alt">
+            <!-- Modifer par la base de donnés plus tard -->
+
           </div>
           <div class="card-content">
-          <h3 class="card-title">Alexandre Teyssier</h3>
+            <h3 class="card-title">Alexandre Teyssier</h3>
             <p>Campus: La Loupe</p>
           </div>
           <div class="card-action">
@@ -82,14 +92,17 @@
           </div>
         </div>
       </div>
-    </div>  <div class="row">
+    </div>
+    <div class="row">
       <div class="col s12 m7">
         <div class="card">
           <div class="card-image">
-            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg"><!-- Modifer par la base de donnés plus tard -->
-          </div><div class="card-content">
-          <h3 class="card-title">Bastien Escroc</h3>
-          
+            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg">
+            <!-- Modifer par la base de donnés plus tard -->
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Bastien Escroc</h3>
+
             <p>Campus: La Loupe</p>
           </div>
           <div class="card-action">
@@ -97,16 +110,18 @@
           </div>
         </div>
       </div>
-    </div>  <div class="row">
+    </div>
+    <div class="row">
       <div class="col s12 m7">
         <div class="card">
           <div class="card-image">
-            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg"><!-- Modifer par la base de donnés plus tard -->
-            
+            <img src="https://thepeoplespharmacy-graedonenterpris.netdna-ssl.com/wp-content/uploads/Kid_Hand-over-mouth-e1422294167254.jpg">
+            <!-- Modifer par la base de donnés plus tard -->
+
           </div>
           <div class="card-content">
-          <h3 class="card-title">Antoine Porée</h3>
-          
+            <h3 class="card-title">Antoine Porée</h3>
+
             <p>Campus: La Loupe</p>
           </div>
           <div class="card-action">
