@@ -41,8 +41,9 @@
   <div class="container">
     <div class="intro-text">
       <div class="intro-lead-in">Vous recherchez un Développeur ?</div>
-      <form class="form-inline row search">
-        <div class="langages">
+      <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Cherchez un Développeur</a>
+      <form class="form-inline row search" *ngIf="isClick == true">
+        <div class="col-3">
           <h3>Langages/Frameworks</h3>
           <select class="custom-select" id="techno">
             <option selected>Select</option>
@@ -55,7 +56,7 @@
           </select>
         </div>
 
-        <div class="posteActuel">
+        <div class="col-3">
           <h3>Poste Actuel</h3>
           <select class="custom-select" id="poste">
             <option selected>Select</option>
@@ -64,12 +65,12 @@
           </select>
         </div>
 
-        <div class="zone">
+        <div class="col-3">
           <h3>Zone géographique</h3>
           <label class="sr-only" for="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
-        <div class="buttonSearch">
+        <div class="col-3">
           <a class="btn btn-primary btn-lg text-uppercase answerText">Cherchez un Développeur</a>
         </div>
       </form>

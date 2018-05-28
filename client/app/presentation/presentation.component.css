@@ -169,9 +169,8 @@
     text-align: center;
     color: white;
     background-image: url('/../assets/image_home.jpg');
-    background-color: black;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     max-height: 700px;
     background-position: center center;
     -webkit-background-size: cover;
@@ -180,6 +179,13 @@
     background-size: cover;
   }
   
+
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
   header.masthead .intro-text {
     padding-top: 150px;
     padding-bottom: 100px;

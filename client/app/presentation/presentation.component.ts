@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
+  isClick = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isSearched() {
+    this.isClick = true
   }
 
 }

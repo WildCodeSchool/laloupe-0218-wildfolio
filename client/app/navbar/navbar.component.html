@@ -48,38 +48,52 @@
  -->
 <!-- debut de acceuil -->
 
-<div class="containeracceuil">
-  <header class="navbar" id="changecolor">
-    <span class="navitemlogo">
+<div class="containeracceuil" id="page-top">
+  <nav class="navbar navbar-expand-lg" id="changecolor">
+    <span class="navitemlogo navbar-brand">
       <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
     </span>
-    <span class="dropdownColor"><a class="nav-link" id="textcolor1" routerLink="">ACCUEIL</a></span>
-    <span>
-      <li class="nav-item navcampus dropdown drop-cursor-t">
-        <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor2" data-toggle="dropdown">
-          NOS CAMPUS
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item overGreen" *ngFor="let city of cities" href="{{ city.link }}" target="_blank">{{ city.name }}</a>
-        </div>
-      </li>
-    </span>
-    <span class="dropdownColor"><a class="nav-link" id="textcolor3" >NOS DEVELOPPEURS</a></span>
-    <span class="dropdownColor"><a class="nav-link" id="textcolor4" >NOS PROJETS</a></span>
-    <span>
-      <li class="nav-item dropdown drop-cursor-t">
-        <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor5" data-toggle="dropdown">
-          ENTREPRISES
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/recruter-un-developpeur/">Recruter un developpeur</a>
-          <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/developper-un-projet/">Developper un projet</a>
-          <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/plan-de-formation-2-0/">Plan de formation 2.0</a>
-        </div>
-      </li>
-    </span>
-    <span class="dropdownColor"><a class="nav-link" id="textcolor6">CONTACT</a></span>
-  </header>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="iconcolor">Menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor1" routerLink="">ACCUEIL</a>
+      </span>
+      <span>
+        <li class="nav-item navcampus dropdown drop-cursor-t">
+          <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor2" data-toggle="dropdown">
+            NOS CAMPUS
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item overGreen" *ngFor="let city of cities" href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+          </div>
+        </li>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor3">NOS WILDERS</a>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor4">NOS PROJETS</a>
+      </span>
+      <span>
+        <li class="nav-item dropdown drop-cursor-t">
+          <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor5" data-toggle="dropdown">
+            ENTREPRISES
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/recruter-un-developpeur/">Recruter un developpeur</a>
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/developper-un-projet/">Developper un projet</a>
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/plan-de-formation-2-0/">Plan de formation 2.0</a>
+          </div>
+        </li>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor6">CONTACT</a>
+      </span>
+    </div>
+  </nav>
 </div>
 
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
