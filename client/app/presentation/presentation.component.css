@@ -9,11 +9,25 @@
   }
   
   a {
-    color: #fed136;
+    color: black;
   }
   
   a:hover {
     color: #fec503;
+    text-decoration: none;
+  }
+
+  hr 
+  {
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+
+  .hrWhite 
+  {
+    color: white;
+    max-width: 500px;
+    margin-bottom: 40px;
   }
   
   .text-primary {
@@ -31,13 +45,13 @@
   }
   
   section {
-    padding: 100px 0;
+    padding: 80px 0;
   }
   
   section h2.section-heading {
     font-size: 40px;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
   }
   
   section h3.section-subheading {
@@ -66,6 +80,7 @@
   }
   
   .btn-primary {
+    color: white;
     background-color: #FBA858;
     border-color: #FBA858;
   }
@@ -98,7 +113,7 @@
     background: transparent;
   }
   
-  #mainNav {
+/*   #mainNav {
     background-color: #212529;
   }
   
@@ -163,7 +178,7 @@
       font-size: 1.25em;
       padding: 12px 0;
     }
-  }
+  } */
   
   header.masthead {
     text-align: center;
@@ -220,7 +235,7 @@
 
   .answerText:hover
   {
-      background-color: #F9A02E !important;
+    background-color: #F9A02E !important;
   }
   
   @media (min-width: 768px) {
