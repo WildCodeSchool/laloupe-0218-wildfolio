@@ -198,7 +198,11 @@
     margin-bottom: 25px;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+  }
   header.masthead .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
@@ -206,7 +210,9 @@
     margin-bottom: 25px;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-
+  .team-member p {
+    margin-top: 0;
+  }
   .answerText 
   {
       color: white;
@@ -242,7 +248,15 @@
     margin: 15px 0;
     text-transform: none;
   }
-  
+  .timeline > li .timeline-image h4 {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 12px;
+  }
+  #portfolio .portfolio-item .portfolio-caption h4 {
+    margin: 0;
+    text-transform: none;
+  }
   #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -298,10 +312,14 @@
     text-align: center;
     background-color: #fff;
   }
+
+  .portfolio-modal .modal-content p {
+    margin-bottom: 30px;
+  }
   
-  #portfolio .portfolio-item .portfolio-caption h4 {
-    margin: 0;
-    text-transform: none;
+  .timeline .timeline-body > ul,
+  .timeline .timeline-body > p {
+    margin-bottom: 0;
   }
   
   #portfolio .portfolio-item .portfolio-caption p {
@@ -310,7 +328,7 @@
     margin: 0;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  
+ 
   #portfolio * {
     z-index: 2;
   }
@@ -340,9 +358,7 @@
     margin-bottom: 15px;
   }
   
-  .portfolio-modal .modal-content p {
-    margin-bottom: 30px;
-  }
+  
   
   .portfolio-modal .modal-content p.item-intro {
     font-size: 16px;
@@ -350,12 +366,21 @@
     margin: 20px 0 30px;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  
+  section#contact ::-moz-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+    /* Firefox 19+ */
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
   .portfolio-modal .modal-content ul.list-inline {
     margin-top: 0;
     margin-bottom: 30px;
   }
-  
+  .team-member img {
+    width: 225px;
+    height: 225px;
+    border: 7px solid #fff;
+  }
   .portfolio-modal .modal-content img {
     margin-bottom: 30px;
   }
@@ -471,12 +496,6 @@
     background-color: #fed136;
   }
   
-  .timeline > li .timeline-image h4 {
-    font-size: 10px;
-    line-height: 14px;
-    margin-top: 12px;
-  }
-  
   .timeline > li.timeline-inverted > .timeline-panel {
     float: right;
     padding: 0 20px 0 100px;
@@ -501,19 +520,10 @@
     margin-bottom: 0;
   }
   
-  .timeline .timeline-heading h4 {
-    margin-top: 0;
-    color: inherit;
-  }
-  
   .timeline .timeline-heading h4.subheading {
     text-transform: none;
   }
   
-  .timeline .timeline-body > ul,
-  .timeline .timeline-body > p {
-    margin-bottom: 0;
-  }
   
   @media (min-width: 768px) {
     .timeline:before {
@@ -535,6 +545,10 @@
       height: 100px;
       margin-left: -50px;
     }
+    .timeline .timeline-heading h4 {
+      margin-top: 0;
+      color: inherit;
+    }
     .timeline > li .timeline-image h4 {
       font-size: 13px;
       line-height: 18px;
@@ -546,7 +560,7 @@
       text-align: left;
     }
   }
-  
+
   @media (min-width: 992px) {
     .timeline > li {
       min-height: 150px;
@@ -581,6 +595,7 @@
       height: 170px;
       margin-left: -85px;
     }
+    
     .timeline > li .timeline-image h4 {
       margin-top: 40px;
     }
@@ -593,23 +608,7 @@
     margin-bottom: 50px;
     text-align: center;
   }
-  
-  .team-member img {
-    width: 225px;
-    height: 225px;
-    border: 7px solid #fff;
-  }
-  
-  .team-member h4 {
-    margin-top: 25px;
-    margin-bottom: 0;
-    text-transform: none;
-  }
-  
-  .team-member p {
-    margin-top: 0;
-  }
-  
+   
   section#contact {
     background-color: #212529;
     background-repeat: no-repeat;
@@ -652,13 +651,6 @@
     font-weight: 700;
     color: #ced4da;
     /* Firefox 18- */
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-  
-  section#contact ::-moz-placeholder {
-    font-weight: 700;
-    color: #ced4da;
-    /* Firefox 19+ */
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   
