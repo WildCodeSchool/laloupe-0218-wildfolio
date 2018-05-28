@@ -51,11 +51,11 @@ export class NavbarComponent implements OnInit {
     this.cityService.getCities().subscribe(
       (data) => {
         console.log(data);
-        this.cities = data.sort(function(a, b){
-          if(a.name < b.name) return -1;
-          if(a.name > b.name) return 1;
+        this.cities = data.sort((a, b) => {
+          if (a.name < b.name) { return - 1 ; }
+          if (a.name > b.name) { return 1 ; }
           return 0;
-      });
+        });
       },
     );
   }
