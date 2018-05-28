@@ -50,8 +50,9 @@ export class NavbarComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
-        console.log(data);
         this.cities = data;
+        data.sort();
+        console.log(data.sort());
       },
     );
   }
