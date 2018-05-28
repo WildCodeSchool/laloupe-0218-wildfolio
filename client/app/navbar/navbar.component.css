@@ -167,6 +167,7 @@ header.masthead p {
 {
   display: flex;
   width: 100%;
+  min-height: 60px;
   background-color: transparent;
   position:fixed;
   top:0;

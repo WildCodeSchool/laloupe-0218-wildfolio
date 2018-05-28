@@ -37,7 +37,7 @@
   section h2.section-heading {
     font-size: 40px;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
   
   section h3.section-subheading {
@@ -49,11 +49,11 @@
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   
-  @media (min-width: 768px) {
+ /*  @media (min-width: 768px) {
     section {
       padding: 150px 0;
     }
-  }
+  } */
   
   .btn {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;

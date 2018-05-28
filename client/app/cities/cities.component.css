@@ -10,5 +10,17 @@
 
 .backgroundNav 
 {
-  background-color: #f9a02e;
+  background-color: #F9A02E;
+}
+
+.btn-primary {
+  border: 1px solid #FBA858;
+  background-color: #FBA858;
+  color: white;
+}
+
+.btn-primary:hover {
+  border: 1px solid #F9A02E;
+  background-color: #F9A02E;
+  color: white;
 }
