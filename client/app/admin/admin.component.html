@@ -2,7 +2,7 @@
 
 <app-toast [message]="toast.message"></app-toast>
 
-<div class="card" *ngIf="!isLoading">
+<!-- <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Registered users ({{ users.length }})</h4>
   <div class="card-body">
     <table class="table table-bordered">
@@ -32,5 +32,47 @@
         </tr>  
       </tbody>
     </table>
+  </div>
+</div> -->
+<div class="back">
+  <app-navbar></app-navbar>
+
+  <h2 class="titleAdmin col-12">Bienvenue dans la partie administration</h2>
+  <div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Utilisateurs</a>
+          <button type="button" class="buttonSetting" routerLink=""><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
+        </li>
+      </ol>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Projets </a>
+          <button type="button" class="buttonSetting" routerLink=""><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
+        </li>
+      </ol>
+    </nav>
+    
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="cities">Ecoles</a>
+          <button type="button" class="buttonSetting" routerLink="/cities"><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
+        </li>
+      </ol>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="recruts">Oeil du Recruteurs</a>
+          <button type="button" class="buttonSetting" routerLink="/recruts"><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
+        </li>
+      </ol>
+    </nav>
   </div>
 </div>
