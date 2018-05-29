@@ -32,7 +32,6 @@
 
   hr{
     width:20%;
-    border: solid;
   }
   
   section {
@@ -518,6 +517,7 @@
   footer {
     padding: 25px 0;
     text-align: center;
+    background-color: #212529;
   }
   
   footer span.copyright {
