@@ -21,6 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { RecrutsComponent } from './recruts/recruts.component';
 import { RecrutService } from './services/recrut.service';
+import { ResearchComponent } from './research/research.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -40,6 +42,8 @@ export function tokenGetter() {
     NavbarComponent,
     PresentationComponent,
     RecrutsComponent,
+    ResearchComponent,
+    FooterComponent,
   ],
   imports: [
     RoutingModule,

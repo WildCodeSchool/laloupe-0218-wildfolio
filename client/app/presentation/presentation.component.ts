@@ -15,7 +15,7 @@ export class PresentationComponent implements OnInit {
   }
 
   isSearched() {
-    this.isClick = true
+    this.isClick = true;
   }
 
 }
