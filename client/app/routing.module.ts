@@ -14,6 +14,7 @@ import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { PresentationComponent } from './presentation/presentation.component';
 import { RecrutsComponent } from './recruts/recruts.component';
+import { OauthComponent } from './oauth/oauth.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'oauth', component: OauthComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent }, /*  canActivate: [AuthGuardAdmin]  */
