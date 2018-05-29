@@ -23,6 +23,7 @@ import { RecrutsComponent } from './recruts/recruts.component';
 import { RecrutService } from './services/recrut.service';
 import { ResearchComponent } from './research/research.component';
 import { FooterComponent } from './footer/footer.component';
+import { OauthComponent } from './oauth/oauth.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -44,6 +45,7 @@ export function tokenGetter() {
     RecrutsComponent,
     ResearchComponent,
     FooterComponent,
+    OauthComponent,
   ],
   imports: [
     RoutingModule,

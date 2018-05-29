@@ -1,1 +1,9 @@
-/* This is an example */
+.table td,
+.table th {
+  width: 25%;
+}
+
+.titleAdmin 
+{
+  font-weight: bold;
+}
