@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Recrut } from '../shared/models/recrut.model';
 import { RecrutService } from '../services/recrut.service';
+<<<<<<< HEAD
 import * as AOS from 'aos';
+=======
+import { StudentService } from '../services/student.service';
+>>>>>>> f9afd77727baaf234016eb9be6ac7abc75124a5f
 
 @Component({
   selector: 'app-presentation',
@@ -12,10 +16,10 @@ import * as AOS from 'aos';
 export class PresentationComponent implements OnInit {
 
   isClick = false;
-  recruts: Recrut[] = []
+  recruts: Recrut[] = [];
 
-  constructor(route: ActivatedRoute, private recrutService: RecrutService) { 
-    console.log("J'ai trouvé le code", route.snapshot.queryParamMap.get('code'));
+  constructor(route: ActivatedRoute, private recrutService: RecrutService) {
+    console.log('Jai trouvé le code', route.snapshot.queryParamMap.get('code'));
   }
 
   ngOnInit() {
