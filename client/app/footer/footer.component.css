@@ -9,6 +9,12 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
+
+.logofooter {
+    width: 12vh;
+    margin-top: -130px;
+}
+
 #footer {
     background: #35383a !important;
 }
@@ -54,6 +60,7 @@ section .section-title {
 	color:#ffffff;
 }
 #footer ul.social li a:hover{
+    background-color: #Fba858;
 	color:#eeeeee;
 }
 #footer ul.quick-links li{
