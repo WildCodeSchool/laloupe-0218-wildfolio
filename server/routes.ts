@@ -32,8 +32,8 @@ export default function routes(app) {
 
   // users
   router.route('/login').post(user.login);
-  router.route('/users').get(user.getAll);
-  router.route('/users/count').get(user.count);
+  router.route('/oauth').get(user.oauth);
+  router.route('/oauth/callback').get(user.callback);
   router.route('/user').post(user.insert);
   router.route('/user/:id').get(user.get);
   router.route('/user/:id').put(user.update);

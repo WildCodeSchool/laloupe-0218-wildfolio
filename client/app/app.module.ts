@@ -24,6 +24,8 @@ import { RecrutService } from './services/recrut.service';
 import { ResearchComponent } from './research/research.component';
 import { FooterComponent } from './footer/footer.component';
 import { OauthComponent } from './oauth/oauth.component';
+import { LoginCallbackComponent } from './login-callback/login-callback.component';
+import { WcsService } from './wcs.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -46,6 +48,7 @@ export function tokenGetter() {
     ResearchComponent,
     FooterComponent,
     OauthComponent,
+    LoginCallbackComponent,
   ],
   imports: [
     RoutingModule,
@@ -64,6 +67,7 @@ export function tokenGetter() {
     CityService,
     RecrutService,
     UserService,
+    WcsService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Recrut } from '../shared/models/recrut.model';
 import { RecrutService } from '../services/recrut.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-presentation',
@@ -19,6 +20,10 @@ export class PresentationComponent implements OnInit {
 
   ngOnInit() {
     this.getRecrut();
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out-sine'
+    });
   }
 
   getRecrut() {
