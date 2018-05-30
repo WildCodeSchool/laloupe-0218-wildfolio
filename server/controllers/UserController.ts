@@ -30,7 +30,6 @@ const authorizationUri = oauth2.authorizationCode.authorizeURL({
 export default class UserController extends BaseController {
   model = userModel;
 
-<<<<<<< HEAD
     login = (req, res) => {
         this.model.findOne({ email: req.body.email }, (err, user) => {
             if (!user) { return res.sendStatus(403); }
@@ -77,20 +76,4 @@ export default class UserController extends BaseController {
         res.send('');
     };
 
-=======
-  login = (req, res) => {
-    this.model.findOne({ email: req.body.email }, (err, user) => {
-      if (!user) {
-        return res.sendStatus(403);
-      }
-      user.comparePassword(req.body.password, (error, isMatch) => {
-        if (!isMatch) {
-          return res.sendStatus(403);
-        }
-        const token = jwt.sign({ user }, process.env.SECRET_TOKEN); // , { expiresIn: 10 } seconds
-        res.status(200).json({ token });
-      });
-    });
-  }
->>>>>>> f9afd77727baaf234016eb9be6ac7abc75124a5f
 }

@@ -24,14 +24,11 @@ import { RecrutService } from './services/recrut.service';
 import { ResearchComponent } from './research/research.component';
 import { FooterComponent } from './footer/footer.component';
 import { OauthComponent } from './oauth/oauth.component';
-<<<<<<< HEAD
 import { LoginCallbackComponent } from './login-callback/login-callback.component';
 import { WcsService } from './wcs.service';
-=======
 import { StudentsComponent } from './students/students.component';
 import { StudentService } from './services/student.service';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
->>>>>>> f9afd77727baaf234016eb9be6ac7abc75124a5f
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -55,11 +52,8 @@ export function tokenGetter() {
     ResearchComponent,
     FooterComponent,
     OauthComponent,
-<<<<<<< HEAD
     LoginCallbackComponent,
-=======
     StudentEleveComponent,
->>>>>>> f9afd77727baaf234016eb9be6ac7abc75124a5f
   ],
   imports: [
     RoutingModule,
