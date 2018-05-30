@@ -23,7 +23,7 @@ export class PresentationComponent implements OnInit {
     this.getRecrut();
     AOS.init({
       duration: 800,
-      easing: 'ease-in-out-sine'
+      easing: 'ease-in-out-sine',
     });
   }
 
