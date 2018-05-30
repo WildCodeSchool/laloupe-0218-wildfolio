@@ -209,6 +209,8 @@ header.masthead p {
   display:block;
 }
 
+/* Dropdown */
+
 .dropdownColor
 {
   color: white;
@@ -230,11 +232,13 @@ a:hover{
   color: #FBA858;
 }
 
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: block;
+  margin-top: -1px;
 }
 
-.dropdown>.dropdown-toggle:active {
+
+ .dropdown>.dropdown-toggle:active {
   /*Without this, clicking will make it sticky*/
     pointer-events: none;
 }
@@ -250,6 +254,7 @@ a:hover{
   opacity: 1;
 }
 
+/* 
 @media (min-width: 768px) {
   .dropdown .dropdown-menu{
       display: block; 
@@ -264,4 +269,23 @@ a:hover{
       display: block;
       opacity: 1;
   }
-  }
+  } 
+  */
+
+  .dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 2000px;
+    opacity: 1;
+}
