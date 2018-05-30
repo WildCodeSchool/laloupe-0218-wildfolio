@@ -10,9 +10,26 @@ section .section-title {
     text-transform: uppercase;
 }
 
+
+a:hover {
+    color: #FBA858;
+    text-decoration: none;
+}
+
 .logofooter {
     width: 12vh;
     margin-top: -130px;
+}
+
+.footerCenter 
+{
+    text-align: center;
+}
+
+.footerCenter h2
+{
+    font-weight: bold;
+    color: white;
 }
 
 #footer {
@@ -34,7 +51,6 @@ section .section-title {
 #footer a {
     color: #ffffff;
     text-decoration: none !important;
-    background-color: transparent;
 }
 #footer p {
     color: #ffffff;
@@ -91,4 +107,27 @@ section .section-title {
 .miniLogo {
     display: contents;
 }
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+    }
+    
+ul.social-buttons li a {
+font-size: 20px;
+line-height: 40px;
+display: block;
+width: 40px;
+height: 40px;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+color: white;
+border-radius: 100%;
+outline: none;
+background-color: #35383a;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+background-color: #FBA858;
 }
