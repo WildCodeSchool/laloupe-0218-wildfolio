@@ -223,13 +223,12 @@ header.masthead p {
 }
 
 a:hover{
-  color: #FBA858 !important;
+  color: #FBA858;
 }
-/* fin de acceuil */
-/* Navbar */
-/* #navbarNavDropdown {
-  justify-content: flex-end;
-} */
+
+.dropdownColor a:hover{
+  color: #FBA858;
+}
 
 .dropdown:hover>.dropdown-menu {
   display: block;
