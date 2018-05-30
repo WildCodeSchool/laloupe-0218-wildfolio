@@ -3,11 +3,12 @@
 </app-navbar>
 
 <!-- Bannière/Barre de recherche -->
+
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
       <div class="intro-lead-in">Vous recherchez un Développeur ?</div>
-      <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Cherchez un Développeur</a>
+      <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Chercher un Développeur</a>
       <form class="form-inline" *ngIf="isClick == true">
         <div class="offset-lg-1 col-lg-2 col-12">
           <h3>Langages/Frameworks</h3>
@@ -37,7 +38,7 @@
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
         <div class="col-lg-1 col-12">
-          <a class="btn btn-primary text-uppercase answerText">Cherchez un Développeur</a>
+          <a class="btn btn-primary text-uppercase answerText">Chercher un Développeur</a>
         </div>
       </form>
     </div>
@@ -152,7 +153,7 @@
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-mail"></i>
+                <i class="fa fa-envelope"></i>
               </a>
             </li>
           </ul>
@@ -176,7 +177,7 @@
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-mail"></i>
+                <i class="fa fa-envelope"></i>
               </a>
             </li>
           </ul>
@@ -200,7 +201,7 @@
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-mail"></i>
+                <i class="fa fa-envelope"></i>
               </a>
             </li>
           </ul>
@@ -296,50 +297,83 @@
 </section> -->
 
 <!-- Footer -->
+
+
+
 <footer>
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <span class="copyright">Copyright &copy; Your Website 2018</span>
+      <div class="row">
+          <div class="col-12 mx-auto">
+              <img src="https://wildcodeschool.fr/wp-content/uploads/2016/05/cropped-naviconWCS.png" alt="logo" class="logofooter">
+          </div>
+        </div>
+    <div class="row linkFooter">
+      <div class="col-md-6 col-sm-12 footer_p1">
+          <h5>Lien</h5>
+          <ul class="list-unstyled quick-links">
+            <li>
+              <a href="javascript:void();">
+                <i class="fa fa-angle-double-right"></i>Nos Wilders</a>
+            </li>
+            <li>
+              <a href="javascript:void();">
+                <i class="fa fa-angle-double-right"></i>Nos Projets</a>
+            </li>
+            <li>
+              <a href="https://wildcodeschool.fr/recruter-un-developpeur/">
+                <i class="fa fa-angle-double-right"></i>Entreprise</a>
+            </li>
+            <li>
+              <a href="admin">
+                <i class="fa fa-angle-double-right"></i>Contact</a>
+            </li>
+            <!-- <li>
+              <a href="javascript:void();">
+                <i class="fa fa-angle-double-right"></i>Videos</a>
+            </li> -->
+          </ul>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 mx-auto footer_p2">
+        <h2>Wild Code School</h2>
+        <p>contact@wildcodeschool.fr</p>
+        <p>+33 9 72 52 63 94</p>
         <ul class="list-inline social-buttons">
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://twitter.com/wildcodeschool" target="_blank">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://www.facebook.com/wildcodeschool" target="_blank">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://www.linkedin.com/school/wild-code-school/" target="_blank">
               <i class="fa fa-linkedin"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://github.com/WildCodeSchool" target="_blank">
               <i class="fa fa-github"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://www.instagram.com/wildcodeschool/" target="_blank">
               <i class="fa fa-instagram"></i>
             </a>
           </li>
           <li class="list-inline-item">
-            <a href="#">
+            <a href="https://www.youtube.com/channel/UCi99G_0QPx5sYsK8zdvQzfw" target="_blank">
               <i class="fa fa-youtube"></i>
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="row">
+    <div class="row rights">
       <div class="col-12">
-        <span class="copyright">Copyright &copy; Your Website 2018</span>
+        <span class="copyright">Made with love by Wild Code School</span>
       </div>
     </div>
   </div>
@@ -563,4 +597,5 @@
     </div>
   </div>
 </div>
+
 <app-footer></app-footer>
