@@ -631,6 +631,7 @@ blockquote{
   padding: 15px 20px 15px 45px;
   margin: 0 0 20px;
   position: relative;
+  border-radius: 4%;
   
   /*Font*/
   font-family: Georgia, serif;
