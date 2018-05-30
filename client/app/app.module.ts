@@ -24,6 +24,9 @@ import { RecrutService } from './services/recrut.service';
 import { ResearchComponent } from './research/research.component';
 import { FooterComponent } from './footer/footer.component';
 import { OauthComponent } from './oauth/oauth.component';
+import { StudentsComponent } from './students/students.component';
+import { StudentService } from './services/student.service';
+import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -43,9 +46,11 @@ export function tokenGetter() {
     NavbarComponent,
     PresentationComponent,
     RecrutsComponent,
+    StudentsComponent,
     ResearchComponent,
     FooterComponent,
     OauthComponent,
+    StudentEleveComponent,
   ],
   imports: [
     RoutingModule,
@@ -62,6 +67,7 @@ export function tokenGetter() {
     AuthGuardLogin,
     AuthGuardAdmin,
     CityService,
+    StudentService,
     RecrutService,
     UserService,
   ],
