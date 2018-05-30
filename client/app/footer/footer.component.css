@@ -1,4 +1,5 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 section {
     padding: 60px 0;
 }
@@ -9,6 +10,29 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
+
+
+a:hover {
+    color: #FBA858;
+    text-decoration: none;
+}
+
+.logofooter {
+    width: 12vh;
+    margin-top: -130px;
+}
+
+.footerCenter 
+{
+    text-align: center;
+}
+
+.footerCenter h2
+{
+    font-weight: bold;
+    color: white;
+}
+
 #footer {
     background: #35383a !important;
 }
@@ -28,7 +52,6 @@ section .section-title {
 #footer a {
     color: #ffffff;
     text-decoration: none !important;
-    background-color: transparent;
 }
 #footer p {
     color: #ffffff;
@@ -54,6 +77,7 @@ section .section-title {
 	color:#ffffff;
 }
 #footer ul.social li a:hover{
+    background-color: #Fba858;
 	color:#eeeeee;
 }
 #footer ul.quick-links li{
@@ -84,4 +108,27 @@ section .section-title {
 .miniLogo {
     display: contents;
 }
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+    }
+    
+ul.social-buttons li a {
+font-size: 20px;
+line-height: 40px;
+display: block;
+width: 40px;
+height: 40px;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+color: white;
+border-radius: 100%;
+outline: none;
+background-color: #35383a;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+background-color: #FBA858;
 }

@@ -52,6 +52,7 @@
     "npm": "^5.8.0",
     "popper.js": "^1.14.3",
     "rxjs": "^5.5.6",
+    "simple-oauth2": "^1.5.2",
     "startbootstrap-creative": "^4.0.0",
     "tether": "1.4.4",
     "zone.js": "^0.8.19"

@@ -376,6 +376,147 @@ header.masthead .intro-text .intro-heading {
   font-size: 3em;
   margin-bottom: 15px;
 }
+  @media (min-width: 992px) {
+    .timeline > li {
+      min-height: 150px;
+    }
+    .timeline > li .timeline-panel {
+      padding: 0 20px 20px;
+    }
+    .timeline > li .timeline-image {
+      width: 150px;
+      height: 150px;
+      margin-left: -75px;
+    }
+    .timeline > li .timeline-image h4 {
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 30px;
+    }
+    .timeline > li.timeline-inverted > .timeline-panel {
+      padding: 0 20px 20px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .timeline > li {
+      min-height: 170px;
+    }
+    .timeline > li .timeline-panel {
+      padding: 0 20px 20px 100px;
+    }
+    .timeline > li .timeline-image {
+      width: 170px;
+      height: 170px;
+      margin-left: -85px;
+    }
+    
+    .timeline > li .timeline-image h4 {
+      margin-top: 40px;
+    }
+    .timeline > li.timeline-inverted > .timeline-panel {
+      padding: 0 100px 20px 20px;
+    }
+  }
+  
+  .team-member {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+   
+  section#contact {
+    background-color: #212529;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  section#contact .section-heading {
+    color: #fff;
+  }
+  
+  section#contact .form-group {
+    margin-bottom: 25px;
+  }
+  
+  section#contact .form-group input,
+  section#contact .form-group textarea {
+    padding: 20px;
+  }
+  
+  section#contact .form-group input.form-control {
+    height: auto;
+  }
+  
+  section#contact .form-group textarea.form-control {
+    height: 248px;
+  }
+  
+  section#contact .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+  }
+  
+  section#contact ::-webkit-input-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  section#contact :-moz-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+    /* Firefox 18- */
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  section#contact :-ms-input-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+  
+  footer span.copyright {
+    font-size: 90%;
+    line-height: 40px;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  footer ul.quicklinks {
+    font-size: 90%;
+    line-height: 40px;
+    margin-bottom: 0;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  ul.social-buttons {
+    margin-bottom: 0;
+  }
+  
+  ul.social-buttons li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: #212529;
+  }
+  
+  ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+    background-color: #FBA858;
+  }
 
 
 
@@ -484,7 +625,7 @@ color:white;
 font-weight: bold;
 }
 
-/*Section contact*/
+/*Section Contact*/
 
 section#contact {
   background-color: #212529;
@@ -538,97 +679,3 @@ section#contact :-ms-input-placeholder {
 }
 
 
-/*Footer*/
-
-.logofooter{
-  width: 12vh;
-  margin-top: -65px;
-}
-
-footer {
-  padding: 25px 0;
-  text-align: center;
-  background-color: #35383a;
-  color:white;
-}
-
-.footer_p1{
-  text-align: left;
-}
-
-.linkFooter{
-  padding-top: 4%;
-}
-
-@media screen and (max-width: 767px) {
-
-}
-
-.footer_p1 li:hover{
-  color:#1fa597;
-}
-
-footer li{
-list-style-type: none;
-padding-bottom: 2%;
-}
-
-footer span.copyright {
-  font-size: 90%;
-  line-height: 40px;
-  text-transform: none;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-footer ul.quicklinks {
-  font-size: 90%;
-  line-height: 40px;
-  margin-bottom: 0;
-  text-transform: none;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-ul.social-buttons {
-  margin-bottom: 0;
-}
-
-ul.social-buttons li a {
-  font-size: 20px;
-  line-height: 40px;
-  display: block;
-  width: 40px;
-  height: 40px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  color: white;
-  border-radius: 100%;
-  outline: none;
-  background-color: #35383a;
-}
-
-ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-  background-color: #FBA858;
-}
-
-.rights{
-  margin-top: 5%;
-}
-
-#footer ul.quick-links li{
-	padding: 3px 0;
-	-webkit-transition: .5s all ease;
-	-moz-transition: .5s all ease;
-	transition: .5s all ease;
-}
-#footer ul.quick-links li:hover{
-	padding: 3px 0;
-	margin-left:5px;
-	font-weight:700;
-}
-#footer ul.quick-links li a i{
-	margin-right: 5px;
-}
-#footer ul.quick-links li:hover a i {
-    font-weight: 700;
-}

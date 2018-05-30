@@ -46,6 +46,7 @@
 </header>
 
 <!-- Section Présentation -->
+
 <section id="services">
   <div class="container">
     <div class="row">
@@ -63,6 +64,7 @@
 </section>
 
 <!-- Section Projets -->
+
 <section class="bg-light" id="portfolio">
   <div class="container">
     <div class="row">
@@ -126,6 +128,7 @@
 </section>
 
 <!-- Section Développeurs -->
+
 <section id="team">
   <div class="container">
     <div class="row">
@@ -219,6 +222,7 @@
 </section>
 
 <!-- Section Oeil du recruteur -->
+
 <section class="bg-light">
   <div class="container">
     <div class="row">
@@ -229,28 +233,33 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6">
-        <q class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper scelerisque dapibus. Praesent molestie finibus
-          dolor, a auctor dui tincidunt aliquam. Praesent feugiat magna pellentesque erat pulvinar, accumsan ullamcorper
-          ipsum suscipit.</q>
-        <p class="text-muted name_company">Comparateur Agricole</p>
+        <q class="text-muted">{{ this.recruts[0].description }}</q>
+        <p class="text-muted">
+          <strong>{{ this.recruts[0].authname }}</strong>
+        </p>
       </div>
       <div class="col-md-4 col-sm-6">
-        <q class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper scelerisque dapibus. Praesent molestie finibus
-          dolor, a auctor dui tincidunt aliquam. Praesent feugiat magna pellentesque erat pulvinar, accumsan ullamcorper
-          ipsum suscipit.</q>
-        <p class="text-muted name_company">Enedis</p>
+        <a href="#">
+          <q class="text-muted">{{ this.recruts[1].description }}</q>
+          <p class="text-muted">
+            <strong>{{ this.recruts[1].authname }}</strong>
+          </p>
+        </a>
       </div>
       <div class="col-md-4 col-sm-6">
-        <q class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper scelerisque dapibus. Praesent molestie finibus
-          dolor, a auctor dui tincidunt aliquam. Praesent feugiat magna pellentesque erat pulvinar, accumsan ullamcorper
-          ipsum suscipit.</q>
-        <p class="text-muted name_company">Carrefour</p>
+        <a href="#">
+          <q class="text-muted">{{ this.recruts[2].description }}</q>
+          <p class="text-muted">
+            <strong>{{ this.recruts[2].authname }}</strong>
+          </p>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
+
 <!-- <section id="contact">
   <div class="container">
     <div class="row">
@@ -295,90 +304,6 @@
     </div>
   </div>
 </section> -->
-
-<!-- Footer -->
-
-
-
-<footer>
-  <div class="container">
-      <div class="row">
-          <div class="col-12 mx-auto">
-              <img src="https://wildcodeschool.fr/wp-content/uploads/2016/05/cropped-naviconWCS.png" alt="logo" class="logofooter">
-          </div>
-        </div>
-    <div class="row linkFooter">
-      <div class="col-md-6 col-sm-12 footer_p1">
-          <h5>Lien</h5>
-          <ul class="list-unstyled quick-links">
-            <li>
-              <a href="javascript:void();">
-                <i class="fa fa-angle-double-right"></i>Nos Wilders</a>
-            </li>
-            <li>
-              <a href="javascript:void();">
-                <i class="fa fa-angle-double-right"></i>Nos Projets</a>
-            </li>
-            <li>
-              <a href="https://wildcodeschool.fr/recruter-un-developpeur/">
-                <i class="fa fa-angle-double-right"></i>Entreprise</a>
-            </li>
-            <li>
-              <a href="admin">
-                <i class="fa fa-angle-double-right"></i>Contact</a>
-            </li>
-            <!-- <li>
-              <a href="javascript:void();">
-                <i class="fa fa-angle-double-right"></i>Videos</a>
-            </li> -->
-          </ul>
-      </div>
-      <div class="col-md-6 mx-auto footer_p2">
-        <h2>Wild Code School</h2>
-        <p>contact@wildcodeschool.fr</p>
-        <p>+33 9 72 52 63 94</p>
-        <ul class="list-inline social-buttons">
-          <li class="list-inline-item">
-            <a href="https://twitter.com/wildcodeschool" target="_blank">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/wildcodeschool" target="_blank">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/school/wild-code-school/" target="_blank">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/WildCodeSchool" target="_blank">
-              <i class="fa fa-github"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.instagram.com/wildcodeschool/" target="_blank">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.youtube.com/channel/UCi99G_0QPx5sYsK8zdvQzfw" target="_blank">
-              <i class="fa fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row rights">
-      <div class="col-12">
-        <span class="copyright">Made with love by Wild Code School</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
 
 <!-- Portfolio Modals -->
 
