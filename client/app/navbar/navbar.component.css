@@ -222,8 +222,47 @@ header.masthead p {
   transition: 0.5s;
 }
 
+a:hover{
+  color: #FBA858 !important;
+}
 /* fin de acceuil */
 /* Navbar */
 /* #navbarNavDropdown {
   justify-content: flex-end;
 } */
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-menu.fade {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show > .dropdown-menu.fade {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .dropdown .dropdown-menu{
+      display: block; 
+    opacity:0;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  }
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+  }
+  }
