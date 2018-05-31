@@ -29,6 +29,8 @@ import { WcsService } from './wcs.service';
 import { StudentsComponent } from './students/students.component';
 import { StudentService } from './services/student.service';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
+import { ProjetFrontComponent } from './projet-front/projet-front.component';
+import { ProjetBackComponent } from './projet-back/projet-back.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -54,6 +56,8 @@ export function tokenGetter() {
     OauthComponent,
     LoginCallbackComponent,
     StudentEleveComponent,
+    ProjetFrontComponent,
+    ProjetBackComponent,
   ],
   imports: [
     RoutingModule,

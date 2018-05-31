@@ -16,10 +16,14 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { RecrutsComponent } from './recruts/recruts.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { StudentsComponent } from './students/students.component';
+import { ProjetFrontComponent } from './projet-front/projet-front.component';
+import { ProjetBackComponent } from './projet-back/projet-back.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'cities', component: CitiesComponent },
+  { path: 'projet', component: ProjetFrontComponent },
+  { path: 'projetBack', component: ProjetBackComponent },
   { path: 'student', component: StudentsComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
