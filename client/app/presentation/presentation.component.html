@@ -1,4 +1,4 @@
- <app-navbar>
+<app-navbar>
 
 </app-navbar>
 
@@ -9,8 +9,8 @@
     <div class="intro-text">
       <div class="intro-lead-in">Vous recherchez un développeur ?</div>
       <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Chercher un Développeur</a>
-      <form class="form-inline" *ngIf="isClick == true">
-        <div class="offset-lg-1 col-lg-2 col-12">
+      <form class="form-inline row" *ngIf="isClick == true">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
           <select class="custom-select" id="techno">
             <option selected>Select</option>
@@ -23,7 +23,7 @@
           </select>
         </div>
 
-        <div class="offset-lg-1 col-lg-3 col-12">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select" id="poste">
             <option selected>Select</option>
@@ -32,13 +32,12 @@
           </select>
         </div>
 
-        <div class="col-lg-3 col-12">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
           <label class="sr-only" for="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
-
-        <div class="row mx-auto">
+        <div class="row mx-auto" *ngIf="isClick">
           <div class="col-12 buttonSearch">
             <a class="btn btn-primary btn-xs text-uppercase answerText">Chercher un Développeur</a>
           </div>
@@ -112,7 +111,11 @@
               <i class="fa fa-plus fa-3x"></i>
             </div>
           </div>
+<<<<<<< HEAD
           <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-up">
+=======
+          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
+>>>>>>> 970c5f7752fb0d14d1e8a77fdfb35cd3c2262cb0
         </a>
         <div class="portfolio-caption">
           <h4>Projet 3</h4>
@@ -236,12 +239,12 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6">
-          <a href="#">
-        <blockquote class="text-muted">{{ this.recruts[0].description }}
-          <p class="text-muted">
-            <strong>{{ this.recruts[0].authname }}</strong>
-          </p>
-        </blockquote>
+        <a href="#">
+          <blockquote class="text-muted">{{ this.recruts[0].description }}
+            <p class="text-muted">
+              <strong>{{ this.recruts[0].authname }}</strong>
+            </p>
+          </blockquote>
         </a>
       </div>
       <div class="col-md-4 col-sm-6">

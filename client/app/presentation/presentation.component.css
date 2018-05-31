@@ -271,6 +271,13 @@ header.masthead .intro-text .intro-heading {
   padding-top:3%;
 }
 
+/* @media (min-width: 992px) {
+#techno{
+  width: 250px !important;
+}
+} */
+
+
 /*Section Présentation*/
 
 .service-heading {
