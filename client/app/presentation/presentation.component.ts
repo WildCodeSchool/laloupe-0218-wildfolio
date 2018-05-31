@@ -4,6 +4,7 @@ import { Recrut } from '../shared/models/recrut.model';
 import { RecrutService } from '../services/recrut.service';
 import * as AOS from 'aos';
 import { StudentService } from '../services/student.service';
+import { WcsService } from '../wcs.service';
 
 @Component({
   selector: 'app-presentation',
@@ -15,8 +16,7 @@ export class PresentationComponent implements OnInit {
   isClick = false;
   recruts: Recrut[] = [];
 
-  constructor(route: ActivatedRoute, private recrutService: RecrutService) {
-    console.log('Jai trouvé le code', route.snapshot.queryParamMap.get('code'));
+  constructor(route: ActivatedRoute, private recrutService: RecrutService, private wcsService: WcsService) {
   }
 
   ngOnInit() {

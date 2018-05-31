@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
         document.getElementById('textcolor4').style.backgroundColor = 'transparent';
         document.getElementById('textcolor5').style.backgroundColor = 'transparent';
         document.getElementById('textcolor6').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor7').style.backgroundColor = 'transparent';
 
         document.getElementById('textcolor1').style.color = 'white';
         document.getElementById('textcolor2').style.color = 'white';
@@ -34,6 +35,7 @@ export class NavbarComponent implements OnInit {
         document.getElementById('textcolor4').style.color = 'white';
         document.getElementById('textcolor5').style.color = 'white';
         document.getElementById('textcolor6').style.color = 'white';
+        document.getElementById('textcolor7').style.color = 'white';
       } else {
         document.getElementById('changecolor').style.backgroundColor = 'white';
         document.getElementById('changecolor').style.borderBottom = '1px solid gray';
@@ -43,6 +45,7 @@ export class NavbarComponent implements OnInit {
         document.getElementById('textcolor4').style.color = 'black';
         document.getElementById('textcolor5').style.color = 'black';
         document.getElementById('textcolor6').style.color = 'black';
+        document.getElementById('textcolor7').style.color = 'black';
       }
     }); /*Fin de la navbar */
   }

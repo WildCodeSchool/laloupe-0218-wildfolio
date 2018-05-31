@@ -29,6 +29,8 @@ import { WcsService } from './wcs.service';
 import { StudentsComponent } from './students/students.component';
 import { StudentService } from './services/student.service';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
+import { TokenInterceptor } from './token.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -66,6 +68,11 @@ export function tokenGetter() {
     }),
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
     AuthService,
     AuthGuardLogin,
     AuthGuardAdmin,

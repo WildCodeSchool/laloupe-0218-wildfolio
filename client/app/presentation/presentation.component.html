@@ -12,7 +12,7 @@
       <form class="form-inline row" *ngIf="isClick == true">
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
-          <select class="custom-select" id="techno">
+          <select class="custom-select selectWidth" id="techno">
             <option selected>Select</option>
             <option value="1">PHP Symfony</option>
             <option value="2">JavaScript Angular</option>
@@ -25,7 +25,7 @@
 
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
-          <select class="custom-select" id="poste">
+          <select class="custom-select selectWidth" id="poste">
             <option selected>Select</option>
             <option value="valeur1">Stagiaire</option>
             <option value="valeur1">Développeur</option>
@@ -34,12 +34,12 @@
 
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
-          <label class="sr-only" for="inlineFormInput">Zone géographique</label>
+          <label class="sr-only selectWidth" form="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
         <div class="row mx-auto" *ngIf="isClick">
-          <div class="col-12 buttonSearch">
-            <a class="btn btn-primary btn-xs text-uppercase answerText">Chercher un Développeur</a>
+          <div class="col-12">
+            <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Développeur</button>
           </div>
         </div>
       </form>
@@ -122,7 +122,7 @@
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="project_button">
-          <a class="btn btn-primary btn-lg answerText" href="/api/oauth">Plus de projets</a>
+          <a class="btn btn-primary btn-lg answerText" href="">Plus de projets</a>
         </div>
       </div>
     </div>

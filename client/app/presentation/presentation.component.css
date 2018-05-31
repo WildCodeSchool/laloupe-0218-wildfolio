@@ -67,9 +67,25 @@ section h3.section-subheading {
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/*  @media (min-width: 768px) {
-  section {
-    padding: 150px 0;
+@media (min-width: 950px) {
+  .selectWidth 
+  {
+    width: 250px!important;
+  }
+}
+
+@media (min-width: 950px) {
+  .buttonSearch
+  {
+    height: 69px!important;
+    margin-top: 14%!important;
+  }
+}
+
+/* @media (min-width: 950px) {
+  .selectWidthTwo 
+  {
+    width: 250px!important;
   }
 } */
 

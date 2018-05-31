@@ -16,6 +16,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { RecrutsComponent } from './recruts/recruts.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { StudentsComponent } from './students/students.component';
+import { LoginCallbackComponent } from './login-callback/login-callback.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
