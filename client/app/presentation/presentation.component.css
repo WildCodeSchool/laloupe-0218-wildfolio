@@ -522,6 +522,10 @@ header.masthead .intro-text .intro-heading {
     background-color: #FBA858;
   }
 
+hr {
+  background-color: #1fa597;
+  height: 2px;
+}
 
 
 .portfolio-modal .modal-content p.item-intro {

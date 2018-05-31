@@ -25,6 +25,7 @@ a:hover {
 .footerCenter 
 {
     text-align: center;
+    /* display: inline; */
 }
 
 .footerCenter h2
