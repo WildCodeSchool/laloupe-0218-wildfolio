@@ -2,7 +2,9 @@ import * as mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
   name: String,
-  surname: String,
+  lastname: String,
+  email: String,
+  wcs_id: Number,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

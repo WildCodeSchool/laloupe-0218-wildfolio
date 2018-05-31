@@ -21,6 +21,10 @@ export class StudentService {
     return this.http.post<Student>('/api/student', student);
   }
 
+  addStudentIfNotExists(student: Student): Observable<Student> {
+    return this.http.post<Student>('/api/student/ifNotExists', student);
+  }
+
   getStudent(student: Student): Observable<Student> {
     return this.http.get<Student>(`/api/student/${student._id}`);
   }
