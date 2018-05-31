@@ -7,7 +7,7 @@
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
-      <div class="intro-lead-in">Vous recherchez un Développeur ?</div>
+      <div class="intro-lead-in">Vous recherchez un développeur ?</div>
       <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Chercher un Développeur</a>
       <form class="form-inline" *ngIf="isClick == true">
         <div class="offset-lg-1 col-lg-2 col-12">
@@ -37,8 +37,11 @@
           <label class="sr-only" for="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
-        <div class="col-lg-1 col-12">
-          <a class="btn btn-primary text-uppercase answerText">Chercher un Développeur</a>
+
+        <div class="row mx-auto">
+          <div class="col-12 buttonSearch">
+            <a class="btn btn-primary btn-lg text-uppercase answerText">Chercher un Développeur</a>
+          </div>
         </div>
       </form>
     </div>
@@ -120,7 +123,7 @@
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="project_button">
-          <a class="btn btn-primary btn-lg answerText">Plus de projets</a>
+          <a class="btn btn-primary answerText">Plus de projets</a>
         </div>
       </div>
     </div>
@@ -233,11 +236,13 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6">
+          <a href="#">
         <blockquote class="text-muted">{{ this.recruts[0].description }}
           <p class="text-muted">
             <strong>{{ this.recruts[0].authname }}</strong>
           </p>
         </blockquote>
+        </a>
       </div>
       <div class="col-md-4 col-sm-6">
         <a href="#">
