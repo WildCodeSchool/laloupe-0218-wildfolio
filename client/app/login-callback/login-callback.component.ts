@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WcsService } from '../wcs.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { WcsService } from '../wcs.service';
 })
 export class LoginCallbackComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private wcsService: WcsService) { }
+  constructor(private route: ActivatedRoute, private wcsService: WcsService, private router: Router) { }
 
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
@@ -17,6 +17,7 @@ export class LoginCallbackComponent implements OnInit {
     this.wcsService.getMe().subscribe((data) => {
       console.log(data);
     });
+    this.router.navigate(['/']);
   }
 
 }

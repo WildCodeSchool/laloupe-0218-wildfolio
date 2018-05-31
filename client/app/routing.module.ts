@@ -16,8 +16,12 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { RecrutsComponent } from './recruts/recruts.component';
 import { OauthComponent } from './oauth/oauth.component';
 import { StudentsComponent } from './students/students.component';
+<<<<<<< HEAD
+import { LoginCallbackComponent } from './login-callback/login-callback.component';
+=======
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
 import { ProjetBackComponent } from './projet-back/projet-back.component';
+>>>>>>> af29c926f3d6f8576f91376959461f469b6b629f
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -28,6 +32,7 @@ const routes: Routes = [
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
