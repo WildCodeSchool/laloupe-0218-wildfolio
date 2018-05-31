@@ -7,10 +7,10 @@
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
-      <div class="intro-lead-in">Vous recherchez un Développeur ?</div>
+      <div class="intro-lead-in">Vous recherchez un développeur ?</div>
       <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Chercher un Développeur</a>
-      <form class="form-inline" *ngIf="isClick == true">
-        <div class="offset-lg-1 col-lg-2 col-12">
+      <form class="form-inline row" *ngIf="isClick == true">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
           <select class="custom-select" id="techno">
             <option selected>Select</option>
@@ -23,7 +23,7 @@
           </select>
         </div>
 
-        <div class="offset-lg-1 col-lg-3 col-12">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select" id="poste">
             <option selected>Select</option>
@@ -32,13 +32,15 @@
           </select>
         </div>
 
-        <div class="col-lg-3 col-12">
+        <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
           <label class="sr-only" for="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
-        <div class="col-lg-1 col-12">
-          <a class="btn btn-primary text-uppercase answerText">Chercher un Développeur</a>
+        <div class="row mx-auto" *ngIf="isClick">
+          <div class="col-12 buttonSearch">
+            <a class="btn btn-primary btn-xs text-uppercase answerText">Chercher un Développeur</a>
+          </div>
         </div>
       </form>
     </div>
@@ -81,7 +83,7 @@
               <i class="fa fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-right">
+          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
         </a>
         <div class="portfolio-caption">
           <h4>Projet 1</h4>
@@ -109,7 +111,7 @@
               <i class="fa fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-left">
+          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
         </a>
         <div class="portfolio-caption">
           <h4>Projet 3</h4>
@@ -233,11 +235,13 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6">
-        <blockquote class="text-muted">{{ this.recruts[0].description }}
-          <p class="text-muted">
-            <strong>{{ this.recruts[0].authname }}</strong>
-          </p>
-        </blockquote>
+        <a href="#">
+          <blockquote class="text-muted">{{ this.recruts[0].description }}
+            <p class="text-muted">
+              <strong>{{ this.recruts[0].authname }}</strong>
+            </p>
+          </blockquote>
+        </a>
       </div>
       <div class="col-md-4 col-sm-6">
         <a href="#">
@@ -326,7 +330,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="" alt="">
               <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
                 maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -362,7 +366,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="" alt="">
               <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
                 maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -398,7 +402,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="" alt="">
               <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
                 maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -434,7 +438,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="" alt="">
               <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
                 dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
                 maiores repudiandae, nostrum, reiciendis facere nemo!</p>

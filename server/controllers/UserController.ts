@@ -6,6 +6,7 @@ import BaseController from './BaseController';
 const simpleOauthModule = require('simple-oauth2');
 const https = require('https');
 
+
 const oauth2 = simpleOauthModule.create({
   client: {
     id: '5b473f25ae3b81262abce0595e896c5876bb56fd8604863b724ae792aece495e',
@@ -25,14 +26,13 @@ const authorizationUri = oauth2.authorizationCode.authorizeURL({
   state: '',
 });
 
+
 export default class UserController extends BaseController {
   model = userModel;
 
   login = (req, res) => {
     this.model.findOne({ email: req.body.email }, (err, user) => {
-      if (!user) {
-        return res.sendStatus(403);
-      }
+      if (!user) { return res.sendStatus(403); }
       user.comparePassword(req.body.password, (error, isMatch) => {
         if (!isMatch) {
           return res.sendStatus(403);
@@ -46,7 +46,8 @@ export default class UserController extends BaseController {
   oauth = (req, res) => {
     console.log(authorizationUri);
     res.redirect(authorizationUri);
-  }
+  };
+
 
   // Callback service parsing the authorization token and asking for the access token
   callback = async (req, res) => {
@@ -60,19 +61,21 @@ export default class UserController extends BaseController {
 
     console.log(code);
 
+
     try {
       const result = await oauth2.authorizationCode.getToken(options);
 
       const token = oauth2.accessToken.create(result);
-
-      return res.status(200).json(token);
+      console.log('starfalah', token.token.access_token);
+      res.redirect('/login/callback/' + token.token.access_token);
     } catch (error) {
       console.error('Access Token Error', error);
       return res.status(500).json('Authentication failed');
     }
-  }
+  };
 
   success = (req, res) => {
     res.send('');
-  }
+  };
+
 }
