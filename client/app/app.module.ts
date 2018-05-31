@@ -29,8 +29,13 @@ import { WcsService } from './wcs.service';
 import { StudentsComponent } from './students/students.component';
 import { StudentService } from './services/student.service';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
+<<<<<<< HEAD
 import { TokenInterceptor } from './token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+=======
+import { ProjetFrontComponent } from './projet-front/projet-front.component';
+import { ProjetBackComponent } from './projet-back/projet-back.component';
+>>>>>>> af29c926f3d6f8576f91376959461f469b6b629f
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -56,6 +61,8 @@ export function tokenGetter() {
     OauthComponent,
     LoginCallbackComponent,
     StudentEleveComponent,
+    ProjetFrontComponent,
+    ProjetBackComponent,
   ],
   imports: [
     RoutingModule,

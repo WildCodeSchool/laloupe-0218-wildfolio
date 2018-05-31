@@ -1,0 +1,18 @@
+.container-fluid {
+    margin-top: 10vh;
+}
+.linkFoot {
+    background-color: #ced4da;
+    min-height: 15vh;
+}
+.linkButton {
+    background-color: #ced4da;
+
+}
+.h3Projet {
+    color: white;
+    padding-top: 5%;
+}
+.list-item {
+    list-style: none;
+}
