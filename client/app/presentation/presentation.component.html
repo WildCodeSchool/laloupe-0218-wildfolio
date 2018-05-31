@@ -234,29 +234,29 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6" *ngIf="recruts[0]">
         <a href="#">
-          <blockquote class="text-muted">{{ this.recruts[0].description }}
+          <blockquote class="text-muted">{{ recruts[0].description }}
             <p class="text-muted">
-              <strong>{{ this.recruts[0].authname }}</strong>
+              <strong>{{ recruts[0].authname }}</strong>
             </p>
           </blockquote>
         </a>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6" *ngIf="recruts[1]">
         <a href="#">
-          <blockquote class="text-muted">{{ this.recruts[1].description }}
+          <blockquote class="text-muted">{{ recruts[1].description }}
             <p class="text-muted">
-              <strong>{{ this.recruts[1].authname }}</strong>
+              <strong>{{ recruts[1].authname }}</strong>
             </p>
           </blockquote>
         </a>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-6" *ngIf="recruts[2]">
         <a href="#">
-          <blockquote class="text-muted">{{ this.recruts[2].description }}
+          <blockquote class="text-muted">{{ recruts[2].description }}
             <p class="text-muted">
-              <strong>{{ this.recruts[2].authname }}</strong>
+              <strong>{{ recruts[2].authname }}</strong>
             </p>
           </blockquote>
         </a>

@@ -19,6 +19,7 @@ import { StudentsComponent } from './students/students.component';
 import { LoginCallbackComponent } from './login-callback/login-callback.component';
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
 import { ProjetBackComponent } from './projet-back/projet-back.component';
+import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'projet', component: ProjetFrontComponent },
   { path: 'projetBack', component: ProjetBackComponent },
   { path: 'student', component: StudentsComponent },
+  { path: 'student-eleve', component: StudentEleveComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
