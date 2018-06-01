@@ -9,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentEleveComponent implements OnInit {
 
-  constructor(private wcsService: WcsService,private route: ActivatedRoute) { }
+  constructor(private wcsService: WcsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const token = this.route.snapshot.paramMap.get('token');    
+    const token = this.route.snapshot.paramMap.get('token');
     localStorage.getItem('token_wcs');
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;

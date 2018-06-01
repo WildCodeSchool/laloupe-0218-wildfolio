@@ -75,7 +75,7 @@ export function tokenGetter() {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi: true
+      multi: true,
     },
     AuthService,
     AuthGuardLogin,

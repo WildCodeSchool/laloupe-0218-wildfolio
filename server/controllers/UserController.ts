@@ -46,7 +46,7 @@ export default class UserController extends BaseController {
   oauth = (req, res) => {
     console.log(authorizationUri);
     res.redirect(authorizationUri);
-  };
+  }
 
 
   // Callback service parsing the authorization token and asking for the access token
@@ -72,10 +72,10 @@ export default class UserController extends BaseController {
       console.error('Access Token Error', error);
       return res.status(500).json('Authentication failed');
     }
-  };
+  }
 
   success = (req, res) => {
     res.send('');
-  };
+  }
 
 }

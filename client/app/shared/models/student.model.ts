@@ -1,6 +1,6 @@
 export class Student {
   _id?: string;
-  wcs_id?: number;
+  WCS_ID?: number;
   name?: string;
   lastname?: string;
   email?: string;

@@ -6,7 +6,7 @@ export default class StudentController extends BaseController {
 
   // Insert
   insertIfNotExists = (req, res) => {
-    this.model.findOne({ wcs_id: req.body.wcs_id }, (err, item) => {
+    this.model.findOne({ WCS_ID: req.body.WCS_ID }, (err, item) => {
       if (err) {
         return console.error(err);
       }
@@ -21,7 +21,7 @@ export default class StudentController extends BaseController {
             return console.error(err);
           }
           res.status(200).json(item);
-        })
+        });
       } else {
         res.status(200).json(item);
       }

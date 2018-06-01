@@ -73,6 +73,9 @@ a:hover {
 	font-size:30px;
 	margin-top:-10px;
 }
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
 #footer ul.social li a,
 #footer ul.quick-links li a{
 	color:#ffffff;
@@ -92,9 +95,7 @@ a:hover {
 	margin-left:5px;
 	font-weight:700;
 }
-#footer ul.quick-links li a i{
-	margin-right: 5px;
-}
+
 #footer ul.quick-links li:hover a i {
     font-weight: 700;
 }

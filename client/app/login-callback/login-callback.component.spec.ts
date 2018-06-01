@@ -8,7 +8,7 @@ describe('LoginCallbackComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginCallbackComponent ]
+      declarations: [LoginCallbackComponent],
     })
     .compileComponents();
   }));

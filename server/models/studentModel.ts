@@ -4,7 +4,7 @@ const studentSchema = new mongoose.Schema({
   name: String,
   lastname: String,
   email: String,
-  wcs_id: Number,
+  WCS_ID: Number,
 });
 
 const studentModel = mongoose.model('student', studentSchema);
