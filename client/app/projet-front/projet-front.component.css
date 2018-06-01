@@ -57,6 +57,10 @@ i {
   border-radius: 15px;
 }
 
+a {
+  color:white;
+  
+}
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .imgProjet {
