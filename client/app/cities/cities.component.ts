@@ -34,7 +34,6 @@ export class CitiesComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
-        console.log(data);
         this.cities = data;
       },
       error => console.log(error),
@@ -96,7 +95,7 @@ export class CitiesComponent implements OnInit {
   }
 
   canAddCity() {
-    for (const i = 0; i < this.cities.length; i + 1) {
+    for (let i = 0; i < this.cities.length; i += 1) {
       if (this.cities[i].name === this.addCityForm.value.name) {
         return false;
       }

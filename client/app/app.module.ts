@@ -19,6 +19,21 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { RecrutsComponent } from './recruts/recruts.component';
+import { RecrutService } from './services/recrut.service';
+import { ResearchComponent } from './research/research.component';
+import { FooterComponent } from './footer/footer.component';
+import { OauthComponent } from './oauth/oauth.component';
+import { LoginCallbackComponent } from './login-callback/login-callback.component';
+import { WcsService } from './wcs.service';
+import { StudentsComponent } from './students/students.component';
+import { StudentService } from './services/student.service';
+import { StudentEleveComponent } from './student-eleve/student-eleve.component';
+import { TokenInterceptor } from './token.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ProjetFrontComponent } from './projet-front/projet-front.component';
+import { ProjetBackComponent } from './projet-back/projet-back.component';
+import { ProjetResearchComponent } from './projet-research/projet-research.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -37,6 +52,16 @@ export function tokenGetter() {
     NotFoundComponent,
     NavbarComponent,
     PresentationComponent,
+    RecrutsComponent,
+    StudentsComponent,
+    ResearchComponent,
+    FooterComponent,
+    OauthComponent,
+    LoginCallbackComponent,
+    StudentEleveComponent,
+    ProjetFrontComponent,
+    ProjetBackComponent,
+    ProjetResearchComponent,
   ],
   imports: [
     RoutingModule,
@@ -49,11 +74,19 @@ export function tokenGetter() {
     }),
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
     AuthService,
     AuthGuardLogin,
     AuthGuardAdmin,
     CityService,
+    StudentService,
+    RecrutService,
     UserService,
+    WcsService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
