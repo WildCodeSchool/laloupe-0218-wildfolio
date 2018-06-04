@@ -5,9 +5,7 @@
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
-      <div class="intro-lead-in">Vous recherchez un développeur ?</div>
-      <a class="btn btn-primary btn-xl text-uppercase answerText" (click)="isSearched()" *ngIf="isClick == false">Chercher un Développeur</a>
-      <form class="form-inline row" *ngIf="isClick == true">
+      <form class="form-inline row">
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
           <select class="custom-select selectWidth" id="techno">
@@ -35,8 +33,8 @@
           <label class="sr-only selectWidth" form="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
         </div>
-        <div class="row mx-auto" *ngIf="isClick">
-          <div class="col-12">
+        <div class="row mx-auto">
+          <div class="col-12 search">
             <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Développeur</button>
           </div>
         </div>
