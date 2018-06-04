@@ -95,7 +95,7 @@ export class RecrutsComponent implements OnInit {
   }
 
   canAddRecrut() {
-    for (let i = 0; i < this.recruts.length; i++) {
+    for (let i = 0; i < this.recruts.length; i += 1) {
       if (this.recruts[i].authname === this.addRecrutForm.value.authname) {
         return false;
       }

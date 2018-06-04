@@ -95,7 +95,7 @@ export class StudentsComponent implements OnInit {
   }
 
   canAddStudent() {
-    for (let i = 0; i < this.students.length; i++) {
+    for (let i = 0; i < this.students.length; i += 1) {
       if (this.students[i].name === this.addStudentForm.value.name) {
         return false;
       }

@@ -95,7 +95,7 @@ export class CitiesComponent implements OnInit {
   }
 
   canAddCity() {
-    for (let i = 0; i < this.cities.length; i++) {
+    for (let i = 0; i < this.cities.length; i += 1) {
       if (this.cities[i].name === this.addCityForm.value.name) {
         return false;
       }
