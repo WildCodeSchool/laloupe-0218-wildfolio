@@ -1,0 +1,92 @@
+.container-fluid {
+  margin-top: 10vh;
+}
+.answerText {
+  background-color: #fba858;
+  border-color: #fba858;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkFoot {
+  min-height: 15vh;
+}
+
+.linkButton {
+  background-color: white;
+}
+
+.h3Projet {
+  color: black;
+  padding-top: 5%;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.project_button {
+  margin-bottom: 10vh;
+}
+
+.paragraphe {
+  margin-top: 4vh;
+  max-width: 50vh;
+}
+
+hr {
+  background-color: #1fa597;
+  width: 30vw;
+}
+
+i {
+  color: #fba858;
+}
+
+.projetHeader {
+  background-color: #ced4da;
+}
+.imgProjet {
+  width: 70%;
+  height: 70%;
+  margin-left: 15vh;
+  margin-top: 7vh;
+  border-style: groove;
+  border-color: #1fa597;
+  border-width: 16px;
+  border-radius: 15px;
+}
+
+a {
+  color:white;
+  
+}
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .imgProjet {
+    width: 65%;
+    height: 65%;
+    margin-left: 6vh;
+    margin-top: 5vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .imgProjet {
+    width: 65%;
+    height: 65%;
+    margin-left: 8vh;
+    margin-top: 5vh;
+  }
+  
+}
+@media (min-width: 992px) {
+    .paragraphe {
+        margin-left: 19vh;
+    }
+
+    ul {
+      margin-left: 20vh;
+    }
+  }
+  

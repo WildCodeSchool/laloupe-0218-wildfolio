@@ -1,0 +1,126 @@
+ /* here */
+
+.navbar 
+{
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  opacity: 0.8;
+  background-color: black;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:0;
+  transition:1s;
+  z-index:100;
+}
+
+
+.logo
+{
+  width: 4vh;
+  /* margin-top: 40px; */
+  margin-left: 3vw;
+}
+
+.iconcolor 
+{
+  color: #FBA858;
+}
+
+.navitemlogo
+{
+  flex:8;
+  color:white;
+}
+
+.navbar li 
+{
+  list-style-type: none;
+}
+
+#demo {
+  z-index: 10;
+  color: black;
+  font-size: 70px;
+  font-weight: bold;
+  display:block;
+}
+
+/* Dropdown */
+
+.dropdownColor
+{
+  color: white;
+  transition: 0.5s;
+}
+
+.dropdownColor a
+{
+  cursor: pointer;
+  color: white;
+  transition: 0.5s;
+}
+
+a:hover{
+  color: #FBA858;
+}
+
+.dropdownColor a:hover{
+  color: #FBA858;
+}
+
+
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: -1px;
+  max-height: 800px;
+    opacity: 1;
+}
+
+
+ .dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-menu.fade {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show > .dropdown-menu.fade {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* 
+@media (min-width: 768px) {
+  .dropdown .dropdown-menu{
+      display: block; 
+    opacity:0;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  }
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+  }
+  } 
+  */
