@@ -29,7 +29,10 @@ export class StudentEleveComponent implements OnInit {
       student.lastname = data['lastname'];
       student.email = data['email'];
       student.WCS_ID = data['id'];
-      student.github = data['github']
+      student.github = data['github'];
+      student.admin = data['admin'];
+      student.banished = data['banished'];
+      student.crew = data['current_crew'];
       console.log(student);
       this.students = student
     });

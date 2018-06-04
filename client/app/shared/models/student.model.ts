@@ -5,4 +5,8 @@ export class Student {
   lastname?: string;
   email?: string;
   github?: string;
+  roles?: string;
+  admin?: boolean;
+  banished?: boolean;
+  crew?: object;
 }
