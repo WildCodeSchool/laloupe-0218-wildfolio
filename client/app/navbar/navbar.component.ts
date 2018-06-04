@@ -14,6 +14,7 @@ import { StudentService } from '../services/student.service';
 export class NavbarComponent implements OnInit {
 
   cities = [];
+  students: Student;
 
   constructor(private cityService: CityService, private wcsService: WcsService, private studentService: StudentService, private route: ActivatedRoute) { }
 
@@ -67,4 +68,25 @@ export class NavbarComponent implements OnInit {
       },
     );
   }
+
+ /*  getStudent() {
+    const token = this.route.snapshot.paramMap.get('token');
+    localStorage.getItem('token_wcs');
+    this.wcsService.getMe().subscribe((data) => {
+      this.wcsService.student = data;
+      console.log(data);
+      const student = new Student();
+      student.name = data['firstname'];
+      student.lastname = data['lastname'];
+      student.email = data['email'];
+      student.WCS_ID = data['id'];
+      student.github = data['github'];
+      student.admin = data['admin'];
+      student.banished = data['banished'];
+      student.crew = data['current_crew'];
+      console.log(student);
+      this.students = student
+    });
+  } */
+
 }
