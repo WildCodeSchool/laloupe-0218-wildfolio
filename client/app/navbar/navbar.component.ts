@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesComponent } from '../cities/cities.component';
 import { CityService } from '../services/city.service';
+import { WcsService } from '../wcs.service';
+import { ActivatedRoute } from '@angular/router';
+import { Student } from '../shared/models/student.model';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   cities = [];
 
-  constructor(private cityService: CityService) { }
+  constructor(private cityService: CityService, private wcsService: WcsService, private studentService: StudentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCity();
@@ -19,7 +23,8 @@ export class NavbarComponent implements OnInit {
     window.addEventListener('scroll', function (event) {
       const scroll = this.scrollY;
       if (scroll === 0) {
-        document.getElementById('changecolor').style.backgroundColor = 'transparent';
+        document.getElementById('changecolor').style.opacity = '0.8';
+        document.getElementById('changecolor').style.backgroundColor = 'black';
         document.getElementById('changecolor').style.borderBottom = 'transparent';
         document.getElementById('textcolor1').style.backgroundColor = 'transparent';
         document.getElementById('textcolor2').style.backgroundColor = 'transparent';
@@ -37,6 +42,7 @@ export class NavbarComponent implements OnInit {
         document.getElementById('textcolor6').style.color = 'white';
         document.getElementById('textcolor7').style.color = 'white';
       } else {
+        document.getElementById('changecolor').style.opacity = '1';
         document.getElementById('changecolor').style.backgroundColor = 'white';
         document.getElementById('changecolor').style.borderBottom = '1px solid gray';
         document.getElementById('textcolor1').style.color = 'black';
@@ -53,10 +59,9 @@ export class NavbarComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
-        console.log(data);
         this.cities = data.sort((a, b) => {
-          if (a.name < b.name) { return - 1 ; }
-          if (a.name > b.name) { return 1 ; }
+          if (a.name < b.name) { return - 1; }
+          if (a.name > b.name) { return 1; }
           return 0;
         });
       },

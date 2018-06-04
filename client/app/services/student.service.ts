@@ -6,7 +6,6 @@ import { Student } from '../shared/models/student.model';
 
 @Injectable()
 export class StudentService {
-
   constructor(private http: HttpClient) { }
 
   getStudents(): Observable<Student[]> {
@@ -36,5 +35,4 @@ export class StudentService {
   deleteStudent(student: Student): Observable<string> {
     return this.http.delete(`/api/student/${student._id}`, { responseType: 'text' });
   }
-
 }

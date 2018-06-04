@@ -1,3 +1,11 @@
-<p>
-  student-eleve works!
-</p>
+<div class="container-fluid" *ngIf="students">
+    <div class="row">
+        <div class="mx-auto">
+            <h1>Mon profil</h1>
+            <hr/>
+            <h2>Prénom Nom : {{ students.name }} {{ students.lastname }}</h2>
+            <h2>Email : {{ students.email }}</h2>
+            <h2>Github : {{ students.github }}</h2>
+        </div>
+    </div>
+</div>

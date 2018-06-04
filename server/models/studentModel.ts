@@ -5,6 +5,7 @@ const studentSchema = new mongoose.Schema({
   lastname: String,
   email: String,
   WCS_ID: Number,
+  github: String,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

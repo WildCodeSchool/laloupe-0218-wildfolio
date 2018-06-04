@@ -1,11 +1,11 @@
-
 <!-- debut de acceuil -->
 
 <div class="container acceuil" id="page-top">
   <nav class="navbar navbar-expand-lg" id="changecolor">
     <span class="navitemlogo navbar-brand">
       <a href="/">
-      <img  src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo"></a>
+        <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
+      </a>
     </span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +47,11 @@
         <a class="nav-link" id="textcolor6" href="admin">CONTACT</a>
       </span>
       <span class="dropdownColor">
-          <a class="nav-link" id="textcolor7" href="/api/oauth">SE CONNECTER</a>
-        </span>
+        <a class="nav-link" id="textcolor7" href="/api/oauth" *ngIf="!islog">SE CONNECTER</a>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor7" routerLink="/student-eleve" *ngIf="islog">MON PROFIL</a>
+      </span>
     </div>
   </nav>
 </div>

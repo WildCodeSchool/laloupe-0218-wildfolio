@@ -30,7 +30,6 @@ export class PresentationComponent implements OnInit {
   getRecrut() {
     this.recrutService.getRecruts().subscribe(
       (data) => {
-        console.log(data);
         this.recruts = data;
       },
     );
