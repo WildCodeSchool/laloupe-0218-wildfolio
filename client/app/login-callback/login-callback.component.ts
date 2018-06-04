@@ -10,6 +10,9 @@ import { StudentService } from '../services/student.service';
   styleUrls: ['./login-callback.component.css'],
 })
 export class LoginCallbackComponent implements OnInit {
+
+  students: Student;
+
   constructor(
     private route: ActivatedRoute,
     private wcsService: WcsService,
@@ -19,14 +22,21 @@ export class LoginCallbackComponent implements OnInit {
 
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
-    localStorage.setItem('token_wcs', token);
+    localStorage.getItem('token_wcs');
     this.wcsService.getMe().subscribe((data) => {
+      this.wcsService.student = data;
       console.log(data);
       const student = new Student();
       student.name = data['firstname'];
       student.lastname = data['lastname'];
       student.email = data['email'];
       student.WCS_ID = data['id'];
+      student.github = data['github'];
+      student.admin = data['admin'];
+      student.banished = data['banished'];
+      student.crew = data['current_crew'];
+      console.log(student);
+      this.students = student
       this.studentService.addStudentIfNotExists(student).subscribe(
         (res) => {
           console.log('ok');

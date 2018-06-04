@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { StudentService } from '../services/student.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Student } from '../shared/models/student.model';
+import { WcsService } from '../wcs.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-students',
@@ -11,6 +13,7 @@ import { Student } from '../shared/models/student.model';
   styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent implements OnInit {
+
   student = new Student();
   students: Student[] = [];
   isLoading = true;
@@ -20,7 +23,7 @@ export class StudentsComponent implements OnInit {
   name = new FormControl('', Validators.required);
   surname = new FormControl('', Validators.required);
 
-  constructor(private studentService: StudentService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
+  constructor(private studentService: StudentService, private formBuilder: FormBuilder, public toast: ToastComponent, private wcsService: WcsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getStudent();
@@ -29,6 +32,26 @@ export class StudentsComponent implements OnInit {
       surname: this.surname,
     });
   }
+
+  /* getStudent() {
+    const token = this.route.snapshot.paramMap.get('token');
+    localStorage.getItem('token_wcs');
+    this.wcsService.getMe().subscribe((data) => {
+      this.wcsService.student = data;
+      console.log(data);
+      const student = new Student();
+      student.name = data['firstname'];
+      student.lastname = data['lastname'];
+      student.email = data['email'];
+      student.WCS_ID = data['id'];
+      student.github = data['github'];
+      student.admin = data['admin'];
+      student.banished = data['banished'];
+      student.crew = data['current_crew'];
+      console.log(student);
+      this.students = student
+    });
+  } */
 
   getStudent() {
     this.studentService.getStudents().subscribe(
@@ -39,22 +62,6 @@ export class StudentsComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
-  }
-
-  addStudent() {
-    if (this.canAddStudent()) {
-      this.studentService.addStudent(this.addStudentForm.value).subscribe(
-        (res) => {
-          this.students.push(res);
-          this.addStudentForm.reset();
-          this.toast.setMessage('item added successfully.', 'success');
-        },
-        error => console.log(error),
-      );
-    } else {
-      this.addStudentForm.reset();
-      this.toast.setMessage('campus already exist.', 'warning');
-    }
   }
 
   enableEditing(student: Student) {

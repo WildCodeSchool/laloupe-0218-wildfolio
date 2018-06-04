@@ -5,6 +5,11 @@ const studentSchema = new mongoose.Schema({
   lastname: String,
   email: String,
   WCS_ID: Number,
+  github: String,
+  roles: String,
+  admin: Boolean,
+  banished: Boolean,
+  crew: Object,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

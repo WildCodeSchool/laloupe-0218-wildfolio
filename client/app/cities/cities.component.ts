@@ -34,7 +34,6 @@ export class CitiesComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
-        console.log(data);
         this.cities = data;
       },
       error => console.log(error),

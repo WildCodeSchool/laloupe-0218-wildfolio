@@ -5,7 +5,8 @@
   display: flex;
   width: 100%;
   min-height: 60px;
-  background-color: transparent;
+  opacity: 0.8;
+  background-color: black;
   position:fixed;
   top:0;
   left:0;

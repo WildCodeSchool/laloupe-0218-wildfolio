@@ -34,7 +34,6 @@ export class RecrutsComponent implements OnInit {
   getRecrut() {
     this.recrutService.getRecruts().subscribe(
       (data) => {
-        console.log(data);
         this.recruts = data;
       },
       error => console.log(error),
@@ -48,13 +47,13 @@ export class RecrutsComponent implements OnInit {
         (res) => {
           this.recruts.push(res);
           this.addRecrutForm.reset();
-          this.toast.setMessage('item added successfully.', 'success');
+          this.toast.setMessage('description added successfully.', 'success');
         },
         error => console.log(error),
       );
     } else {
       this.addRecrutForm.reset();
-      this.toast.setMessage('campus already exist.', 'warning');
+      this.toast.setMessage('description already exist or more than 3 description exist', 'warning');
     }
   }
 
