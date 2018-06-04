@@ -11,8 +11,6 @@ import { StudentService } from '../services/student.service';
 })
 export class LoginCallbackComponent implements OnInit {
 
-  islog = false;
-
   constructor(
     private route: ActivatedRoute,
     private wcsService: WcsService,
@@ -25,7 +23,6 @@ export class LoginCallbackComponent implements OnInit {
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       console.log(data);
-      this.islog = true;
       const student = new Student();
       student.name = data['firstname'];
       student.lastname = data['lastname'];
