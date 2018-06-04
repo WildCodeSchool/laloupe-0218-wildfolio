@@ -33,6 +33,7 @@ import { TokenInterceptor } from './token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
 import { ProjetBackComponent } from './projet-back/projet-back.component';
+import { ProjetResearchComponent } from './projet-research/projet-research.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -60,6 +61,7 @@ export function tokenGetter() {
     StudentEleveComponent,
     ProjetFrontComponent,
     ProjetBackComponent,
+    ProjetResearchComponent,
   ],
   imports: [
     RoutingModule,

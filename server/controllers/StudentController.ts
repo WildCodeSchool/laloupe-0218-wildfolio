@@ -12,7 +12,8 @@ export default class StudentController extends BaseController {
       }
       if (item == null) {
         const obj = new this.model(req.body);
-        obj.save((err, item) => {
+        // enlever objerr => err et objitem => item (erreur tsLint)
+        obj.save((objerr, objitem) => {
           // 11000 is the code for duplicate key error
           if (err && err.code === 11000) {
             res.sendStatus(400);
