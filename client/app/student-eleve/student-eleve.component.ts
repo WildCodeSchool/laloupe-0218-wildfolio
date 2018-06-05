@@ -34,7 +34,7 @@ export class StudentEleveComponent implements OnInit {
       student.banished = data['banished'];
       student.crew = data['current_crew'];
       console.log(student);
-      this.students = student
+      this.students = student;
     });
   }
 }
