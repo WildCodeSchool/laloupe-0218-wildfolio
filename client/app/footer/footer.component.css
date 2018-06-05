@@ -50,6 +50,26 @@ a:hover {
     margin-bottom: 20px;
     color:#ffffff;
 }
+
+ul.social-buttons li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: #35383a;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+    background-color: #FBA858;
+}
+
 #footer a {
     color: #ffffff;
     text-decoration: none !important;
@@ -69,13 +89,16 @@ a:hover {
 	-moz-transition: .5s all ease;
 	transition: .5s all ease;
 }
+
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+
 #footer ul.social li:hover a i {
 	font-size:30px;
 	margin-top:-10px;
 }
-#footer ul.quick-links li a i{
-	margin-right: 5px;
-}
+
 #footer ul.social li a,
 #footer ul.quick-links li a{
 	color:#ffffff;
@@ -116,21 +139,5 @@ ul.social-buttons {
     margin-bottom: 0;
     }
     
-ul.social-buttons li a {
-font-size: 20px;
-line-height: 40px;
-display: block;
-width: 40px;
-height: 40px;
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
-transition: all 0.3s;
-color: white;
-border-radius: 100%;
-outline: none;
-background-color: #35383a;
-}
 
-ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-background-color: #FBA858;
-}
+
