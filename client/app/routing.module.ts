@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'cities', component: CitiesComponent }, // Modification
   { path: 'projet', component: ProjetResearchComponent },
   { path: 'projetFront', component: ProjetFrontComponent }, // Remplacer par id
+  { path: 'projet/:id', component: ProjetFrontComponent },
   { path: 'projetBack', component: ProjetBackComponent }, // Modification
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve', component: StudentEleveComponent },

@@ -8,13 +8,7 @@
       <div class="row">
         <div class="mx-auto">
           <select class="custom-select selectWidth" id="campus">
-            <option selected>LA LOUPE</option>
-            <option value="1">BIARRITZ</option>
-            <option value="2">BORDEAUX</option>
-            <option value="3">BRUXELLES</option>
-            <option value="4">LILLE</option>
-            <option value="5">LYON</option>
-            <option value="6">MARSEILLE</option>
+            <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
           </select>
         </div>
       </div>
