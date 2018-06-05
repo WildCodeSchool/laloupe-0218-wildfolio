@@ -50,10 +50,10 @@
         <tbody *ngIf="!isEditing">
           <tr *ngFor="let blogProjet of blogProjets">
             <td>{{ blogProjet.name }}</td>
+            <td><img class="imageUrl" src="{{ blogProjet.imageUrl }}" alt="Can't access"></td>
             <td>
               <a href="{{ blogProjet.link }}" target="_blank">{{ blogProjet.link }}</a>
             </td>
-            <td>{{ blogProjet.imageUrl }}</td>
             <td>{{ blogProjet.description }}</td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(blogProjet)">
               <i class="fa fa-pencil"></i> Modifier</button>
