@@ -15,22 +15,22 @@ import { ActivatedRoute } from '@angular/router';
 export class StudentsComponent implements OnInit {
 
   student = new Student();
-  students: Student[] = [];
+  students: Student[];
   isLoading = true;
   isEditing = false;
 
   addStudentForm: FormGroup;
   name = new FormControl('', Validators.required);
-  surname = new FormControl('', Validators.required);
+  lastname = new FormControl('', Validators.required);
+  email = new FormControl('', Validators.required);
+  github = new FormControl('', Validators.required);
+  crew = new FormControl('', Validators.required);
+  framework = new FormControl('', Validators.required);
 
   constructor(private studentService: StudentService, private formBuilder: FormBuilder, public toast: ToastComponent, private wcsService: WcsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getStudent();
-    this.addStudentForm = this.formBuilder.group({
-      name: this.name,
-      surname: this.surname,
-    });
   }
 
   /* getStudent() {
