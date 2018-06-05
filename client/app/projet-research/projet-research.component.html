@@ -63,21 +63,21 @@
       <div class="tz-gallery">
 
         <div class="row mb-3">
-          <div class="col-md-4">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <div class="col-md-4" *ngFor="let blogProjet of blogProjets">
+            <a class="portfolio-link" data-toggle="modal" href="{{ blogProjet.link }}">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
+              <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="??" data-aos="fade-down">
             </a>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4" *ngFor="let blogProjet of blogProjets">
             <div class="card">
-              <a class="lightbox" href="images/benches.jpg">
-                <img src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+              <a class="lightbox" href="{{ blogProjet.link }}">
+                <img src="{{ this.blogProjet.imageUrl }}"
                   alt="Park" class="card-img-top">
               </a>
             </div>
