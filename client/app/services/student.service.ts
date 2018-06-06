@@ -29,7 +29,7 @@ export class StudentService {
   }
 
   editStudent(student: Student): Observable<string> {
-    return this.http.put(`/api/student/${student._id}`, student, { responseType: 'text' });
+    return this.http.put(`/api/students/${student._id}`, student, { responseType: 'text' });
   }
 
   deleteStudent(student: Student): Observable<string> {

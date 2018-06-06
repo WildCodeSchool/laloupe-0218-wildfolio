@@ -18,16 +18,16 @@ import { OauthComponent } from './oauth/oauth.component';
 import { StudentsComponent } from './students/students.component';
 import { LoginCallbackComponent } from './login-callback/login-callback.component';
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
-import { ProjetBackComponent } from './projet-back/projet-back.component';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 import { ProjetResearchComponent } from './projet-research/projet-research.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'cities', component: CitiesComponent }, // Modification
   { path: 'projet', component: ProjetResearchComponent },
-  { path: 'projetFront', component: ProjetFrontComponent }, // Remplacer par id
-  { path: 'projetBack', component: ProjetBackComponent }, // Modification
+  { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
+  { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve', component: StudentEleveComponent },
   { path: 'recruts', component: RecrutsComponent },
