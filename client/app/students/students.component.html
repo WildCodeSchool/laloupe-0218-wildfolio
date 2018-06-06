@@ -18,6 +18,7 @@
         <i class="fa fa-floppy-o"></i> Ajouter</button>
     </form>
   </div> -->
+
   <div class="card mb-3" *ngIf="!isLoading">
     <h4 class="card-header backgroundNav">Elèves ({{ students.length }})</h4>
     <div class="card-body">
@@ -30,6 +31,7 @@
             <th scope="col">Github</th>
             <th scope="col">Promotion</th>
             <th scope="col">Framework</th>
+            <th scope="col">Admin</th>
             <th scope="col">Modifier/Supprimer</th>
             <th scope="col">Profile</th>            
           </tr>
@@ -47,13 +49,14 @@
             <td >{{ student.github }}</td>
             <td >{{ student.crew.name }}</td>
             <td >{{ student.crew.program_type.name }}</td>
+            <td ><span *ngIf="student.admin == true">Oui</span> <span *ngIf="student.admin == false">Non</span></td>
             <td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(student)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(student)">
               <i class="fa fa-trash"></i> Supprimer</button>
               </td>
-            <td ><button class="btn btn-sm btn-primary" routerLink="/student-eleve">Profile</button></td>              
+            <td ><button class="btn btn-sm btn-primary" [routerLink]="['/student-eleve', student._id]">Profile</button></td>              
           </tr>
         </tbody>
         <tbody *ngIf="isEditing && students">
@@ -65,7 +68,9 @@
                 <input class="form-control mr-2" type="text" name="email" [(ngModel)]="student.email" placeholder="email" required>
                 <input class="form-control mr-2" type="text" name="github" [(ngModel)]="student.github" placeholder="github" required>                              
                 <input class="form-control mr-2" type="text" name="crew" [(ngModel)]="student.crew.name" placeholder="crew" required>                              
-                <input class="form-control mr-2" type="text" name="framework" [(ngModel)]="student.crew.program_type.name" placeholder="framework" required>                              
+                <input class="form-control mr-2" type="text" name="framework" [(ngModel)]="student.crew.program_type.name" placeholder="framework" required>
+                <button (click)="isAdmin()">Oui</button> <button (click)="isNotAdmin()">Non</button>
+                <div *ngIf="student.admin == true">Admin : oui</div> <div *ngIf="student.admin == false">Admin : non</div>                              
                 <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
                   <i class="fa fa-floppy-o"></i> Save</button>
                 <button class="btn btn-sm btn-warning" (click)="cancelEditing()">

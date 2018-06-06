@@ -121,4 +121,13 @@ export class StudentsComponent implements OnInit {
     }
     return true;
   }
+
+  isAdmin() {
+    return this.student.admin = true;
+  }
+
+  isNotAdmin() {
+    return this.student.admin = false;
+  }
+
 }
