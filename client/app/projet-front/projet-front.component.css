@@ -1,33 +1,32 @@
 .container-fluid {
   margin-top: 10vh;
 }
-.answerText {
-  background-color: #fba858;
-  border-color: #fba858;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.linkFoot {
-  min-height: 15vh;
-}
 
-.linkButton {
+.projetHeader {
   background-color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
-.h3Projet {
-  color: black;
-  padding-top: 5%;
+/* Image */
+
+.imgProjet {
+  width: 100%;
+  height: 100%;
+  padding-left: 5%;
 }
 
-.list-item {
-  list-style: none;
+figcaption{
+  padding-left: 5%;
 }
 
-.project_button {
-  margin-bottom: 10vh;
+figcaption{
+  text-align: center;
+  padding-top: 1%;
 }
+
+
+/* Description Image */
 
 .paragraphe {
   margin-top: 4vh;
@@ -39,35 +38,93 @@ hr {
   width: 30vw;
 }
 
+.list-item {
+  list-style: none;
+}
+
 i {
   color: #fba858;
 }
 
-.projetHeader {
-  background-color: #ced4da;
-}
-.imgProjet {
-  width: 70%;
-  height: 70%;
-  margin-left: 15vh;
-  margin-top: 7vh;
-  border-style: groove;
-  border-color: #1fa597;
-  border-width: 16px;
-  border-radius: 15px;
+li a {
+  color: #fba858;
 }
 
-a {
-  color:white;
-  
+li a:hover {
+  font-weight: bold;
+  text-decoration:none;
 }
+
+/* Link Project */
+
+.h3Projet {
+  color: black;
+  padding-top: 5%;
+  text-align: center;
+}
+
+.linktext {
+  min-height: 15vh;
+  background-color: #ced4da;
+}
+
+.linkButton {
+  min-height: 10vh;
+  background-color: #ced4da;
+}
+
+/* Button Project */
+
+.h3Projet{
+  font-size: 3.5vh;
+ }
+
+.answerText {
+  background-color: #fba858;
+  border-color: #fba858;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project_button {
+  margin-bottom: 12vh;
+}
+
+.btn {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #FBA858;
+  border-color: #FBA858;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  background-color: #F9A02E !important;
+  border-color: #F9A02E !important;
+  color: white;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .imgProjet {
     width: 65%;
     height: 65%;
-    margin-left: 6vh;
-    margin-top: 5vh;
+    margin-left: 2vh;
+    margin-top: 2vh;
   }
 }
 

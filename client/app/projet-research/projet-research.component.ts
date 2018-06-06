@@ -3,6 +3,8 @@ import { CitiesComponent } from '../cities/cities.component';
 import { CityService } from '../services/city.service';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
+import { BlogProjetService } from '../services/blogProjet.service';
+import { BlogProjet } from '../shared/models/blogProjet.model';
 
 @Component({
   selector: 'app-projet-research',
@@ -10,13 +12,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./projet-research.component.css'],
 })
 export class ProjetResearchComponent implements OnInit {
+  newBlogProjet: BlogProjet = new BlogProjet();
+  blogProjet = new BlogProjet();
+  blogProjets: BlogProjet[] = [];
+  isLoading = true;
 
   cities = [];
 
-  constructor(private cityService: CityService, private wcsService: WcsService, private route: ActivatedRoute) { }
+  constructor(private cityService: CityService, private wcsService: WcsService, private blogProjetService: BlogProjetService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCity();
+    this.getBlogProjet();
   }
 
   getCity() {
@@ -30,4 +37,24 @@ export class ProjetResearchComponent implements OnInit {
       },
     );
   }
+
+  getBlogProjet() {
+    this.blogProjetService.getBlogProjets().subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(data);
+        console.log(this.blogProjet);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+  
 }
+
+$(function() {
+  $('.scroll-down').click (function() {
+    $('html, body').animate({scrollTop: $('section#portfolio').offset().top }, 'slow');
+    return false;
+  });
+});

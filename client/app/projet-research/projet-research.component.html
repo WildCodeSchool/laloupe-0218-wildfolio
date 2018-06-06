@@ -14,10 +14,10 @@
       </div>
       <div class="p-research">
         <p>
-          Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons
+          Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons.
         </p>
         <p>
-          Rechercher le Projet que vous voulez découvrir selon la session :
+          Rechercher un projet selon la session :
         </p>
       </div>
       <div class="col-lg-4 col-12 mx-auto">
@@ -50,6 +50,11 @@
           <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
         </div>
       </div>
+
+      <div class="row mx-auto">
+        <a class="scroll-down" address="true"></a>
+      </div>
+        
     </div>
   </div>
 </header>
@@ -68,17 +73,17 @@
         <div class="tz-gallery">
 
           <div class="row mb-3">
-            <div class="col-md-4 portfolio-item">
-              <a class="portfolio-link" href="/projetFront">
+            <div class="col-md-4 portfolio-item" *ngFor="let blogProjet of blogProjets">
+              <a class="portfolio-link" href="/projetFront" target="blank">
                 <div class="portfolio-hover">
                   <div class="portfolio-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
+                    <i class="fa fa-chevron-down fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+                <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
               </a>
             </div>
-
+<!-- 
             <div class="col-md-4 portfolio-item">
               <a class="portfolio-link" href="#portfolioModal1">
                 <div class="portfolio-hover">
@@ -86,7 +91,7 @@
                     <i class="fa fa-plus fa-3x"></i>
                   </div>
                 </div>
-                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+                <img class="img-fluid" src="{{ this.blogProjet.imageUrl }}" alt="projet">
               </a>
             </div>
 
@@ -133,7 +138,7 @@
                 </div>
                 <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
