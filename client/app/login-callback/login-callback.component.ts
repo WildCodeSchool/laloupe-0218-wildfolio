@@ -22,7 +22,7 @@ export class LoginCallbackComponent implements OnInit {
 
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
-    localStorage.getItem('token_wcs');
+    localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
       console.log(data);

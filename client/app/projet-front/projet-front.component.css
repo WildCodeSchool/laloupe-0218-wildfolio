@@ -29,7 +29,8 @@ figcaption{
 /* Description Image */
 
 .paragraphe {
-  margin-top: 4vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   max-width: 50vh;
 }
 

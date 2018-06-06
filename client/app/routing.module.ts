@@ -26,12 +26,10 @@ const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'cities', component: CitiesComponent }, // Modification
   { path: 'projet', component: ProjetResearchComponent },
-  { path: 'projetFront', component: ProjetFrontComponent }, // Remplacer par id
-  { path: 'projet/:id', component: ProjetFrontComponent },
-  { path: 'addProjet', component: NewPostComponent },
-
+  { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
+  { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
-  { path: 'student-eleve', component: StudentEleveComponent },
+  { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

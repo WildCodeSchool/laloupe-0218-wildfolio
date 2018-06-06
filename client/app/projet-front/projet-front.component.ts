@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogProjetService } from '../services/blogProjet.service';
-import { ActivatedRoute } from '@angular/router';
 import { BlogProjet } from '../shared/models/blogProjet.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-projet-front',
@@ -9,19 +9,21 @@ import { BlogProjet } from '../shared/models/blogProjet.model';
   styleUrls: ['./projet-front.component.css'],
 })
 export class ProjetFrontComponent implements OnInit {
-
+  blogProjet: BlogProjet;
+  isLoading = false;
   id: string;
-  projet: BlogProjet;
 
-  constructor(private blogProjetService: BlogProjetService,
-    private route: ActivatedRoute) { }
-
+  constructor(private blogProjetService: BlogProjetService, private route: ActivatedRoute) {  }
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get("id");
-    this.blogProjetService.getBlogProjet(this.id)
-      .subscribe((projet) => {
-        this.projet = projet;
-      });
+    this.id = this.route.snapshot.paramMap.get('id'),
+    this.getBlogProjet();
+  }
+  getBlogProjet() {
+    this.blogProjetService.getBlogProjet(this.id).subscribe(
+      (data) => {
+        this.blogProjet = data;
+      },
+    );
   }
 }
 

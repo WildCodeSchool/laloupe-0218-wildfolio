@@ -43,7 +43,6 @@ export class ProjetResearchComponent implements OnInit {
       (data) => {
         this.blogProjets = data;
         console.log(data);
-        console.log(this.blogProjet);
       },
       error => console.log(error),
       () => this.isLoading = false,

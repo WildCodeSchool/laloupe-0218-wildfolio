@@ -24,12 +24,12 @@ export class StudentService {
     return this.http.post<Student>('/api/student/ifNotExists', student);
   }
 
-  getStudent(student: Student): Observable<Student> {
-    return this.http.get<Student>(`/api/student/${student._id}`);
+  getStudent(studentid: string): Observable<Student> {
+    return this.http.get<Student>(`/api/student/${studentid}`);
   }
 
   editStudent(student: Student): Observable<string> {
-    return this.http.put(`/api/students/${student._id}`, student, { responseType: 'text' });
+    return this.http.put(`/api/student/${student._id}`, student, { responseType: 'text' });
   }
 
   deleteStudent(student: Student): Observable<string> {

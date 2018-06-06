@@ -21,8 +21,8 @@ export class BlogProjetService {
     return this.http.post<BlogProjet>('/api/blogProjet', blogProjet);
   }
 
-  getBlogProjet(blogProjetId: string): Observable<BlogProjet> {
-    return this.http.get<BlogProjet>(`/api/blogProjet/${blogProjetId}`);
+  getBlogProjet(blogProjetid: string): Observable<BlogProjet> {
+    return this.http.get<BlogProjet>(`/api/blogProjet/${blogProjetid}`);
   }
 
   editBlogProjet(blogProjet: BlogProjet): Observable<string> {
