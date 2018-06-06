@@ -70,7 +70,7 @@ export class StudentsComponent implements OnInit {
         this.students = data;
       },
       error => console.log(error),
-      () => (this.isLoading = false),
+      () => this.isLoading = false,
     );
   }
 

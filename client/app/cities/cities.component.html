@@ -26,6 +26,7 @@
           <tr>
             <th scope="col">Nom du campus</th>
             <th scope="col">Lien</th>
+            <th scope="col">Projets</th>
             <th scope="col">Modifier/Supprimer</th>
           </tr>
         </thead>
@@ -40,6 +41,7 @@
             <td>
               <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
             </td>
+            <td>{{ city.projet }}</td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">
