@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
   { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
-  { path: 'student-eleve', component: StudentEleveComponent },
+  { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

@@ -53,7 +53,7 @@
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(student)">
               <i class="fa fa-trash"></i> Supprimer</button>
               </td>
-            <td ><button class="btn btn-sm btn-primary" routerLink="/student-eleve">Profile</button></td>              
+            <td ><button class="btn btn-sm btn-primary" [routerLink]="['/student-eleve', student._id]">Profile</button></td>              
           </tr>
         </tbody>
         <tbody *ngIf="isEditing && students">
