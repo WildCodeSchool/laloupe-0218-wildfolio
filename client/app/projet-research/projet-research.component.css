@@ -116,7 +116,7 @@ header.masthead {
 #campus{
   font-weight: bold;
   font-size: 30px;
-  width: 40vh;
+  width: auto;
   height: 10vh;
   box-shadow: 2px 2px 1px grey;
 }

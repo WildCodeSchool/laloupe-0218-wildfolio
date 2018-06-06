@@ -1,14 +1,15 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
   <div class="row projetHeader">
-    <div class="col-md-6">
+    <div class="col-md-6" *ngIf='blogProjet'>
       <img alt="Project img" src="{{ blogProjet.imageUrl }}" class="imgProjet"/>
     </div>
     
     <!-- Liste éleves -->
-    <div class="col-md-6">
-      <h3>{{ blogProjet.name }}</h3>
-      <p class="paragraphe">Présentation du projet Ou plusieurs personnes parlent de leurs projets, on peut dire que c'est une description</p>
+    <div class="col-md-6" *ngIf='blogProjet'>
+      <h3 class="paragraphe">{{ blogProjet.name }}</h3>
+      <hr/>
+      <p class="paragraphe"> {{ blogProjet.description }}</p>
       <hr/>
 
       <p class="paragraphe">Elèves participant au projet :</p>
@@ -44,8 +45,8 @@
   </div>
   <div class="row linkButton">
     <div class="offset-md-5 col-md-7 mx-auto col-lg-5">
-      <div class="project_button">
-        <a class="btn btn-primary btn-lg answerText" href="">Lien du Projet</a>
+      <div class="project_button" *ngIf='blogProjet'>
+        <a class="btn btn-primary btn-lg answerText" href="{{ blogProjet.link }}" target="blank">Lien du Projet</a>
       </div>
     </div>
   </div>

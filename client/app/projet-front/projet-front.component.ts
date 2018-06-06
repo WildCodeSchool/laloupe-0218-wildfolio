@@ -13,8 +13,7 @@ export class ProjetFrontComponent implements OnInit {
   isLoading = false;
   id: string;
 
-  constructor(private blogProjetService: BlogProjetService, private route: ActivatedRoute) { }
-
+  constructor(private blogProjetService: BlogProjetService, private route: ActivatedRoute) {  }
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id'),
     this.getBlogProjet();
