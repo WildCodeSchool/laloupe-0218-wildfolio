@@ -32,8 +32,10 @@ import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 import { TokenInterceptor } from './token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
-import { ProjetBackComponent } from './projet-back/projet-back.component';
 import { ProjetResearchComponent } from './projet-research/projet-research.component';
+import { NewPostComponent } from './new-post/new-post.component';
+import { BlogProjetService } from './services/blogProjet.service';
+import { ListStudentsComponent } from './list-students/list-students.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -60,8 +62,9 @@ export function tokenGetter() {
     LoginCallbackComponent,
     StudentEleveComponent,
     ProjetFrontComponent,
-    ProjetBackComponent,
     ProjetResearchComponent,
+    NewPostComponent,
+    ListStudentsComponent,
   ],
   imports: [
     RoutingModule,
@@ -85,6 +88,7 @@ export function tokenGetter() {
     CityService,
     StudentService,
     RecrutService,
+    BlogProjetService,
     UserService,
     WcsService,
   ],

@@ -24,3 +24,7 @@
   background-color: #F9A02E;
   color: white;
 }
+
+.imageUrl {
+  max-height: 5vh;
+}

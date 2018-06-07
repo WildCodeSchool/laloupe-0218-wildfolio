@@ -1,36 +1,110 @@
 .container-fluid {
   margin-top: 10vh;
 }
-.answerText {
-  background-color: #fba858;
-  border-color: #fba858;
+
+.projetHeader {
+  background-color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* Image */
+
+.imgProjet {
+  width: 100%;
+  height: 100%;
+  padding-left: 5%;
+}
+
+figcaption{
+  padding-left: 5%;
+  text-align: center;
+  padding-top: 1.5%;
+}
+
+li a {
+  color: #fba858;
+}
+
+li a:hover {
+  font-weight: bold;
+  text-decoration:none;
+}
+.button {
+  background: #fff;
   display: flex;
   align-items: center;
+  min-width: 160px;
+  border-radius: 300px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 20px;
+  padding-top: 7%;
+  width: 3.5vh;
+}
+.button .front {
+  border-radius: 300px;
+  width: 100%;
+  height: 100%;
+  background:black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  transition: all 600ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
-.linkFoot {
-  min-height: 15vh;
+.button:hover .front {
+  transform: translateX(-100%);
+}
+.button .links a {
+  opacity: 0;
+  transform: scale(0.1);
+  color: #131313;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-delay: 50ms;
+}
+.button:hover .links a {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.linkButton {
-  background-color: white;
+.button .links {
+  border-radius: 300px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.h3Projet {
-  color: black;
-  padding-top: 5%;
+.button .links a:hover {
+  color: #444;
+}
+i {
+  color: #fba858;
+}
+.button i{
+  color:#1fa597;
 }
 
-.list-item {
-  list-style: none;
-}
+/* Description Image */
 
-.project_button {
-  margin-bottom: 10vh;
+h3{
+  color: #1fa597;
 }
 
 .paragraphe {
-  margin-top: 4vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   max-width: 50vh;
 }
 
@@ -39,35 +113,77 @@ hr {
   width: 30vw;
 }
 
-i {
-  color: #fba858;
+.list-item {
+  list-style: none;
 }
 
-.projetHeader {
+/* Link Project */
+
+.h3Projet {
+  color: black;
+  padding-top: 5%;
+  text-align: center;
+  font-size: 3.5vh;
+}
+
+.linktext {
+  min-height: 15vh;
   background-color: #ced4da;
 }
-.imgProjet {
-  width: 70%;
-  height: 70%;
-  margin-left: 15vh;
-  margin-top: 7vh;
-  border-style: groove;
-  border-color: #1fa597;
-  border-width: 16px;
-  border-radius: 15px;
+
+.linkButton {
+  min-height: 10vh;
+  background-color: #ced4da;
 }
 
-a {
-  color:white;
-  
+/* Button Project */
+
+.answerText {
+  background-color: #fba858;
+  border-color: #fba858;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.project_button {
+  margin-bottom: 12vh;
+}
+
+.btn {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #FBA858;
+  border-color: #FBA858;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  background-color: #F9A02E !important;
+  border-color: #F9A02E !important;
+  color: white;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .imgProjet {
     width: 65%;
     height: 65%;
-    margin-left: 6vh;
-    margin-top: 5vh;
+    margin-left: 2vh;
+    margin-top: 2vh;
   }
 }
 

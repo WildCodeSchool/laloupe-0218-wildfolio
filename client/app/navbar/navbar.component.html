@@ -26,7 +26,7 @@
         </li>
       </span>
       <span class="dropdownColor">
-        <a class="nav-link" id="textcolor3">NOS DEVELOPPEURS</a>
+        <a class="nav-link" id="textcolor3" href="/list-students">NOS DEVELOPPEURS</a>
       </span>
       <span class="dropdownColor">
         <a class="nav-link" id="textcolor4" href="/projet">NOS PROJETS</a>
@@ -49,7 +49,7 @@
       <span class="dropdownColor">
         <a class="nav-link" id="textcolor7" href="/api/oauth">SE CONNECTER</a>
       </span>
-      <span class="dropdownColor" *ngIf="students">
+      <span class="dropdownColor" >
         <a class="nav-link" id="textcolor7" routerLink="/student-eleve">{{ students.name }}</a>
       </span>
     </div>

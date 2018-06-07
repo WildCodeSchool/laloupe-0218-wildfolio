@@ -30,7 +30,47 @@
     </table>
   </div>
 </div> -->
-<div class="back">
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Bienvenue dans la partie administration</h2>
+          <hr/>
+          <h3 class="section-subheading text-muted">
+            Gérer les
+            <a href="student">Éléves</a>
+            <a routerLink="/student"><i class="fas fa-cog"></i></a>
+          </h3>
+          <hr/>
+          <h3 class="section-subheading text-muted">
+            Gérer les
+            <a href="newPost">Projets</a>
+            <a routerLink="/newPost"><i class="fas fa-cog"></i></a>
+          </h3>
+          <hr/>
+          <h3 class="section-subheading text-muted">
+            Gérer les
+            <a href="cities">Campus</a>
+            <a routerLink="/cities"><i class="fas fa-cog"></i></a>
+          </h3>
+          <hr/>
+          <h3 class="section-subheading text-muted">
+            Gérer l'<a href="recruts">oeil du recruteur</a>
+            <a routerLink="/recruts"><i class="fas fa-cog"></i></a>
+          </h3>
+          <hr/>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>
+
+<!-- <div class="back">
   <h2 class="titleAdmin col-12">Bienvenue dans la partie administration</h2>
   <div>
     <nav aria-label="breadcrumb">
@@ -46,7 +86,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Projets </a>
-          <button type="button" class="buttonSetting" routerLink=""><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
+          <button type="button" class="buttonSetting" routerLink="/newPost"><img class="imgSetting" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cog%2C_Web_Fundamentals.svg/120px-Cog%2C_Web_Fundamentals.svg.png" alt="A"></button>
         </li>
       </ol>
     </nav>
@@ -69,4 +109,4 @@
       </ol>
     </nav>
   </div>
-</div>
+</div> -->
