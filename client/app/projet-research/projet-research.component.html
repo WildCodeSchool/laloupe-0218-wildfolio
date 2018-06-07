@@ -8,22 +8,16 @@
       <div class="row">
         <div class="mx-auto">
           <select class="custom-select selectWidth" id="campus">
-            <option selected>LA LOUPE</option>
-            <option value="1">BIARRITZ</option>
-            <option value="2">BORDEAUX</option>
-            <option value="3">BRUXELLES</option>
-            <option value="4">LILLE</option>
-            <option value="5">LYON</option>
-            <option value="6">MARSEILLE</option>
+            <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
           </select>
         </div>
       </div>
       <div class="p-research">
         <p>
-          Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons
+          Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons.
         </p>
         <p>
-          Rechercher le Projet que vous voulez découvrir selon la session :
+          Rechercher un projet selon la session :
         </p>
       </div>
       <div class="col-lg-4 col-12 mx-auto">
@@ -56,6 +50,11 @@
           <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
         </div>
       </div>
+
+      <!-- <div class="row mx-auto">
+        <a class="scroll-down" address="true"></a>
+      </div> -->
+        
     </div>
   </div>
 </header>
