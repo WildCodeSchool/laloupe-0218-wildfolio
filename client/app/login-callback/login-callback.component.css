@@ -1,1 +1,6 @@
-/* Source inifi */
+/* Source  inifi */
+.imgCenter {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px!important;
+  }

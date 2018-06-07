@@ -18,7 +18,7 @@ export class LoginCallbackComponent implements OnInit {
     private wcsService: WcsService,
     private router: Router,
     private studentService: StudentService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
