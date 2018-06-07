@@ -18,6 +18,7 @@ import { OauthComponent } from './oauth/oauth.component';
 import { StudentsComponent } from './students/students.component';
 import { LoginCallbackComponent } from './login-callback/login-callback.component';
 import { ProjetFrontComponent } from './projet-front/projet-front.component';
+import { ListStudentsComponent } from './list-students/list-students.component';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 import { ProjetResearchComponent } from './projet-research/projet-research.component';
 import { NewPostComponent } from './new-post/new-post.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'cities', component: CitiesComponent }, // Modification
   { path: 'projet', component: ProjetResearchComponent },
   { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
+  { path: 'list-students', component: ListStudentsComponent },
   { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
