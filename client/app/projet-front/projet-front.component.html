@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="row projetHeader">
+    <!-- Image du projet -->
+    <div class="col-md-6" *ngIf='blogProjet'>
+      <figure>
+          <img alt="Project img" src="{{ blogProjet.imageUrl }}" class="imgProjet" />
+        <figcaption>
+            <div class="button mx-auto">
+                <div class="front">
+                  <p>Partager <i class="fa fa-share-alt" aria-hidden="true"></i></p>
+                </div>
+                <div class="links">
+                  <a href="#"><i class="fab fa-facebook-f fa-fw"></i></a>
+                  <a href="#"><i class="fab fa-twitter fa-fw"></i></a>
+                  <a href="#"><i class="fab fa-instagram fa-fw"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a>
+                </div>
+              </div>
+        </figcaption>
+      </figure>
+    </div>
+    <!-- Description Projet et Liste des élèves -->
+    <div class="col-md-6 description" *ngIf='blogProjet'>
+      <h3 class="paragraphe">{{ blogProjet.name }}</h3>
+      <p class="paragraphe">{{ blogProjet.description }}</p>
+      <ul>
+        <li class="list-item">
+          <a href="">
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Bastien Escroc</a>
+        </li>
+        <li class="list-item">
+          <a href="">
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Alexander</a>
+        </li>
+        <li class="list-item">
+          <a href="">
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Antoine</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="linkfoot">
+    <div class="row linktext">
+      <div class="mx-auto">
+        <h3 class="h3Projet">
+          Vous pouvez retrouver le lien du projet ci-dessous :
+        </h3>
+      </div>
+    </div>
+    <div class="row linkButton">
+      <div class="mx-auto">
+        <div class="project_button" *ngIf='blogProjet'>
+          <a class="btn btn-primary btn-lg answerText" href="{{ blogProjet.link }}" target="blank">Lien du Projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<app-footer></app-footer>

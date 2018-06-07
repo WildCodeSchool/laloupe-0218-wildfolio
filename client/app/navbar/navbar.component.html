@@ -1,0 +1,105 @@
+<!-- debut de acceuil -->
+
+<div class="container acceuil" id="page-top">
+  <nav class="navbar navbar-expand-lg" id="changecolor">
+    <span class="navitemlogo navbar-brand">
+      <a href="/">
+        <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
+      </a>
+    </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars iconcolor"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor1" routerLink="/">ACCUEIL</a>
+      </span>
+      <span>
+        <li class="nav-item navcampus dropdown drop-cursor-t">
+          <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor2" data-toggle="dropdown">
+            NOS CAMPUS
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item overGreen" *ngFor="let city of cities" href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+          </div>
+        </li>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor3" href="/list-students">NOS DEVELOPPEURS</a>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor4" href="/projet">NOS PROJETS</a>
+      </span>
+      <span>
+        <li class="nav-item dropdown drop-cursor-t">
+          <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor5" data-toggle="dropdown">
+            ENTREPRISES
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/recruter-un-developpeur/">Recruter un developpeur</a>
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/developper-un-projet/">Developper un projet</a>
+            <a class="dropdown-item overGreen" href="https://wildcodeschool.fr/plan-de-formation-2-0/">Plan de formation 2.0</a>
+          </div>
+        </li>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor6" href="admin">CONTACT</a>
+      </span>
+      <span class="dropdownColor">
+        <a class="nav-link" id="textcolor7" href="/api/oauth">SE CONNECTER</a>
+      </span>
+      <span class="dropdownColor" >
+        <a class="nav-link" id="textcolor7" routerLink="/student-eleve">{{ students.name }}</a>
+      </span>
+    </div>
+  </nav>
+</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" id="textcolor1" href="#">ACCUEIL<span class="sr-only">(current)</span></a>
+      </li>
+
+     <li class="nav-item dropdown active">
+        <a class="nav-link" id="textcolor2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          NOS CAMPUS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <!-- A modifier par liste dans la base de données 
+          <a class="dropdown-item" href="#">La Loupe</a>
+          <a class="dropdown-item" href="#">Paris</a>
+          <a class="dropdown-item" href="#">Toulouse</a>
+        </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" id="textcolor3" href="#">NOS WILDERS</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" id="textcolor4" href="#">NOS PROJETS</a>
+      </li>
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ENTREPRISE
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <!-- A modifier par liste du site originale 
+          <a class="dropdown-item" href="#">La Loupe</a>
+          <a class="dropdown-item" href="#">Paris</a>
+          <a class="dropdown-item" href="#">Toulouse</a>
+        </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" id="textcolor5" href="#">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->

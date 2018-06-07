@@ -1,0 +1,26 @@
+.table td,
+.table th {
+  width: 25%;
+}
+
+.titleAdmin 
+{
+  font-weight: bold;
+}
+
+.backgroundNav 
+{
+  background-color: #F9A02E;
+}
+
+.btn-primary {
+  border: 1px solid #FBA858;
+  background-color: #FBA858;
+  color: white;
+}
+
+.btn-primary:hover {
+  border: 1px solid #F9A02E;
+  background-color: #F9A02E;
+  color: white;
+}

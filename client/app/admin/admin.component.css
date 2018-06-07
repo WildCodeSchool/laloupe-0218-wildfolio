@@ -1,0 +1,31 @@
+
+section {
+  padding: 80px 0;
+}
+
+.back {
+  background-color: white;
+}
+
+.titleAdmin {
+  font-weight: bold;
+  background-color: #f9a02e;
+  margin-top: 10vh;
+  border-style: solid;
+}
+.breadcrumb {
+  background-color: #f9a02e;
+  border-style: solid;
+  border-width: 2px ;
+}
+a {
+  color: black;
+}
+.buttonSetting {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 70px;
+}
+.imgSetting {
+  height: 2vh;
+}

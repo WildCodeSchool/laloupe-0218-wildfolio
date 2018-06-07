@@ -1,0 +1,152 @@
+<app-navbar></app-navbar>
+
+<!-- Bannière/Barre de recherche -->
+
+<header class="masthead">
+  <div class="container-fluid">
+    <div class="intro-text">
+      <div class="row">
+        <div class="mx-auto">
+          <select class="custom-select selectWidth" id="campus">
+            <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="p-research">
+        <p>
+          Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons.
+        </p>
+        <p>
+          Rechercher un projet selon la session :
+        </p>
+      </div>
+      <div class="col-lg-4 col-12 mx-auto">
+        <h3>Sessions</h3>
+        <select class="custom-select selectWidth" id="session">
+          <option selected>Select</option>
+          <option value="1">Février 2018</option>
+          <option value="2">Septembre 2017</option>
+          <option value="3">Février 2017</option>
+          <option value="4">Js</option>
+          <option value="5">!</option>
+          <option value="6">?</option>
+        </select>
+      </div>
+
+      <div class="col-lg-4 col-12 mx-auto">
+        <h3>Projets</h3>
+        <select class="custom-select selectWidth" id="projets">
+          <option selected>Projet client</option>
+          <option value="valeur1">Projet intermediaire</option>
+          <option value="valeur2">Projet initial</option>
+          <option value="valeur3">Hackathon 1</option>
+          <option value="valeur4">Hackathon 2</option>
+          <option value="valeur5">Hackathon 3</option>
+        </select>
+      </div>
+
+      <div class="row mx-auto">
+        <div class="col-12 search">
+          <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
+        </div>
+      </div>
+
+      <!-- <div class="row mx-auto">
+        <a class="scroll-down" address="true"></a>
+      </div> -->
+        
+    </div>
+  </div>
+</header>
+
+<section class="bg-light" id="portfolio">
+  <div class="projet-list">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Nos Projets</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="container">
+
+        <div class="tz-gallery">
+
+          <div class="row mb-3">
+            <div class="col-md-4 portfolio-item" *ngFor="let blogProjet of blogProjets">
+              <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-chevron-down fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
+              </a>
+            </div>
+<!-- 
+            <div class="col-md-4 portfolio-item">
+              <a class="portfolio-link" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="{{ this.blogProjet.imageUrl }}" alt="projet">
+              </a>
+            </div>
+
+            <div class="col-md-4 portfolio-item">
+              <a class="portfolio-link" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 portfolio-item">
+              <a class="portfolio-link" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+              </a>
+            </div>
+
+            <div class="col-md-4 portfolio-item">
+              <a class="portfolio-link" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+              </a>
+            </div>
+
+            <div class="col-md-4 portfolio-item">
+              <a class="portfolio-link" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg" alt="projet">
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="footer-color">
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>
