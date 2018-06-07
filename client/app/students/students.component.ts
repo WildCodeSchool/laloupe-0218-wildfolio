@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { StudentService } from '../services/student.service';
 import { ToastComponent } from '../shared/toast/toast.component';
@@ -13,24 +18,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent implements OnInit {
-
   student = new Student();
-  students: Student[] = [];
+  students: Student[];
   isLoading = true;
   isEditing = false;
 
   addStudentForm: FormGroup;
   name = new FormControl('', Validators.required);
-  surname = new FormControl('', Validators.required);
+  lastname = new FormControl('', Validators.required);
+  email = new FormControl('', Validators.required);
+  github = new FormControl('', Validators.required);
+  crew = new FormControl('', Validators.required);
+  framework = new FormControl('', Validators.required);
 
-  constructor(private studentService: StudentService, private formBuilder: FormBuilder, public toast: ToastComponent, private wcsService: WcsService, private route: ActivatedRoute) { }
+  constructor(
+    private studentService: StudentService,
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent,
+    private wcsService: WcsService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     this.getStudent();
-    this.addStudentForm = this.formBuilder.group({
-      name: this.name,
-      surname: this.surname,
-    });
   }
 
   /* getStudent() {
@@ -89,7 +99,9 @@ export class StudentsComponent implements OnInit {
   }
 
   deleteStudent(student: Student) {
-    if (window.confirm('Are you sure you want to permanently delete this item?')) {
+    if (
+      window.confirm('Are you sure you want to permanently delete this item?')
+    ) {
       this.studentService.deleteStudent(student).subscribe(
         () => {
           const pos = this.students.map(elem => elem._id).indexOf(student._id);
@@ -109,4 +121,13 @@ export class StudentsComponent implements OnInit {
     }
     return true;
   }
+
+  isAdmin() {
+    return this.student.admin = true;
+  }
+
+  isNotAdmin() {
+    return this.student.admin = false;
+  }
+
 }

@@ -18,11 +18,11 @@ export class LoginCallbackComponent implements OnInit {
     private wcsService: WcsService,
     private router: Router,
     private studentService: StudentService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
-    localStorage.getItem('token_wcs');
+    localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
       console.log(data);
@@ -36,7 +36,7 @@ export class LoginCallbackComponent implements OnInit {
       student.banished = data['banished'];
       student.crew = data['current_crew'];
       console.log(student);
-      this.students = student
+      this.students = student;
       this.studentService.addStudentIfNotExists(student).subscribe(
         (res) => {
           console.log('ok');
