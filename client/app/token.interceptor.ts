@@ -8,6 +8,7 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // tslint:disable-next-line:no-parameter-reassignment
     request = request.clone({
       setHeaders: {
         Authorization: `Bearer ${localStorage.getItem('token_wcs')}`,
