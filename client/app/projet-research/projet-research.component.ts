@@ -20,7 +20,11 @@ export class ProjetResearchComponent implements OnInit {
 
   cities = [];
 
-  constructor(private cityService: CityService, private wcsService: WcsService, private blogProjetService: BlogProjetService, private route: ActivatedRoute) { }
+  constructor(
+    private cityService: CityService,
+    private wcsService: WcsService,
+    private blogProjetService: BlogProjetService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCity();
@@ -49,7 +53,6 @@ export class ProjetResearchComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
-  
 }
 
 // $(function() {
