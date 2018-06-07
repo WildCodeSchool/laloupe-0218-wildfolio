@@ -18,13 +18,18 @@
 
 figcaption{
   padding-left: 5%;
-}
-
-figcaption{
   text-align: center;
   padding-top: 1.5%;
-} 
+}
 
+li a {
+  color: #fba858;
+}
+
+li a:hover {
+  font-weight: bold;
+  text-decoration:none;
+}
 .button {
   background: #fff;
   display: flex;
@@ -36,14 +41,6 @@ figcaption{
   padding: 20px 20px;
   padding-top: 7%;
   width: 3.5vh;
-}
-
-.button:hover .front {
-  transform: translateX(-100%);
-}
-.button:hover .links a {
-  opacity: 1;
-  transform: scale(1);
 }
 .button .front {
   border-radius: 300px;
@@ -60,6 +57,22 @@ figcaption{
   justify-content: center;
   align-items: center;
 }
+.button:hover .front {
+  transform: translateX(-100%);
+}
+.button .links a {
+  opacity: 0;
+  transform: scale(0.1);
+  color: #131313;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-delay: 50ms;
+}
+.button:hover .links a {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .button .links {
   border-radius: 300px;
   width: 100%;
@@ -72,18 +85,13 @@ figcaption{
   justify-content: space-around;
   align-items: center;
 }
-.button .links a {
-  opacity: 0;
-  transform: scale(0.1);
-  color: #131313;
-  transition-property: all;
-  transition-duration: 600ms;
-  transition-delay: 50ms;
-}
+
 .button .links a:hover {
   color: #444;
 }
-
+i {
+  color: #fba858;
+}
 .button i{
   color:#1fa597;
 }
@@ -109,25 +117,13 @@ hr {
   list-style: none;
 }
 
-i {
-  color: #fba858;
-}
-
-li a {
-  color: #fba858;
-}
-
-li a:hover {
-  font-weight: bold;
-  text-decoration:none;
-}
-
 /* Link Project */
 
 .h3Projet {
   color: black;
   padding-top: 5%;
   text-align: center;
+  font-size: 3.5vh;
 }
 
 .linktext {
@@ -141,10 +137,6 @@ li a:hover {
 }
 
 /* Button Project */
-
-.h3Projet{
-  font-size: 3.5vh;
- }
 
 .answerText {
   background-color: #fba858;
