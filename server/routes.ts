@@ -35,7 +35,7 @@ export default function routes(app) {
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
 
-   // blogProjet
+  // blogProjet
   router.route('/blogProjet').get(blogProjet.getAll);
   router.route('/blogProjet/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);

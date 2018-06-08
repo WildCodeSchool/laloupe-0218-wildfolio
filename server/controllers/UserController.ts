@@ -6,7 +6,6 @@ import BaseController from './BaseController';
 const simpleOauthModule = require('simple-oauth2');
 const https = require('https');
 
-
 const oauth2 = simpleOauthModule.create({
   client: {
     id: '5b473f25ae3b81262abce0595e896c5876bb56fd8604863b724ae792aece495e',
@@ -25,7 +24,6 @@ const authorizationUri = oauth2.authorizationCode.authorizeURL({
   scope: '',
   state: '',
 });
-
 
 export default class UserController extends BaseController {
   model = userModel;
@@ -48,7 +46,6 @@ export default class UserController extends BaseController {
     res.redirect(authorizationUri);
   }
 
-
   // Callback service parsing the authorization token and asking for the access token
   callback = async (req, res) => {
     const code = req.query.code;
@@ -58,13 +55,9 @@ export default class UserController extends BaseController {
       scope: '',
       state: '',
     };
-
     console.log(code);
-
-
     try {
       const result = await oauth2.authorizationCode.getToken(options);
-
       const token = oauth2.accessToken.create(result);
       console.log('starfalah', token.token.access_token);
       res.redirect('/login/callback/' + token.token.access_token);
