@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
 
-
 @Component({
   selector: 'app-projet-research',
   templateUrl: './projet-research.component.html',
