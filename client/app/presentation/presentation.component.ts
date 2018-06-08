@@ -13,8 +13,8 @@ import { BlogProjet } from '../shared/models/blogProjet.model';
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.css'],
 })
+
 export class PresentationComponent implements OnInit {
-  
   blogProjets: BlogProjet[] = [];
   isLoading = true;
   isClick = false;
