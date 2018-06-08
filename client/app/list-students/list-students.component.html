@@ -1,29 +1,122 @@
-
+<app-navbar></app-navbar>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 offset-md-1 col-12">
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Localisation">
+    <div class="input-group col-md-3 offset-md-1 col-12">
+      <span class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input class="form-control py-2" type="search" placeholder="Localisation" id="searchZone">
     </div>
   </div>
+
+  <hr/>
+
   <div class="row">
-      <div class="col-md-2 offset-md-1 col-12 button1">
-          <button>  
+    <div class="col-md-2 offset-md-1 col-12 button1">
 
-          </button>
-      </div>
-      <div class="col-md-2 offset-md-1 col-12 button2">
-          <button>  
+      <button type="button" class="btn" data-toggle="modal" data-target=".modal1">Langages/Frameworks</button>
 
-          </button>
+      <!-- Modal 1 -->
+      <div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> PHP Symfony</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> JavaScript Angular</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> JavaScript React</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> JavaScript VueJS</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> JavaScript NodeJS</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> Java J2EE Android</label>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Fin Modal 1 -->
+    </div>
+    <div class="col-md-2 col-12 button2">
+      <button type="button" class="btn " data-toggle="modal" data-target=".modal2">Poste Actuel</button>
+
+      <!-- Modal 2 -->
+      <div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> Stagiaire</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value=""> Développeur</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fin Modal 2 -->
+    </div>
   </div>
-  
+
+  <hr/>
 
 
 
+  <!-- Liste des développeurs -->
 
-  <!-- Liste des développeurs et Maps -->
+  <div class="row">
+    <div class="col-md-6 offset-md-1 col-12">
+      <div class="table-responsive-md">
+        <table class="table">
+          <tbody *ngIf="students">
+            <tr *ngFor="let student of students">
+              <td>
+                <img class="rounded-circle" src="/../assets/profil.jpg" alt="">
+              </td>
+              <td>{{student.name}}</td>
+              <td>{{student.lastname}}</td>
+              <td>
+                <a class="socialLink" href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </td>
+              <td>
+                <a class="socialLink" href="#">
+                  <i class="fa fa-github"></i>
+                </a>
+              </td>
+              <td>
+                <a href="#" class="btn btn2 btn-lg active" role="button" aria-pressed="true" [routerLink]="['/student-eleve', student._id]">Profil</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Maps-->
+
+    <div class="col-md-5 col-12">
+
+    </div>
+  </div>
+
 
 </div>
 <app-footer></app-footer>
