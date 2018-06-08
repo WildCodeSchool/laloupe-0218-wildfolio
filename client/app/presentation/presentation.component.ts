@@ -14,8 +14,7 @@ import { BlogProjet } from '../shared/models/blogProjet.model';
   styleUrls: ['./presentation.component.css'],
 })
 export class PresentationComponent implements OnInit {
-  newBlogProjet: BlogProjet = new BlogProjet();
-  blogProjet = new BlogProjet();
+  
   blogProjets: BlogProjet[] = [];
   isLoading = true;
   isClick = false;
@@ -50,7 +49,6 @@ export class PresentationComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,
