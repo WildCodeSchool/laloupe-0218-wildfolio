@@ -1,6 +1,5 @@
 import * as express from 'express';
 
-import BlogProjetController from './controllers/BlogProjetController';
 import CityController from './controllers/CityController';
 import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
@@ -12,7 +11,6 @@ export default function routes(app) {
 
   const router = express.Router();
 
-  const blogProjet = new BlogProjetController();
   const recrut = new RecrutController();
   const city = new CityController();
   const user = new UserController();
@@ -34,14 +32,6 @@ export default function routes(app) {
   router.route('/student/:id').get(student.get);
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
-
-   // blogProjet
-  router.route('/blogProjet').get(blogProjet.getAll);
-  router.route('/blogProjet/count').get(blogProjet.count);
-  router.route('/blogProjet').post(blogProjet.insert);
-  router.route('/blogProjet/:id').get(blogProjet.get);
-  router.route('/blogProjet/:id').put(blogProjet.update);
-  router.route('/blogProjet/:id').delete(blogProjet.delete);
 
   // cities
   router.route('/cities').get(city.getAll);

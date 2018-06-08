@@ -12,15 +12,11 @@ import { StudentService } from '../services/student.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
   cities = [];
   students: Student;
 
-  constructor(
-    private cityService: CityService,
-    private wcsService: WcsService,
-    private studentService: StudentService,
-    private route: ActivatedRoute,
-  ) {}
+  constructor(private cityService: CityService, private wcsService: WcsService, private studentService: StudentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCity();
@@ -30,22 +26,14 @@ export class NavbarComponent implements OnInit {
       if (scroll === 0) {
         document.getElementById('changecolor').style.opacity = '0.8';
         document.getElementById('changecolor').style.backgroundColor = 'black';
-        document.getElementById('changecolor').style.borderBottom =
-          'transparent';
-        document.getElementById('textcolor1').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor2').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor3').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor4').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor5').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor6').style.backgroundColor =
-          'transparent';
-        document.getElementById('textcolor7').style.backgroundColor =
-          'transparent';
+        document.getElementById('changecolor').style.borderBottom = 'transparent';
+        document.getElementById('textcolor1').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor2').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor3').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor4').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor5').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor6').style.backgroundColor = 'transparent';
+        document.getElementById('textcolor7').style.backgroundColor = 'transparent';
 
         document.getElementById('textcolor1').style.color = 'white';
         document.getElementById('textcolor2').style.color = 'white';
@@ -57,8 +45,7 @@ export class NavbarComponent implements OnInit {
       } else {
         document.getElementById('changecolor').style.opacity = '1';
         document.getElementById('changecolor').style.backgroundColor = 'white';
-        document.getElementById('changecolor').style.borderBottom =
-          '1px solid gray';
+        document.getElementById('changecolor').style.borderBottom = '1px solid gray';
         document.getElementById('textcolor1').style.color = 'black';
         document.getElementById('textcolor2').style.color = 'black';
         document.getElementById('textcolor3').style.color = 'black';
@@ -71,20 +58,18 @@ export class NavbarComponent implements OnInit {
   }
 
   getCity() {
-    this.cityService.getCities().subscribe((data) => {
-      this.cities = data.sort((a, b) => {
-        if (a.name < b.name) {
-          return -1;
-        }
-        if (a.name > b.name) {
-          return 1;
-        }
-        return 0;
-      });
-    });
+    this.cityService.getCities().subscribe(
+      (data) => {
+        this.cities = data.sort((a, b) => {
+          if (a.name < b.name) { return - 1; }
+          if (a.name > b.name) { return 1; }
+          return 0;
+        });
+      },
+    );
   }
 
-  /*  getStudent() {
+ /*  getStudent() {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.getItem('token_wcs');
     this.wcsService.getMe().subscribe((data) => {
@@ -103,4 +88,5 @@ export class NavbarComponent implements OnInit {
       this.students = student
     });
   } */
+
 }

@@ -20,10 +20,10 @@ export class AdminComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    /* this.getUsers(); */
+    this.getUsers();
   }
 
-  /* getUsers() {
+  getUsers() {
     this.userService.getUsers().subscribe(
       data => this.users = data,
       error => console.log(error),
@@ -39,6 +39,6 @@ export class AdminComponent implements OnInit {
         () => this.getUsers(),
       );
     }
-  } */
+  }
 
 }

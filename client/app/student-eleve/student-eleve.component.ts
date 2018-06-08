@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
 import { Student } from '../shared/models/student.model';
-import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-student-eleve',
@@ -11,25 +10,15 @@ import { StudentService } from '../services/student.service';
 })
 export class StudentEleveComponent implements OnInit {
 
-  student: Student;
-  id: string;
+  students: Student;
 
-  constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private wcsService: WcsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id'),
     this.getStudent();
   }
 
   getStudent() {
-    this.studentService.getStudent(this.id).subscribe(
-      (data) => {
-        this.student = data;
-      },
-    );
-  }
-
-  /* getStudent() {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.getItem('token_wcs');
     this.wcsService.getMe().subscribe((data) => {
@@ -45,7 +34,7 @@ export class StudentEleveComponent implements OnInit {
       student.banished = data['banished'];
       student.crew = data['current_crew'];
       console.log(student);
-      this.students = student;
+      this.students = student
     });
-  } */
+  }
 }

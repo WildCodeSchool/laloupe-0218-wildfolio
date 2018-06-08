@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngIf="student">
+<div class="container-fluid" *ngIf="students">
     <div class="row">
         <div class="mx-auto">
             <h1>Mon profil</h1>
@@ -7,12 +7,11 @@
     </div>
     <div class="row">
         <div class="mx-auto">
-            <h2>Prénom Nom : {{ student.name }} {{ student.lastname }}</h2>
-            <h2>Email : {{ student.email }}</h2>
-            <h2>Github : {{ student.github }}</h2>
-            <h2>Promotion : {{ student.crew.name }}</h2>
-            <h2>Framework : {{ student.crew.program_type.name }}</h2>
+            <h2>Prénom Nom : {{ students.name }} {{ students.lastname }}</h2>
+            <h2>Email : {{ students.email }}</h2>
+            <h2>Github : {{ students.github }}</h2>
+            <h2>Promotion : {{ students.crew.name }}</h2>
+            <h2>Framework : {{ students.crew.program_type.name }}</h2>
         </div>
     </div>
 </div>
-<button class="btn" routerLink="/">Return home</button>
