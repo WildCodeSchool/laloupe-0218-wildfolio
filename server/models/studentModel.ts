@@ -11,6 +11,7 @@ const studentSchema = new mongoose.Schema({
   admin: Boolean,
   banished: Boolean,
   crew: Object,
+  members: Array,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

@@ -10,4 +10,5 @@ export class Student {
   admin?: boolean;
   banished?: boolean;
   crew?: object;
+  members?: any[];
 }
