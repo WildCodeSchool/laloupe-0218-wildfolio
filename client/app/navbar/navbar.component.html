@@ -50,7 +50,7 @@
         <a class="nav-link" id="textcolor7" href="/api/oauth">SE CONNECTER</a>
       </span>
       <span class="dropdownColor" >
-        <a class="nav-link" id="textcolor7" routerLink="/student-eleve">{{ students.name }}</a>
+        <a class="nav-link" id="textcolor7" *ngIf="name" routerLink="/student-eleve">{{ students.name }}</a>
       </span>
     </div>
   </nav>

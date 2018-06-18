@@ -35,6 +35,7 @@ export class LoginCallbackComponent implements OnInit {
       student.admin = data['admin'];
       student.banished = data['banished'];
       student.crew = data['current_crew'];
+      student.LOC_ID = student.crew.location.id;
       console.log(student);
       this.students = student;
       this.studentService.addStudentIfNotExists(student).subscribe(

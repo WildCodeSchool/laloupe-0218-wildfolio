@@ -36,7 +36,7 @@ abstract class BaseController {
 
   // Insert
   insertIfNotExists = (req, res) => {
-    this.model.findOne({ WCS_ID: req.body.WCS_ID }, (err, item) => {
+    this.model.findOne({ WCS_ID: req.body.WCS_ID, LOC_ID: req.body.LOC_ID }, (err, item) => {
       if (err) {
         return console.error(err);
       }
