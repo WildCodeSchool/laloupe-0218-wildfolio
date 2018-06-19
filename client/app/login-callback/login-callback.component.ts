@@ -23,9 +23,8 @@ export class LoginCallbackComponent implements OnInit {
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.setItem('token_wcs', token);
-    this.wcsService.getMe().subscribe((data) => {
+    this.wcsService.getMe().subscribe((data) => { 
       this.wcsService.student = data;
-      console.log(data);
       const student = new Student();
       student.name = data['firstname'];
       student.lastname = data['lastname'];
@@ -40,7 +39,7 @@ export class LoginCallbackComponent implements OnInit {
       this.students = student;
       this.studentService.addStudentIfNotExists(student).subscribe(
         (res) => {
-          console.log('ok');
+          console.log('connecter');
         },
         error => console.log(error),
       );
