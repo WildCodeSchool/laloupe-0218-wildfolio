@@ -81,3 +81,15 @@ td{
     color: #58c4b8;
     font-size: 20px;
 }
+
+/*Maps*/
+
+.maps{
+    padding-left: 9%;
+}
+
+@media (max-width: 768px) {
+    .maps {
+        display: none
+    }
+  }

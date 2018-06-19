@@ -25,6 +25,7 @@ figcaption{
   padding-top: 1.5%;
 } 
 
+
 .button {
   background: #fff;
   display: flex;
@@ -34,9 +35,9 @@ figcaption{
   overflow: hidden;
   position: relative;
   padding: 20px 20px;
-  padding-top: 7%;
   width: 3.5vh;
 }
+
 
 .button:hover .front {
   transform: translateX(-100%);
