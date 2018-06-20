@@ -70,7 +70,7 @@ export class StudentsComponent implements OnInit {
         console.log(data);
         this.students = data;
         this.members = this.students[0].members;
-        console.log(this.members)
+        console.log(this.members);
       },
       error => console.log(error),
       () => this.isLoading = false,

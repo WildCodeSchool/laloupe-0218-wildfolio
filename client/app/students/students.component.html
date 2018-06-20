@@ -20,7 +20,7 @@
   </div> -->
 
   <div class="card mb-3" *ngIf="!isLoading">
-    <h4 class="card-header backgroundNav">Elèves ({{ students.length }})</h4>
+    <h4 class="card-header backgroundNav">Elèves ({{ members.length }})</h4>
     <div class="card-body">
       <table class="table table-bordered">
         <thead class="thead-light">
@@ -36,7 +36,7 @@
             <th scope="col">Profile</th>            
           </tr>
         </thead>
-        <tbody *ngIf="students.length === 0">
+        <tbody *ngIf="members.length === 0">
           <tr>
             <td colspan="4">Il n'y a pas d'eleves ajouter.</td>
           </tr>
@@ -47,7 +47,7 @@
             <td >{{ member.lastname }}</td>
             <td >{{ member.email }}</td>
             <td >{{ member.github }}</td>
-           <!--  <td >{{ student.crew.name }}</td>
+            <!--  <td >{{ student.crew.name }}</td>
             <td >{{ student.crew.program_type.name }}</td> -->
             <td ><span *ngIf="student.admin == true">Oui</span> <span *ngIf="student.admin == false">Non</span></td>
             <td>
@@ -63,8 +63,6 @@
           <tr>
             <td colspan="4">
               <form class="form-inline" #form="ngForm" (ngSubmit)="editStudent(student)">
-                <input class="form-control mr-2" type="text" name="name" [(ngModel)]="student.name" placeholder="Name" required>
-                <input class="form-control mr-2" type="text" name="lastname" [(ngModel)]="student.lastname" placeholder="lastname" required>
                 <input class="form-control mr-2" type="text" name="email" [(ngModel)]="student.email" placeholder="email" required>
                 <input class="form-control mr-2" type="text" name="github" [(ngModel)]="student.github" placeholder="github" required>                              
                 <input class="form-control mr-2" type="text" name="crew" [(ngModel)]="student.crew.name" placeholder="crew" required>                              

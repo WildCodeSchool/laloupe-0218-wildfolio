@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { WcsService } from '../wcs.service';
 import { Student } from '../shared/models/student.model';
 import { StudentService } from '../services/student.service';
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-login-callback',
@@ -23,7 +24,7 @@ export class LoginCallbackComponent implements OnInit {
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.setItem('token_wcs', token);
-    this.wcsService.getMe().subscribe((data) => { 
+    this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
       const student = new Student();
       student.name = data['firstname'];
@@ -35,9 +36,13 @@ export class LoginCallbackComponent implements OnInit {
       student.banished = data['banished'];
       /* student.crew = data['current_crew']; */
       student.members = data['current_crew'].users;
-      student.LOC_ID = data['current_crew'].location.id;
       console.log(student);
       this.students = student;
+      // this.locationService.addLocationIfNotExist(data['current_crew'].location).subscribe(
+      //  (res) => {
+      //   console.log('loc save');
+      // },
+      // error => console.log(error)});
       this.studentService.addStudentIfNotExists(student).subscribe(
         (res) => {
           console.log('connecter');

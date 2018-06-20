@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { CityService } from '../services/city.service';
+import { LocationService } from '../services/location.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { City } from '../shared/models/city.model';
+import { WcsService } from '../wcs.service';
+import { toTypeScript } from '@angular/compiler';
 
 @Component({
   selector: 'app-cities',
@@ -21,7 +24,11 @@ export class CitiesComponent implements OnInit {
   name = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
 
-  constructor(private cityService: CityService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
+  constructor(private cityService: CityService,
+              private formBuilder: FormBuilder,
+              public toast: ToastComponent,
+              private wcsService: WcsService,
+              private locationService: LocationService) { }
 
   ngOnInit() {
     this.getCity();
@@ -56,6 +63,17 @@ export class CitiesComponent implements OnInit {
       this.addCityForm.reset();
       this.toast.setMessage('campus already exist.', 'warning');
     }
+  }
+  addLocationIfNotExists() {
+    this.wcsService.getMe().subscribe((data) => {
+      this.wcsService.student = data;
+      this.locationService.addLocationIfNotExists(data['current_crew'].location).subscribe(
+        (res) => {
+          console.log('loc save');
+        },
+        error => console.log(error),
+      );
+    });
   }
 
   enableEditing(city: City) {

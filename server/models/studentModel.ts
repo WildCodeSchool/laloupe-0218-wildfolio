@@ -5,7 +5,6 @@ const studentSchema = new mongoose.Schema({
   lastname: String,
   email: String,
   WCS_ID: Number,
-  LOC_ID: Number,
   github: String,
   roles: String,
   admin: Boolean,
