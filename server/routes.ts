@@ -41,7 +41,7 @@ export default function routes(app) {
   router.route('/locations').get(location.getAll);
   router.route('/locations/count').get(location.count);
   router.route('/location').post(location.insert);
-  router.route('/location/ifNotExists').post(location.insertIfNotExists);
+  router.route('/location/ifNotExists').post(location.insertLocationIfNotExists);
   router.route('/location/:id').get(location.get);
   router.route('/location/:id').put(location.update);
   router.route('/location/:id').delete(location.delete);
