@@ -20,7 +20,7 @@ export class LocationService {
     return this.http.post<Location>('/api/location', location);
   }
 
-  addLocationIfNotExists(location: Location): Observable<Location> {
+  addIfNotExist(location: Location): Observable<Location> {
     return this.http.post<Location>('/api/location/ifNotExists', location);
   }
 

@@ -36,6 +36,8 @@ export class PresentationComponent implements OnInit {
     });
   }
 
+  // Oeil du recruteur
+
   getRecrut() {
     this.recrutService.getRecruts().subscribe((data) => {
       this.recruts = data;
@@ -45,10 +47,15 @@ export class PresentationComponent implements OnInit {
   isSearched() {
     this.isClick = true;
   }
+
+
+  // Projet
+
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,

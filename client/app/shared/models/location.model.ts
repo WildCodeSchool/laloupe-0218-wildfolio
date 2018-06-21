@@ -1,4 +1,5 @@
 export class Location {
   _id?: string;
-  LOC_ID?: number;
+  WCS_ID?: number;
+  city?: string;
 }

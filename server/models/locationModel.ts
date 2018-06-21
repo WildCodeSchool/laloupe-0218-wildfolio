@@ -1,7 +1,8 @@
 import * as mongoose from 'mongoose';
 
 const locationSchema = new mongoose.Schema({
-  LOC_ID: Number,
+  WCS_ID: Number,
+  city: String,
 });
 
 const locationModel = mongoose.model('location', locationSchema);
