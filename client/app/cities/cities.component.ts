@@ -25,10 +25,10 @@ export class CitiesComponent implements OnInit {
   link = new FormControl('', Validators.required);
 
   constructor(private cityService: CityService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent,
-              private wcsService: WcsService,
-              private locationService: LocationService) { }
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent,
+    private wcsService: WcsService,
+    private locationService: LocationService) { }
 
   ngOnInit() {
     this.getCity();
@@ -63,17 +63,6 @@ export class CitiesComponent implements OnInit {
       this.addCityForm.reset();
       this.toast.setMessage('campus already exist.', 'warning');
     }
-  }
-  addLocationIfNotExists() {
-    this.wcsService.getMe().subscribe((data) => {
-      this.wcsService.student = data;
-      this.locationService.addLocationIfNotExists(data['current_crew'].location).subscribe(
-        (res) => {
-          console.log('loc save');
-        },
-        error => console.log(error),
-      );
-    });
   }
 
   enableEditing(city: City) {
