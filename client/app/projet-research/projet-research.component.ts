@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
 
-
 @Component({
   selector: 'app-projet-research',
   templateUrl: './projet-research.component.html',
@@ -20,7 +19,11 @@ export class ProjetResearchComponent implements OnInit {
 
   cities = [];
 
-  constructor(private cityService: CityService, private wcsService: WcsService, private blogProjetService: BlogProjetService, private route: ActivatedRoute) { }
+  constructor(
+    private cityService: CityService,
+    private wcsService: WcsService,
+    private blogProjetService: BlogProjetService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCity();
@@ -49,7 +52,6 @@ export class ProjetResearchComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
-  
 }
 
 // $(function() {

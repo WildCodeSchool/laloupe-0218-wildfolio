@@ -9,10 +9,8 @@ export class WcsService {
 
   constructor(private http: HttpClient) { }
 
-
   getMe() {
     return this.http.get('https://ppody.innoveduc.fr/api/v2/me');
   }
 
 }
-

@@ -36,6 +36,7 @@ import { ProjetResearchComponent } from './projet-research/projet-research.compo
 import { NewPostComponent } from './new-post/new-post.component';
 import { BlogProjetService } from './services/blogProjet.service';
 import { ListStudentsComponent } from './list-students/list-students.component';
+import { LocationService } from './services/location.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -91,6 +92,7 @@ export function tokenGetter() {
     BlogProjetService,
     UserService,
     WcsService,
+    LocationService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

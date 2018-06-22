@@ -5,6 +5,7 @@ import CityController from './controllers/CityController';
 import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
 import StudentController from './controllers/StudentController';
+import LocationController from './controllers/LocationController';
 // import city from './models/city';
 // import user from './models/user';
 
@@ -17,6 +18,7 @@ export default function routes(app) {
   const city = new CityController();
   const user = new UserController();
   const student = new StudentController();
+  const location = new LocationController();
 
   // recruts
   router.route('/recruts').get(recrut.getAll);
@@ -35,7 +37,16 @@ export default function routes(app) {
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
 
-   // blogProjet
+  // Location
+  router.route('/locations').get(location.getAll);
+  router.route('/locations/count').get(location.count);
+  router.route('/location').post(location.insert);
+  router.route('/location/ifNotExists').post(location.insertIfNotExists);
+  router.route('/location/:id').get(location.get);
+  router.route('/location/:id').put(location.update);
+  router.route('/location/:id').delete(location.delete);
+
+  // blogProjet
   router.route('/blogProjet').get(blogProjet.getAll);
   router.route('/blogProjet/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);
@@ -47,6 +58,7 @@ export default function routes(app) {
   router.route('/cities').get(city.getAll);
   router.route('/cities/count').get(city.count);
   router.route('/city').post(city.insert);
+  router.route('/city/ifNotExists').post(city.insertIfNotExists);
   router.route('/city/:id').get(city.get);
   router.route('/city/:id').put(city.update);
   router.route('/city/:id').delete(city.delete);

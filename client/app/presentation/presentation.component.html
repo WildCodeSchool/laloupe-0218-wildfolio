@@ -72,21 +72,21 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6 portfolio-item">
+      <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let blogProject of blogProjets">
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="fa fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
+          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="">
         </a>
         <div class="portfolio-caption">
-          <h4>Projet 1</h4>
+          <h4>{{ blogProject.name }}</h4>
           <!-- <p class="text-muted">Illustration</p> -->
         </div>
       </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
+    <!--   <div class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
@@ -97,10 +97,10 @@
         </a>
         <div class="portfolio-caption">
           <h4>Projet 2</h4>
-          <!-- <p class="text-muted">Graphic Design</p> -->
+          <! <p class="text-muted">Graphic Design</p>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
+      </div> -->
+     <!--  <div class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
@@ -111,9 +111,9 @@
         </a>
         <div class="portfolio-caption">
           <h4>Projet 3</h4>
-          <!-- <p class="text-muted">Identity</p> -->
+          <! <p class="text-muted">Identity</p>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
@@ -231,31 +231,25 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6" *ngIf="recruts[0]">
-        <a href="#">
           <blockquote class="text-muted">{{ recruts[0].description }}
             <p class="text-muted">
               <strong>{{ recruts[0].authname }}</strong>
             </p>
           </blockquote>
-        </a>
       </div>
       <div class="col-md-4 col-sm-6" *ngIf="recruts[1]">
-        <a href="#">
           <blockquote class="text-muted">{{ recruts[1].description }}
             <p class="text-muted">
               <strong>{{ recruts[1].authname }}</strong>
             </p>
           </blockquote>
-        </a>
       </div>
-      <div class="col-md-4 col-sm-6" *ngIf="recruts[2]">
-        <a href="#">
+      <div class="col-md-4 col-sm-6" *ngIf="recruts[2]">  
           <blockquote class="text-muted">{{ recruts[2].description }}
             <p class="text-muted">
               <strong>{{ recruts[2].authname }}</strong>
             </p>
           </blockquote>
-        </a>
       </div>
     </div>
   </div>
