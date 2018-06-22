@@ -44,7 +44,7 @@ export class CitiesComponent implements OnInit {
       name: this.name,
       link: this.link,
     });
-    const token = this.route.snapshot.paramMap.get('token');
+   /*  const token = this.route.snapshot.paramMap.get('token');
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
@@ -57,7 +57,7 @@ export class CitiesComponent implements OnInit {
         (res) => {
           console.log('loc save', res);
         });
-    });
+    }); */
   }
   getCity() {
     this.cityService.getCities().subscribe(

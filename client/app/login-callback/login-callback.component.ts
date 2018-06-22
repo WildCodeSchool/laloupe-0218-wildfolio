@@ -28,7 +28,6 @@ export class LoginCallbackComponent implements OnInit {
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
-      console.log(data);
       const student = new Student();
       const location = new Location();
       student.name = data['firstname'];
