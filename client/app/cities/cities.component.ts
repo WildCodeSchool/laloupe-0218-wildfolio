@@ -50,8 +50,8 @@ export class CitiesComponent implements OnInit {
       this.wcsService.student = data;
       console.log(data);
       const location = new Location();
-      location.city = data['current_crew'].location.city;
-      location.WCS_ID = data['current_crew'].location.id;
+      // location.city = data['current_crew'].location.city;
+      // location.WCS_ID = data['current_crew'].location.id;
 
       this.locationService.addIfNotExist(this.city).subscribe(
         (res) => {

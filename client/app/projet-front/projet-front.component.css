@@ -43,14 +43,6 @@ li a:hover {
   width: 3.5vh;
 }
 
-/* .button:hover .front {
-  transform: translateX(-100%);
-}
-.button:hover .links a {
-  opacity: 1;
-  transform: scale(1); 
-} */
-
 .button .front {
   border-radius: 300px;
   width: 100%;
