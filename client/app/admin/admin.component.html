@@ -1,35 +1,3 @@
-<!-- <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Registered users ({{ users.length }})</h4>
-  <div class="card-body">
-    <table class="table table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">Role</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="users.length === 0">
-        <tr>
-          <td colspan="4">There are no registered users.</td>
-        </tr>  
-      </tbody>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
-          <td>
-            <button class="btn btn-sm btn-danger" (click)="deleteUser(user)" [disabled]="auth.currentUser.id === user.id">
-              <i class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>  
-      </tbody>
-    </table>
-  </div>
-</div> -->
 <app-navbar></app-navbar>
 
 <div class="container-fluid">
@@ -58,7 +26,7 @@
           </h3>
           <hr/>
           <h3 class="section-subheading text-muted">
-            Gérer l'<a href="recruts">oeil du recruteur</a>
+            Gérer <a href="recruts">l'oeil du recruteur</a>
             <a routerLink="/recruts"><i class="fas fa-cog"></i></a>
           </h3>
           <hr/>
