@@ -28,6 +28,7 @@ export class LoginCallbackComponent implements OnInit {
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
+      console.log(this.wcsService.student)
       const student = new Student();
       const location = new Location();
       student.name = data['firstname'];
@@ -48,7 +49,7 @@ export class LoginCallbackComponent implements OnInit {
       data['current_crew'].users.forEach(async student => {
         await this.studentService.addStudentIfNotExists(student).subscribe(
           (res) => {
-            console.log('add user', res);
+            console.log('add user', student);
           },
           error => console.log(error),
         );
