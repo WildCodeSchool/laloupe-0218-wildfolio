@@ -55,7 +55,6 @@ export class PresentationComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,

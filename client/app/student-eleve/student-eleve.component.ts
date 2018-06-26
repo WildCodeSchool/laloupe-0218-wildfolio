@@ -11,21 +11,27 @@ import { StudentService } from '../services/student.service';
 })
 export class StudentEleveComponent implements OnInit {
 
-  student: Student;
+  student: Student
   id: string;
 
   constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id'),
-    this.getStudent();
+      this.wcsService.getMe().subscribe((data => {
+        this.wcsService.student = data;
+        this.student = this.wcsService.student
+        console.log(this.student);
+      }))
+   /*  this.id = this.route.snapshot.paramMap.get('id'); */
   }
 
-  getStudent() {
+ /*  getStudent() {
     this.studentService.getStudent(this.id).subscribe(
       (data) => {
         this.student = data;
+        console.log(this.student);
       },
     );
-  }
+  } */
+
 }
