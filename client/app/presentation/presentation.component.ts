@@ -15,6 +15,8 @@ import { BlogProjet } from '../shared/models/blogProjet.model';
 })
 
 export class PresentationComponent implements OnInit {
+  newBlogProjet: BlogProjet = new BlogProjet();
+  blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
   isLoading = true;
   isClick = false;
