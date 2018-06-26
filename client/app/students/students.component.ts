@@ -18,9 +18,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent implements OnInit {
+
   student = new Student();
   students: Student[];
-  members: any;
+  members: Student[];
   isLoading = true;
   isEditing = false;
 
@@ -69,7 +70,7 @@ export class StudentsComponent implements OnInit {
       (data) => {
         console.log(data);
         this.students = data;
-        this.members = this.students[0].members;
+        this.members = this.students;
         console.log(this.members);
       },
       error => console.log(error),
