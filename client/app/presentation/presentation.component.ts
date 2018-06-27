@@ -7,6 +7,7 @@ import { StudentService } from '../services/student.service';
 import { WcsService } from '../wcs.service';
 import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
+import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser/src/dom/debug/ng_probe';
 
 @Component({
   selector: 'app-presentation',
@@ -27,7 +28,7 @@ export class PresentationComponent implements OnInit {
     private recrutService: RecrutService,
     private wcsService: WcsService,
     private blogProjetService: BlogProjetService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getBlogProjet();
@@ -36,6 +37,7 @@ export class PresentationComponent implements OnInit {
       duration: 800,
       easing: 'ease-in-out-sine',
     });
+
   }
 
   // Oeil du recruteur
@@ -57,9 +59,14 @@ export class PresentationComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        // for (let i = 0; i < this.blogProjets.length; i++) {
+        //   let num = Math.floor(Math.random() * 3);
+        //   console.log(this.blogProjets[i].WCS_id);
+        // }
       },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
+  
 }

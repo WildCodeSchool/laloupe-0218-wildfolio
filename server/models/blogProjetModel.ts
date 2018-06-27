@@ -6,6 +6,7 @@ const blogProjetSchema = new mongoose.Schema({
   link: String,
   imageUrl: String,
   description: String,
+  WCS_id: Number,
 });
 
 const blogProjetModel = mongoose.model('blogProjet', blogProjetSchema);
