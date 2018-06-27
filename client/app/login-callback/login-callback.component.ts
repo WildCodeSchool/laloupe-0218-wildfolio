@@ -36,20 +36,25 @@ export class LoginCallbackComponent implements OnInit {
       student.email = data['email'];
       student.WCS_ID = data['id'];
       student.github = data['github'];
-      student.admin = data['admin'];
-      student.banished = data['banished'];
+     /*  student.admin = data['admin'];
+      student.banished = data['banished']; */
       // student.members = data['current_crew'].users;
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
       this.students = student;
+      console.log(this.students);
       this.locationService.addIfNotExist(location).subscribe(
         (res) => {
           console.log(res);
         });
       data['current_crew'].users.forEach(async student => {
+        student.WCS_ID = student['id'];
+        student.name = student.fullname
+        delete student.lastname;
+        delete student.id;
         await this.studentService.addStudentIfNotExists(student).subscribe(
           (res) => {
-            console.log('add user', student);
+           /*  console.log('add user', student); */
           },
           error => console.log(error),
         );

@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'list-students', component: ListStudentsComponent },
   { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
-  { path: 'student-eleve', component: StudentEleveComponent },
+  { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },
