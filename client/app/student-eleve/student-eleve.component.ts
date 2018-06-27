@@ -23,6 +23,7 @@ export class StudentEleveComponent implements OnInit {
        console.log(this.student);
      })) */
     this.id = this.route.snapshot.paramMap.get('id');
+    this.getStudent();
   }
 
   getStudent() {
