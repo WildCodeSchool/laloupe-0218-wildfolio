@@ -25,13 +25,13 @@
       <table class="table table-bordered">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Prénom</th>
-            <th scope="col">Nom</th>
+            <th scope="col">Prénom Nom</th>
+           <!--  <th scope="col">Nom</th> -->
             <th scope="col">Email</th>
             <th scope="col">Github</th>
-            <th scope="col">Promotion</th>
+           <!--  <th scope="col">Promotion</th>
             <th scope="col">Framework</th>
-            <th scope="col">Admin</th>
+            <th scope="col">Admin</th> -->
             <th scope="col">Modifier/Supprimer</th>
             <th scope="col">Profile</th>            
           </tr>
@@ -43,13 +43,12 @@
         </tbody>
         <tbody *ngIf="!isEditing && students">
           <tr *ngFor="let member of members">
-            <td>{{ member.firstname }}</td>
-            <td >{{ member.lastname }}</td>
+            <td>{{ member.name }}</td>
             <td >{{ member.email }}</td>
             <td >{{ member.github }}</td>
             <!--  <td >{{ student.crew.name }}</td>
             <td >{{ student.crew.program_type.name }}</td> -->
-            <td ><span *ngIf="student.admin == true">Oui</span> <span *ngIf="student.admin == false">Non</span></td>
+           <!--  <td ><span *ngIf="student.admin == true">Oui</span> <span *ngIf="student.admin == false">Non</span></td> -->
             <td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(student)">
               <i class="fa fa-pencil"></i> Modifier</button>

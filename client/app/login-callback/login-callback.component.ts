@@ -42,12 +42,15 @@ export class LoginCallbackComponent implements OnInit {
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
       this.students = student;
+      console.log(this.students);
       this.locationService.addIfNotExist(location).subscribe(
         (res) => {
           console.log(res);
         });
       data['current_crew'].users.forEach(async student => {
         student.WCS_ID = student['id'];
+        student.name = student.fullname
+        delete student.lastname;
         delete student.id;
         await this.studentService.addStudentIfNotExists(student).subscribe(
           (res) => {
