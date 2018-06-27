@@ -22,6 +22,7 @@ export class NewPostComponent implements OnInit {
   imageUrl = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
+  WCS_id = new FormControl('', Validators.required);
 
   constructor(private blogProjetService: BlogProjetService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
 
@@ -61,6 +62,9 @@ export class NewPostComponent implements OnInit {
           this.blogProjets.push(blogProjet);
           this.addBlogProjetForm.reset();
           console.log(blogProjet);
+          for (let i = 0 ; i < this.blogProjets.length; i++){
+            console.log(this.WCS_id);
+          }
           this.toast.setMessage('item added successfully.', 'success');
         },
         error => console.log(error),

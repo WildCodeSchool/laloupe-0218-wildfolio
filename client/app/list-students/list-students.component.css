@@ -65,6 +65,10 @@
     border-color: gray;
 }
 
+.devMaps{
+    padding-bottom: 10%;
+}
+
 /*Liste des élèves*/
 
 td img {
@@ -81,3 +85,18 @@ td{
     color: #58c4b8;
     font-size: 20px;
 }
+
+/*Maps*/
+
+.maps{
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .maps {
+        display: none
+    }
+  }
+

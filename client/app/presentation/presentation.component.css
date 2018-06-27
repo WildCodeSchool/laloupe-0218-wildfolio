@@ -575,6 +575,13 @@ header.masthead .intro-text .intro-heading {
 color:white;
 }
 
+.img-fluid {
+  display: block;
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
+}
+
 /* Section Développeurs*/
 
 .team-member {
@@ -696,4 +703,16 @@ section#contact :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.img-fluid {
+  display: block;
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.portfolio-caption h4{
+  color: black;
 }

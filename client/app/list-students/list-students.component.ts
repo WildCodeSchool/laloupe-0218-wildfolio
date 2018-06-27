@@ -8,6 +8,7 @@ import { Student } from '../shared/models/student.model';
   templateUrl: './list-students.component.html',
   styleUrls: ['./list-students.component.css'],
 })
+
 export class ListStudentsComponent implements OnInit {
   students: Student[];
   isLoading = true;
