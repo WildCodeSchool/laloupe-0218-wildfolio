@@ -11,7 +11,7 @@ import { StudentService } from '../services/student.service';
 })
 export class StudentEleveComponent implements OnInit {
 
-  student: Student
+  student: Student;
   id: string;
 
   constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService) { }

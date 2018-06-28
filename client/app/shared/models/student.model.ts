@@ -6,6 +6,7 @@ export class Student {
   email?: string;
   github?: string;
   linkedin?: string;
+  lienlinkedin?: string;
   image?: string;
   roles?: string;
   locationId?: number;

@@ -1,3 +1,6 @@
+import { HttpClient } from '@angular/common/http';
+import { StudentService } from './../services/student.service';
+import { Student } from '../shared/models/student.model';
 import { Component, OnInit } from '@angular/core';
 import { CityService } from '../services/city.service';
 import { Router } from '@angular/router';
@@ -11,16 +14,21 @@ export class NavbarComponent implements OnInit {
 
   cities = [];
   isconnect = false;
+  isLoading = true;
+  isEditing = false;
+  students: Student[];
 
   constructor(
     private cityService: CityService,
     private router: Router,
+    private http: HttpClient,
   ) { }
 
   ngOnInit() {
     this.checkConnect();
     this.getCity();
     /* Navbar */
+    // tslint:disable-next-line:no-this-assignment
     const self = this;
     window.addEventListener('scroll', function (event) {
       const scroll = this.scrollY;
@@ -87,9 +95,12 @@ export class NavbarComponent implements OnInit {
   checkConnect() {
     if (localStorage.getItem('token_wcs')) {
       return this.isconnect = true;
-    } else {
-      console.log('No')
+    }  {
+      console.log('No');
     }
+  }
+  getMe() {
+    return this.http.get('https://ppody.innoveduc.fr/api/v2/me');
   }
 
   getCity() {
