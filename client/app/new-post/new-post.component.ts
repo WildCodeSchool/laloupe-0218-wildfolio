@@ -37,7 +37,7 @@ export class NewPostComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets().subscribe(
+    this.blogProjetService.getBlogProjets({}).subscribe(
       (data) => {
         this.blogProjets = data;
       },

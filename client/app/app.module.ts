@@ -28,6 +28,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { BlogProjetService } from './services/blogProjet.service';
 import { ListStudentsComponent } from './list-students/list-students.component';
 import { LocationService } from './services/location.service';
+import { ProfilComponent } from './profil/profil.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -52,6 +53,7 @@ export function tokenGetter() {
     ProjetResearchComponent,
     NewPostComponent,
     ListStudentsComponent,
+    ProfilComponent,
   ],
   imports: [
     RoutingModule,

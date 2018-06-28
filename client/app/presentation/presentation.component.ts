@@ -60,7 +60,7 @@ export class PresentationComponent implements OnInit {
   // Projets
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets().subscribe(
+    this.blogProjetService.getBlogProjets({}).subscribe(
       (data) => {
         this.blogProjets = data;
         // for (let i = 0; i < this.blogProjets.length; i++) {

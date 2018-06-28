@@ -5,9 +5,9 @@ export class Student {
   lastname?: string;
   email?: string;
   github?: string;
+  linkedin?: string;
+  image?: string;
   roles?: string;
-  admin?: boolean;
-  banished?: boolean;
-  crew?: object;
-  members?: any[];
+  locationId?: number;
+  campus?: string;
 }

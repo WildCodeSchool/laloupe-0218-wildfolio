@@ -5,35 +5,30 @@
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
-      <div class="row">
-        <div class="mx-auto">
-          <select class="custom-select selectWidth" id="campus">
-            <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
-          </select>
-        </div>
-      </div>
       <div class="p-research">
         <p>
           Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons.
         </p>
         <p>
-          Rechercher un projet selon la session :
+          Rechercher un projet selon le campus et la session :
         </p>
       </div>
-      <div class="col-lg-4 col-12 mx-auto">
+      <div class="col-lg-4 col-12 mx-auto mt-4">
+        <h3>Campus</h3>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCity">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city">{{ city.name }}</option>
+        </select>
+      </div>
+      <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Sessions</h3>
         <select class="custom-select selectWidth" id="session">
-          <option selected>Select</option>
+          <option selected>Sessions</option>
           <option value="1">Février 2018</option>
-          <option value="2">Septembre 2017</option>
-          <option value="3">Février 2017</option>
-          <option value="4">Js</option>
-          <option value="5">!</option>
-          <option value="6">?</option>
+          <option value="1">Septembre 2018</option>
         </select>
       </div>
 
-      <div class="col-lg-4 col-12 mx-auto">
+      <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Projets</h3>
         <select class="custom-select selectWidth" id="projets">
           <option selected>Projet client</option>
@@ -47,14 +42,14 @@
 
       <div class="row mx-auto">
         <div class="col-12 search">
-          <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
+          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Chercher un Projet</button>
         </div>
       </div>
 
       <!-- <div class="row mx-auto">
         <a class="scroll-down" address="true"></a>
       </div> -->
-        
+
     </div>
   </div>
 </header>
@@ -83,7 +78,7 @@
                 <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
               </a>
             </div>
-<!-- 
+            <!-- 
             <div class="col-md-4 portfolio-item">
               <a class="portfolio-link" href="#portfolioModal1">
                 <div class="portfolio-hover">

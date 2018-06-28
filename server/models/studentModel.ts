@@ -6,11 +6,11 @@ const studentSchema = new mongoose.Schema({
   email: String,
   WCS_ID: Number,
   github: String,
+  linkedin: String,
+  image: String,
   roles: String,
-  admin: Boolean,
-  banished: Boolean,
-  crew: Object,
-  members: Array,
+  locationId: Number,
+  campus: String
 });
 
 const studentModel = mongoose.model('student', studentSchema);
