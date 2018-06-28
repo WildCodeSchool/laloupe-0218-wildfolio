@@ -3,6 +3,8 @@ import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
 import { Student } from '../shared/models/student.model';
 import { StudentService } from '../services/student.service';
+import { BlogProjetService } from '../services/blogProjet.service';
+import { BlogProjet } from '../shared/models/blogProjet.model';
 
 @Component({
   selector: 'app-student-eleve',
@@ -13,8 +15,11 @@ export class StudentEleveComponent implements OnInit {
 
   student: Student
   id: string;
+  blogProjet = new BlogProjet();
+  blogProjets: BlogProjet[] = [];
+  isLoading = true;
 
-  constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService, private blogProjetService: BlogProjetService) { }
 
   ngOnInit() {
     /*  this.wcsService.getMe().subscribe((data => {
@@ -33,6 +38,21 @@ export class StudentEleveComponent implements OnInit {
         console.log(this.student);
       },
     );
+  }
+
+  getBlogProjet() {
+    this.blogProjetService.getBlogProjets(this.blogProjet).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+
+  showProject() {
+    this.getBlogProjet();
   }
 
 }
