@@ -18,12 +18,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.css'],
 })
-export class StudentsComponent implements OnInit {
+export class ProfilComponent implements OnInit {
 
   student = new Student();
   students: Student[];
   isLoading = true;
   isEditing = false;
+  id: string;
 
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
@@ -49,7 +50,8 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit() {
     this.getMe();
-
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.getStudent();
   }
 
   getMe() {
@@ -57,15 +59,12 @@ export class StudentsComponent implements OnInit {
   }
 
   getStudent() {
-    this.studentService.getStudents().subscribe(
-        (data) => {
-          console.log(data);
-          this.students = data;
-         /*  console.log(this.members); */
-        },
-        error => console.log(error),
-        () => this.isLoading = false,
-      );
+    this.studentService.getStudent(this.id).subscribe(
+      (data) => {
+        this.student = data;
+        console.log(this.student);
+      },
+    );
   }
   enableEditing(student: Student) {
     this.isEditing = true;
@@ -115,12 +114,12 @@ export class StudentsComponent implements OnInit {
     return true;
   }
 
-  isAdmin() {
-    return this.student.admin = true;
-  }
+  // isAdmin() {
+  //   return this.student.admin = true;
+  // }
 
-  isNotAdmin() {
-    return this.student.admin = false;
-  }
+  // isNotAdmin() {
+  //   return this.student.admin = false;
+  // }
 
 }
