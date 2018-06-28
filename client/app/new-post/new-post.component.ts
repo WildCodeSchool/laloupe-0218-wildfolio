@@ -62,9 +62,9 @@ export class NewPostComponent implements OnInit {
           this.blogProjets.push(blogProjet);
           this.addBlogProjetForm.reset();
           console.log(blogProjet);
-          for (let i = 0 ; i < this.blogProjets.length; i++){
-            console.log(this.WCS_id);
-          }
+          // for (let i = 0 ; i < this.blogProjets.length; i++){
+          //   console.log(this.WCS_id);
+          // }
           this.toast.setMessage('item added successfully.', 'success');
         },
         error => console.log(error),
@@ -119,5 +119,24 @@ export class NewPostComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 }
