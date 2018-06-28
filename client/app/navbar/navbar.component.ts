@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private cityService: CityService,
+    private studentService: StudentService,
     private router: Router,
     private http: HttpClient,
   ) { }
@@ -100,7 +101,9 @@ export class NavbarComponent implements OnInit {
     }
   }
   getMe() {
-    return this.http.get('https://ppody.innoveduc.fr/api/v2/me');
+    this.studentService.getMe().subscribe((data) => {
+      console.log('me');
+    });
   }
 
   getCity() {

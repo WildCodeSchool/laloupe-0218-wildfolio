@@ -25,6 +25,7 @@ export class ProfilComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   id: string;
+  me;
 
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
@@ -55,7 +56,10 @@ export class ProfilComponent implements OnInit {
   }
 
   getMe() {
-    return this.http.get('https://ppody.innoveduc.fr/api/v2/me');
+    this.studentService.getMe().subscribe((data) => {
+      this.me = data;
+      console.log(this.me);
+    });
   }
 
   getStudent() {
