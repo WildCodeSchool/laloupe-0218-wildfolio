@@ -1,9 +1,9 @@
 export class BlogProjet {
   _id?: string;
-  WCS_id?: number;
+  studentId?: string;
   name?: string;
   link?: string;
   imageUrl?: string;
   description?: string;
-  
+  locationId?: number;
 }

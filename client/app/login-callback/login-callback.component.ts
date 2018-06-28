@@ -27,6 +27,7 @@ export class LoginCallbackComponent implements OnInit {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
+      localStorage.setItem('WCS_ID', data['id']);
       this.wcsService.student = data;
      /*  console.log(this.wcsService.student); */
       const student = new Student();
