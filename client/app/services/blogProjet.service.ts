@@ -9,8 +9,9 @@ export class BlogProjetService {
 
   constructor(private http: HttpClient) { }
 
-  getBlogProjets(): Observable<BlogProjet[]> {
-    return this.http.get<BlogProjet[]>('/api/blogProjet');
+  getBlogProjets(city): Observable<BlogProjet[]> {
+    console.log(city);
+    return this.http.get<BlogProjet[]>('/api/blogProjet', { params: { city } });
   }
 
   countBlogProjets(): Observable<number> {

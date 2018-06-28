@@ -6,8 +6,5 @@ export class Student {
   email?: string;
   github?: string;
   roles?: string;
-  admin?: boolean;
-  banished?: boolean;
-  crew?: object;
-  members?: any[];
+  locationId?: number;
 }

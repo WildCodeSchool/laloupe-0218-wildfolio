@@ -7,10 +7,7 @@ const studentSchema = new mongoose.Schema({
   WCS_ID: Number,
   github: String,
   roles: String,
-  admin: Boolean,
-  banished: Boolean,
-  crew: Object,
-  members: Array,
+  locationId: Number
 });
 
 const studentModel = mongoose.model('student', studentSchema);

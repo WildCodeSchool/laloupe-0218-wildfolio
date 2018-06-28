@@ -18,6 +18,7 @@ export class ProjetResearchComponent implements OnInit {
   isLoading = true;
 
   cities = [];
+  selectedCity: any;
 
   constructor(
     private cityService: CityService,
@@ -27,7 +28,6 @@ export class ProjetResearchComponent implements OnInit {
 
   ngOnInit() {
     this.getCity();
-    this.getBlogProjet();
   }
 
   getCity() {
@@ -43,7 +43,7 @@ export class ProjetResearchComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets().subscribe(
+    this.blogProjetService.getBlogProjets(this.selectedCity).subscribe(
       (data) => {
         this.blogProjets = data;
         console.log(data);
@@ -51,6 +51,10 @@ export class ProjetResearchComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
+  }
+
+  showProject() {
+    this.getBlogProjet();
   }
 }
 

@@ -28,7 +28,7 @@ export class LoginCallbackComponent implements OnInit {
     localStorage.setItem('token_wcs', token);
     this.wcsService.getMe().subscribe((data) => {
       this.wcsService.student = data;
-      console.log(this.wcsService.student)
+     /*  console.log(this.wcsService.student); */
       const student = new Student();
       const location = new Location();
       student.name = data['firstname'];
@@ -36,36 +36,38 @@ export class LoginCallbackComponent implements OnInit {
       student.email = data['email'];
       student.WCS_ID = data['id'];
       student.github = data['github'];
-     /*  student.admin = data['admin'];
-      student.banished = data['banished']; */
+      /*  student.admin = data['admin'];
+       student.banished = data['banished']; */
       // student.members = data['current_crew'].users;
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
       this.students = student;
-      console.log(this.students);
+     /*  console.log(this.students); */
       this.locationService.addIfNotExist(location).subscribe(
         (res) => {
-          console.log(res);
+         /*  console.log(res); */
+          data['current_crew'].users.forEach(async studt => {
+            studt.WCS_ID = studt['id'];
+            studt.name = studt.fullname;
+            studt.location = location.WCS_ID;
+            delete studt.lastname;
+            delete studt.id;
+            await this.studentService.addStudentIfNotExists(studt).subscribe(
+              (res) => {
+                /*  console.log('add user', student); */
+              },
+              error => console.log(error),
+            );
+          });
+          this.studentService.addStudentIfNotExists(student).subscribe(
+            (res) => {
+              student.locationId = location.WCS_ID;
+             /*  console.log('connecter'); */
+            },
+            error => console.log(error),
+          );
+          this.router.navigate(['/']);
         });
-      data['current_crew'].users.forEach(async student => {
-        student.WCS_ID = student['id'];
-        student.name = student.fullname
-        delete student.lastname;
-        delete student.id;
-        await this.studentService.addStudentIfNotExists(student).subscribe(
-          (res) => {
-           /*  console.log('add user', student); */
-          },
-          error => console.log(error),
-        );
-      });
-      this.studentService.addStudentIfNotExists(student).subscribe(
-        (res) => {
-          console.log('connecter');
-        },
-        error => console.log(error),
-      );
-      this.router.navigate(['/']);
     });
   }
 }
