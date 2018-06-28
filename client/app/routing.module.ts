@@ -1,3 +1,4 @@
+import { ProfilComponent } from './profil/profil.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
+  { path: 'projet/:id', component: ProfilComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },
