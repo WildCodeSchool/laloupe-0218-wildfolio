@@ -22,6 +22,7 @@ export class NewPostComponent implements OnInit {
   imageUrl = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
+  // tslint:disable-next-line:variable-name
   WCS_id = new FormControl('', Validators.required);
 
   constructor(private blogProjetService: BlogProjetService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
