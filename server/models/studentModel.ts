@@ -10,10 +10,8 @@ const studentSchema = new mongoose.Schema({
   lienlinkedin: String,
   image: String,
   roles: String,
-  admin: Boolean,
-  banished: Boolean,
-  crew: Object,
-  members: Array,
+  locationId: Number,
+  campus: String
 });
 
 const studentModel = mongoose.model('student', studentSchema);

@@ -15,8 +15,8 @@
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Campus</h3>
-        <select class="custom-select selectWidth" id="session">
-          <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCity">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city">{{ city.name }}</option>
         </select>
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
@@ -42,7 +42,7 @@
 
       <div class="row mx-auto">
         <div class="col-12 search">
-          <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
+          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Chercher un Projet</button>
         </div>
       </div>
 

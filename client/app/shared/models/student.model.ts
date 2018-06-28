@@ -9,8 +9,6 @@ export class Student {
   lienlinkedin?: string;
   image?: string;
   roles?: string;
-  admin?: boolean;
-  banished?: boolean;
-  crew?: object;
-  members?: any[];
+  locationId?: number;
+  campus?: string;
 }
