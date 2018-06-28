@@ -49,7 +49,8 @@ export class LoginCallbackComponent implements OnInit {
           data['current_crew'].users.forEach(async studt => {
             studt.WCS_ID = studt['id'];
             studt.name = studt.fullname;
-            studt.location = location.WCS_ID;
+            studt.locationId = location.WCS_ID;
+            studt.campus = location.city;
             delete studt.lastname;
             delete studt.id;
             await this.studentService.addStudentIfNotExists(studt).subscribe(
@@ -62,6 +63,7 @@ export class LoginCallbackComponent implements OnInit {
           this.studentService.addStudentIfNotExists(student).subscribe(
             (res) => {
               student.locationId = location.WCS_ID;
+              student.campus = location.city;
              /*  console.log('connecter'); */
             },
             error => console.log(error),

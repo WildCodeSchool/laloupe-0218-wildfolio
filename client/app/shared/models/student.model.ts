@@ -7,4 +7,5 @@ export class Student {
   github?: string;
   roles?: string;
   locationId?: number;
+  campus?: string;
 }

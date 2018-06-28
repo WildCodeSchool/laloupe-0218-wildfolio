@@ -7,7 +7,8 @@ const studentSchema = new mongoose.Schema({
   WCS_ID: Number,
   github: String,
   roles: String,
-  locationId: Number
+  locationId: Number,
+  campus: String
 });
 
 const studentModel = mongoose.model('student', studentSchema);
