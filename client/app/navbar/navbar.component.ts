@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('token_wcs');
+    localStorage.clear();
     return this.isconnect = false;
   }
 

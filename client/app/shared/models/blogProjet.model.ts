@@ -5,4 +5,5 @@ export class BlogProjet {
   link?: string;
   imageUrl?: string;
   description?: string;
+  locationId?: number;
 }
