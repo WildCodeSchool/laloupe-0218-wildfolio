@@ -64,5 +64,3 @@ export class ProjetResearchComponent implements OnInit {
 //     return false;
 //   });
 // });
-
-

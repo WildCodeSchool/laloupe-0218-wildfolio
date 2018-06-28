@@ -100,12 +100,6 @@ export class NavbarComponent implements OnInit {
       console.log('No');
     }
   }
-  getMe() {
-    this.studentService.getMe().subscribe((data) => {
-      console.log('me');
-    });
-  }
-
   getCity() {
     this.cityService.getCities().subscribe((data) => {
       this.cities = data.sort((a, b) => {

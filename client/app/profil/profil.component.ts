@@ -52,7 +52,6 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.getMe();
     this.id = this.route.snapshot.paramMap.get('id');
-    this.getStudent();
   }
 
   getMe() {

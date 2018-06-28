@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'newPost', component: NewPostComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
-  { path: 'profil/:id', component: ProfilComponent },
+  { path: 'profil', component: ProfilComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },
