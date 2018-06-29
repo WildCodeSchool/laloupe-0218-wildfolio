@@ -1,25 +1,25 @@
+<app-loading [condition]="isLoading">
+</app-loading>
 
-  <app-loading [condition]="isLoading"></app-loading>
+<app-toast [message]="toast.message"></app-toast>
 
-  <app-toast [message]="toast.message"></app-toast>
-  
 <div class="container-fluid" *ngIf="me">
-    <div class="row">
-        <div class="mx-auto">
-            <h1>Profil</h1>
-            <hr/>
-        </div>
+  <div class="row">
+    <div class="mx-auto">
+      <h1>Profil</h1>
+      <hr/>
     </div>
-    <div class="row">
-        <div class="mx-auto">
-            <h2>Prénom Nom : {{ me.name }} </h2>
-            <h2>Email : {{ me.email }}</h2>
-            <h2>Github : {{ me.github }}</h2>
-            <h2>Linkedin : {{ me.linkedin }}</h2>
-            <h2>Lien Linkedin : {{ me.lienLinkedin }}</h2>
-            <h2>img: {{ me.image }}</h2>
-        </div>
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+      <h2>Prénom Nom : {{ me.name }} </h2>
+      <h2>Email : {{ me.email }}</h2>
+      <h2>Github : {{ me.github }}</h2>
+      <h2>Linkedin : {{ me.linkedin }}</h2>
+      <h2>Lien Linkedin : {{ me.lienLinkedin }}</h2>
+      <h2>img: {{ me.image }}</h2>
     </div>
+  </div>
 </div>
 <!-- name: String,
   lastname: String,
@@ -28,70 +28,78 @@
   linkedin: String,
   lienlinkedin: String,
   image: String, -->
+<div class="row mt-2 mb-2">
+  <div class="offset-4">
+    <button (click)="showEdit()" *ngIf="!edit">Edit</button>
+    <button (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
+  </div>
+</div>
 
-  
-  <div class="card">
-    <h4 class="card-header backgroundNav">Ajouter des infos</h4>
-    <div class="card-body"  >
-        <form class="form-inline" *ngIf="me"[formGroup]="addStudentForm" (ngSubmit)="canAddStudent()">
-            <input class="form-control mr-2" type="text" name="github" formControlName="github" placeholder="Nom du github">
-            <input class="form-control mr-2" type="text" name="linkedin" formControlName="linkedin" placeholder="Nom du linkedin">
-            <input class="form-control mr-2" type="text" name="lienLinkedin" formControlName="lienLinkedin" placeholder="lien du linkedin">
-            <input class="form-control mr-2" type="text" name="image" formControlName="image" placeholder="Lien image">
-            <button class="btn btn-primary" type="submit" [disabled]="!addStudentForm.valid">
-                <i class="fa fa-floppy-o"></i> Ajouter</button>
-        </form>
-    </div>
+<div class="card" *ngIf="edit">
+  <h4 class="card-header backgroundNav">Ajouter des infos</h4>
+  <div class="card-body">
+    <form class="form-inline" *ngIf="me" [formGroup]="addStudentForm" (ngSubmit)="addStudent()">
+      <input class="form-control mr-2" type="text" name="github" formControlName="github" placeholder="Nom du github">
+      <input class="form-control mr-2" type="text" name="email" formControlName="email" placeholder="Email">
+      <input class="form-control mr-2" type="text" name="linkedin" formControlName="linkedin" placeholder="Nom du linkedin">
+      <input class="form-control mr-2" type="text" name="lienLinkedin" formControlName="lienLinkedin" placeholder="lien du linkedin">
+      <input class="form-control mr-2" type="text" name="image" formControlName="image" placeholder="Lien image">
+      <button class="btn btn-primary" type="submit" [disabled]="!addStudentForm.valid">
+        <i class="fa fa-floppy-o"></i> Ajouter</button>
+    </form>
+  </div>
 
-      <div class="card mb-3" *ngIf="!isLoading">
-        <h4 class="card-header backgroundNav">Projets </h4>
-        <div class="card-body">
-          <table class="table table-bordered">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Nom du projet</th>
-                <th scope="col">imageUrl</th>
-                <th scope="col">Lien</th>
-                <th scope="col">Description</th>
-                <th scope="col">Modifier/Supprimer</th>
-              </tr>
-            </thead>
-            <!-- <tbody *ngIf="me.length === 0">
+  <div class="card mb-3" *ngIf="!isLoading">
+    <h4 class="card-header backgroundNav">Projets </h4>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nom du projet</th>
+            <th scope="col">imageUrl</th>
+            <th scope="col">Lien</th>
+            <th scope="col">Description</th>
+            <th scope="col">Modifier/Supprimer</th>
+          </tr>
+        </thead>
+        <!-- <tbody *ngIf="me.length === 0">
               <tr>
                 <td colspan="4">Il n'y a pas de projet ajouter.</td>
               </tr>
             </tbody> -->
-            <tbody *ngIf="!isEditing">
-              <tr *ngFor="let me of mes">
-                <td>{{ me.name }}</td>
-                <td><img class="imageUrl" src="{{ me.image }}" alt="Can't access"></td>
-                <td>
-                  <a href="{{ me.lienLinkedin }}" target="_blank">{{ me.lienLinkedin }}</a>
-                </td>
-                <td>{{ me.linkedin }}</td>
-                <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(me)">
-                  <i class="fa fa-pencil"></i> Modifier</button>
-                <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(me)">
-                  <i class="fa fa-trash"></i> Supprimer</button>
-              </tr>
-            </tbody>
-            <tbody *ngIf="isEditing">
-              <tr>
-                <td colspan="4" *ngIf="me" >
-                  <form class="form-inline" #form="ngForm" (ngSubmit)="editStudent(me)">
-                    <input class="form-control mr-2" type="text" name="github" [(ngModel)]="me.github" placeholder="Name Github" required>
-                    <input class="form-control mr-2" type="text" name="image" [(ngModel)]="me.image" placeholder="Url Image" required>
-                    <input class="form-control mr-2" type="text" name="linkedin" [(ngModel)]="me.linkedin" placeholder="Link" required>
-                    <textarea class="form-control mr-2" type="text" name="lienLinkedin" [(ngModel)]="me.lienLinkedin" placeholder="lien"></textarea>
-                    <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
-                      <i class="fa fa-floppy-o"></i> Save</button>
-                    <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
-                      <i class="fa fa-times"></i> Cancel</button>
-                  </form>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div> 
+        <tbody *ngIf="!isEditing">
+          <tr *ngFor="let me of mes">
+            <td>{{ me.name }}</td>
+            <td>
+              <img class="imageUrl" src="{{ me.image }}" alt="Can't access">
+            </td>
+            <td>
+              <a href="{{ me.lienLinkedin }}" target="_blank">{{ me.lienLinkedin }}</a>
+            </td>
+            <td>{{ me.linkedin }}</td>
+            <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(me)">
+              <i class="fa fa-pencil"></i> Modifier</button>
+            <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(me)">
+              <i class="fa fa-trash"></i> Supprimer</button>
+          </tr>
+        </tbody>
+        <tbody *ngIf="isEditing">
+          <tr>
+            <td colspan="4" *ngIf="me">
+              <form class="form-inline" #form="ngForm" (ngSubmit)="editStudent(me)">
+                <input class="form-control mr-2" type="text" name="github" [(ngModel)]="me.github" placeholder="Name Github" required>
+                <input class="form-control mr-2" type="text" name="image" [(ngModel)]="me.image" placeholder="Url Image" required>
+                <input class="form-control mr-2" type="text" name="linkedin" [(ngModel)]="me.linkedin" placeholder="Link" required>
+                <textarea class="form-control mr-2" type="text" name="lienLinkedin" [(ngModel)]="me.lienLinkedin" placeholder="lien"></textarea>
+                <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
+                  <i class="fa fa-floppy-o"></i> Save</button>
+                <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                  <i class="fa fa-times"></i> Cancel</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
