@@ -9,13 +9,16 @@ export class BlogProjetService {
 
   constructor(private http: HttpClient) { }
 
-  getBlogProjets(city): Observable<BlogProjet[]> {
-    console.log(city);
-    return this.http.get<BlogProjet[]>('/api/blogProjet', { params: { city } });
+  getBlogProjets(): Observable<BlogProjet[]> {
+    return this.http.get<BlogProjet[]>('/api/blogProjets');
+  }
+
+  getBlogProjetsByLocationId(locationId: number): Observable<BlogProjet[]> {
+    return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${locationId}`);
   }
 
   countBlogProjets(): Observable<number> {
-    return this.http.get<number>('/api/blogProjet/count');
+    return this.http.get<number>('/api/blogProjets/count');
   }
 
   addBlogProjet(blogProjet: BlogProjet): Observable<BlogProjet> {

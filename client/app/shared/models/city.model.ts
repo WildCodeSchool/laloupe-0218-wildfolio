@@ -3,4 +3,5 @@ export class City {
   name?: string;
   link?: string;
   WCS_ID?: number;
+  locationId?: number;
 }

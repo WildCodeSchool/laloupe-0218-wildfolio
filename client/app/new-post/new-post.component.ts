@@ -38,7 +38,7 @@ export class NewPostComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets({}).subscribe(
+    this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
       },
@@ -59,6 +59,8 @@ export class NewPostComponent implements OnInit {
     if (this.canAddBlogProjet()) {
       this.studentService.getMe().subscribe((me) => {
         this.addBlogProjetForm.value.studentId = me._id;
+        this.addBlogProjetForm.value.locationId = me.locationId;
+        console.log(me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
             this.newBlogProjet = new BlogProjet;

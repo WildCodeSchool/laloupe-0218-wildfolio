@@ -4,9 +4,19 @@ import BaseController from './BaseController';
 export default class BlogProjetController extends BaseController {
   model = blogProjetModel;
 
+
+  getAllByLocationId = (req, res) => {
+    this.model.find({locationId: req.params.id}, (err, docs) => {
+      if (err) { return console.error(err); }
+      // console.log(docs);
+      res.status(200).json(docs);
+    });
+  }
+
+
   // Insert
   getAllBy = (req, res) => {
-    console.log(req.params);
+    console.log(req.query);
     this.model.find({ WCS_ID: req.body.WCS_ID }, (err, item) => {
       if (err) {
         return console.error(err);

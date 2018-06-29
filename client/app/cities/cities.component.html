@@ -14,6 +14,7 @@
     <form class="form-inline" [formGroup]="addCityForm" (ngSubmit)="addCity()">
       <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom">
       <input class="form-control mr-2" type="text" name="link" formControlName="link" placeholder="Lien">
+      <input class="form-control mr-2" type="text" name="locationId" formControlName="locationId" placeholder="Id">
       <button class="btn btn-primary" type="submit" [disabled]="!addCityForm.valid">
         <i class="fa fa-floppy-o"></i> Ajouter</button>
     </form>
@@ -26,7 +27,7 @@
           <tr>
             <th scope="col">Nom du campus</th>
             <th scope="col">Lien</th>
-            <th scope="col">Projets</th>
+            <th scope="col">Id</th>
             <th scope="col">Modifier/Supprimer</th>
           </tr>
         </thead>
@@ -41,7 +42,7 @@
             <td>
               <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
             </td>
-            <td>{{ city.projet }}</td>
+            <td>{{ city.locationId }}</td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">
