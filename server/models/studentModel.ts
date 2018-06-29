@@ -11,7 +11,7 @@ const studentSchema = new mongoose.Schema({
   image: String,
   roles: String,
   locationId: Number,
-  campus: String
+  campus: String,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

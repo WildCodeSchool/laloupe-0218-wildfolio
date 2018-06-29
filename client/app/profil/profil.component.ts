@@ -28,18 +28,13 @@ export class ProfilComponent implements OnInit {
   me;
 
   addStudentForm: FormGroup;
-  email = new FormControl('', Validators.required);
-  github = new FormControl('', Validators.required);
-  linkedin = new FormControl('', Validators.required);
-  lienLinkedin = new FormControl('', Validators.required);
-  image = new FormControl('', Validators.required);
-  // <!-- name: String,
-  // lastname: String,
-  // email: String,
-  // github: String,
-  // linkedin: String,
-  // lienlinkedin: String,
-  // image: String, -->
+  email = new FormControl('');
+  github = new FormControl('');
+  linkedin = new FormControl('');
+  lienLinkedin = new FormControl('');
+  image = new FormControl('');
+  name = new FormControl('');
+
   constructor(
     private studentService: StudentService,
     private formBuilder: FormBuilder,
@@ -52,13 +47,22 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.getMe();
     this.id = this.route.snapshot.paramMap.get('id');
+    this.addStudentForm = this.formBuilder.group({
+      lienLinkedin: this.lienLinkedin,
+      linkedin: this.linkedin,
+      image: this.image,
+      github: this.github,
+    });
   }
 
   getMe() {
     this.studentService.getMe().subscribe((data) => {
       this.me = data;
       console.log(this.me);
-    });
+    },
+                                          error => console.log(error),
+                                          () => this.isLoading = false,
+  );
   }
 
   getStudent() {
@@ -109,7 +113,7 @@ export class ProfilComponent implements OnInit {
   }
 
   canAddStudent() {
-    for (let i = 0; i < this.students.length; i += 1) {
+    for (let i = 0; i < this.me.length; i += 1) {
       if (this.students[i].name === this.addStudentForm.value.name) {
         return false;
       }
