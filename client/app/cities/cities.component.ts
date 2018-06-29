@@ -45,7 +45,6 @@ export class CitiesComponent implements OnInit {
       link: this.link,
     });
   }
-  
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
