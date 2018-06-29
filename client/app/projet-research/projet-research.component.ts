@@ -18,7 +18,7 @@ export class ProjetResearchComponent implements OnInit {
   isLoading = true;
 
   cities = [];
-  selectedCity: any;
+  selectedCityId: any;
 
   constructor(
     private cityService: CityService,
@@ -43,7 +43,7 @@ export class ProjetResearchComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets(this.selectedCity).subscribe(
+    this.blogProjetService.getBlogProjetsByLocationId(this.selectedCityId).subscribe(
       (data) => {
         this.blogProjets = data;
         console.log(data);
@@ -64,5 +64,3 @@ export class ProjetResearchComponent implements OnInit {
 //     return false;
 //   });
 // });
-
-

@@ -3,6 +3,8 @@ import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ToastComponent } from '../shared/toast/toast.component';
+import { WcsService } from '../wcs.service';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-new-post',
@@ -22,9 +24,8 @@ export class NewPostComponent implements OnInit {
   imageUrl = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
-  WCS_id = new FormControl('', Validators.required);
 
-  constructor(private blogProjetService: BlogProjetService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
+  constructor(private blogProjetService: BlogProjetService, private formBuilder: FormBuilder, public toast: ToastComponent, private studentService: StudentService) { }
 
   ngOnInit() {
     this.getBlogProjet();
@@ -37,7 +38,7 @@ export class NewPostComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets({}).subscribe(
+    this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
       },
@@ -56,19 +57,21 @@ export class NewPostComponent implements OnInit {
 
   addBlogProjet() {
     if (this.canAddBlogProjet()) {
-      this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
-        (blogProjet) => {
-          this.newBlogProjet = new BlogProjet;
-          this.blogProjets.push(blogProjet);
-          this.addBlogProjetForm.reset();
-          console.log(blogProjet);
-          // for (let i = 0 ; i < this.blogProjets.length; i++){
-          //   console.log(this.WCS_id);
-          // }
-          this.toast.setMessage('item added successfully.', 'success');
-        },
-        error => console.log(error),
-      );
+      this.studentService.getMe().subscribe((me) => {
+        this.addBlogProjetForm.value.studentId = me._id;
+        this.addBlogProjetForm.value.locationId = me.locationId;
+        console.log(me);
+        this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
+          (blogProjet) => {
+            this.newBlogProjet = new BlogProjet;
+            this.blogProjets.push(blogProjet);
+            this.addBlogProjetForm.reset();
+            console.log(blogProjet);
+            this.toast.setMessage('item added successfully.', 'success');
+          },
+          error => console.log(error),
+        );
+      })
     } else {
       this.addBlogProjetForm.reset();
       this.toast.setMessage('projet already exist.', 'warning');

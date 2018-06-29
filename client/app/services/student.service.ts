@@ -12,6 +12,16 @@ export class StudentService {
     return this.http.get<Student[]>('/api/students');
   }
 
+  getMe(): Observable<Student> {
+    const id = localStorage.getItem('WCS_ID');
+    return this.http.get<Student>(`/api/student/wcs/${id}`);
+  }
+
+  getMyLocation(): Observable<Student> {
+    const locationid = localStorage.getItem('locationId');
+    return this.http.get<Student>(`/api/student/wcs/${locationid}`);
+  }
+
   countStudents(): Observable<number> {
     return this.http.get<number>('/api/students/count');
   }

@@ -13,7 +13,7 @@ import { BlogProjet } from '../shared/models/blogProjet.model';
 })
 export class StudentEleveComponent implements OnInit {
 
-  student: Student
+  student: Student;
   id: string;
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
@@ -38,21 +38,6 @@ export class StudentEleveComponent implements OnInit {
         console.log(this.student);
       },
     );
-  }
-
-  getBlogProjet() {
-    this.blogProjetService.getBlogProjets(this.blogProjet).subscribe(
-      (data) => {
-        this.blogProjets = data;
-        console.log(data);
-      },
-      error => console.log(error),
-      () => this.isLoading = false,
-    );
-  }
-
-  showProject() {
-    this.getBlogProjet();
   }
 
 }
