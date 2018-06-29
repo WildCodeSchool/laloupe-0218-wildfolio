@@ -1,27 +1,32 @@
-/* Here */
-.btn {
-    background: #ff0000;
-    background-image: -webkit-linear-gradient(top, #ff0000, #b37676);
-    background-image: -moz-linear-gradient(top, #ff0000, #b37676);
-    background-image: -ms-linear-gradient(top, #ff0000, #b37676);
-    background-image: -o-linear-gradient(top, #ff0000, #b37676);
-    background-image: linear-gradient(to bottom, #ff0000, #b37676);
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0px;
-    color: #ffffff;
-    font-size: 19px;
-    padding: 10px 20px 10px 20px;
-    border: solid #a8deff 2px;
-    text-decoration: none;
+.container-fluid {
+  margin-top: 16vh;
+}
+
+.profil{
+  margin-bottom: 4%;
+}
+
+  img {
+    width: 100px;
+    height: 100px;
+    border: 7px solid #fff;
   }
-  
-  .btn:hover {
-    background: #ff0000;
-    background-image: -webkit-linear-gradient(top, #ff0000, #dba315);
-    background-image: -moz-linear-gradient(top, #ff0000, #dba315);
-    background-image: -ms-linear-gradient(top, #ff0000, #dba315);
-    background-image: -o-linear-gradient(top, #ff0000, #dba315);
-    background-image: linear-gradient(to bottom, #ff0000, #dba315);
-    text-decoration: none;
+
+  .specialities{
+    border: solid black;
   }
+
+  .contact{
+    border: solid black;
+    margin-bottom: 4%;
+    text-align: center;
+  }
+
+  .palmares{
+    border: solid black;
+  }
+
+  .projets{
+    border: solid black;
+  }
+

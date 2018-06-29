@@ -38,7 +38,7 @@ export class NewPostComponent implements OnInit {
   }
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets({}).subscribe(
+    this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
       },
@@ -59,6 +59,8 @@ export class NewPostComponent implements OnInit {
     if (this.canAddBlogProjet()) {
       this.studentService.getMe().subscribe((me) => {
         this.addBlogProjetForm.value.studentId = me._id;
+        this.addBlogProjetForm.value.locationId = me.locationId;
+        console.log(me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
             this.newBlogProjet = new BlogProjet;
@@ -120,5 +122,24 @@ export class NewPostComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 }

@@ -60,7 +60,6 @@ abstract class BaseController {
 
   // Get by id
   getbyWCSID = (req, res) => {
-    console.log(req.params, 'ok');
     this.model.findOne({ WCS_ID: req.params.id }, (err, item) => {
       if (err) { return console.error(err); }
       res.status(200).json(item);

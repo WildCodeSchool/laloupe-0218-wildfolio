@@ -48,8 +48,9 @@ export default function routes(app) {
   router.route('/location/:id').delete(location.delete);
 
   // blogProjet
-  router.route('/blogProjet').get(blogProjet.getAllBy);
-  router.route('/blogProjet/count').get(blogProjet.count);
+  router.route('/blogProjets').get(blogProjet.getAll);
+  router.route('/blogProjets/location/:id').get(blogProjet.getAllByLocationId);
+  router.route('/blogProjets/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);
   router.route('/blogProjet/:id').get(blogProjet.get);
   router.route('/blogProjet/:id').put(blogProjet.update);

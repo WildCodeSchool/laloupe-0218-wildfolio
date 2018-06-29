@@ -27,6 +27,7 @@ export class CitiesComponent implements OnInit {
   addCityForm: FormGroup;
   name = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
+  locationId = new FormControl('', Validators.required);
 
   constructor(
     private cityService: CityService,
@@ -43,6 +44,7 @@ export class CitiesComponent implements OnInit {
     this.addCityForm = this.formBuilder.group({
       name: this.name,
       link: this.link,
+      locationId: this.locationId,
     });
   }
   getCity() {

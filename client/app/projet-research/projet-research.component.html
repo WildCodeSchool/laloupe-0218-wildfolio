@@ -15,8 +15,8 @@
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Campus</h3>
-        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCity">
-          <option *ngFor="let city of cities" target="_blank" [ngValue]="city">{{ city.name }}</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.locationId">{{ city.name }}</option>
         </select>
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
@@ -68,6 +68,9 @@
         <div class="tz-gallery">
 
           <div class="row mb-3">
+            <div class="mx-auto" *ngIf="blogProjets.length == 0">
+              <h3>Aucun projet pour ce campus.</h3>
+            </div>
             <div class="col-md-4 portfolio-item" *ngFor="let blogProjet of blogProjets">
               <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
                 <div class="portfolio-hover">

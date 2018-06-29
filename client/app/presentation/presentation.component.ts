@@ -4,6 +4,7 @@ import { Recrut } from '../shared/models/recrut.model';
 import { RecrutService } from '../services/recrut.service';
 import * as AOS from 'aos';
 import { StudentService } from '../services/student.service';
+import { Student } from '../shared/models/student.model';
 import { WcsService } from '../wcs.service';
 import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
@@ -22,16 +23,19 @@ export class PresentationComponent implements OnInit {
   isLoading = true;
   isClick = false;
   recruts: Recrut[] = [];
+  students: Student[];
+  student = new Student();
 
   constructor(
     route: ActivatedRoute,
     private recrutService: RecrutService,
-    private wcsService: WcsService,
+    private studentService: StudentService,
     private blogProjetService: BlogProjetService,
   ) { }
 
   ngOnInit() {
     this.getBlogProjet();
+    this.getStudent();
     this.getRecrut();
     AOS.init({
       duration: 800,
@@ -53,16 +57,30 @@ export class PresentationComponent implements OnInit {
   }
 
 
-  // Projet
+  // Projets
 
   getBlogProjet() {
-    this.blogProjetService.getBlogProjets({}).subscribe(
+    this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
         // for (let i = 0; i < this.blogProjets.length; i++) {
         //   let num = Math.floor(Math.random() * 3);
         //   console.log(this.blogProjets[i].WCS_id);
         // }
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+
+   // Développeurs
+
+  getStudent() {
+    this.studentService.getStudents().subscribe(
+      (data) => {
+        console.log(data);
+        this.students = data;
+        return Math.floor(Math.random() * this.student.WCS_ID);
       },
       error => console.log(error),
       () => this.isLoading = false,

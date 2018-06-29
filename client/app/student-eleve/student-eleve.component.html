@@ -1,15 +1,65 @@
+<app-navbar></app-navbar>
+
 <div class="container-fluid" *ngIf="student">
-    <div class="row">
-        <div class="mx-auto">
-            <h1>Profil</h1>
-            <hr/>
+    <div class="row profil">
+        <div class="col-md-3 col-sm-12 mx-auto">
+            <img class="rounded-circle" src="/../assets/profil.jpg" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12 mx-auto">
+            <h2>{{ student.name }} {{ student.lastname }}</h2>
+            <h2>Titre</h2>
+            <div class="specialities">Mes spécialités :
+                <ul>
+                    <li>Javascript</li>
+                    <li>Angular</li>
+                    <li>VueJS</li>
+                </ul>
+            </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="mx-auto">
-            <h2>Prénom Nom : {{ student.name }} {{ student.lastname }}</h2>
-            <h2>Email : {{ student.email }}</h2>
-            <h2>Github : {{ student.github }}</h2>
+        <div class="col-md-3 col-sm-12 mx-auto">
+            <div class="contact">Me contacter :
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                </li>
+            </div>
+            <div class="palmares">Mon Palmarès :
+                <p>Prix du Grand Vainqueur Hackathon mai 2018</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 mx-auto">
+            <div class="projets">Mes projets :
+                <div class="portfolio-item" *ngFor="let blogProjet of blogProjets">
+                    <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-chevron-down fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
