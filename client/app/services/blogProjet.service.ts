@@ -17,6 +17,10 @@ export class BlogProjetService {
     return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${locationId}`);
   }
 
+  getBlogProjetsBySession(session: string): Observable<BlogProjet[]> {
+    return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${session}`);
+  }
+
   countBlogProjets(): Observable<number> {
     return this.http.get<number>('/api/blogProjets/count');
   }

@@ -53,6 +53,17 @@ export class ProjetResearchComponent implements OnInit {
     );
   }
 
+  getBlogProjetBySession() {
+    this.blogProjetService.getBlogProjetsBySession(this.selectedSession).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+
   showProject() {
     this.getBlogProjet();
   }
