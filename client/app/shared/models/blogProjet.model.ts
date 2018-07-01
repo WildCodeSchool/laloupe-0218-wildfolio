@@ -6,4 +6,5 @@ export class BlogProjet {
   imageUrl?: string;
   description?: string;
   locationId?: number;
+  session?: string;
 }

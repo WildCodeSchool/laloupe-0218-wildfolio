@@ -8,6 +8,7 @@ const blogProjetSchema = new mongoose.Schema({
   description: String,
   studentId: String,
   locationId: Number,
+  session: String,
 });
 
 const blogProjetModel = mongoose.model('blogProjet', blogProjetSchema);
