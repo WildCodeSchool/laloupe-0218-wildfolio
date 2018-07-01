@@ -12,6 +12,7 @@ const studentSchema = new mongoose.Schema({
   roles: String,
   locationId: Number,
   campus: String,
+  session: String,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

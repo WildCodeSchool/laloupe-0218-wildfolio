@@ -11,4 +11,5 @@ export class Student {
   roles?: string;
   locationId?: number;
   campus?: string;
+  session?: string;
 }
