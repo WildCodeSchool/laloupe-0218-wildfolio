@@ -54,7 +54,7 @@ export class ProjetResearchComponent implements OnInit {
   }
 
   getBlogProjetBySession() {
-    this.blogProjetService.getBlogProjetsBySession(this.selectedSession).subscribe(
+    this.blogProjetService.getBlogProjetsBySession(this.selectedCityId).subscribe(
       (data) => {
         this.blogProjets = data;
         console.log(data);
