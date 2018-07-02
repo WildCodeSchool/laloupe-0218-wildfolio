@@ -132,9 +132,12 @@ export class ProfilComponent implements OnInit {
 
   showEdit() {
     this.edit = true;
+    this.isEditing = true;
   }
   hiddenEdit() {
     this.edit = false;
+    this.isEditing = false;
+
   }
 
   // isAdmin() {
