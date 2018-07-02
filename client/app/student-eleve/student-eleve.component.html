@@ -1,56 +1,81 @@
 <app-navbar></app-navbar>
 
 <div class="container-fluid" *ngIf="student">
-    <div class="row profil">
-        <div class="col-md-3 col-sm-12 mx-auto">
-            <img class="rounded-circle" src="/../assets/profil.jpg" alt="">
+    <div class="row justify-content-start profil">
+        <div class="col-md-3 col-sm-12 mx-auto photo">
+            <img class="rounded-circle" src="/../assets/profil.jpg" alt="photoDev">
         </div>
-        <div class="col-md-6 col-sm-12 mx-auto">
-            <h2>{{ student.name }} {{ student.lastname }}</h2>
-            <h2>Titre</h2>
-            <div class="specialities">Mes spécialités :
-                <ul>
-                    <li>Javascript</li>
-                    <li>Angular</li>
-                    <li>VueJS</li>
+        <div class="col-md-8 col-sm-12 mx-auto">
+            <div class="nameDev">
+                <h1>{{ student.name }} {{ student.lastname }}</h1>
+                <h2 class="poste">Stagiaire</h2>
+            </div>
+            <div class="specialities">
+                <div class="row speciality">
+                    <div class="col-sm-12">
+                        <h3>Mes spécialités :</h3>
+                    </div>
+                </div>
+                <ul class="list-inline keywords">
+                    <li class="list-inline-item keyword">Javascript</li>
+                    <li class="list-inline-item keyword">Angular</li>
+                    <li class="list-inline-item keyword">VueJS</li>
+                    <li class="list-inline-item keyword">MongoDB</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-start">
         <div class="col-md-3 col-sm-12 mx-auto">
-            <div class="contact">Me contacter :
+            <div class="contact">
+                <h3>Me contacter :</h3>
                 <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
+                    <li class="list-inline-item linksocial">
                         <a href="#">
                             <i class="fa fa-linkedin"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="#">
+                    <li class="list-inline-item linksocial">
+                        <a href="https://github.com/{{ student.github }}" target="blank">
                             <i class="fa fa-github"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="#">
+                    <li class="list-inline-item linksocial">
+                        <a href="mailto:{{ student.email }}">
                             <i class="fa fa-envelope"></i>
                         </a>
                     </li>
                 </ul>
-                <li class="list-inline-item">
-                    <a href="#">
-                        <i class="fa fa-phone"></i>
-                    </a>
-                </li>
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item linksocial phone">06 06 06 06 06</li>
+                </ul>
             </div>
-            <div class="palmares">Mon Palmarès :
-                <p>Prix du Grand Vainqueur Hackathon mai 2018</p>
+            <div class="palmares">
+                <div class="row">
+                    <div class="col-sm-12 titleprojects">
+                        <h3>Mon Palmarès :</h3>
+                    </div>
+                </div>
+                <ul class="list-palmares">
+                    <li class="title-palmares">Prix du Grand Vainqueur Hackathon mai 2018</li>
+                </ul>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 mx-auto">
-            <div class="projets">Mes projets :
-                <div class="portfolio-item" *ngFor="let blogProjet of blogProjets">
+        <div class="col-md-8 col-sm-12 mx-auto">
+            <div class="projets" id="portfolio">
+                <div class="row">
+                    <div class="col-sm-12 titleprojects">
+                        <h3>Mes projets :</h3>
+                    </div>
+                </div>
+                <div class="row projects">
+                    <!-- <div class="portfolio-item" *ngFor="let blogProjet of blogProjets">
                     <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -59,7 +84,79 @@
                         </div>
                         <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
                     </a>
+                </div> -->
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
+                </div>
+                <div class="row projects">
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
+                                alt="projet">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+    <app-footer></app-footer>
