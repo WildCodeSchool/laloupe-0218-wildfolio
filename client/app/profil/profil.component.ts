@@ -27,7 +27,6 @@ export class ProfilComponent implements OnInit {
   id: string;
   me;
   edit = false;
-  addpalmares = false;
 
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
@@ -36,9 +35,9 @@ export class ProfilComponent implements OnInit {
   lienLinkedin = new FormControl('');
   image = new FormControl('');
   name = new FormControl('');
-  palmares = new FormControl('');
   poste = new FormControl('');
   specialites = new FormControl('');
+  
 
   
 
@@ -60,7 +59,6 @@ export class ProfilComponent implements OnInit {
       image: this.image,
       github: this.github,
       email: this.email,
-      palmares: this.palmares,
       poste: this.poste,
       specialites : this.specialites,
     });
@@ -136,16 +134,9 @@ export class ProfilComponent implements OnInit {
   showEdit() {
     this.edit = true;
   }
+
   hiddenEdit() {
     this.edit = false;
-  }
-
-  isAddPalmares() {
-    this.addpalmares = true;
-  }
-
-  AddPalmares() {
-    
   }
 
   // isAdmin() {

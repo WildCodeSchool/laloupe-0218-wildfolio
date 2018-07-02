@@ -12,4 +12,6 @@ export class Student {
   locationId?: number;
   campus?: string;
   session?: string;
+  program_type?: object;
+  langageId?: number;
 }

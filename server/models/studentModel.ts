@@ -11,9 +11,10 @@ const studentSchema = new mongoose.Schema({
   image: String,
   roles: String,
   locationId: Number,
-  palmares: Array,
   poste: String, // boolean ?
   specialites: Array,
+  program_type: Object,
+  langageId: Number
 });
 
 const studentModel = mongoose.model('student', studentSchema);

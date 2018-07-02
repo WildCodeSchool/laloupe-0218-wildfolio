@@ -6,6 +6,7 @@ import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
 import StudentController from './controllers/StudentController';
 import LocationController from './controllers/LocationController';
+import LangageController from './controllers/LangageController';
 // import city from './models/city';
 // import user from './models/user';
 
@@ -19,6 +20,7 @@ export default function routes(app) {
   const user = new UserController();
   const student = new StudentController();
   const location = new LocationController();
+  const langage = new LangageController();
 
   // recruts
   router.route('/recruts').get(recrut.getAll);
@@ -37,6 +39,15 @@ export default function routes(app) {
   router.route('/student/wcs/:id').get(student.getbyWCSID);
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
+
+  // Langages
+  router.route('/langages').get(langage.getAll);
+  router.route('/langages/count').get(langage.count);
+  router.route('/langage').post(langage.insert);
+  router.route('/langage/ifNotExists').post(langage.insertIfNotExists);
+  router.route('/langage/:id').get(langage.get);
+  router.route('/langage/:id').put(langage.update);
+  router.route('/langage/:id').delete(langage.delete);
 
   // Location
   router.route('/locations').get(location.getAll);
