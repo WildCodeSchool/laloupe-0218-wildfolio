@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <section id="services">
-    <div class="container">
+    <div class="container" *ngIf="verifyRoles()">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">Bienvenue dans la partie administration</h2>
@@ -10,41 +10,52 @@
           <h3 class="section-subheading text-muted">
             Gérer les
             <a href="student">Éléves</a>
-            <a routerLink="/student"><i class="fas fa-cog"></i></a>
+            <a routerLink="/student">
+              <i class="fas fa-cog"></i>
+            </a>
           </h3>
           <hr/>
           <h3 class="section-subheading text-muted">
             Gérer les
             <a href="newPost">Projets</a>
-            <a routerLink="/newPost"><i class="fas fa-cog"></i></a>
+            <a routerLink="/newPost">
+              <i class="fas fa-cog"></i>
+            </a>
           </h3>
           <hr/>
           <h3 class="section-subheading text-muted">
             Gérer les
             <a href="cities">Campus</a>
-            <a routerLink="/cities"><i class="fas fa-cog"></i></a>
+            <a routerLink="/cities">
+              <i class="fas fa-cog"></i>
+            </a>
           </h3>
           <hr/>
           <h3 class="section-subheading text-muted">
-            Gérer <a href="recruts">l'oeil du recruteur</a>
-            <a routerLink="/recruts"><i class="fas fa-cog"></i></a>
+            Gérer
+            <a href="recruts">l'oeil du recruteur</a>
+            <a routerLink="/recruts">
+              <i class="fas fa-cog"></i>
+            </a>
           </h3>
           <hr/>
           <h3 class="section-subheading text-muted">
-            Gérer les <a href="recruts">sessions</a>
-            <a routerLink="/sessions"><i class="fas fa-cog"></i></a>
+            Gérer les
+            <a href="recruts">sessions</a>
+            <a routerLink="/sessions">
+              <i class="fas fa-cog"></i>
+            </a>
           </h3>
           <hr/>
-          <button (click)="verifyRoles()">click</button>
         </div>
       </div>
-    </div>
+      </div>
   </section>
-</div>
+  </div>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
 
-<!-- <div class="back">
+  <!-- <div class="back">
   <h2 class="titleAdmin col-12">Bienvenue dans la partie administration</h2>
   <div>
     <nav aria-label="breadcrumb">
