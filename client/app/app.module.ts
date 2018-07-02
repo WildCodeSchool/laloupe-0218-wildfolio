@@ -28,6 +28,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { BlogProjetService } from './services/blogProjet.service';
 import { ListStudentsComponent } from './list-students/list-students.component';
 import { LocationService } from './services/location.service';
+import { LangageService } from './services/langage.service';
 import { ProfilComponent } from './profil/profil.component';
 import { SessionComponent } from './session/session.component';
 import { SessionService } from './services/session.service';
@@ -81,6 +82,7 @@ export function tokenGetter() {
     BlogProjetService,
     WcsService,
     LocationService,
+    LangageService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

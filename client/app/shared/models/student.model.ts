@@ -14,4 +14,5 @@ export class Student {
   campus?: string;
   session?: string;
   sessionId?: string;
+  langageId?: number;
 }

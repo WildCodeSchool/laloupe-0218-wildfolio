@@ -79,7 +79,6 @@
           </tr>
           <td>
             <td>{{ me.linkedin }}</td>
-            <td>{{ me.palmares }}</td>
             <td>{{ me.poste }}</td>
             <td>{{ me.specialites }}</td> -->
             <!-- <td> 
@@ -99,10 +98,8 @@
                 <input class="form-control mr-2" type="text" name="image" [(ngModel)]="me.image" placeholder="Url Image" required>
                 <input class="form-control mr-2" type="text" name="lienLinkedin" [(ngModel)]="me.lienLinkedin" placeholder="lien linkedin">
                 <input class="form-control mr-2" type="text" name="linkedin" [(ngModel)]="me.linkedin" placeholder="Linkedin Nom">
-                <input class="form-control mr-2" type="text" name="palmares" [(ngModel)]="me.palmares" placeholder="Palmares">
                 <input class="form-control mr-2" type="text" name="poste" [(ngModel)]="me.poste" placeholder="Poste">
                 <input class="form-control mr-2" type="text" name="specialites" [(ngModel)]="me.specialites" placeholder="spécialités">
-
                 <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
                   <i class="fa fa-floppy-o"></i> Save</button>
                 <button class="btn btn-sm btn-warning" (click)="cancelEditing()">

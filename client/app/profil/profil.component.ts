@@ -35,9 +35,11 @@ export class ProfilComponent implements OnInit {
   lienLinkedin = new FormControl('');
   image = new FormControl('');
   name = new FormControl('');
-  palmares = new FormControl('');
   poste = new FormControl('');
   specialites = new FormControl('');
+  
+
+  
 
   constructor(
     private studentService: StudentService,
@@ -57,7 +59,6 @@ export class ProfilComponent implements OnInit {
       image: this.image,
       github: this.github,
       email: this.email,
-      palmares: this.palmares,
       poste: this.poste,
       specialites : this.specialites,
     });
@@ -134,6 +135,7 @@ export class ProfilComponent implements OnInit {
     this.edit = true;
     this.isEditing = true;
   }
+
   hiddenEdit() {
     this.edit = false;
     this.isEditing = false;

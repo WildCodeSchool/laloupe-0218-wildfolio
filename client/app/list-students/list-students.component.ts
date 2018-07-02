@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentService } from '../services/student.service';
 import { Student } from '../shared/models/student.model';
+import { LangageService } from '../services/langage.service';
+import { Langage } from '../shared/models/langage.model';
 
 @Component({
   selector: 'app-list-students',
@@ -13,7 +15,9 @@ export class ListStudentsComponent implements OnInit {
   students: Student[];
   isLoading = true;
   isEditing = false;
-  constructor(private studentService: StudentService) { }
+  // selectedLangageId: any;
+
+  constructor(private studentService: StudentService, private langageService: LangageService) { }
 
   ngOnInit() {
     this.getStudent();
@@ -29,4 +33,15 @@ export class ListStudentsComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
+
+  // getStudentByLangage() {
+  //   this.studentService.getStudentsByLangage(this.selectedLangageId).subscribe(
+  //     (data) => {
+  //       this.students = data;
+  //       console.log(data);
+  //     },
+  //     error => console.log(error),
+  //     () => this.isLoading = false,
+  //   );
+  // }
 }
