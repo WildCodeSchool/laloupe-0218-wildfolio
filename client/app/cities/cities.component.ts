@@ -12,6 +12,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { City } from '../shared/models/city.model';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-cities',
@@ -25,28 +26,26 @@ export class CitiesComponent implements OnInit {
   isEditing = false;
 
   addCityForm: FormGroup;
-  name = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
-  locationId = new FormControl('', Validators.required);
 
   constructor(
     private cityService: CityService,
     private formBuilder: FormBuilder,
     public toast: ToastComponent,
     private wcsService: WcsService,
+    private studentService: StudentService,
     private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router,
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.getCity();
+    this.addCityByStudentName();
     this.addCityForm = this.formBuilder.group({
-      name: this.name,
       link: this.link,
-      locationId: this.locationId,
     });
   }
+  
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
@@ -58,15 +57,31 @@ export class CitiesComponent implements OnInit {
     );
   }
 
+  addCityByStudentName() {
+    this.studentService.getMe().subscribe((me) => {
+      this.addCityForm.value.name = me.campus;
+      this.addCityForm.value.locationId = me.locationId;
+      this.cityService.addCity(this.addCityForm.value).subscribe(
+        (res) => {
+          this.cities.push(res);
+          this.addCityForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
+      );
+    })
+    this.getCity();
+  }
+
   addCity() {
     if (this.canAddCity()) {
       this.cityService.addCity(this.addCityForm.value).subscribe(
-      (res) => {
-        this.cities.push(res);
-        this.addCityForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      error => console.log(error),
+        (res) => {
+          this.cities.push(res);
+          this.addCityForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
       );
     } else {
       this.addCityForm.reset();

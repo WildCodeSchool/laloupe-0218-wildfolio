@@ -20,8 +20,9 @@ export class CityService {
   addCity(city: City): Observable<City> {
     return this.http.post<City>('/api/city', city);
   }
+
   addIfNotExist(city: City): Observable<City> {
-    return this.http.post<City>('/api/city/ifNotExists', city);
+    return this.http.post<City>('/api/city/ifNotId', city);
   }
 
   getCity(city: City): Observable<City> {

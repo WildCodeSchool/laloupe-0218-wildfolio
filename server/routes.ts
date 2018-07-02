@@ -62,7 +62,7 @@ export default function routes(app) {
   router.route('/cities').get(city.getAll);
   router.route('/cities/count').get(city.count);
   router.route('/city').post(city.insert);
-  router.route('/city/ifNotExists').post(city.insertIfNotExists);
+  router.route('/city/ifNotId').post(city.insertIfNotId);
   router.route('/city/:id').get(city.get);
   router.route('/city/:id').put(city.update);
   router.route('/city/:id').delete(city.delete);
