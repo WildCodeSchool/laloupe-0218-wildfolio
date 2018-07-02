@@ -15,10 +15,12 @@ import { ListStudentsComponent } from './list-students/list-students.component';
 import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 import { ProjetResearchComponent } from './projet-research/projet-research.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { SessionComponent } from './session/session.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'cities', component: CitiesComponent }, // Modification
+  { path: 'sessions', component: SessionComponent }, // Modification
   { path: 'projet', component: ProjetResearchComponent },
   { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
   { path: 'list-students', component: ListStudentsComponent },
