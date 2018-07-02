@@ -3,12 +3,12 @@
 <div class="container-fluid" *ngIf="student">
     <div class="row justify-content-start profil">
         <div class="col-md-3 col-sm-12 mx-auto photo">
-            <img class="rounded-circle" src="/../assets/profil.jpg" alt="photoDev">
+            <img class="rounded-circle" src="{{ student.image }}" alt="photoDev">
         </div>
         <div class="col-md-8 col-sm-12 mx-auto">
             <div class="nameDev">
-                <h1>{{ student.name }} {{ student.lastname }}</h1>
-                <h2 class="poste">Stagiaire</h2>
+                <h1>{{ student.name }}</h1>
+                <h2 class="poste">{{student.poste}}</h2>
             </div>
             <div class="specialities">
                 <div class="row speciality">
@@ -29,41 +29,60 @@
     <div class="row justify-content-start">
         <div class="col-md-3 col-sm-12 mx-auto">
             <div class="contact">
-                <h3>Me contacter :</h3>
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item linksocial">
-                        <a href="#">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item linksocial">
-                        <a href="https://github.com/{{ student.github }}" target="blank">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item linksocial">
-                        <a href="mailto:{{ student.email }}">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-phone"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item linksocial phone">06 06 06 06 06</li>
-                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Me contacter :</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item linksocial">
+                                <a href="{{ student.lienLinkedin }}" target="blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial">
+                                <a href="https://github.com/{{ student.github }}" target="blank">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="mailto:{{ student.email }}">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial mail">{{ student.email }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial phone">{{ student.phone }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="palmares">
+            <div class="palmares" *ngIf="this.student.palmares.length !== 0">
                 <div class="row">
                     <div class="col-sm-12 titleprojects">
                         <h3>Mon Palmarès :</h3>
                     </div>
                 </div>
                 <ul class="list-palmares">
-                    <li class="title-palmares">Prix du Grand Vainqueur Hackathon mai 2018</li>
+                    <li class="title-palmares">{{ student.palmares}}</li>
                 </ul>
             </div>
         </div>
@@ -159,4 +178,4 @@
         </div>
     </div>
 </div>
-    <app-footer></app-footer>
+<app-footer></app-footer>
