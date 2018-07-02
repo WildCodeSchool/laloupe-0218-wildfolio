@@ -59,9 +59,10 @@ export class CitiesComponent implements OnInit {
 
   addCityByStudentName() {
     this.studentService.getMe().subscribe((me) => {
+      console.log(me.campus);
       this.addCityForm.value.name = me.campus;
       this.addCityForm.value.locationId = me.locationId;
-      this.cityService.addCity(this.addCityForm.value).subscribe(
+      this.cityService.addIfNotExist(this.addCityForm.value).subscribe(
         (res) => {
           this.cities.push(res);
           this.addCityForm.reset();

@@ -38,11 +38,11 @@
         </tbody>
         <tbody *ngIf="!isEditing">
           <tr *ngFor="let session of sessions">
-            <td>{{ session.name }}</td>
-            <td>
+            <td>{{ session.date }}</td>
+           <!--  <td>
               <a href="{{ session.link }}" target="_blank">{{ session.name }}</a>
-            </td>
-            <td>{{ session.locationId }}</td>
+            </td> -->
+            <td>{{ session.WCS_ID }}</td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(session)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteSession(session)">

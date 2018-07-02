@@ -43,6 +43,7 @@ export class SessionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.addSessionByStudent();
     this.getSession();
     this.addSessionForm = this.formBuilder.group({
       name: this.name,
@@ -61,10 +62,29 @@ export class SessionComponent implements OnInit {
     );
   }
 
+  addSessionByStudent() {
+    this.studentService.getMe().subscribe((me) => {
+      this.addSessionForm.value.date = me.session;
+      this.addSessionForm.value.WCS_ID = me.sessionId;
+      console.log(me);
+      this.sessionService.addIfNotExist(this.addSessionForm.value).subscribe(
+        (session) => {
+          this.newSession = new Session;
+          this.sessions.push(session);
+          this.addSessionForm.reset();
+          console.log(session);
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
+      );
+    })
+  }
+
   addSession() {
     if (this.canAddSession()) {
       this.studentService.getMe().subscribe((me) => {
         this.addSessionForm.value.date = me.session;
+        this.addSessionForm.value.WCS_ID = me.sessionId;
         console.log(me);
         this.sessionService.addSession(this.addSessionForm.value).subscribe(
           (session) => {

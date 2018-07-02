@@ -11,10 +11,13 @@ const studentSchema = new mongoose.Schema({
   lienLinkedin: String,
   image: String,
   roles: String,
+  campus: String,
+  session: String,
+  sessionId: Number,
   locationId: Number,
-  palmares: Array,
-  poste: String, // boolean ?
-  specialites: Array,
+ /*  palmares: Array,
+  poste: String,
+  specialites: Array, */
 });
 
 const studentModel = mongoose.model('student', studentSchema);
