@@ -68,6 +68,9 @@
         <div class="tz-gallery">
 
           <div class="row mb-3">
+            <div class="mx-auto" *ngIf="blogProjets.length == 0">
+              <h3>Aucun projet pour ce campus.</h3>
+            </div>
             <div class="col-md-4 portfolio-item" *ngFor="let blogProjet of blogProjets">
               <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
                 <div class="portfolio-hover">

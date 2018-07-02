@@ -11,7 +11,8 @@ const studentSchema = new mongoose.Schema({
   image: String,
   roles: String,
   locationId: Number,
-  campus: String
+  campus: String,
+  session: String,
 });
 
 const studentModel = mongoose.model('student', studentSchema);

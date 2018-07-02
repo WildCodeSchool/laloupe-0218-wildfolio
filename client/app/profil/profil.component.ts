@@ -26,20 +26,16 @@ export class ProfilComponent implements OnInit {
   isEditing = false;
   id: string;
   me;
+  edit = false;
 
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
-  github = new FormControl('', Validators.required);
-  linkedin = new FormControl('', Validators.required);
-  lienLinkedin = new FormControl('', Validators.required);
-  image = new FormControl('', Validators.required);
-  // <!-- name: String,
-  // lastname: String,
-  // email: String,
-  // github: String,
-  // linkedin: String,
-  // lienlinkedin: String,
-  // image: String, -->
+  github = new FormControl('');
+  linkedin = new FormControl('');
+  lienLinkedin = new FormControl('');
+  image = new FormControl('');
+  name = new FormControl('');
+
   constructor(
     private studentService: StudentService,
     private formBuilder: FormBuilder,
@@ -52,23 +48,34 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.getMe();
     this.id = this.route.snapshot.paramMap.get('id');
-  }
-
-  getMe() {
-    this.studentService.getMe().subscribe((data) => {
-      this.me = data;
-      console.log(this.me);
+    this.addStudentForm = this.formBuilder.group({
+      lienLinkedin: this.lienLinkedin,
+      linkedin: this.linkedin,
+      image: this.image,
+      github: this.github,
+      email: this.email,
     });
   }
 
-  getStudent() {
-    this.studentService.getStudent(this.id).subscribe(
+  getMe() {
+    this.studentService.getMe().subscribe(
       (data) => {
-        this.student = data;
-        console.log(this.student);
+        this.me = data,
+        console.log(this.me);
       },
-    );
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
   }
+
+  // getStudent() {
+  //   this.studentService.getStudent(this.id).subscribe(
+  //     (data) => {
+  //       this.student = data;
+  //       console.log(this.student);
+  //     },
+  //   );
+  // }
   enableEditing(student: Student) {
     this.isEditing = true;
     this.student = student;
@@ -79,7 +86,7 @@ export class ProfilComponent implements OnInit {
     this.student = new Student();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cats to reset the editing
-    this.getStudent();
+    this.getMe();
   }
 
   editStudent(student: Student) {
@@ -108,15 +115,20 @@ export class ProfilComponent implements OnInit {
     }
   }
 
-  canAddStudent() {
-    for (let i = 0; i < this.students.length; i += 1) {
+  addStudent() {
+    for (let i = 0; i < this.me.length; i += 1) {
       if (this.students[i].name === this.addStudentForm.value.name) {
         return false;
       }
     }
     return true;
   }
-
+  showEdit() {
+    this.edit = true;
+  }
+  hiddenEdit() {
+    this.edit = false;
+  }
   // isAdmin() {
   //   return this.student.admin = true;
   // }

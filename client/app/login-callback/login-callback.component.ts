@@ -29,7 +29,7 @@ export class LoginCallbackComponent implements OnInit {
     this.wcsService.getMe().subscribe((data) => {
       localStorage.setItem('WCS_ID', data['id']);
       this.wcsService.student = data;
-     /*  console.log(this.wcsService.student); */
+      console.log(this.wcsService.student);
       const student = new Student();
       const location = new Location();
       student.name = data['firstname'];
@@ -43,15 +43,16 @@ export class LoginCallbackComponent implements OnInit {
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
       this.students = student;
-     /*  console.log(this.students); */
+      // console.log(this.students);
       this.locationService.addIfNotExist(location).subscribe(
         (res) => {
-         /*  console.log(res); */
+          /*  console.log(res); */
           data['current_crew'].users.forEach(async studt => {
             studt.WCS_ID = studt['id'];
             studt.name = studt.fullname;
             studt.locationId = location.WCS_ID;
             studt.campus = location.city;
+            studt.session = data['current_crew'].name;
             delete studt.lastname;
             delete studt.id;
             await this.studentService.addStudentIfNotExists(studt).subscribe(
@@ -65,7 +66,8 @@ export class LoginCallbackComponent implements OnInit {
             (res) => {
               student.locationId = location.WCS_ID;
               student.campus = location.city;
-             /*  console.log('connecter'); */
+              student.session = data['current_crew'].name;
+              /*  console.log('connecter'); */
             },
             error => console.log(error),
           );

@@ -47,7 +47,6 @@ export class CitiesComponent implements OnInit {
       locationId: this.locationId,
     });
   }
-  
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
