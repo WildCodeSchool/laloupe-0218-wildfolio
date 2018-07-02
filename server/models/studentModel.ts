@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
+  admin: Boolean,
   name: String,
   phone: String,
   email: String,

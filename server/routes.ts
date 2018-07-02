@@ -67,14 +67,14 @@ export default function routes(app) {
   router.route('/city/:id').put(city.update);
   router.route('/city/:id').delete(city.delete);
 
-   // sessions
-   router.route('/sessions').get(session.getAll);
-   router.route('/sessions/count').get(session.count);
-   router.route('/session').post(session.insert);
-   router.route('/session/ifNotExists').post(session.insertIfNotExists);
-   router.route('/session/:id').get(session.get);
-   router.route('/session/:id').put(session.update);
-   router.route('/session/:id').delete(session.delete); 
+  // sessions
+  router.route('/sessions').get(session.getAll);
+  router.route('/sessions/count').get(session.count);
+  router.route('/session').post(session.insert);
+  router.route('/session/ifNotExists').post(session.insertIfNotExists);
+  router.route('/session/:id').get(session.get);
+  router.route('/session/:id').put(session.update);
+  router.route('/session/:id').delete(session.delete);
 
   // users
   router.route('/login').post(user.login);
