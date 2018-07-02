@@ -29,6 +29,8 @@ import { BlogProjetService } from './services/blogProjet.service';
 import { ListStudentsComponent } from './list-students/list-students.component';
 import { LocationService } from './services/location.service';
 import { ProfilComponent } from './profil/profil.component';
+import { SessionComponent } from './session/session.component';
+import { SessionService } from './services/session.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -38,6 +40,7 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     CitiesComponent,
+    SessionComponent,
     AdminComponent,
     NotFoundComponent,
     NavbarComponent,
@@ -72,6 +75,7 @@ export function tokenGetter() {
       multi: true,
     },
     CityService,
+    SessionService,
     StudentService,
     RecrutService,
     BlogProjetService,

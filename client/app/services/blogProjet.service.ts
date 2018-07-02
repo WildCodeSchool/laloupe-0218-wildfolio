@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { BlogProjet } from '../shared/models/blogProjet.model';
+import { Session } from '../shared/models/session.model';
 
 @Injectable()
 export class BlogProjetService {
@@ -17,8 +18,8 @@ export class BlogProjetService {
     return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${locationId}`);
   }
 
-  getBlogProjetsBySession(session: string): Observable<BlogProjet[]> {
-    return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${session}`);
+  getBlogProjetsBySession(date: string): Observable<BlogProjet[]> {
+    return this.http.get<Session[]>(`/api/sessions/date/${date}`);
   }
 
   countBlogProjets(): Observable<number> {
