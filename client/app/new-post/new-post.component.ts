@@ -25,7 +25,10 @@ export class NewPostComponent implements OnInit {
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
 
-  constructor(private blogProjetService: BlogProjetService, private formBuilder: FormBuilder, public toast: ToastComponent, private studentService: StudentService) { }
+  constructor(private blogProjetService: BlogProjetService,
+              private formBuilder: FormBuilder,
+              public toast: ToastComponent,
+              private studentService: StudentService) { }
 
   ngOnInit() {
     this.getBlogProjet();
@@ -72,7 +75,7 @@ export class NewPostComponent implements OnInit {
           },
           error => console.log(error),
         );
-      })
+      });
     } else {
       this.addBlogProjetForm.reset();
       this.toast.setMessage('projet already exist.', 'warning');
