@@ -2,7 +2,7 @@
 </app-loading>
 
 <app-toast [message]="toast.message"></app-toast>
-
+<button type="button" class="btn btn-primary btn-rounded" routerLink="/">Home</button>
 <div class="container-fluid" *ngIf="me">
   <div class="row">
     <div class="mx-auto">
@@ -14,6 +14,7 @@
     <div class="mx-auto">
       <h2>Prénom Nom : {{ me.name }} </h2>
       <h2>Email : {{ me.email }}</h2>
+      <h2>Phone : {{ me.phone }}</h2>
       <h2>Github : {{ me.github }}</h2>
       <h2>Linkedin : {{ me.linkedin }}</h2>
       <h2>Lien Linkedin : {{ me.lienLinkedin }}</h2>
@@ -46,6 +47,7 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">Email</th>
+            <th scope="col">Téléphone</th>
             <th scope="col">Github</th>
             <th scope="col">image Url</th>
             <th scope="col">Lien Linkedin</th>
@@ -56,14 +58,15 @@
             <th scope="col">Modifier/Supprimer</th>
           </tr>
         </thead>
-         <tbody *ngIf="me.length === 0">
-              <tr>
-                <td colspan="4">Il n'y a pas de projet ajouter.</td>
-              </tr>
-            </tbody> 
+        <tbody *ngIf="me.length === 0">
+          <tr>
+            <td colspan="4">Il n'y a pas de projet ajouter.</td>
+          </tr>
+        </tbody>
         <tbody *ngIf="me">
-          <tr >
-            <td >{{ me.email }} </td>
+          <tr>
+            <td>{{ me.email }} </td>
+            <td>{{ me.phone }} </td>
             <td> {{ me.github }}</td>
             <td>
               <img class="imageUrl" src="{{ me.image }}" alt="Can't access">
@@ -85,7 +88,8 @@
           <tr>
             <td colspan="4" *ngIf="me">
               <form class="form-inline" #form="ngForm" (ngSubmit)="editStudent(me)">
-                  <input class="form-control mr-2" type="text" name="email" [(ngModel)]="me.email" placeholder="Email" required>
+                <input class="form-control mr-2" type="text" name="email" [(ngModel)]="me.email" placeholder="Email" required>
+                <input class="form-control mr-2" type="text" name="phone" [(ngModel)]="me.phone" placeholder="Téléphone">
                 <input class="form-control mr-2" type="text" name="github" [(ngModel)]="me.github" placeholder="Name Github" required>
                 <input class="form-control mr-2" type="text" name="image" [(ngModel)]="me.image" placeholder="Url Image" required>
                 <input class="form-control mr-2" type="text" name="lienLinkedin" [(ngModel)]="me.lienLinkedin" placeholder="lien linkedin">
