@@ -64,6 +64,7 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.studentId = me._id;
         this.addBlogProjetForm.value.locationId = me.locationId;
         this.addBlogProjetForm.value.session = me.session;
+        this.addBlogProjetForm.value.sessionId = me.sessionId;
         console.log(me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {

@@ -64,31 +64,31 @@ export class CitiesComponent implements OnInit {
       this.addCityForm.value.locationId = me.locationId;
       this.cityService.addIfNotExist(this.addCityForm.value).subscribe(
         (res) => {
-          this.cities.push(res);
+          // this.cities.push(res);
           this.addCityForm.reset();
           this.toast.setMessage('item added successfully.', 'success');
+          this.getCity();
         },
         error => console.log(error),
       );
     })
-    this.getCity();
   }
 
-  addCity() {
-    if (this.canAddCity()) {
-      this.cityService.addCity(this.addCityForm.value).subscribe(
-        (res) => {
-          this.cities.push(res);
-          this.addCityForm.reset();
-          this.toast.setMessage('item added successfully.', 'success');
-        },
-        error => console.log(error),
-      );
-    } else {
-      this.addCityForm.reset();
-      this.toast.setMessage('campus already exist.', 'warning');
-    }
-  }
+  // addCity() {
+  //   if (this.canAddCity()) {
+  //     this.cityService.addCity(this.addCityForm.value).subscribe(
+  //       (res) => {
+  //         this.cities.push(res);
+  //         this.addCityForm.reset();
+  //         this.toast.setMessage('item added successfully.', 'success');
+  //       },
+  //       error => console.log(error),
+  //     );
+  //   } else {
+  //     this.addCityForm.reset();
+  //     this.toast.setMessage('campus already exist.', 'warning');
+  //   }
+  // }
 
   enableEditing(city: City) {
     this.isEditing = true;

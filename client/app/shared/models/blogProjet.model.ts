@@ -7,4 +7,5 @@ export class BlogProjet {
   description?: string;
   locationId?: number;
   session?: string;
+  sessionId?: number;
 }

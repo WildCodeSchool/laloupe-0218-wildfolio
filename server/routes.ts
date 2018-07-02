@@ -63,6 +63,7 @@ export default function routes(app) {
   // blogProjet
   router.route('/blogProjets').get(blogProjet.getAll);
   router.route('/blogProjets/location/:id').get(blogProjet.getAllByLocationId);
+  router.route('/blogProjets/session/:id').get(blogProjet.getAllBySessionId);
   router.route('/blogProjets/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);
   router.route('/blogProjet/:id').get(blogProjet.get);

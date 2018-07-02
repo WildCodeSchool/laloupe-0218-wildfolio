@@ -52,12 +52,11 @@ export class AdminComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
-
   }
-  verifyRoles() {
+ /*  verifyRoles() {
     if (this.me.admin === false || this.me.roles.length === 0 || this.me.sessionId === this.blogProjet.sessionId ||
       this.me.WCS_id === this.blogProjet.studentId) {
       console.log('NOT Admin');
     }
-  }
+  } */
 }

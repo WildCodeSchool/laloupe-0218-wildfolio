@@ -18,8 +18,8 @@ export class BlogProjetService {
     return this.http.get<BlogProjet[]>(`/api/blogProjets/location/${locationId}`);
   }
 
-  getBlogProjetsBySession(date: string): Observable<BlogProjet[]> {
-    return this.http.get<Session[]>(`/api/sessions/date/${date}`);
+  getBlogProjetsBySession(WCS_ID: number): Observable<BlogProjet[]> {
+    return this.http.get<Session[]>(`/api/blogProjets/session/${WCS_ID}`);
   }
 
   countBlogProjets(): Observable<number> {
