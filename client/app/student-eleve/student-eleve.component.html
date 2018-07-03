@@ -70,11 +70,22 @@
                                     <i class="fa fa-phone"></i>
                                 </a>
                             </li>
-                            <li class="list-inline-item linksocial phone">{{ student.phone }}</li>
+                            <li class="list-inline-item linksocial phone" *ngIf="phone" >0608080808</li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <!-- <div class="palmares" *ngIf="this.student.palmares.length !== 0">
+                <div class="row">
+                    <div class="col-sm-12 titleprojects">
+                        <h3>Mon Palmarès :</h3>
+                    </div>
+                </div>
+                <ul class="list-palmares">
+                    <li class="title-palmares">Prix du Grand Vainqueur Hackathon mai 2018</li>
+                    <li class="title-palmares">{{ student.palmares}}</li>
+                </ul>
+            </div> -->
         </div>
         <div class="col-md-8 col-sm-12 mx-auto">
             <div class="projets" id="portfolio">

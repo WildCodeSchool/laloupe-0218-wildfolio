@@ -18,6 +18,7 @@ export class StudentEleveComponent implements OnInit {
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
   isLoading = true;
+  // phone = false;
 
   constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService, private blogProjetService: BlogProjetService) { }
 
@@ -40,6 +41,8 @@ export class StudentEleveComponent implements OnInit {
     );
   }
 
-
+  // displayPhone() {
+  //   this.phone = true;
+  // }
 
 }

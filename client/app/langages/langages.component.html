@@ -1,0 +1,64 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+
+<!-- Title -->
+<h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button></h2>    
+
+    
+<!-- Administration -->
+<div class="card">
+  <h4 class="card-header backgroundNav">Ajouter un framework/langage</h4>
+  <div class="card-body">
+    <form class="form-inline" [formGroup]="addLangageForm" (ngSubmit)="addLangage()">
+      <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom">
+      <input class="form-control mr-2" type="text" name="id" formControlName="id" placeholder="Id">
+      <button class="btn btn-primary" type="submit" [disabled]="!addLangageForm.valid">
+        <i class="fa fa-floppy-o"></i> Ajouter</button>
+    </form>
+  </div>
+  <div class="card mb-3" *ngIf="!isLoading">
+    <h4 class="card-header backgroundNav">Langages ({{ langages.length }})</h4>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Id</th>
+            <th scope="col">Modifier/Supprimer</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="langages.length === 0">
+          <tr>
+            <td colspan="4">Il n'y a pas de langage ajouté.</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!isEditing">
+          <tr *ngFor="let langage of langages">
+            <td>{{ langage.name }}</td>
+            <td>{{ langage.id }}</td>
+            <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(langage)">
+              <i class="fa fa-pencil"></i> Modifier</button>
+            <button class="btn btn-sm btn-danger mr-2" (click)="deleteLangage(langage)">
+              <i class="fa fa-trash"></i> Supprimer</button>
+          </tr>
+        </tbody>
+        <tbody *ngIf="isEditing">
+          <tr>
+            <td colspan="4">
+              <form class="form-inline" #form="ngForm" (ngSubmit)="editLangage(langage)">
+                <input class="form-control mr-2" type="text" name="name" [(ngModel)]="langage.name" placeholder="Name" required>
+                <input class="form-control mr-2" type="text" name="id" [(ngModel)]="langage.id" placeholder="Id" required>
+                <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
+                  <i class="fa fa-floppy-o"></i> Save</button>
+                <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                  <i class="fa fa-times"></i> Cancel</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
