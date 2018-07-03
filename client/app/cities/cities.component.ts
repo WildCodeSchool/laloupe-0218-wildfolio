@@ -24,7 +24,7 @@ export class CitiesComponent implements OnInit {
   cities: City[] = [];
   isLoading = true;
   isEditing = false;
-
+  me;
   addCityForm: FormGroup;
   link = new FormControl('', Validators.required);
 
@@ -40,12 +40,22 @@ export class CitiesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getMe();
     this.addCityByStudentName();
     this.addCityForm = this.formBuilder.group({
       link: this.link,
     });
   }
-  
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+        console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
+  }
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
@@ -71,7 +81,7 @@ export class CitiesComponent implements OnInit {
         },
         error => console.log(error),
       );
-    })
+    });
   }
 
   // addCity() {
@@ -137,4 +147,5 @@ export class CitiesComponent implements OnInit {
     }
     return true;
   }
+
 }
