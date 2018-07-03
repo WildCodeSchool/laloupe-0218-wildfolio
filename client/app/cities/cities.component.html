@@ -3,6 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 
+
 <!-- Title -->
 <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button></h2>    
 <h2 *ngIf="me.admin === false || me.roles.length === 0"> Veuillez quitter cette page, Merci</h2>
