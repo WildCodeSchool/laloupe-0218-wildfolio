@@ -84,7 +84,7 @@ export function tokenGetter() {
     BlogProjetService,
     WcsService,
     LocationService,
-    LangageService
+    LangageService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
