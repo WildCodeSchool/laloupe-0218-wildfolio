@@ -3,7 +3,7 @@
 <div class="container acceuil" id="page-top">
   <nav class="navbar navbar-expand-lg" id="changecolor">
     <span class="navitemlogo navbar-brand">
-      <a href="/">
+      <a  [routerLink]="['/']">
         <img src="https://www.investinreims.com/sites/default/files/news/logo_orange_pastille.png" class="logo">
       </a>
     </span>
@@ -13,11 +13,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <span class="dropdownColor">
-        <a class="nav-link" id="textcolor1" routerLink="/">ACCUEIL</a>
+        <a class="nav-link" id="textcolor1"  [routerLink]="['/']">ACCUEIL</a>
       </span>
       <span>
         <li class="nav-item navcampus dropdown drop-cursor-t">
-          <a class="nav-link drop-cursor-t dropdownColor" href="#" id="textcolor2" data-toggle="dropdown">
+          <a class="nav-link drop-cursor-t dropdownColor" [routerLink]="['/']" id="textcolor2" data-toggle="dropdown">
             NOS CAMPUS
           </a>
           <div class="dropdown-menu">
@@ -26,10 +26,10 @@
         </li>
       </span>
       <span class="dropdownColor">
-        <a class="nav-link" id="textcolor3" href="/list-students">NOS DEVELOPPEURS</a>
+        <a class="nav-link" id="textcolor3" [routerLink]="['/list-students']">NOS DEVELOPPEURS</a>
       </span>
       <span class="dropdownColor">
-        <a class="nav-link" id="textcolor4" href="/projet">NOS PROJETS</a>
+        <a class="nav-link" id="textcolor4" [routerLink]="['/projet']">NOS PROJETS</a>
       </span>
       <span>
         <li class="nav-item dropdown drop-cursor-t">
@@ -44,13 +44,13 @@
         </li>
       </span>
       <span class="dropdownColor" *ngIf="isconnect == true">
-        <a class="nav-link" id="textcolor6" href="/profil">MON PROFIL</a>
+        <a class="nav-link" id="textcolor6" [routerLink]="['/profil']">MON PROFIL</a>
       </span>
       <span class="dropdownColor" *ngIf="isconnect == true">
         <a class="nav-link" id="textcolor7" (click)="logout()">SE DÉCONNECTER</a>
       </span>
       <span class="dropdownColor" *ngIf="isconnect == false">
-        <a class="nav-link" id="textcolor8" href="/api/oauth">SE CONNECTER</a>
+        <a class="nav-link" id="textcolor8" href='/api/oauth'>SE CONNECTER</a>
       </span>
     </div>
   </nav>

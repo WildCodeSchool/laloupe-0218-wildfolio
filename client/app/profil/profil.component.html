@@ -36,35 +36,33 @@
   <div class="offset-4">
     <button (click)="showEdit()" *ngIf="!edit">Edit</button>
     <button (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
+    <form *ngIf="this.me.admin == true || this.me.roles.length >= 0">
+      <input type="button" value="Espace Admin" [routerLink]="['/admin']" />
+      </form>
   </div>
 </div>
 
 <div class="card" *ngIf="edit">
   <div class="card mb-3" *ngIf="!isLoading">
-    <h4 class="card-header backgroundNav">Eleves</h4>
+    <h4 class="card-header backgroundNav" *ngIf="me">{{ me.name }}</h4>
     <div class="card-body">
       <table class="table table-bordered">
-        <thead class="thead-light">
+        <!-- <thead class="thead-light">
           <tr>
             <th scope="col">Email</th>
             <th scope="col">Téléphone</th>
             <th scope="col">Github</th>
             <th scope="col">image Url</th>
             <th scope="col">Lien Linkedin</th>
-            <th scope="col">Linkedin</th>
-            <th scope="col">Palmarès</th>
-            <th scope="col">Poste</th>
-            <th scope="col">Spécialités</th>
-            <th scope="col">Modifier/Supprimer</th>
           </tr>
-        </thead>
+        </thead> -->
         <tbody *ngIf="me.length === 0">
           <tr>
             <td colspan="4">Il n'y a pas de projet ajouter.</td>
           </tr>
         </tbody>
         <tbody *ngIf="me">
-          <tr>
+          <!-- <tr>
             <td>{{ me.email }} </td>
             <td>{{ me.phone }} </td>
             <td> {{ me.github }}</td>
@@ -74,19 +72,29 @@
             <td>
               <a href="{{ me.lienLinkedin }}" target="_blank">{{ me.lienLinkedin }}</a>
             </td>
+          </tr>
+          <tr>
+            <th scope="col">Linkedin</th>
+            <th scope="col">Palmarès</th>
+            <th scope="col">Poste</th>
+            <th scope="col">Spécialités</th>
+            <th scope="col">Modifier/Supprimer</th>
+          </tr>
+          <td>
             <td>{{ me.linkedin }}</td>
             <td>{{ me.poste }}</td>
-            <td>{{ me.specialites }}</td>
+            <td>{{ me.specialites }}</td> -->
+            <!-- <td> 
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(me)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(me)">
-              <i class="fa fa-trash"></i> Supprimer</button>
-          </tr>
+              <i class="fa fa-trash"></i> Supprimer</button> 
+          </td> -->
         </tbody>
         <tbody *ngIf="isEditing">
           <tr>
             <td colspan="4" *ngIf="me">
-              <form class="form-inline" #form="ngForm" (ngSubmit)="editStudent(me)">
+              <form class="form" #form="ngForm" (ngSubmit)="editStudent(me)">
                 <input class="form-control mr-2" type="text" name="email" [(ngModel)]="me.email" placeholder="Email" required>
                 <input class="form-control mr-2" type="text" name="phone" [(ngModel)]="me.phone" placeholder="Téléphone">
                 <input class="form-control mr-2" type="text" name="github" [(ngModel)]="me.github" placeholder="Name Github" required>

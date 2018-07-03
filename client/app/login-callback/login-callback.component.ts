@@ -33,12 +33,12 @@ export class LoginCallbackComponent implements OnInit {
       const student = new Student();
       const location = new Location();
       student.name = data['firstname'];
+      student.admin = data['admin'];
       student.lastname = data['lastname'];
       student.email = data['email'];
       student.WCS_ID = data['id'];
       student.github = data['github'];
-      /*  student.admin = data['admin'];
-       student.banished = data['banished']; */
+      /* student.banished = data['banished']; */
       // student.members = data['current_crew'].users;
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
@@ -53,6 +53,8 @@ export class LoginCallbackComponent implements OnInit {
             studt.locationId = location.WCS_ID;
             studt.campus = location.city;
             studt.session = data['current_crew'].name;
+            studt.admin = studt['admin'];
+            studt.sessionId = data['current_crew'].id
             delete studt.lastname;
             delete studt.id;
             await this.studentService.addStudentIfNotExists(studt).subscribe(
@@ -67,6 +69,7 @@ export class LoginCallbackComponent implements OnInit {
               student.locationId = location.WCS_ID;
               student.campus = location.city;
               student.session = data['current_crew'].name;
+              student.sessionId = data['current_crew'].id
               /*  console.log('connecter'); */
             },
             error => console.log(error),

@@ -6,6 +6,7 @@ import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
 import StudentController from './controllers/StudentController';
 import LocationController from './controllers/LocationController';
+import SessionController from './controllers/Session.Controller';
 import LangageController from './controllers/LangageController';
 // import city from './models/city';
 // import user from './models/user';
@@ -20,6 +21,7 @@ export default function routes(app) {
   const user = new UserController();
   const student = new StudentController();
   const location = new LocationController();
+  const session = new SessionController();
   const langage = new LangageController();
 
   // recruts
@@ -61,6 +63,7 @@ export default function routes(app) {
   // blogProjet
   router.route('/blogProjets').get(blogProjet.getAll);
   router.route('/blogProjets/location/:id').get(blogProjet.getAllByLocationId);
+  router.route('/blogProjets/session/:id').get(blogProjet.getAllBySessionId);
   router.route('/blogProjets/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);
   router.route('/blogProjet/:id').get(blogProjet.get);
@@ -71,10 +74,19 @@ export default function routes(app) {
   router.route('/cities').get(city.getAll);
   router.route('/cities/count').get(city.count);
   router.route('/city').post(city.insert);
-  router.route('/city/ifNotExists').post(city.insertIfNotExists);
+  router.route('/city/ifNotId').post(city.insertIfNotId);
   router.route('/city/:id').get(city.get);
   router.route('/city/:id').put(city.update);
   router.route('/city/:id').delete(city.delete);
+
+  // sessions
+  router.route('/sessions').get(session.getAll);
+  router.route('/sessions/count').get(session.count);
+  router.route('/session').post(session.insert);
+  router.route('/session/ifNotExists').post(session.insertIfNotExists);
+  router.route('/session/:id').get(session.get);
+  router.route('/session/:id').put(session.update);
+  router.route('/session/:id').delete(session.delete);
 
   // users
   router.route('/login').post(user.login);

@@ -1,5 +1,6 @@
 export class Student {
   _id?: string;
+  admin?: boolean;
   WCS_ID?: number;
   name?: string;
   lastname?: string;
@@ -12,6 +13,6 @@ export class Student {
   locationId?: number;
   campus?: string;
   session?: string;
-  program_type?: object;
+  sessionId?: string;
   langageId?: number;
 }

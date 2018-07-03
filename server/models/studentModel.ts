@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
+  admin: Boolean,
   name: String,
   phone: String,
   email: String,
@@ -10,11 +11,14 @@ const studentSchema = new mongoose.Schema({
   lienLinkedin: String,
   image: String,
   roles: String,
+  campus: String,
+  session: String,
+  sessionId: Number,
   locationId: Number,
-  poste: String, // boolean ?
-  specialites: Array,
-  program_type: Object,
-  langageId: Number
+  langageId: Number,
+ /*  palmares: Array,
+  poste: String,
+  specialites: Array, */
 });
 
 const studentModel = mongoose.model('student', studentSchema);

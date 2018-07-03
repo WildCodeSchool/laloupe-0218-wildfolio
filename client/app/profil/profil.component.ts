@@ -37,9 +37,6 @@ export class ProfilComponent implements OnInit {
   name = new FormControl('');
   poste = new FormControl('');
   specialites = new FormControl('');
-  
-
-  
 
   constructor(
     private studentService: StudentService,
@@ -133,10 +130,13 @@ export class ProfilComponent implements OnInit {
 
   showEdit() {
     this.edit = true;
+    this.isEditing = true;
   }
 
   hiddenEdit() {
     this.edit = false;
+    this.isEditing = false;
+
   }
 
   // isAdmin() {

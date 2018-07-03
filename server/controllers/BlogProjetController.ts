@@ -13,6 +13,14 @@ export default class BlogProjetController extends BaseController {
     });
   }
 
+  getAllBySessionId = (req, res) => {
+    this.model.find({WCS_ID: req.params.WCS_ID}, (err, docs) => {
+      if (err) { return console.error(err); }
+      // console.log(docs);
+      res.status(200).json(docs);
+    });
+  }
+
 
   // Insert
   getAllBy = (req, res) => {

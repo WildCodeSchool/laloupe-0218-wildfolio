@@ -12,6 +12,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { City } from '../shared/models/city.model';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-cities',
@@ -23,29 +24,37 @@ export class CitiesComponent implements OnInit {
   cities: City[] = [];
   isLoading = true;
   isEditing = false;
-
+  me;
   addCityForm: FormGroup;
-  name = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
-  locationId = new FormControl('', Validators.required);
 
   constructor(
     private cityService: CityService,
     private formBuilder: FormBuilder,
     public toast: ToastComponent,
     private wcsService: WcsService,
+    private studentService: StudentService,
     private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router,
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.getCity();
+    this.getMe();
+    this.addCityByStudentName();
     this.addCityForm = this.formBuilder.group({
-      name: this.name,
       link: this.link,
-      locationId: this.locationId,
     });
+  }
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+        console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
   }
   getCity() {
     this.cityService.getCities().subscribe(
@@ -58,21 +67,38 @@ export class CitiesComponent implements OnInit {
     );
   }
 
-  addCity() {
-    if (this.canAddCity()) {
-      this.cityService.addCity(this.addCityForm.value).subscribe(
-      (res) => {
-        this.cities.push(res);
-        this.addCityForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      error => console.log(error),
+  addCityByStudentName() {
+    this.studentService.getMe().subscribe((me) => {
+      console.log(me.campus);
+      this.addCityForm.value.name = me.campus;
+      this.addCityForm.value.locationId = me.locationId;
+      this.cityService.addIfNotExist(this.addCityForm.value).subscribe(
+        (res) => {
+          // this.cities.push(res);
+          this.addCityForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+          this.getCity();
+        },
+        error => console.log(error),
       );
-    } else {
-      this.addCityForm.reset();
-      this.toast.setMessage('campus already exist.', 'warning');
-    }
+    });
   }
+
+  // addCity() {
+  //   if (this.canAddCity()) {
+  //     this.cityService.addCity(this.addCityForm.value).subscribe(
+  //       (res) => {
+  //         this.cities.push(res);
+  //         this.addCityForm.reset();
+  //         this.toast.setMessage('item added successfully.', 'success');
+  //       },
+  //       error => console.log(error),
+  //     );
+  //   } else {
+  //     this.addCityForm.reset();
+  //     this.toast.setMessage('campus already exist.', 'warning');
+  //   }
+  // }
 
   enableEditing(city: City) {
     this.isEditing = true;
@@ -121,4 +147,5 @@ export class CitiesComponent implements OnInit {
     }
     return true;
   }
+
 }

@@ -21,10 +21,8 @@
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Sessions</h3>
-        <select class="custom-select selectWidth" id="session">
-          <option selected>Sessions</option>
-          <option value="1">Février 2018</option>
-          <option value="1">Septembre 2018</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedSession">
+          <option *ngFor="let session of sessions" target="_blank" [ngValue]="session.WCS_ID">{{ session.date }}</option>
         </select>
       </div>
 

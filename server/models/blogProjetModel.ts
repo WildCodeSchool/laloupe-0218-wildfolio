@@ -9,6 +9,7 @@ const blogProjetSchema = new mongoose.Schema({
   studentId: String,
   locationId: Number,
   session: String,
+  sessionId: Number,
 });
 
 const blogProjetModel = mongoose.model('blogProjet', blogProjetSchema);
