@@ -27,6 +27,8 @@ export class CitiesComponent implements OnInit {
 
   addCityForm: FormGroup;
   link = new FormControl('', Validators.required);
+  name = new FormControl('', Validators.required);
+  locationId = new FormControl('', Validators.required);
 
   constructor(
     private cityService: CityService,
@@ -43,6 +45,8 @@ export class CitiesComponent implements OnInit {
     this.addCityByStudentName();
     this.addCityForm = this.formBuilder.group({
       link: this.link,
+      name: this.name,
+      locationId: this.locationId,
     });
   }
   
@@ -74,21 +78,21 @@ export class CitiesComponent implements OnInit {
     })
   }
 
-  // addCity() {
-  //   if (this.canAddCity()) {
-  //     this.cityService.addCity(this.addCityForm.value).subscribe(
-  //       (res) => {
-  //         this.cities.push(res);
-  //         this.addCityForm.reset();
-  //         this.toast.setMessage('item added successfully.', 'success');
-  //       },
-  //       error => console.log(error),
-  //     );
-  //   } else {
-  //     this.addCityForm.reset();
-  //     this.toast.setMessage('campus already exist.', 'warning');
-  //   }
-  // }
+  addCity() {
+    if (this.canAddCity()) {
+      this.cityService.addCity(this.addCityForm.value).subscribe(
+        (res) => {
+          this.cities.push(res);
+          this.addCityForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error),
+      );
+    } else {
+      this.addCityForm.reset();
+      this.toast.setMessage('campus already exist.', 'warning');
+    }
+  }
 
   enableEditing(city: City) {
     this.isEditing = true;
