@@ -29,10 +29,10 @@ export class LangageService {
   }
 
   editLangage(langage: Langage): Observable<string> {
-    return this.http.put(`/api/langage/${langage.id}`, langage, { responseType: 'text' });
+    return this.http.put(`/api/langage/${langage._id}`, langage, { responseType: 'text' });
   }
 
   deleteLangage(langage: Langage): Observable<string> {
-    return this.http.delete(`/api/langage/${langage.id}`, { responseType: 'text' });
+    return this.http.delete(`/api/langage/${langage._id}`, { responseType: 'text' });
   }
 }

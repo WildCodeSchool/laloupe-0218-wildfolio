@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
   name: String,
-  id: Number,
+  WCS_ID: Number,
 });
 
 const studentModel = mongoose.model('langage', studentSchema);

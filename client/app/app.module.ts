@@ -32,6 +32,7 @@ import { LangageService } from './services/langage.service';
 import { ProfilComponent } from './profil/profil.component';
 import { SessionComponent } from './session/session.component';
 import { SessionService } from './services/session.service';
+import { LangagesComponent } from './langages/langages.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -58,6 +59,7 @@ export function tokenGetter() {
     NewPostComponent,
     ListStudentsComponent,
     ProfilComponent,
+    LangagesComponent,
   ],
   imports: [
     RoutingModule,
@@ -82,7 +84,7 @@ export function tokenGetter() {
     BlogProjetService,
     WcsService,
     LocationService,
-    LangageService
+    LangageService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

@@ -1,4 +1,5 @@
 export class Langage {
-  id?: number;
+  _id?: number;
   name?: string;
+  WCS_ID?: number;
 }

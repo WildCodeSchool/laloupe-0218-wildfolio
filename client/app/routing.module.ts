@@ -16,6 +16,7 @@ import { StudentEleveComponent } from './student-eleve/student-eleve.component';
 import { ProjetResearchComponent } from './projet-research/projet-research.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { SessionComponent } from './session/session.component';
+import { LangagesComponent } from './langages/langages.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
   { path: 'list-students', component: ListStudentsComponent },
   { path: 'newPost', component: NewPostComponent },
+  { path: 'langages', component: LangagesComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'profil', component: ProfilComponent },
