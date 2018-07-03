@@ -37,9 +37,6 @@ export class ProfilComponent implements OnInit {
   name = new FormControl('');
   poste = new FormControl('');
   specialites = new FormControl('');
-  
-
-  
 
   constructor(
     private studentService: StudentService,
