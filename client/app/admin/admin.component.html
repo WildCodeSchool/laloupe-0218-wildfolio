@@ -15,7 +15,7 @@
             </a>
             <hr/>
           </h3>
-          <h3 class="section-subheading text-muted" *ngIf="me.admin === false || me.roles.length >= 0 || me.admin === true">
+          <h3 class="section-subheading text-muted" *ngIf="me.admin === true || me.roles.length >= 1">
             Gérer les
             <a href="langages">Langages</a>
             <a routerLink="/langages"><i class="fas fa-cog"></i></a>

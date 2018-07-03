@@ -17,7 +17,7 @@ import { StudentService } from '../services/student.service';
 @Component({
   selector: 'app-langages',
   templateUrl: './langages.component.html',
-  styleUrls: ['./langages.component.css']
+  styleUrls: ['./langages.component.css'],
 })
 
 export class LangagesComponent implements OnInit {
@@ -31,8 +31,8 @@ export class LangagesComponent implements OnInit {
 
   addLangageForm: FormGroup;
   name = new FormControl('');
-  id = new FormControl('');
-  
+  WCS_ID = new FormControl('');
+
   constructor(
     private langageService: LangageService,
     private formBuilder: FormBuilder,
@@ -42,13 +42,11 @@ export class LangagesComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
   ) {}
-
-
   ngOnInit() {
     this.getLangage();
     this.addLangageForm = this.formBuilder.group({
       name: this.name,
-      id: this.id,
+      WCS_ID: this.WCS_ID,
     });
   }
 
@@ -109,7 +107,7 @@ export class LangagesComponent implements OnInit {
     ) {
       this.langageService.deleteLangage(langage).subscribe(
         () => {
-          const pos = this.langages.map(elem => elem.id).indexOf(langage.id);
+          const pos = this.langages.map(elem => elem._id).indexOf(langage._id);
           this.langages.splice(pos, 1);
           this.toast.setMessage('item deleted successfully.', 'success');
         },
