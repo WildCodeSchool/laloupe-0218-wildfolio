@@ -15,4 +15,5 @@ export class Student {
   session?: string;
   sessionId?: string;
   langageId?: number;
+  languageName?: string;
 }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { Student } from '../shared/models/student.model';
+import { Langage } from '../shared/models/langage.model';
 
 @Injectable()
 export class StudentService {
@@ -20,6 +21,10 @@ export class StudentService {
   getMyLocation(): Observable<Student> {
     const locationid = localStorage.getItem('locationId');
     return this.http.get<Student>(`/api/student/wcs/${locationid}`);
+  }
+
+  getLangageById(WCS_ID: number): Observable<Langage[]> {
+    return this.http.get<Langage[]>(`/api/student/langage/${WCS_ID}`);
   }
 
   countStudents(): Observable<number> {

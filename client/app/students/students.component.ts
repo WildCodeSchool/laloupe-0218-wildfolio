@@ -11,6 +11,8 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { Student } from '../shared/models/student.model';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
+import { LangageService } from '../services/langage.service';
+import { Langage } from '../shared/models/langage.model';
 
 @Component({
   selector: 'app-students',
@@ -25,6 +27,8 @@ export class StudentsComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   me;
+  langage = new Langage();
+  langages: Langage[];
   addStudentForm: FormGroup;
   name = new FormControl('', Validators.required);
   lastname = new FormControl('', Validators.required);
@@ -39,11 +43,13 @@ export class StudentsComponent implements OnInit {
     public toast: ToastComponent,
     private wcsService: WcsService,
     private route: ActivatedRoute,
+    private langageService: LangageService,
   ) {}
 
   ngOnInit() {
     this.getStudent();
     this.getMe();
+    this.getLanguage();
   }
 
   /* getStudent() {
@@ -85,6 +91,17 @@ export class StudentsComponent implements OnInit {
       },
       error => console.log(error),
       () => this.isLoading = false,
+    );
+  }
+
+  getLanguage() {
+    this.langageService.getLangages().subscribe(
+      (data) => {
+        console.log(data);
+        this.langages = data;
+      },
+      error => console.log(error),
+      () => (this.isLoading = false),
     );
   }
 

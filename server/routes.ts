@@ -35,6 +35,7 @@ export default function routes(app) {
   // students
   router.route('/students').get(student.getAll);
   router.route('/students/count').get(student.count);
+  router.route('/student/langage/:id').get(student.getAllByLangageId);
   router.route('/student').post(student.insert);
   router.route('/student/ifNotExists').post(student.insertIfNotExists);
   router.route('/student/:id').get(student.get);
