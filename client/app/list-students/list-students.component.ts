@@ -13,6 +13,7 @@ import { Langage } from '../shared/models/langage.model';
 
 export class ListStudentsComponent implements OnInit {
   students: Student[];
+  langages: Langage[];
   isLoading = true;
   isEditing = false;
   // selectedLangageId: any;
@@ -21,6 +22,7 @@ export class ListStudentsComponent implements OnInit {
 
   ngOnInit() {
     this.getStudent();
+    this.getLangages();
   }
 
   getStudent() {
@@ -34,14 +36,18 @@ export class ListStudentsComponent implements OnInit {
     );
   }
 
-  // getStudentByLangage() {
-  //   this.studentService.getStudentsByLangage(this.selectedLangageId).subscribe(
-  //     (data) => {
-  //       this.students = data;
-  //       console.log(data);
-  //     },
-  //     error => console.log(error),
-  //     () => this.isLoading = false,
-  //   );
-  // }
+  getLangages() {
+    this.langageService.getLangages().subscribe(
+      (data) => {
+        this.langages = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+  showProject() {
+    this.getLangages();
+    this.getLangagesBySession();
+  }
 }
