@@ -5,10 +5,10 @@
 
 <!-- Title -->
 <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button></h2>    
-
+<h2 *ngIf="me.admin === false || me.roles.length === 0"> Veuillez quitter cette page, Merci</h2>
     
 <!-- Administration -->
-<div class="card">
+<div class="card" *ngIf="me.admin == true || me.roles.length >= 1">
   <h4 class="card-header backgroundNav">Ajouter un campus</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addCityForm" (ngSubmit)="addCity()">

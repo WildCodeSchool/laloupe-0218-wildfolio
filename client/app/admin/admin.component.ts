@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   isLoading = true;
   id: string;
   me;
-  newBlogProjet: BlogProjet = new BlogProjet();
+  // newBlogProjet: BlogProjet = new BlogProjet();
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
   constructor(
@@ -29,10 +29,9 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getMe();
-    this.id = this.route.snapshot.paramMap.get('id');
     this.getBlogProjet();
-
+    this.getMe();
+    // this.id = this.route.snapshot.paramMap.get('id');
   }
   getMe() {
     this.studentService.getMe().subscribe(
@@ -48,15 +47,18 @@ export class AdminComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
- /*  verifyRoles() {
-    if (this.me.admin === false || this.me.roles.length === 0 || this.me.sessionId === this.blogProjet.sessionId ||
-      this.me.WCS_id === this.blogProjet.studentId) {
-      console.log('NOT Admin');
-    }
-  } */
+
+  // verifyRoles() {
+  //   if (this.me.admin === true || this.me.roles.length <= 1 || this.me.sessionId === this.blogProjet.sessionId ||
+  //     this.me._id === this.blogProjet.studentId) {
+  //     console.log(this.me.sessionId, this.blogProjets.sessionId, this.me._id, this.blogProjets.studentId);
+  //     return 1 ;
+  //   }
+  // }
 }

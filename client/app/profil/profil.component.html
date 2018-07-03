@@ -36,6 +36,9 @@
   <div class="offset-4">
     <button (click)="showEdit()" *ngIf="!edit">Edit</button>
     <button (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
+    <form *ngIf="this.me.admin == true || this.me.roles.length >= 0">
+      <input type="button" value="Espace Admin" [routerLink]="['/admin']" />
+      </form>
   </div>
 </div>
 
