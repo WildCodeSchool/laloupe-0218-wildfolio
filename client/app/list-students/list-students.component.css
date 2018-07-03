@@ -85,7 +85,12 @@ td{
     color: #58c4b8;
     font-size: 20px;
 }
-
+.socialLink:hover {
+    color: #F9A02E;
+    font-size: 35px;
+    position: absolute;
+    margin-top: -2vh;
+}
 /*Maps*/
 
 .maps{
