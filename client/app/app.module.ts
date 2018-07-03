@@ -30,6 +30,7 @@ import { ListStudentsComponent } from './list-students/list-students.component';
 import { LocationService } from './services/location.service';
 import { LangageService } from './services/langage.service';
 import { ProfilComponent } from './profil/profil.component';
+import { LangagesComponent } from './langages/langages.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -55,6 +56,7 @@ export function tokenGetter() {
     NewPostComponent,
     ListStudentsComponent,
     ProfilComponent,
+    LangagesComponent,
   ],
   imports: [
     RoutingModule,

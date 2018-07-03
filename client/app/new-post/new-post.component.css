@@ -8,9 +8,31 @@
   font-weight: bold;
 }
 
+.card{
+  background-color:#E8E8E8;
+}
+
 .backgroundNav 
 {
-  background-color: #F9A02E;
+  background-image:linear-gradient(to right, black, grey);
+  color: white;
+}
+
+.imageUrl{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.link{
+  margin-bottom: 2%;
+}
+
+table{
+  background-color: white;
+}
+
+.thead{
+  border: 2px solid black;
 }
 
 .btn-primary {
