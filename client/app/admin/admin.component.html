@@ -10,9 +10,12 @@
       </div>
       <!-- Icon Cards-->
       <div class="row list1 mx-auto">
-        <div class="col-xl-4 col-sm-6 card1">
-          <div class="card card1 text-white bg-primary o-hidden h-100" *ngIf="this.me.admin == true || this.me.roles.length >= 1">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card1 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-users"></i>
+              </div>
               <div class="mr-5">Gérer les éleves</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/student">
@@ -25,9 +28,13 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6">
-          <div class="card card2 text-white bg-primary o-hidden h-100" *ngIf="me.admin === false || me.roles.length >= 0 || me.admin === true">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card2 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fab fa-angular"></i>
+                <i class="fab fa-js-square"></i>
+              </div>
               <div class="mr-5">Gérer les langages</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/langages">
@@ -40,9 +47,12 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6">
+        <div class="col-xl-4 col-sm-6 cards">
           <div class="card card3 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+              <div class="card-body-icon">
+                  <i class="far fa-folder"></i>
+              </div>
               <div class="mr-5">Gérer les projets</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/newPost">
@@ -57,9 +67,12 @@
         </div>
       </div>
       <div class="row list2 mx-auto">
-        <div class="col-xl-4 col-sm-6">
-          <div class="card card4 text-white bg-primary o-hidden h-100" *ngIf="me.admin == true || me.roles.length >= 1">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card4 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-university"></i>
+              </div>
               <div class="mr-5">Gérer les campus</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/cities">
@@ -72,9 +85,12 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6">
-          <div class="card card5 text-white bg-primary o-hidden h-100" *ngIf="me.admin == true || me.roles.length >= 1">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card5 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-eye"></i>
+              </div>
               <div class="mr-5">Gérer l'oeil du recruteur</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/recruts">
@@ -87,9 +103,12 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6">
-          <div class="card card6 text-white bg-primary o-hidden h-100" *ngIf="me.admin == true || me.roles.length >= 1">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card6 text-white bg-primary o-hidden h-100">
             <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
               <div class="mr-5">Gérer les sessions</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" routerLink="/sessions">
