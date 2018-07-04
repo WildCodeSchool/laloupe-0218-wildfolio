@@ -14,7 +14,7 @@ import { Langage } from '../shared/models/langage.model';
 export class ListStudentsComponent implements OnInit {
   students: Student[];
   langage = new Langage();
-  langages: Langage[];
+  langages: Langage[] = [];
   isLoading = true;
   isEditing = false;
   selectedLangage: any;
@@ -51,7 +51,7 @@ export class ListStudentsComponent implements OnInit {
   getLangageById() {
     this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
-        this.langages = data;
+        this.students = data;
         console.log(data);
       },
       error => console.log(error),
