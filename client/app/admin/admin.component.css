@@ -12,7 +12,7 @@ section{
 }
 
 .card{
-  background: radial-gradient(circle, center, darkblue, blue);
+  background-color: black !important;
 }
 
 @media (max-width: 767px){
@@ -27,4 +27,34 @@ section{
 
 .float-left{
   font-weight: bold;
+}
+
+.cards{
+  padding-bottom: 3%;
+}
+
+.card{
+  border:none #FBA858;
+  border-radius: 5px;
+}
+
+.card-body{
+  background-color: #FBA858;
+}
+
+.fa-angle-right{
+  color: #FBA858;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: -20px;
+  right: -5px;
+  font-size: 4rem;
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
 }
