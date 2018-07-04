@@ -67,10 +67,10 @@
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
                                 <a href="{{ student.phone }}">
-                                    <i class="fa fa-phone" (click)="displayPhone()" *ngIf="!phone"></i>
+                                    <i class="fa fa-phone" (click)="displayPhone()"></i>
                                 </a>
                             </li>
-                            <li class="list-inline-item linksocial phone" *ngIf="phone" >0608080808</li>
+                            <li class="list-inline-item linksocial phone">{{ student.phone }}</li>
                         </ul>
                     </div>
                 </div>
