@@ -14,10 +14,10 @@ import { Langage } from '../shared/models/langage.model';
 export class ListStudentsComponent implements OnInit {
   students: Student[];
   langage = new Langage();
-  langages: Langage[] = [];
+  langages: Langage[];
   isLoading = true;
   isEditing = false;
-  // selectedLangageId: any;
+  selectedLangage: any;
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }
 
@@ -48,8 +48,8 @@ export class ListStudentsComponent implements OnInit {
     );
   }
 
-  getLangagesById() {
-    this.studentService.getLangageById(4).subscribe(
+  getLangageById() {
+    this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
         this.langages = data;
         console.log(data);
@@ -60,6 +60,6 @@ export class ListStudentsComponent implements OnInit {
   }
 
   showProject() {
-    this.getLangagesById();
+    this.getLangageById();
   }
 }

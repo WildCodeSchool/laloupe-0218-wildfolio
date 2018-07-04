@@ -53,10 +53,10 @@ export class LoginCallbackComponent implements OnInit {
       // console.log(this.students);
       this.langageService.addIfNotExist(langage).subscribe(
         (res) => {
-      this.locationService.addIfNotExist(location).subscribe(
+          this.locationService.addIfNotExist(location).subscribe(
         (res) => {
           /*  console.log(res); */
-          data['current_crew'].users.forEach(async studt => {
+          data['current_crew'].users.forEach(async (studt) => {
             studt.WCS_ID = studt['id'];
             studt.name = studt.fullname;
             studt.locationId = location.WCS_ID;
@@ -80,7 +80,7 @@ export class LoginCallbackComponent implements OnInit {
               student.locationId = location.WCS_ID;
               student.campus = location.city;
               student.session = data['current_crew'].name;
-              student.sessionId = data['current_crew'].id
+              student.sessionId = data['current_crew'].id;
               student.langageName = langage.name;
               student.langageId = langage.WCS_ID;
               /*  console.log('connecter'); */
@@ -89,7 +89,7 @@ export class LoginCallbackComponent implements OnInit {
           );
           this.router.navigate(['/']);
         });
+        });
     });
-  });
   }
 }
