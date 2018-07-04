@@ -27,9 +27,9 @@ export class SessionComponent implements OnInit {
   isEditing = false;
 
   addSessionForm: FormGroup;
-  name = new FormControl('', Validators.required);
-  link = new FormControl('', Validators.required);
-  locationId = new FormControl('', Validators.required);
+  date = new FormControl('', Validators.required);
+  WCS_ID = new FormControl('', Validators.required);
+  // locationId = new FormControl('', Validators.required);
 
   constructor(
     private sessionService: SessionService,
@@ -46,9 +46,8 @@ export class SessionComponent implements OnInit {
     this.addSessionByStudent();
     this.getSession();
     this.addSessionForm = this.formBuilder.group({
-      name: this.name,
-      link: this.link,
-      locationId: this.locationId,
+      date: this.date,
+      WCS_ID: this.WCS_ID,
     });
   }
   getSession() {
@@ -70,7 +69,7 @@ export class SessionComponent implements OnInit {
       this.sessionService.addIfNotExist(this.addSessionForm.value).subscribe(
         (session) => {
           this.newSession = new Session;
-          this.sessions.push(session);
+          // this.sessions.push(session);
           this.addSessionForm.reset();
           console.log(session);
           this.toast.setMessage('item added successfully.', 'success');
@@ -82,10 +81,6 @@ export class SessionComponent implements OnInit {
 
   addSession() {
     if (this.canAddSession()) {
-      this.studentService.getMe().subscribe((me) => {
-        this.addSessionForm.value.date = me.session;
-        this.addSessionForm.value.WCS_ID = me.sessionId;
-        console.log(me);
         this.sessionService.addSession(this.addSessionForm.value).subscribe(
           (session) => {
             this.newSession = new Session;
@@ -96,7 +91,6 @@ export class SessionComponent implements OnInit {
           },
           error => console.log(error),
         );
-      })
     } else {
       this.addSessionForm.reset();
       this.toast.setMessage('projet already exist.', 'warning');
@@ -144,7 +138,7 @@ export class SessionComponent implements OnInit {
 
   canAddSession() {
     for (let i = 0; i < this.sessions.length; i += 1) {
-      if (this.sessions[i].name === this.addSessionForm.value.name) {
+      if (this.sessions[i].date === this.addSessionForm.value.date) {
         return false;
       }
     }
