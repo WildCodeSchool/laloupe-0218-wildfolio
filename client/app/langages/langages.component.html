@@ -9,7 +9,7 @@
     
 <!-- Administration -->
 <div class="card">
-  <h4 class="card-header backgroundNav">Ajouter un framework/langage</h4>
+  <!-- <h4 class="card-header backgroundNav">Ajouter un framework/langage</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addLangageForm" (ngSubmit)="addLangage()">
       <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom">
@@ -17,7 +17,7 @@
       <button class="btn btn-primary" type="submit" [disabled]="!addLangageForm.valid">
         <i class="fa fa-floppy-o"></i> Ajouter</button>
     </form>
-  </div>
+  </div> -->
   <div class="card mb-3" *ngIf="!isLoading">
     <h4 class="card-header backgroundNav">Langages ({{ langages.length }})</h4>
     <div class="card-body">

@@ -5,6 +5,8 @@ import { Student } from '../shared/models/student.model';
 import { Location } from '../shared/models/location.model';
 import { StudentService } from '../services/student.service';
 import { LocationService } from '../services/location.service';
+import { LangageService } from '../services/langage.service';
+import { Langage } from '../shared/models/langage.model';
 
 @Component({
   selector: 'app-login-callback',
@@ -21,6 +23,7 @@ export class LoginCallbackComponent implements OnInit {
     private router: Router,
     private studentService: StudentService,
     private locationService: LocationService,
+    private langageService: LangageService,
   ) { }
 
   ngOnInit() {
@@ -32,6 +35,7 @@ export class LoginCallbackComponent implements OnInit {
       console.log(this.wcsService.student);
       const student = new Student();
       const location = new Location();
+      const langage = new Langage();
       student.name = data['firstname'];
       student.admin = data['admin'];
       student.lastname = data['lastname'];
@@ -42,8 +46,13 @@ export class LoginCallbackComponent implements OnInit {
       // student.members = data['current_crew'].users;
       location.city = data['current_crew'].location.city;
       location.WCS_ID = data['current_crew'].location.id;
+      langage.name = data['current_crew'].program_type.name;
+      langage.WCS_ID = data['current_crew'].program_type.id;
+      student.langageId = langage.WCS_ID;
       this.students = student;
       // console.log(this.students);
+      this.langageService.addIfNotExist(langage).subscribe(
+        (res) => {
       this.locationService.addIfNotExist(location).subscribe(
         (res) => {
           /*  console.log(res); */
@@ -54,7 +63,9 @@ export class LoginCallbackComponent implements OnInit {
             studt.campus = location.city;
             studt.session = data['current_crew'].name;
             studt.admin = studt['admin'];
-            studt.sessionId = data['current_crew'].id
+            studt.sessionId = data['current_crew'].id;
+            studt.langageName = langage.name;
+            studt.langageId = langage.WCS_ID;
             delete studt.lastname;
             delete studt.id;
             await this.studentService.addStudentIfNotExists(studt).subscribe(
@@ -70,6 +81,8 @@ export class LoginCallbackComponent implements OnInit {
               student.campus = location.city;
               student.session = data['current_crew'].name;
               student.sessionId = data['current_crew'].id
+              student.langageName = langage.name;
+              student.langageId = langage.WCS_ID;
               /*  console.log('connecter'); */
             },
             error => console.log(error),
@@ -77,5 +90,6 @@ export class LoginCallbackComponent implements OnInit {
           this.router.navigate(['/']);
         });
     });
+  });
   }
 }
