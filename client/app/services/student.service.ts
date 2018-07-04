@@ -23,8 +23,8 @@ export class StudentService {
     return this.http.get<Student>(`/api/student/wcs/${locationid}`);
   }
 
-  getLangageById(WCS_ID: number): Observable<Langage[]> {
-    return this.http.get<Langage[]>(`/api/student/langage/${WCS_ID}`);
+  getLangageById(langageId: number): Observable<Student[]> {
+    return this.http.get<Student[]>(`/api/student/langage/${langageId}`);
   }
 
   countStudents(): Observable<number> {

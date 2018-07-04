@@ -17,7 +17,7 @@ export class ListStudentsComponent implements OnInit {
   langages: Langage[] = [];
   isLoading = true;
   isEditing = false;
-  // selectedLangageId: any;
+  selectedLangage: any;
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }
 
@@ -48,10 +48,10 @@ export class ListStudentsComponent implements OnInit {
     );
   }
 
-  getLangagesById() {
-    this.studentService.getLangageById(4).subscribe(
+  getLangageById() {
+    this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
-        this.langages = data;
+        this.students = data;
         console.log(data);
       },
       error => console.log(error),
@@ -60,6 +60,6 @@ export class ListStudentsComponent implements OnInit {
   }
 
   showProject() {
-    this.getLangagesById();
+    this.getLangageById();
   }
 }
