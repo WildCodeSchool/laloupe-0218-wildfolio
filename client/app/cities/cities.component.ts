@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 
 import { CityService } from '../services/city.service';
-import { LocationService } from '../services/location.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { City } from '../shared/models/city.model';
 import { WcsService } from '../wcs.service';
@@ -36,7 +35,6 @@ export class CitiesComponent implements OnInit {
     public toast: ToastComponent,
     private wcsService: WcsService,
     private studentService: StudentService,
-    private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router,
   ) { }

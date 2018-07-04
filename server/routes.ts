@@ -52,15 +52,6 @@ export default function routes(app) {
   router.route('/langage/:id').put(langage.update);
   router.route('/langage/:id').delete(langage.delete);
 
-  // Location
-  router.route('/locations').get(location.getAll);
-  router.route('/locations/count').get(location.count);
-  router.route('/location').post(location.insert);
-  router.route('/location/ifNotExists').post(location.insertIfNotExists);
-  router.route('/location/:id').get(location.get);
-  router.route('/location/:id').put(location.update);
-  router.route('/location/:id').delete(location.delete);
-
   // blogProjet
   router.route('/blogProjets').get(blogProjet.getAll);
   router.route('/blogProjets/location/:id').get(blogProjet.getAllByLocationId);
@@ -82,6 +73,7 @@ export default function routes(app) {
 
   // sessions
   router.route('/sessions').get(session.getAll);
+  router.route('/sessions/location/:id').get(session.getAllbyLocationId);
   router.route('/sessions/count').get(session.count);
   router.route('/session').post(session.insert);
   router.route('/session/ifNotExists').post(session.insertIfNotExists);

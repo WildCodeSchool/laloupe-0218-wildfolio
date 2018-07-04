@@ -4,7 +4,7 @@ import { WcsService } from '../wcs.service';
 import { Student } from '../shared/models/student.model';
 import { Location } from '../shared/models/location.model';
 import { StudentService } from '../services/student.service';
-import { LocationService } from '../services/location.service';
+import { CityService } from '../services/city.service';
 import { LangageService } from '../services/langage.service';
 import { Langage } from '../shared/models/langage.model';
 
@@ -22,7 +22,7 @@ export class LoginCallbackComponent implements OnInit {
     private wcsService: WcsService,
     private router: Router,
     private studentService: StudentService,
-    private locationService: LocationService,
+    private cityService: CityService,
     private langageService: LangageService,
   ) { }
 
@@ -53,8 +53,8 @@ export class LoginCallbackComponent implements OnInit {
       // console.log(this.students);
       this.langageService.addIfNotExist(langage).subscribe(
         (res) => {
-          this.locationService.addIfNotExist(location).subscribe(
-        (res) => {
+          this.cityService.addIfNotExist(location).subscribe(
+        () => {
           /*  console.log(res); */
           data['current_crew'].users.forEach(async (studt) => {
             studt.WCS_ID = studt['id'];
@@ -69,14 +69,14 @@ export class LoginCallbackComponent implements OnInit {
             delete studt.lastname;
             delete studt.id;
             await this.studentService.addStudentIfNotExists(studt).subscribe(
-              (res) => {
+              () => {
                 /*  console.log('add user', student); */
               },
               error => console.log(error),
             );
           });
           this.studentService.addStudentIfNotExists(student).subscribe(
-            (res) => {
+            () => {
               student.locationId = location.WCS_ID;
               student.campus = location.city;
               student.session = data['current_crew'].name;

@@ -15,8 +15,8 @@
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Campus</h3>
-        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId">
-          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.locationId">{{ city.name }}</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId" (ngModelChange)="somethingChanged($event)">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.WCS_ID" >{{ city.city }}</option>
         </select>
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
@@ -26,7 +26,7 @@
         </select>
       </div>
 
-      <div class="col-lg-4 col-12 mx-auto mt-4">
+      <!-- <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Projets</h3>
         <select class="custom-select selectWidth" id="projets">
           <option selected>Projet client</option>
@@ -36,7 +36,7 @@
           <option value="valeur4">Hackathon 2</option>
           <option value="valeur5">Hackathon 3</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="row mx-auto">
         <div class="col-12 search">

@@ -39,6 +39,7 @@ export class ProjetResearchComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
+        console.log('city', data),
         this.cities = data.sort((a, b) => {
           if (a.name < b.name) { return - 1; }
           if (a.name > b.name) { return 1; }
@@ -84,6 +85,17 @@ export class ProjetResearchComponent implements OnInit {
   showProject() {
     this.getBlogProjet();
     this.getBlogProjetBySession();
+  }
+  somethingChanged(change) {
+    console.log('change', change);
+    this.sessionService.getAllbyLocationId(change).subscribe(
+      (data) => {
+        this.sessions = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
   }
 }
 

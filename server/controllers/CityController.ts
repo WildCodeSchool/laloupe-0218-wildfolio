@@ -6,7 +6,7 @@ export default class CityController extends BaseController {
 
   // Insert
   insertIfNotId = (req, res) => {
-    this.model.findOne({ locationId: req.body.locationId }, (err, item) => {
+    this.model.findOne({ locationId: Number(req.body.locationId) }, (err, item) => {
       if (err) {
         return console.error(err);
       }
