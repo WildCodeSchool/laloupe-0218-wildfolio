@@ -40,7 +40,7 @@ export class CitiesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.getMe();
+    this.getMe();
     // this.addCityByStudentName();
     this.getCity();
     this.addCityForm = this.formBuilder.group({
@@ -49,16 +49,16 @@ export class CitiesComponent implements OnInit {
       locationId: this.locationId,
     });
   }
-  // getMe() {
-  //   this.studentService.getMe().subscribe(
-  //     (data) => {
-  //       this.me = data,
-  //       console.log(this.me);
-  //     },
-  //     error => console.log(error),
-  //     () => this.isLoading = false,
-  // );
-  // }
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+          console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
