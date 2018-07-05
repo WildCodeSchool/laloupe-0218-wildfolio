@@ -41,8 +41,8 @@ export class ProjetResearchComponent implements OnInit {
       (data) => {
         console.log('city', data),
         this.cities = data.sort((a, b) => {
-          if (a.name < b.name) { return - 1; }
-          if (a.name > b.name) { return 1; }
+          if (a.city < b.city) { return - 1; }
+          if (a.city > b.city) { return 1; }
           return 0;
         });
       },
