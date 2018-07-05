@@ -43,7 +43,7 @@ export class NewPostComponent implements OnInit {
   }
 
   getMe() {
-      this.studentService.getMe().subscribe(
+    this.studentService.getMe().subscribe(
         (data) => {
           this.me = data,
           console.log(this.me);
@@ -51,7 +51,7 @@ export class NewPostComponent implements OnInit {
         error => console.log(error),
         () => this.isLoading = false,
     );
-    }
+  }
 
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
