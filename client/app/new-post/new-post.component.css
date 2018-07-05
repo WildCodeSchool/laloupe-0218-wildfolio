@@ -21,6 +21,7 @@
 .imageUrl{
   margin-top: 2%;
   margin-bottom: 2%;
+  max-height: 5vh;
 }
 
 .link{
@@ -47,6 +48,3 @@ table{
   color: white;
 }
 
-.imageUrl {
-  max-height: 5vh;
-}

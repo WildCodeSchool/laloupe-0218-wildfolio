@@ -44,8 +44,13 @@ export class NewPostComponent implements OnInit {
 
   getMe() {
     this.studentService.getMe().subscribe(
+<<<<<<< HEAD
       (data) => {
         this.me = data,
+=======
+        (data) => {
+          this.me = data,
+>>>>>>> 415855f9aeeeec0bd76739b00921b8e4ad1f8e19
           console.log(this.me);
         if (this.me.admin == true) {
           this.getBlogProjet();
@@ -161,6 +166,7 @@ export class NewPostComponent implements OnInit {
     }
     return true;
   }
+/* tslint:disable:one-variable-per-declaration */
 
   shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;

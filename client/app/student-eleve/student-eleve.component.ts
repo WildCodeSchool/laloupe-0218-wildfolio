@@ -20,7 +20,10 @@ export class StudentEleveComponent implements OnInit {
   isLoading = true;
   // phone = false;
 
-  constructor(private wcsService: WcsService, private route: ActivatedRoute, private studentService: StudentService, private blogProjetService: BlogProjetService) { }
+  constructor(private wcsService: WcsService,
+              private route: ActivatedRoute,
+              private studentService: StudentService,
+              private blogProjetService: BlogProjetService) { }
 
   ngOnInit() {
     /*  this.wcsService.getMe().subscribe((data => {

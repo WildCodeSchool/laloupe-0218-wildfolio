@@ -55,8 +55,6 @@ export class PresentationComponent implements OnInit {
   isSearched() {
     this.isClick = true;
   }
-
-
   // Projets
 
   getBlogProjet() {
@@ -86,5 +84,4 @@ export class PresentationComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
-  
 }

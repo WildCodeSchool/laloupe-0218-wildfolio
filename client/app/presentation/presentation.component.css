@@ -58,7 +58,9 @@ h6 {
   font-weight: 700;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
+.portfolio-caption h4{
+  color: black;
+}
 section {
   padding: 80px 0;
 }
@@ -703,16 +705,4 @@ section#contact :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-
-.img-fluid {
-  display: block;
-  width: 100vw;
-  height: 30vh;
-  object-fit: cover;
-}
-
-.portfolio-caption h4{
-  color: black;
 }

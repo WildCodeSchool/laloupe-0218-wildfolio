@@ -63,7 +63,7 @@ export class LoginCallbackComponent implements OnInit {
         (res) => {
           console.log(res);
           this.sessionService.addIfNotExist(session).subscribe(
-            (res) => {
+            () => {
               console.log(res);
               this.cityService.addIfNotExist(city).subscribe(
                 () => {
@@ -73,9 +73,9 @@ export class LoginCallbackComponent implements OnInit {
                     studt.name = studt.fullname;
                     studt.locationId = city.WCS_ID;
                     studt.campus = city.city;
-                    studt.session = session.date
+                    studt.session = session.date;
                     studt.admin = studt['admin'];
-                    studt.sessionId = session.WCS_ID
+                    studt.sessionId = session.WCS_ID;
                     studt.langageName = langage.name;
                     studt.langageId = langage.WCS_ID;
                     delete studt.lastname;
