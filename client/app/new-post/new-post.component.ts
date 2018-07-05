@@ -27,13 +27,13 @@ export class NewPostComponent implements OnInit {
   description = new FormControl('', Validators.required);
 
   constructor(private blogProjetService: BlogProjetService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent,
-              private studentService: StudentService) { }
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent,
+    private studentService: StudentService) { }
 
   ngOnInit() {
-    this.getBlogProjet();
     this.getMe();
+
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
@@ -43,15 +43,20 @@ export class NewPostComponent implements OnInit {
   }
 
   getMe() {
-      this.studentService.getMe().subscribe(
-        (data) => {
-          this.me = data,
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
           console.log(this.me);
-        },
-        error => console.log(error),
-        () => this.isLoading = false,
+        if (this.me.admin == true) {
+          this.getBlogProjet();
+        } else {
+          this.getBlogProjetIfNotAdmin();
+        }
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
     );
-    }
+  }
 
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
@@ -63,7 +68,21 @@ export class NewPostComponent implements OnInit {
       () => this.isLoading = false,
     );
 
-  }   /* addProjet() {
+  }
+
+  getBlogProjetIfNotAdmin() {
+    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(this.blogProjets);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+
+  }
+
+  /* addProjet() {
     console.log(this.newBlogProjet);
     this.blogProjetService.addBlogProjet(this.newBlogProjet)
       .subscribe((blogProjet) => {
