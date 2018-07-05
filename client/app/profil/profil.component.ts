@@ -31,10 +31,10 @@ export class ProfilComponent implements OnInit {
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
   github = new FormControl('');
-  linkedin = new FormControl('');
-  lienLinkedin = new FormControl('');
   image = new FormControl('');
   name = new FormControl('');
+  langage = new FormControl('');
+  session = new FormControl('');
   poste = new FormControl('');
   specialites = new FormControl('');
 
@@ -51,11 +51,11 @@ export class ProfilComponent implements OnInit {
     this.getMe();
     this.id = this.route.snapshot.paramMap.get('id');
     this.addStudentForm = this.formBuilder.group({
-      lienLinkedin: this.lienLinkedin,
-      linkedin: this.linkedin,
       image: this.image,
       github: this.github,
       email: this.email,
+      langage: this.langage,
+      session: this.session,
       poste: this.poste,
       specialites : this.specialites,
     });

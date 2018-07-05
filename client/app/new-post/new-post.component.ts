@@ -16,6 +16,7 @@ export class NewPostComponent implements OnInit {
   newBlogProjet: BlogProjet = new BlogProjet();
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
+  me;
   isLoading = true;
   isEditing = false;
 
@@ -26,12 +27,13 @@ export class NewPostComponent implements OnInit {
   description = new FormControl('', Validators.required);
 
   constructor(private blogProjetService: BlogProjetService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent,
-              private studentService: StudentService) { }
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent,
+    private studentService: StudentService) { }
 
   ngOnInit() {
-    this.getBlogProjet();
+    this.getMe();
+
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
@@ -40,16 +42,47 @@ export class NewPostComponent implements OnInit {
     });
   }
 
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+          console.log(this.me);
+        if (this.me.admin == true || this.me.roles.length >= 1) {
+          this.getBlogProjet();
+        } else {
+          this.getBlogProjetIfNotAdmin();
+        }
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
     );
 
-  }   /* addProjet() {
+  }
+
+  getBlogProjetIfNotAdmin() {
+    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(this.blogProjets);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+
+  }
+
+  /* addProjet() {
     console.log(this.newBlogProjet);
     this.blogProjetService.addBlogProjet(this.newBlogProjet)
       .subscribe((blogProjet) => {
@@ -128,6 +161,7 @@ export class NewPostComponent implements OnInit {
     }
     return true;
   }
+/* tslint:disable:one-variable-per-declaration */
 
   shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;

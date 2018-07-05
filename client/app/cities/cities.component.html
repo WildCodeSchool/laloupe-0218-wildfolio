@@ -10,11 +10,11 @@
       <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration
         <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button>
       </h2>
-      <h2 class="page" *ngIf="me.admin === false || me.roles.length === 0"> Veuillez quitter cette page, Merci</h2>
+      <h2 class="page" *ngIf="me && (me.admin == false)"> Veuillez quitter cette page, Merci</h2>
     </div>
   </div>
   <!-- Administration -->
-  <div class="card" *ngIf="me.admin == true || me.roles.length >= 1">
+  <div class="card" *ngIf="me && (me.admin == true)">
     <h4 class="card-header backgroundNav">Ajouter un campus</h4>
     <div class="card-body">
       <form class="form-inline" [formGroup]="addCityForm" (ngSubmit)="addCity()">
@@ -32,7 +32,7 @@
           <thead class="thead-light">
             <tr>
               <th scope="col">Nom du campus</th>
-              <th scope="col">Lien</th>
+              <!-- <th scope="col">Lien</th> -->
               <th scope="col">Id</th>
               <th scope="col">Modifier/Supprimer</th>
             </tr>
@@ -44,11 +44,11 @@
           </tbody>
           <tbody>
             <tr *ngFor="let city of cities">
-              <td>{{ city.name }}</td>
-              <td>
+              <td>{{ city.city }}</td>
+             <!--  <td>
                 <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
-              </td>
-              <td>{{ city.locationId }}</td>
+              </td> -->
+              <td>{{ city.WCS_ID }}</td>
               <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
                 <i class="fa fa-pencil"></i> Modifier</button>
               <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">

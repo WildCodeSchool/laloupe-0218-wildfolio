@@ -3,10 +3,16 @@ import BaseController from './BaseController';
 
 export default class BlogProjetController extends BaseController {
   model = blogProjetModel;
-
-
   getAllByLocationId = (req, res) => {
-    this.model.find({locationId: req.params.id}, (err, docs) => {
+    this.model.find({ locationId: req.params.id }, (err, docs) => {
+      if (err) { return console.error(err); }
+      // console.log(docs);
+      res.status(200).json(docs);
+    });
+  }
+
+  getAllByUserId = (req, res) => {
+    this.model.find({studentId: req.params.id}, (err, docs) => {
       if (err) { return console.error(err); }
       // console.log(docs);
       res.status(200).json(docs);
@@ -14,14 +20,12 @@ export default class BlogProjetController extends BaseController {
   }
 
   getAllBySessionId = (req, res) => {
-    this.model.find({sessionId: req.params.id}, (err, docs) => {
+    this.model.find({ sessionId: req.params.id }, (err, docs) => {
       if (err) { return console.error(err); }
       // console.log(docs);
       res.status(200).json(docs);
     });
   }
-
-
   // Insert
   getAllBy = (req, res) => {
     console.log(req.query);
@@ -47,5 +51,3 @@ export default class BlogProjetController extends BaseController {
     });
   }
 }
-
-

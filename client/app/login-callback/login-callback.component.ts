@@ -4,9 +4,12 @@ import { WcsService } from '../wcs.service';
 import { Student } from '../shared/models/student.model';
 import { Location } from '../shared/models/location.model';
 import { StudentService } from '../services/student.service';
-import { LocationService } from '../services/location.service';
+import { CityService } from '../services/city.service';
 import { LangageService } from '../services/langage.service';
 import { Langage } from '../shared/models/langage.model';
+import { City } from '../shared/models/city.model';
+import { SessionService } from '../services/session.service';
+import { Session } from '../shared/models/session.model';
 
 @Component({
   selector: 'app-login-callback',
@@ -22,7 +25,8 @@ export class LoginCallbackComponent implements OnInit {
     private wcsService: WcsService,
     private router: Router,
     private studentService: StudentService,
-    private locationService: LocationService,
+    private cityService: CityService,
+    private sessionService: SessionService,
     private langageService: LangageService,
   ) { }
 
@@ -34,8 +38,9 @@ export class LoginCallbackComponent implements OnInit {
       this.wcsService.student = data;
       console.log(this.wcsService.student);
       const student = new Student();
-      const location = new Location();
+      const city = new City();
       const langage = new Langage();
+      const session = new Session();
       student.name = data['firstname'];
       student.admin = data['admin'];
       student.lastname = data['lastname'];
@@ -44,51 +49,59 @@ export class LoginCallbackComponent implements OnInit {
       student.github = data['github'];
       /* student.banished = data['banished']; */
       // student.members = data['current_crew'].users;
-      location.city = data['current_crew'].location.city;
-      location.WCS_ID = data['current_crew'].location.id;
+      city.city = data['current_crew'].location.city;
+      city.WCS_ID = data['current_crew'].location.id;
       langage.name = data['current_crew'].program_type.name;
       langage.WCS_ID = data['current_crew'].program_type.id;
+      session.date = data['current_crew'].name;
+      session.WCS_ID = data['current_crew'].id;
+      session.locationId = city.WCS_ID;
       student.langageId = langage.WCS_ID;
       this.students = student;
       // console.log(this.students);
       this.langageService.addIfNotExist(langage).subscribe(
         (res) => {
-          this.locationService.addIfNotExist(location).subscribe(
-        (res) => {
-          /*  console.log(res); */
-          data['current_crew'].users.forEach(async (studt) => {
-            studt.WCS_ID = studt['id'];
-            studt.name = studt.fullname;
-            studt.locationId = location.WCS_ID;
-            studt.campus = location.city;
-            studt.session = data['current_crew'].name;
-            studt.admin = studt['admin'];
-            studt.sessionId = data['current_crew'].id;
-            studt.langageName = langage.name;
-            studt.langageId = langage.WCS_ID;
-            delete studt.lastname;
-            delete studt.id;
-            await this.studentService.addStudentIfNotExists(studt).subscribe(
-              (res) => {
-                /*  console.log('add user', student); */
-              },
-              error => console.log(error),
-            );
-          });
-          this.studentService.addStudentIfNotExists(student).subscribe(
-            (res) => {
-              student.locationId = location.WCS_ID;
-              student.campus = location.city;
-              student.session = data['current_crew'].name;
-              student.sessionId = data['current_crew'].id;
-              student.langageName = langage.name;
-              student.langageId = langage.WCS_ID;
-              /*  console.log('connecter'); */
-            },
-            error => console.log(error),
-          );
-          this.router.navigate(['/']);
-        });
+          console.log(res);
+          this.sessionService.addIfNotExist(session).subscribe(
+            () => {
+              console.log(res);
+              this.cityService.addIfNotExist(city).subscribe(
+                () => {
+                  /*  console.log(res); */
+                  data['current_crew'].users.forEach(async (studt) => {
+                    studt.WCS_ID = studt['id'];
+                    studt.name = studt.fullname;
+                    studt.locationId = city.WCS_ID;
+                    studt.campus = city.city;
+                    studt.session = session.date;
+                    studt.admin = studt['admin'];
+                    studt.sessionId = session.WCS_ID;
+                    studt.langageName = langage.name;
+                    studt.langageId = langage.WCS_ID;
+                    delete studt.lastname;
+                    delete studt.id;
+                    await this.studentService.addStudentIfNotExists(studt).subscribe(
+                      () => {
+                        /*  console.log('add user', student); */
+                      },
+                      error => console.log(error),
+                    );
+                  });
+                  this.studentService.addStudentIfNotExists(student).subscribe(
+                    () => {
+                      student.locationId = city.WCS_ID;
+                      student.campus = city.city;
+                      student.session = session.date;
+                      student.sessionId = session.WCS_ID;
+                      student.langageName = langage.name;
+                      student.langageId = langage.WCS_ID;
+                      /*  console.log('connecter'); */
+                    },
+                    error => console.log(error),
+                  );
+                  this.router.navigate(['/']);
+                });
+            });
         });
     });
   }

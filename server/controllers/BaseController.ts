@@ -65,7 +65,6 @@ abstract class BaseController {
       res.status(200).json(item);
     });
   }
-
   // Get by id
   get = (req, res) => {
     this.model.findOne({ _id: req.params.id }, (err, item) => {

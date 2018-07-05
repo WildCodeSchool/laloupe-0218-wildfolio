@@ -15,8 +15,8 @@
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Campus</h3>
-        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId">
-          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.locationId">{{ city.name }}</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId" (ngModelChange)="somethingChanged($event)">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.WCS_ID" >{{ city.city }}</option>
         </select>
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
@@ -25,8 +25,8 @@
           <option *ngFor="let session of sessions" target="_blank" [ngValue]="session.WCS_ID">{{ session.date }}</option>
         </select>
       </div>
-<!-- 
-      <div class="col-lg-4 col-12 mx-auto mt-4">
+
+      <!-- <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Projets</h3>
         <select class="custom-select selectWidth" id="projets">
           <option selected>Projet client</option>

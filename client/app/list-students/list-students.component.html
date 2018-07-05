@@ -17,7 +17,7 @@
   <div class="row">
     <div class="col-md-2 offset-md-1 col-12 button1">
 
-      <button type="button" class="btn" data-toggle="modal" data-target=".modal1">Langages/Frameworks</button>
+      <button type="button" class="btn" data-toggle="modal" >Langages/Frameworks</button>
 
       <!-- Modal 1 -->
       <div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -76,7 +76,8 @@
           <tbody *ngIf="students">
             <tr *ngFor="let student of students">
               <td>
-                <img class="rounded-circle" src="/../assets/profil.jpg" alt="">
+                  <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined" src="https://cdn.xl.thumbs.canstockphoto.fr/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg" alt="">
+                <img class="rounded-circle"  src="https://github.com/{{ student.github }}.png" alt="">
               </td>
               <td>{{ student.name }}</td>
               <td>{{ student.lastname }}</td>
@@ -91,7 +92,7 @@
                 </a>
               </td>
               <td>
-                <a class="btn btn2 btn-lg active" role="button" aria-pressed="true" [routerLink]="['/student-eleve', student._id]">Profil</a>
+                <a class="btn btn2 btn-lg active" role="button" aria-pressed="true" target="_blank" [routerLink]="['/student-eleve', student._id]">Profil</a>
               </td>
             </tr>
           </tbody>

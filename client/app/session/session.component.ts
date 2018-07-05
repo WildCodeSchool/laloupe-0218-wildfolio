@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 
 import { SessionService } from '../services/session.service';
-import { LocationService } from '../services/location.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Session } from '../shared/models/session.model';
 import { WcsService } from '../wcs.service';
@@ -37,7 +36,6 @@ export class SessionComponent implements OnInit {
     private formBuilder: FormBuilder,
     public toast: ToastComponent,
     private wcsService: WcsService,
-    private locationService: LocationService,
     private route: ActivatedRoute,
     private router: Router,
   ) {}
@@ -65,6 +63,7 @@ export class SessionComponent implements OnInit {
     this.studentService.getMe().subscribe((me) => {
       this.addSessionForm.value.date = me.session;
       this.addSessionForm.value.WCS_ID = me.sessionId;
+      this.addSessionForm.value.locationId = me.locationId;
       console.log(me);
       this.sessionService.addIfNotExist(this.addSessionForm.value).subscribe(
         (session) => {
@@ -76,12 +75,12 @@ export class SessionComponent implements OnInit {
         },
         error => console.log(error),
       );
-    })
+    });
   }
 
   addSession() {
     if (this.canAddSession()) {
-        this.sessionService.addSession(this.addSessionForm.value).subscribe(
+      this.sessionService.addSession(this.addSessionForm.value).subscribe(
           (session) => {
             this.newSession = new Session;
             this.sessions.push(session);

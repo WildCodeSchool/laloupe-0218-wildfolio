@@ -12,7 +12,9 @@ export class SessionService {
   getSessions(): Observable<Session[]> {
     return this.http.get<Session[]>('/api/sessions');
   }
-
+  getAllbyLocationId(locationId: number): Observable<Session[]> {
+    return this.http.get<Session[]>(`/api/sessions/location/${locationId}`);
+  }
   countSessions(): Observable<number> {
     return this.http.get<number>('/api/sessions/count');
   }
