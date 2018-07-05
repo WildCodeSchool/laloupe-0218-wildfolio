@@ -6,10 +6,10 @@
 
 <!-- Title -->
 <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button></h2>    
-<h2 *ngIf="me.admin === false || me.roles.length === 0"> Veuillez quitter cette page, Merci</h2>
-    
+<h2 *ngIf="me && (me.admin === false || me.roles.length === 0)"> Veuillez quitter cette page, Merci</h2>
+  
 <!-- Administration -->
-<div class="card" *ngIf="me.admin == true || me.roles.length >= 1">
+<div class="card" *ngIf="me && (me.admin == true || me.roles.length >= 1)">
   <h4 class="card-header backgroundNav">Ajouter un campus</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addCityForm" (ngSubmit)="addCity()">
@@ -39,11 +39,11 @@
         </tbody>
         <tbody *ngIf="!isEditing">
           <tr *ngFor="let city of cities">
-            <td>{{ city.name }}</td>
+            <td>{{ city.city }}</td>
             <td>
-              <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+              <a href="{{ city.link }}" target="_blank">{{ city.city }}</a>
             </td>
-            <td>{{ city.locationId }}</td>
+            <td>{{ city.WCS_ID }}</td>
             <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
               <i class="fa fa-pencil"></i> Modifier</button>
             <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">

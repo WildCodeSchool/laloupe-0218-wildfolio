@@ -16,6 +16,7 @@ export class NewPostComponent implements OnInit {
   newBlogProjet: BlogProjet = new BlogProjet();
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
+  me;
   isLoading = true;
   isEditing = false;
 
@@ -32,6 +33,7 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit() {
     this.getBlogProjet();
+    this.getMe();
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
@@ -40,10 +42,22 @@ export class NewPostComponent implements OnInit {
     });
   }
 
+  getMe() {
+      this.studentService.getMe().subscribe(
+        (data) => {
+          this.me = data,
+          console.log(this.me);
+        },
+        error => console.log(error),
+        () => this.isLoading = false,
+    );
+    }
+
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,

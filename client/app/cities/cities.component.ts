@@ -40,24 +40,25 @@ export class CitiesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getMe();
-    this.addCityByStudentName();
+    // this.getMe();
+    // this.addCityByStudentName();
+    this.getCity();
     this.addCityForm = this.formBuilder.group({
       link: this.link,
       name: this.name,
       locationId: this.locationId,
     });
   }
-  getMe() {
-    this.studentService.getMe().subscribe(
-      (data) => {
-        this.me = data,
-        console.log(this.me);
-      },
-      error => console.log(error),
-      () => this.isLoading = false,
-  );
-  }
+  // getMe() {
+  //   this.studentService.getMe().subscribe(
+  //     (data) => {
+  //       this.me = data,
+  //       console.log(this.me);
+  //     },
+  //     error => console.log(error),
+  //     () => this.isLoading = false,
+  // );
+  // }
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
@@ -69,38 +70,38 @@ export class CitiesComponent implements OnInit {
     );
   }
 
-  addCityByStudentName() {
-    this.studentService.getMe().subscribe((me) => {
-      console.log(me.campus);
-      this.addCityForm.value.name = me.campus;
-      this.addCityForm.value.locationId = me.locationId;
-      this.cityService.addIfNotExist(this.addCityForm.value).subscribe(
-        (res) => {
-          // this.cities.push(res);
-          this.addCityForm.reset();
-          this.toast.setMessage('item added successfully.', 'success');
-          this.getCity();
-        },
-        error => console.log(error),
-      );
-    });
-  }
+  // addCityByStudentName() {
+  //   this.studentService.getMe().subscribe((me) => {
+  //     console.log(me.campus);
+  //     this.addCityForm.value.name = me.campus;
+  //     this.addCityForm.value.locationId = me.locationId;
+  //     this.cityService.addIfNotExist(this.addCityForm.value).subscribe(
+  //       (res) => {
+  //         // this.cities.push(res);
+  //         this.addCityForm.reset();
+  //         this.toast.setMessage('item added successfully.', 'success');
+  //         this.getCity();
+  //       },
+  //       error => console.log(error),
+  //     );
+  //   });
+  // }
 
-  addCity() {
-    if (this.canAddCity()) {
-      this.cityService.addCity(this.addCityForm.value).subscribe(
-        (res) => {
-          this.cities.push(res);
-          this.addCityForm.reset();
-          this.toast.setMessage('item added successfully.', 'success');
-        },
-        error => console.log(error),
-      );
-    } else {
-      this.addCityForm.reset();
-      this.toast.setMessage('campus already exist.', 'warning');
-    }
-  }
+  // addCity() {
+  //   if (this.canAddCity()) {
+  //     this.cityService.addCity(this.addCityForm.value).subscribe(
+  //       (res) => {
+  //         this.cities.push(res);
+  //         this.addCityForm.reset();
+  //         this.toast.setMessage('item added successfully.', 'success');
+  //       },
+  //       error => console.log(error),
+  //     );
+  //   } else {
+  //     this.addCityForm.reset();
+  //     this.toast.setMessage('campus already exist.', 'warning');
+  //   }
+  // }
 
   enableEditing(city: City) {
     this.isEditing = true;
