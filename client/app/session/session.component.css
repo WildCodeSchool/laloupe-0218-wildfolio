@@ -3,14 +3,13 @@
   width: 25%;
 }
 
-.titleAdmin 
-{
+.titleAdmin {
   font-weight: bold;
 }
 
-.backgroundNav 
-{
-  background-color: #F9A02E;
+
+.card{
+  background-color:#E8E8E8;
 }
 
 .btn-primary {
@@ -23,4 +22,19 @@
   border: 1px solid #F9A02E;
   background-color: #F9A02E;
   color: white;
+}
+
+.backgroundNav {
+  background-image:linear-gradient(to right, black, grey);
+  color: white;
+}
+
+table{
+  background-color: white;
+}
+
+.id{
+
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
