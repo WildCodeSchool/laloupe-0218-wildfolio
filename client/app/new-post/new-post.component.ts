@@ -142,6 +142,7 @@ export class NewPostComponent implements OnInit {
     }
     return true;
   }
+/* tslint:disable:one-variable-per-declaration */
 
   shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
