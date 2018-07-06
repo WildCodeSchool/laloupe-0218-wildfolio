@@ -1,15 +1,25 @@
 import * as mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
+  admin: Boolean,
   name: String,
-  lastname: String,
+  phone: String,
   email: String,
   WCS_ID: Number,
   github: String,
+  linkedin: String,
+  lienLinkedin: String,
+  image: String,
   roles: String,
-  admin: Boolean,
-  banished: Boolean,
-  crew: Object,
+  campus: String,
+  session: String,
+  sessionId: Number,
+  locationId: Number,
+  langageId: Number,
+  langageName: String,
+ /*  palmares: Array,
+  poste: String,
+  specialites: Array, */
 });
 
 const studentModel = mongoose.model('student', studentSchema);

@@ -5,6 +5,9 @@ import CityController from './controllers/CityController';
 import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
 import StudentController from './controllers/StudentController';
+import LocationController from './controllers/LocationController';
+import SessionController from './controllers/Session.Controller';
+import LangageController from './controllers/LangageController';
 // import city from './models/city';
 // import user from './models/user';
 
@@ -17,6 +20,9 @@ export default function routes(app) {
   const city = new CityController();
   const user = new UserController();
   const student = new StudentController();
+  const location = new LocationController();
+  const session = new SessionController();
+  const langage = new LangageController();
 
   // recruts
   router.route('/recruts').get(recrut.getAll);
@@ -29,15 +35,29 @@ export default function routes(app) {
   // students
   router.route('/students').get(student.getAll);
   router.route('/students/count').get(student.count);
+  router.route('/student/langage/:id').get(student.getAllByLangageId);
   router.route('/student').post(student.insert);
   router.route('/student/ifNotExists').post(student.insertIfNotExists);
   router.route('/student/:id').get(student.get);
+  router.route('/student/wcs/:id').get(student.getbyWCSID);
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
 
+  // Langages
+  router.route('/langages').get(langage.getAll);
+  router.route('/langages/count').get(langage.count);
+  router.route('/langage').post(langage.insert);
+  router.route('/langage/ifNotExists').post(langage.insertIfNotExists);
+  router.route('/langage/:id').get(langage.get);
+  router.route('/langage/:id').put(langage.update);
+  router.route('/langage/:id').delete(langage.delete);
+
   // blogProjet
-  router.route('/blogProjet').get(blogProjet.getAll);
-  router.route('/blogProjet/count').get(blogProjet.count);
+  router.route('/blogProjets').get(blogProjet.getAll);
+  router.route('/blogProjets/location/:id').get(blogProjet.getAllByLocationId);
+  router.route('/blogProjets/session/:id').get(blogProjet.getAllBySessionId);
+  router.route('/blogProjets/all/:id').get(blogProjet.getAllByUserId);
+  router.route('/blogProjets/count').get(blogProjet.count);
   router.route('/blogProjet').post(blogProjet.insert);
   router.route('/blogProjet/:id').get(blogProjet.get);
   router.route('/blogProjet/:id').put(blogProjet.update);
@@ -47,9 +67,20 @@ export default function routes(app) {
   router.route('/cities').get(city.getAll);
   router.route('/cities/count').get(city.count);
   router.route('/city').post(city.insert);
+  router.route('/city/ifNotId').post(city.insertIfNotId);
   router.route('/city/:id').get(city.get);
   router.route('/city/:id').put(city.update);
   router.route('/city/:id').delete(city.delete);
+
+  // sessions
+  router.route('/sessions').get(session.getAll);
+  router.route('/sessions/location/:id').get(session.getAllbyLocationId);
+  router.route('/sessions/count').get(session.count);
+  router.route('/session').post(session.insert);
+  router.route('/session/ifNotExists').post(session.insertIfNotExists);
+  router.route('/session/:id').get(session.get);
+  router.route('/session/:id').put(session.update);
+  router.route('/session/:id').delete(session.delete);
 
   // users
   router.route('/login').post(user.login);

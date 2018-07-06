@@ -1,0 +1,202 @@
+<app-loading [condition]="isLoading">
+</app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+<app-navbar></app-navbar>
+
+<div class="container-fluid" *ngIf="me">
+    <div class="row justify-content-start profil">
+        <div class="col-md-3 col-sm-12 mx-auto photo">
+            <img class="rounded-circle" src="https://github.com/{{ me.github }}.png" alt="photoDev">
+        </div>
+        <div class="col-md-8 col-sm-12 mx-auto">
+            <div class="nameDev">
+                <h1>{{ me.name }} 
+                    <form>
+                    <button class="btn btn-outline-warning" (click)="showEdit()" *ngIf="!edit">Edit</button>
+                    <button class="btn btn-outline-warning" (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
+                    <input type="button" class="btn btn-outline-info" value="Espace Admin" [routerLink]="['/admin']" />
+                    </form></h1>
+                <!-- <h2 class="poste">{{me.poste}}</h2> -->
+                
+            </div>
+            <div class="specialities">
+                <div class="row speciality">
+                    <div class="col-sm-12">
+                        <h3>Mes spécialités :</h3>
+                    </div>
+                </div>
+                <ul class="list-inline keywords">
+                    <li class="list-inline-item keyword">{{ me.langageName }}</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col-md-3 col-sm-12 mx-auto">
+            <div class="contact">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item linksocial">
+                                <a href="{{ me.lienLinkedin }}" target="blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial">
+                                <a href="https://github.com/{{ me.github }}" target="blank">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row list-inline">
+                    <div class="col-12">
+                
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="mailto:{{ me.email }}">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial mail">{{ me.email }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a>
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item linksocial phone">{{ me.phone }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="palmares" *ngIf="this.student.palmares.length !== 0">
+                <div class="row">
+                    <div class="col-sm-12 titleprojects">
+                        <h3>Mon Palmarès :</h3>
+                    </div>
+                </div>
+                <ul class="list-palmares">
+                    <li class="title-palmares">Prix du Grand Vainqueur Hackathon mai 2018</li>
+                    <li class="title-palmares">{{ student.palmares}}</li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="col-md-8 col-sm-12 mx-auto">
+            <div class="projets" id="portfolio">
+                <div class="row">
+                    <div class="col-sm-12 titleprojects">
+                        <h3>Mes projets :</h3>
+                    </div>
+                </div>
+                <div class="row projects">
+                    <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let blogProjet of blogProjets">
+                        <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-chevron-down fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="{{ blogProjet.imageUrl }}"
+                                alt="projet">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- name: String,
+  lastname: String,
+  email: String,
+  github: String,
+  linkedin: String,
+  lienlinkedin: String,
+  image: String, -->
+
+    
+
+
+<div class="card" *ngIf="edit">
+  <div class="card mb-3" *ngIf="!isLoading">
+    <h4 class="card-header backgroundNav" *ngIf="me">{{ me.name }}</h4>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <!-- <thead class="thead-light">
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Github</th>
+            <th scope="col">image Url</th>
+            <th scope="col">Lien Linkedin</th>
+          </tr>
+        </thead> -->
+        <tbody *ngIf="me.length === 0">
+          <tr>
+            <td colspan="4">Il n'y a pas de projet ajouter.</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="me">
+          <!-- <tr>
+            <td>{{ me.email }} </td>
+            <td>{{ me.phone }} </td>
+            <td> {{ me.github }}</td>
+            <td>
+              <img class="imageUrl" src="{{ me.image }}" alt="Can't access">
+            </td>
+            <td>
+              <a href="{{ me.lienLinkedin }}" target="_blank">{{ me.lienLinkedin }}</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="col">Linkedin</th>
+            <th scope="col">Palmarès</th>
+            <th scope="col">Poste</th>
+            <th scope="col">Spécialités</th>
+            <th scope="col">Modifier/Supprimer</th>
+          </tr>
+          <td>
+            <td>{{ me.linkedin }}</td>
+            <td>{{ me.poste }}</td>
+            <td>{{ me.specialites }}</td> -->
+          <!-- <td> 
+            <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(me)">
+              <i class="fa fa-pencil"></i> Modifier</button>
+            <button class="btn btn-sm btn-danger mr-2" (click)="deleteStudent(me)">
+              <i class="fa fa-trash"></i> Supprimer</button> 
+          </td> -->
+        </tbody>
+        <tbody *ngIf="isEditing">
+          <tr>
+            <td colspan="4" *ngIf="me">
+              <form class="form" #form="ngForm" (ngSubmit)="editStudent(me)">
+                <input class="form-control mr-2" type="text" name="email" [(ngModel)]="me.email" placeholder="Email" required>
+                <input class="form-control mr-2" type="text" name="phone" [(ngModel)]="me.phone" placeholder="Téléphone">
+                <input class="form-control mr-2" type="text" name="github" [(ngModel)]="me.github" placeholder="Nom Github" required>
+                <input class="form-control mr-2" type="text" name="lienLinkedin" [(ngModel)]="me.lienLinkedin" placeholder="Lien vers votre linkedin">
+                <!-- <input class="form-control mr-2" type="text" name="image" [(ngModel)]="me.image" placeholder="Photo de profil"> -->
+                <!-- <input class="form-control mr-2" type="text" name="langage" [(ngModel)]="me.langageName" placeholder="Framework">
+                <input class="form-control mr-2" type="text" name="session" [(ngModel)]="me.session" placeholder="Session"> -->
+                <!-- <input class="form-control mr-2" type="text" name="poste" [(ngModel)]="me.poste" placeholder="Poste">
+                <input class="form-control mr-2" type="text" name="specialites" [(ngModel)]="me.specialites" placeholder="spécialités"> -->
+                <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
+                  <i class="fa fa-floppy-o"></i> Save</button>
+                <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                  <i class="fa fa-times"></i> Cancel</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

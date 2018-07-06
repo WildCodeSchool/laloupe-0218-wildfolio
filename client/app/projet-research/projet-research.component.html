@@ -5,35 +5,28 @@
 <header class="masthead">
   <div class="container-fluid">
     <div class="intro-text">
-      <div class="row">
-        <div class="mx-auto">
-          <select class="custom-select selectWidth" id="campus">
-            <option *ngFor="let city of cities" target="_blank">{{ city.name }}</option>
-          </select>
-        </div>
-      </div>
       <div class="p-research">
         <p>
           Durant nos formations intenses, nos élèves réalisent des projets ainsi que des Hackathons.
         </p>
         <p>
-          Rechercher un projet selon la session :
+          Rechercher un projet selon le campus et la session :
         </p>
       </div>
-      <div class="col-lg-4 col-12 mx-auto">
+      <div class="col-lg-4 col-12 mx-auto mt-4">
+        <h3>Campus</h3>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId" (ngModelChange)="somethingChanged($event)">
+          <option *ngFor="let city of cities" target="_blank" [ngValue]="city.WCS_ID" >{{ city.city }}</option>
+        </select>
+      </div>
+      <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Sessions</h3>
-        <select class="custom-select selectWidth" id="session">
-          <option selected>Select</option>
-          <option value="1">Février 2018</option>
-          <option value="2">Septembre 2017</option>
-          <option value="3">Février 2017</option>
-          <option value="4">Js</option>
-          <option value="5">!</option>
-          <option value="6">?</option>
+        <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedSession">
+          <option *ngFor="let session of sessions" target="_blank" [ngValue]="session.WCS_ID">{{ session.date }}</option>
         </select>
       </div>
 
-      <div class="col-lg-4 col-12 mx-auto">
+      <!-- <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Projets</h3>
         <select class="custom-select selectWidth" id="projets">
           <option selected>Projet client</option>
@@ -43,18 +36,18 @@
           <option value="valeur4">Hackathon 2</option>
           <option value="valeur5">Hackathon 3</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="row mx-auto">
         <div class="col-12 search">
-          <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Projet</button>
+          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Chercher un Projet</button>
         </div>
       </div>
 
       <!-- <div class="row mx-auto">
         <a class="scroll-down" address="true"></a>
       </div> -->
-        
+
     </div>
   </div>
 </header>
@@ -64,7 +57,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center">Nos Projets</h2>
+          <h2 class="text-center">Nos projets</h2>
           <hr>
         </div>
       </div>
@@ -73,6 +66,9 @@
         <div class="tz-gallery">
 
           <div class="row mb-3">
+            <div class="mx-auto" *ngIf="blogProjets.length == 0">
+              <h3>Aucun projet pour ce campus.</h3>
+            </div>
             <div class="col-md-4 portfolio-item" *ngFor="let blogProjet of blogProjets">
               <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
                 <div class="portfolio-hover">
@@ -83,7 +79,7 @@
                 <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
               </a>
             </div>
-<!-- 
+            <!-- 
             <div class="col-md-4 portfolio-item">
               <a class="portfolio-link" href="#portfolioModal1">
                 <div class="portfolio-hover">

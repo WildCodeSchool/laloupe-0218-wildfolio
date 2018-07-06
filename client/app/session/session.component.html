@@ -1,0 +1,92 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+
+<div class="container-fluid">
+  <!-- Title -->
+  <div class="row">
+    <div class="col-12">
+      <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration
+        <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button>
+      </h2>
+    </div>
+  </div>
+
+
+  <!-- Administration -->
+  <div class="card">
+    <h4 class="card-header backgroundNav">Ajouter une session</h4>
+    <div class="card-body">
+      <form [formGroup]="addSessionForm" (ngSubmit)="addSession()">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <input class="form-control name" type="text" name="date" formControlName="date" placeholder="Nom de la session">
+            <input class="form-control id" type="text" name="WCS_ID" formControlName="WCS_ID" placeholder="Id de la session">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit" [disabled]="!addSessionForm.valid">
+              <i class="fa fa-floppy-o"></i> Ajouter</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="card mb-3" *ngIf="!isLoading">
+      <h4 class="card-header backgroundNav">Sessions ({{ sessions.length }})</h4>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" *ngIf="!isEditing">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nom de la session</th>
+                <th scope="col">Id de la session</th>
+                <th scope="col">Modifier/Supprimer</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="sessions.length === 0">
+              <tr>
+                <td colspan="4">Il n'y a pas de campus ajouter.</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr *ngFor="let session of sessions">
+                <td>{{ session.date }}</td>
+                <!--  <td>
+              <a href="{{ session.link }}" target="_blank">{{ session.name }}</a>
+            </td> -->
+                <td>{{ session.WCS_ID }}</td>
+                <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(session)">
+                  <i class="fa fa-pencil"></i> Modifier</button>
+                <button class="btn btn-sm btn-danger mr-2" (click)="deleteSession(session)">
+                  <i class="fa fa-trash"></i> Supprimer</button>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card" *ngIf="isEditing">
+      <h4 class="card-header backgroundNav">Modifier une session</h4>
+      <div class="card-body">
+        <form #form="ngForm" (ngSubmit)="editSession(session)">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <input class="form-control name" type="text" name="date" [(ngModel)]="session.date" placeholder="Date" required>
+              <input class="form-control id" type="number" name="WCS_ID" [(ngModel)]="session.WCS_ID" placeholder="Id" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mx-auto">
+              <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
+                <i class="fa fa-floppy-o"></i> Enregister</button>
+              <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                <i class="fa fa-times"></i> Quitter</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

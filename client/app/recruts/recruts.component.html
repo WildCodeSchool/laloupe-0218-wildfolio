@@ -2,65 +2,84 @@
 
 <app-toast [message]="toast.message"></app-toast>
 
+<div class="container-fluid">
 
-<!-- Title -->
-<h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button></h2>    
-
-    
-<!-- Administration -->
-<div class="card">
-  <h4 class="card-header backgroundNav">Ajouter un description</h4>
-  <div class="card-body">
-    <form class="form-inline" [formGroup]="addRecrutForm" (ngSubmit)="addRecrut()">
-      <input class="form-control mr-2" type="text" name="authname" formControlName="authname" placeholder="Auteur">
-      <input class="form-control mr-2" type="textarea" name="description" formControlName="description" placeholder="Description">
-      <button class="btn btn-primary" type="submit" [disabled]="!addRecrutForm.valid">
-        <i class="fa fa-floppy-o"></i> Ajouter</button>
-    </form>
+  <div class="row">
+    <div class="col-12">
+      <!-- Title -->
+      <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration
+        <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button>
+      </h2>
+      <h2 class="page" *ngIf="me && (me.admin == false)"> Veuillez quitter cette page, Merci</h2>
+    </div>
   </div>
-  <div class="card mb-3" *ngIf="!isLoading">
-    <h4 class="card-header backgroundNav">Commentaire ({{ recruts.length }})</h4>
+  <!-- Administration -->
+  <div class="card" *ngIf="me && (me.admin == true)">
+    <h4 class="card-header backgroundNav">Ajouter un description</h4>
     <div class="card-body">
-      <table class="table table-bordered">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Nom de la description</th>
-            <th scope="col">Auteur</th>
-            <th scope="col">Modifier/Supprimer</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="recruts.length === 0">
-          <tr>
-            <td colspan="4">Il n'y a pas de description ajouter.</td>
-          </tr>
-        </tbody>
-        <tbody *ngIf="!isEditing">
-          <tr *ngFor="let recrut of recruts">
-            <td>{{ recrut.description }}</td>
-            <td>
-              <p>{{ recrut.authname }}</p>
-            </td>
-            <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(recrut)">
-              <i class="fa fa-pencil"></i> Modifier</button>
-            <button class="btn btn-sm btn-danger mr-2" (click)="deleteRecrut(recrut)">
-              <i class="fa fa-trash"></i> Supprimer</button>
-          </tr>
-        </tbody>
-        <tbody *ngIf="isEditing">
-          <tr>
-            <td colspan="4">
-              <form class="form-inline" #form="ngForm" (ngSubmit)="editRecrut(recrut)">
-                <input class="form-control mr-2" type="text" name="authname" [(ngModel)]="recrut.authname" placeholder="Auteur" required>
-                <input class="form-control mr-2" type="textarea" name="description" [(ngModel)]="recrut.description" placeholder="Description" required>
-                <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
-                  <i class="fa fa-floppy-o"></i> Save</button>
-                <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
-                  <i class="fa fa-times"></i> Cancel</button>
-              </form>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <form class="form-inline" [formGroup]="addRecrutForm" (ngSubmit)="addRecrut()">
+        <input class="form-control mr-2" type="text" name="authname" formControlName="authname" placeholder="Auteur">
+        <input class="form-control mr-2" type="textarea" name="description" formControlName="description" placeholder="Description">
+        <button class="btn btn-primary" type="submit" [disabled]="!addRecrutForm.valid">
+          <i class="fa fa-floppy-o"></i> Ajouter</button>
+      </form>
+    </div>
+    <div class="card mb-3" *ngIf="!isLoading">
+      <h4 class="card-header backgroundNav">Commentaire ({{ recruts.length }})</h4>
+      <div class="card-body">
+        <table class="table table-bordered" *ngIf="!isEditing">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nom de la description</th>
+              <th scope="col">Auteur</th>
+              <th scope="col">Modifier/Supprimer</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="recruts.length === 0">
+            <tr>
+              <td colspan="4">Il n'y a pas de description ajouter.</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr *ngFor="let recrut of recruts">
+              <td>{{ recrut.description }}</td>
+              <td>
+                <p>{{ recrut.authname }}</p>
+              </td>
+              <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(recrut)">
+                <i class="fa fa-pencil"></i> Modifier</button>
+              <button class="btn btn-sm btn-danger mr-2" (click)="deleteRecrut(recrut)">
+                <i class="fa fa-trash"></i> Supprimer</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card" *ngIf="isEditing">
+      <h4 class="card-header backgroundNav">Modifier un projet</h4>
+      <div class="card-body">
+        <form #form="ngForm" (ngSubmit)="editRecrut(recrut)">
+          <div class="row">
+            <div class="col-md-6 col-12">
+              <input class="form-control mr-2" type="text" name="authname" [(ngModel)]="recrut.authname" placeholder="Auteur" required>
+              <input class="form-control mr-2" type="textarea" name="description" [(ngModel)]="recrut.description" placeholder="Description"
+                required>
+            </div>
+            <div class="col-md-6 col-12">
+              <textarea class="form-control" type="text" name="description" [(ngModel)]="blogProjet.description" placeholder="description"
+                rows="5"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mx-auto">
+              <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
+                <i class="fa fa-floppy-o"></i> Enregistrer</button>
+              <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                <i class="fa fa-times"></i> Quitter</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

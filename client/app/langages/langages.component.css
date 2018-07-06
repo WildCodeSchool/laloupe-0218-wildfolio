@@ -1,0 +1,43 @@
+
+.titleAdmin {
+  font-weight: bold;
+}
+
+.card{
+  background-color:#E8E8E8;
+}
+
+.backgroundNav{
+  background-image:linear-gradient(to right, black, grey);
+  color: white;
+}
+
+.imageUrl{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+table{
+    background-color: white;
+  }
+
+.btn-primary {
+    border: 1px solid #FBA858;
+    background-color: #FBA858;
+    color: white;
+  }
+  
+.btn-primary:hover {
+    border: 1px solid #F9A02E;
+    background-color: #F9A02E;
+    color: white;
+  }
+
+  .name{
+    margin-bottom: 2%;
+  }
+
+  .id{
+    margin-bottom: 2%;
+  }

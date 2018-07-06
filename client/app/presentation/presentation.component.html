@@ -8,25 +8,21 @@
       <form class="form-inline row">
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
-          <select class="custom-select selectWidth" id="techno">
-            <option selected>Select</option>
-            <option value="1">PHP Symfony</option>
-            <option value="2">JavaScript Angular</option>
-            <option value="3">JavaScript React</option>
-            <option value="4">JavaScript VueJS</option>
-            <option value="5">JavaScript NodeJS</option>
-            <option value="6">Java J2EE Android</option>
-          </select>
+          <div class="col-md-2 col-12 button2">
+            <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
+            </select>
+          </div>
         </div>
 
-        <div class="col-lg-4 col-12 mx-auto">
+        <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select selectWidth" id="poste">
             <option selected>Select</option>
             <option value="valeur1">Stagiaire</option>
             <option value="valeur1">Développeur</option>
           </select>
-        </div>
+        </div> -->
 
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
@@ -35,7 +31,7 @@
         </div>
         <div class="row mx-auto">
           <div class="col-12 search">
-            <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Développeur</button>
+            <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
           </div>
         </div>
       </form>
@@ -64,61 +60,58 @@
 <!-- Section Projets -->
 
 <section class="bg-light" id="portfolio">
-  <div class="container">
-    <div class="row">
+  <div class="container" *ngIf="isCharged">
+    <div class="row" >
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Nos derniers projets</h2>
         <hr/>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+      <div class="col-md-4  col-sm-6 portfolio-item">
+        <a class="portfolio-link" *ngIf="ramdomProjets[0]" [routerLink]="['/projetFront', ramdomProjets[0]._id]" target="blank">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
-              <i class="fa fa-plus fa-3x"></i>
+              <i class="fa fa-chevron-down fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
+          <img class="img-fluid" src="{{ ramdomProjets[0].imageUrl }}" alt="projet">
         </a>
         <div class="portfolio-caption">
-          <h4>Projet 1</h4>
-          <!-- <p class="text-muted">Illustration</p> -->
+          <h4>{{ ramdomProjets[0].name }}</h4>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fa fa-plus fa-3x"></i>
+      <div class="col-md-4  col-sm-6 portfolio-item" >
+          <a class="portfolio-link"  [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-chevron-down fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ ramdomProjets[1].imageUrl }}" alt="projet">
+          </a>
+          <div class="portfolio-caption">
+            <h4 >{{ ramdomProjets[1].name }}</h4>
+          </div>
+        </div>
+        <div class="col-md-4  col-sm-6 portfolio-item" >
+            <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-chevron-down fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ ramdomProjets[2].imageUrl }}" alt="projet">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ ramdomProjets[2].name }}</h4>
             </div>
           </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-up">
-        </a>
-        <div class="portfolio-caption">
-          <h4>Projet 2</h4>
-          <!-- <p class="text-muted">Graphic Design</p> -->
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fa fa-plus fa-3x"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="http://via.placeholder.com/350x300" alt="" data-aos="fade-down">
-        </a>
-        <div class="portfolio-caption">
-          <h4>Projet 3</h4>
-          <!-- <p class="text-muted">Identity</p> -->
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="project_button">
-          <a class="btn btn-primary btn-lg answerText" href="">Plus de projets</a>
+          <a class="btn btn-primary btn-lg answerText" [routerLink]="['/projet']">Plus de projets</a>
         </div>
       </div>
     </div>
@@ -137,86 +130,72 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
-          <h4>Antoine Porée</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[0].github }}.png" alt="">
+          <h4>{{ ramdomProfil[0].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[0].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[0].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[2].github }}">
                 <i class="fa fa-github"></i>
               </a>
             </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
-          <h4>Alexandre Teyssier</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[1].github }}.png" alt="">
+          <h4>{{ ramdomProfil[1].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[1].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[1].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[1].github }}">
                 <i class="fa fa-github"></i>
               </a>
             </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
-          <h4>Bastien Champion</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[2].github }}.png" alt="">
+          <h4>{{ ramdomProfil[2].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[2].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[2].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[2].github }}">
                 <i class="fa fa-github"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-envelope"></i>
               </a>
             </li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="dev_button">
-          <a class="btn btn-primary btn-lg answerText">Plus de développeurs</a>
+      <div class="row mx-auto">
+        <div class="col-12  mx-auto text-center">
+          <div class="dev_button">
+            <a class="btn btn-primary btn-lg answerText" [routerLink]="['/list-students']">Plus de développeurs</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div></div>
 </section>
 
 <!-- Section Oeil du recruteur -->
@@ -231,25 +210,25 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6" *ngIf="recruts[0]">
-          <blockquote class="text-muted">{{ recruts[0].description }}
-            <p class="text-muted">
-              <strong>{{ recruts[0].authname }}</strong>
-            </p>
-          </blockquote>
+        <blockquote class="text-muted">{{ recruts[0].description }}
+          <p class="text-muted">
+            <strong>{{ recruts[0].authname }}</strong>
+          </p>
+        </blockquote>
       </div>
       <div class="col-md-4 col-sm-6" *ngIf="recruts[1]">
-          <blockquote class="text-muted">{{ recruts[1].description }}
-            <p class="text-muted">
-              <strong>{{ recruts[1].authname }}</strong>
-            </p>
-          </blockquote>
+        <blockquote class="text-muted">{{ recruts[1].description }}
+          <p class="text-muted">
+            <strong>{{ recruts[1].authname }}</strong>
+          </p>
+        </blockquote>
       </div>
-      <div class="col-md-4 col-sm-6" *ngIf="recruts[2]">  
-          <blockquote class="text-muted">{{ recruts[2].description }}
-            <p class="text-muted">
-              <strong>{{ recruts[2].authname }}</strong>
-            </p>
-          </blockquote>
+      <div class="col-md-4 col-sm-6" *ngIf="recruts[2]">
+        <blockquote class="text-muted">{{ recruts[2].description }}
+          <p class="text-muted">
+            <strong>{{ recruts[2].authname }}</strong>
+          </p>
+        </blockquote>
       </div>
     </div>
   </div>
@@ -301,223 +280,5 @@
     </div>
   </div>
 </section> -->
-
-<!-- Portfolio Modals -->
-
-<!-- Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Threads</li>
-                <li>Category: Illustration</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Explore</li>
-                <li>Category: Graphic Design</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Finish</li>
-                <li>Category: Identity</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Lines</li>
-                <li>Category: Branding</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Southwest</li>
-                <li>Category: Website Design</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">Project Name</h2>
-              <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-              <img class="img-fluid d-block mx-auto" src="" alt="">
-              <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-              <ul class="list-inline">
-                <li>Date: January 2017</li>
-                <li>Client: Window</li>
-                <li>Category: Photography</li>
-              </ul>
-              <button class="btn btn-primary" data-dismiss="modal" type="button">
-                <i class="fa fa-times"></i>
-                Close Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <app-footer></app-footer>

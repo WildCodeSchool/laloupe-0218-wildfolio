@@ -58,7 +58,9 @@ h6 {
   font-weight: 700;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
+.portfolio-caption h4{
+  color: black;
+}
 section {
   padding: 80px 0;
 }
@@ -97,7 +99,9 @@ section h3.section-subheading {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
-
+.button2 {
+  max-width: 100%;
+}
 .btn-xl {
   font-size: 18px;
   padding: 20px 40px;
@@ -573,6 +577,13 @@ header.masthead .intro-text .intro-heading {
 
 .project_button{
 color:white;
+}
+
+.img-fluid {
+  display: block;
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
 }
 
 /* Section Développeurs*/
