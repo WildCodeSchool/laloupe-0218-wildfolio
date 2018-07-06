@@ -1,8 +1,250 @@
-button {
-    width: 15vh;
-}
-.imageUrl {
-    border-radius: 50%;
+.container-fluid {
+    margin-top: 16vh;
+    margin-bottom: 10vh;
+  }
+  
+  @media (max-width: 767px){
+    .container-fluid {
+      margin-top: 10vh;
+    }
+  }
+  
+  @media (max-width: 767px){
+    h1 {
+      font-size:3.5vh;
+    }
+  }
+  
+  h2{
+    font-size:4vh;
+  }
+  
+  @media (max-width: 767px){
+    h2 {
+      font-size:2.5vh;
+    }
+  }
+  
+  h3{
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size:3.5vh;
+  }
+  
+  /* Profil (photo, title and specialities) */
+  
+  .profil{
+    margin-bottom: 3%;
+  }
+  
+  .poste{
+    margin-bottom: 3%
+  }
+  
+  @media (max-width: 767px){
+    .nameDev {
+      text-align: center;
+      margin-top: 4%;
+    }
+  }
+  
+  /* Photo */
+  
+  .photo{
+    text-align:center;
+  }
+  
+  .rounded-circle {
     width: 200px;
     height: 200px;
-}
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media (max-width: 767px){
+    .rounded-circle {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  /* Specialities */
+  
+  .specialities{
+    border: solid 2px #1fa597;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .speciality{
+    font-size:3.5vh;
+  }
+  
+  .keywords{
+    padding-left: 5%;
+  }
+  
+  .keyword {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    color: white;
+    background-color: #FBA858;
+    border-color: #FBA858;
+    text-align: center;
+    padding: 1% 2% 1% 2%;
+  }
+  
+  /* .keyword:active, .keyword:focus, .keyword:hover {
+    background-color: #F9A02E !important;
+    border-color: #F9A02E !important;
+    color: white;
+  } */
+  
+  .keyword:active, .keyword:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  }
+  
+  /* Contact */
+  
+  .contact{
+    border: solid 2px #1fa597;
+    margin-bottom: 11%;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media (max-width: 767px){
+    .contact {
+      margin-bottom: 3%;
+    }
+  }
+  
+  ul.social-buttons {
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  
+  ul.social-buttons li a{
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: #212529;
+  }
+  
+  ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+    background-color: #FBA858;
+  }
+  
+  .linksocial{
+    padding-right: 10%;
+  }
+  
+  .phone{
+    font-size: 2.6vh;
+  }
+  
+  /* Palmares */
+  
+  .palmares{
+    border: solid 2px #1fa597;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 5%;
+  }
+  
+  .list-palmares{
+    font-size: 2vh;
+    padding-left: 5%;
+    list-style-type: none;
+  }
+  
+  /* Projets */
+  
+  .projets{
+    border: solid 2px #1fa597;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  
+  .projects{
+    padding-right: 2%;
+    padding-left: 2%;
+  } 
+  
+  #portfolio .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+  }
+  
+  #portfolio .portfolio-item .portfolio-link {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  #portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    opacity: 0;
+    background: #1fa597;
+  }
+  
+  #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+    opacity: 1;
+  }
+  
+  #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    color: white;
+  }
+  
+  #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+    margin-top: -12px;
+  }
+  
+  
+  #portfolio .portfolio-item .portfolio-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  
+  #portfolio .portfolio-item .portfolio-caption p {
+    font-size: 16px;
+    font-style: italic;
+    margin: 0;
+    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  #portfolio * {
+    z-index: 2;
+  }
+  
+  @media (min-width: 767px) {
+    #portfolio .portfolio-item {
+      margin: 0 0 30px;
+    }
+  }
+  

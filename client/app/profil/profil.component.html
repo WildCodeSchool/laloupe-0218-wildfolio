@@ -2,40 +2,17 @@
 </app-loading>
 
 <app-toast [message]="toast.message"></app-toast>
-<button type="button" class="btn btn-primary btn-rounded" routerLink="/">Home</button>
+<app-navbar></app-navbar>
 
-<!-- <div class="container-fluid" *ngIf="me">
-  <div class="row">
-    <div class="mx-auto">
-      <h1>Profil</h1>
-      <hr/>
-      <img class="imageUrl" src="https://github.com/{{ me.github }}.png" alt="Can't access">
-    </div>
-  </div>
-  <div class="row">
-    <div class="mx-auto">
-      <h2>Prénom Nom : {{ me.name }} </h2>
-      <h2>Email : {{ me.email }}</h2>
-      <h2>Phone : {{ me.phone }}</h2>
-      <h2>Github : {{ me.github }}</h2>
-      <h2>Framework : {{ me.langageName }}</h2>
-      <h2>Session : {{ me.session }}</h2>
-      <!-- <h2>Palmarès : {{ me.palmares }}</h2>
-      <h2>poste : {{ me.poste }}</h2>
-      <h2>Spécialités : {{ me.specialites }}</h2> -->
-    </div>
-  </div>
-</div> -->
-
-<div class="container-fluid" *ngIf="student">
+<div class="container-fluid" *ngIf="me">
     <div class="row justify-content-start profil">
         <div class="col-md-3 col-sm-12 mx-auto photo">
-            <img class="rounded-circle" src="{{ student.image }}" alt="photoDev">
+            <img class="rounded-circle" src="https://github.com/{{ me.github }}.png" alt="photoDev">
         </div>
         <div class="col-md-8 col-sm-12 mx-auto">
             <div class="nameDev">
-                <h1>{{ student.name }}</h1>
-                <h2 class="poste">{{student.poste}}</h2>
+                <h1>{{ me.name }}</h1>
+                <h2 class="poste">{{me.poste}}</h2>
             </div>
             <div class="specialities">
                 <div class="row speciality">
@@ -44,10 +21,8 @@
                     </div>
                 </div>
                 <ul class="list-inline keywords">
-                    <li class="list-inline-item keyword">Javascript</li>
-                    <li class="list-inline-item keyword">Angular</li>
-                    <li class="list-inline-item keyword">VueJS</li>
-                    <li class="list-inline-item keyword">MongoDB</li>
+                    <li class="list-inline-item keyword">{{ me.langageName }}</li>
+
                 </ul>
             </div>
         </div>
@@ -65,12 +40,12 @@
                     <div class="col-12 mx-auto">
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item linksocial">
-                                <a href="{{ student.lienLinkedin }}" target="blank">
+                                <a href="{{ me.lienLinkedin }}" target="blank">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item linksocial">
-                                <a href="https://github.com/{{ student.github }}" target="blank">
+                                <a href="https://github.com/{{ me.github }}" target="blank">
                                     <i class="fa fa-github"></i>
                                 </a>
                             </li>
@@ -81,11 +56,11 @@
                     <div class="col-12">
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
-                                <a href="mailto:{{ student.email }}">
+                                <a href="mailto:{{ me.email }}">
                                     <i class="fa fa-envelope"></i>
                                 </a>
                             </li>
-                            <li class="list-inline-item linksocial mail">{{ student.email }}</li>
+                            <li class="list-inline-item linksocial mail">{{ me.email }}</li>
                         </ul>
                     </div>
                 </div>
@@ -93,11 +68,11 @@
                     <div class="col-12">
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
-                                <a href="{{ student.phone }}">
-                                    <i class="fa fa-phone" (click)="displayPhone()" *ngIf="!phone"></i>
+                                <a>
+                                    <i class="fa fa-phone"></i>
                                 </a>
                             </li>
-                            <li class="list-inline-item linksocial phone" *ngIf="phone" >0608080808</li>
+                            <li class="list-inline-item linksocial phone">{{ me.phone }}</li>
                         </ul>
                     </div>
                 </div>
