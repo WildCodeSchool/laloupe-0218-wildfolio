@@ -1,5 +1,5 @@
 export class Student {
-  _id?: string;
+  _id?: any;
   admin?: boolean;
   WCS_ID?: number;
   name?: string;

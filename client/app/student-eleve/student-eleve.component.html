@@ -11,16 +11,14 @@
                 <h2 class="poste">{{ student.poste }}</h2>
             </div>
             <div class="specialities">
-                <div class="row speciality">
-                    <div class="col-sm-12">
-                        <h3>Mes spécialités :</h3>
+                    <div class="row speciality">
+                        <div class="col-sm-12">
+                            <h3>Mes spécialités :</h3>
+                        </div>
                     </div>
-                </div>
-                <ul class="list-inline keywords">
-                    <li class="list-inline-item keyword">Javascript</li>
-                    <li class="list-inline-item keyword">Angular</li>
-                    <li class="list-inline-item keyword">VueJS</li>
-                    <li class="list-inline-item keyword">MongoDB</li>
+                    <ul class="list-inline keywords">
+                        <li class="list-inline-item keyword">{{ student.langageName }}</li>
+    
                 </ul>
             </div>
         </div>
@@ -105,74 +103,17 @@
                         <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
                     </a>
                 </div> -->
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
-                    </div>
-                </div>
                 <div class="row projects">
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
+                        <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="let blogProjet of blogProjets">
+                            <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-chevron-down fa-3x"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-chevron-down fa-3x"></i>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="http://images.toucharger.com/img/graphiques/fonds_d_ecran/nature__paysages/en_ete/paysage_montagnard.37032.jpg"
-                                alt="projet">
-                        </a>
+                                <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
