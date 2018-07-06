@@ -1,3 +1,6 @@
+import { BlogProjetService } from './../services/blogProjet.service';
+import { BlogProjet } from '../shared/models/blogProjet.model';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -28,6 +31,10 @@ export class ProfilComponent implements OnInit {
   me;
   edit = false;
 
+  newBlogProjet: BlogProjet = new BlogProjet();
+  blogProjet = new BlogProjet();
+  blogProjets: BlogProjet[] = [];
+
   addStudentForm: FormGroup;
   email = new FormControl('', Validators.required);
   github = new FormControl('');
@@ -45,6 +52,7 @@ export class ProfilComponent implements OnInit {
     private wcsService: WcsService,
     private route: ActivatedRoute,
     private http: HttpClient,
+    private blogProjetService: BlogProjetService,
   ) {}
 
   ngOnInit() {
@@ -65,6 +73,7 @@ export class ProfilComponent implements OnInit {
     this.studentService.getMe().subscribe(
       (data) => {
         this.me = data,
+        this.getBlogProjetIfNotAdmin();
         console.log(this.me);
       },
       error => console.log(error),
@@ -138,7 +147,17 @@ export class ProfilComponent implements OnInit {
     this.isEditing = false;
 
   }
+  getBlogProjetIfNotAdmin() {
+    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(this.blogProjets);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
 
+  }
   // isAdmin() {
   //   return this.student.admin = true;
   // }

@@ -27,9 +27,9 @@ export class NewPostComponent implements OnInit {
   description = new FormControl('', Validators.required);
 
   constructor(private blogProjetService: BlogProjetService,
-    private formBuilder: FormBuilder,
-    public toast: ToastComponent,
-    private studentService: StudentService) { }
+              private formBuilder: FormBuilder,
+              public toast: ToastComponent,
+              private studentService: StudentService) { }
 
   ngOnInit() {
     this.getMe();
@@ -47,7 +47,7 @@ export class NewPostComponent implements OnInit {
       (data) => {
         this.me = data,
           console.log(this.me);
-        if (this.me.admin == true || this.me.roles.length >= 1) {
+        if (this.me.admin === true || this.me.roles.length >= 1) {
           this.getBlogProjet();
         } else {
           this.getBlogProjetIfNotAdmin();

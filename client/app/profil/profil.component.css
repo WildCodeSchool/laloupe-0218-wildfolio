@@ -18,7 +18,9 @@
   h2{
     font-size:4vh;
   }
-  
+  form {
+    float: right;
+  }
   @media (max-width: 767px){
     h2 {
       font-size:2.5vh;
@@ -247,4 +249,20 @@
       margin: 0 0 30px;
     }
   }
-  
+  @media (max-width: 767px) {
+    
+    .specialities{
+      margin-top: 6vh;
+    }
+  }
+.form-control {
+  width: 80vh;
+  float: left;
+}
+.list-inline {
+  margin-top: 2vh;
+}
+.img-fluid {
+  width: 100%;
+  height: 100%;
+}
