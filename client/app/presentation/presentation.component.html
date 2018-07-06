@@ -9,10 +9,10 @@
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
           <div class="col-md-2 col-12 button2">
-              <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
-                <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
-              </select>
-            </div>
+            <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
+            </select>
+          </div>
         </div>
 
         <!-- <div class="col-lg-4 col-12 mx-auto">
@@ -60,27 +60,53 @@
 <!-- Section Projets -->
 
 <section class="bg-light" id="portfolio">
-  <div class="container">
-    <div class="row">
+  <div class="container" *ngIf="isCharged">
+    <div class="row" >
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Nos derniers projets</h2>
         <hr/>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4  col-sm-6 portfolio-item" *ngFor="let blogProjet of blogProjets">
-        <a class="portfolio-link" [routerLink]="['/projetFront', blogProjet._id]" target="blank">
+      <div class="col-md-4  col-sm-6 portfolio-item">
+        <a class="portfolio-link" *ngIf="ramdomProjets[0]" [routerLink]="['/projetFront', ramdomProjets[0]._id]" target="blank">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="fa fa-chevron-down fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="{{ blogProjet.imageUrl }}" alt="projet">
+          <img class="img-fluid" src="{{ ramdomProjets[0].imageUrl }}" alt="projet">
         </a>
         <div class="portfolio-caption">
-          <h4>{{ blogProjet.name }}</h4>
+          <h4>{{ ramdomProjets[0].name }}</h4>
         </div>
       </div>
+      <div class="col-md-4  col-sm-6 portfolio-item" >
+          <a class="portfolio-link"  [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-chevron-down fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="{{ ramdomProjets[1].imageUrl }}" alt="projet">
+          </a>
+          <div class="portfolio-caption">
+            <h4 >{{ ramdomProjets[1].name }}</h4>
+          </div>
+        </div>
+        <div class="col-md-4  col-sm-6 portfolio-item" >
+            <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-chevron-down fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ ramdomProjets[2].imageUrl }}" alt="projet">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ ramdomProjets[2].name }}</h4>
+            </div>
+          </div>
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
@@ -104,86 +130,72 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
-        <div class="team-member" *ngIf="student[0]">
-          <img class="mx-auto rounded-circle" src="https://github.com/{{ student[0].github }}.png" alt="">
-          <h4>Antoine Porée</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[0].github }}.png" alt="">
+          <h4>{{ ramdomProfil[0].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[0].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[0].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[2].github }}">
                 <i class="fa fa-github"></i>
               </a>
             </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
-          <h4>Alexandre Teyssier</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[1].github }}.png" alt="">
+          <h4>{{ ramdomProfil[1].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[1].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[1].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[1].github }}">
                 <i class="fa fa-github"></i>
               </a>
             </li>
-            <li class="list-inline-item">
-              <a href="mailto:alextey@gmail.com">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
-          <h4>Bastien Champion</h4>
-          <p class="text-muted">Campus: La Loupe</p>
+        <div class="team-member" *ngIf="students">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[2].github }}.png" alt="">
+          <h4>{{ ramdomProfil[2].name }}</h4>
+          <p class="text-muted">{{ ramdomProfil[2].campus }}</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="{{ ramdomProfil[2].lienLinkedin }}">
                 <i class="fa fa-linkedin"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/{{ ramdomProfil[2].github }}">
                 <i class="fa fa-github"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-envelope"></i>
               </a>
             </li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="dev_button">
-          <a class="btn btn-primary btn-lg answerText" [routerLink]="['/list-students']">Plus de développeurs</a>
+      <div class="row mx-auto">
+        <div class="col-12  mx-auto text-center">
+          <div class="dev_button">
+            <a class="btn btn-primary btn-lg answerText" [routerLink]="['/list-students']">Plus de développeurs</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div></div>
 </section>
 
 <!-- Section Oeil du recruteur -->

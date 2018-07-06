@@ -30,6 +30,10 @@ export class PresentationComponent implements OnInit {
   selectedLangage: any;
   langage = new Langage();
   langages: Langage[] = [];
+  math;
+  ramdomProfil = [];
+  ramdomProjets = [];
+  isCharged = false;
 
   constructor(
     route: ActivatedRoute,
@@ -78,6 +82,9 @@ export class PresentationComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
+        this.ramdomProjets = this.shuffle(this.blogProjets);
+        console.log(this.ramdomProjets);
+        this.isCharged = true;
         // for (let i = 0; i < this.blogProjets.length; i++) {
         //   let num = Math.floor(Math.random() * 3);
         //   console.log(this.blogProjets[i].WCS_id);
@@ -89,14 +96,27 @@ export class PresentationComponent implements OnInit {
   }
 
   // Développeurs
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
-        console.log(data);
         this.students = data;
-        console.log(Math.floor(Math.random() * this.student.WCS_ID));
-        return Math.floor(Math.random() * this.student.WCS_ID);
+        this.ramdomProfil = this.shuffle(this.students);
+        // for (let i = 0; i < 3; i += 1) {
+        //   this.math = Math.floor(Math.random() * this.students.length);
+        //   if (this.ramdomProfil[i] === this.ramdomProfil[i - 1] || this.ramdomProfil[i] === this.ramdomProfil[i - 2]) {
+        //     this.math = Math.floor(Math.random() * this.students.length);
+        //   }
+        //   this.ramdomProfil.push(this.students[this.math]);
+        // }
+        console.log(this.ramdomProfil);
       },
       error => console.log(error),
       () => this.isLoading = false,
