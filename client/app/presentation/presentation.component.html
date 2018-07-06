@@ -8,25 +8,21 @@
       <form class="form-inline row">
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Langages/Frameworks</h3>
-          <select class="custom-select selectWidth" id="techno">
-            <option selected>Select</option>
-            <option value="1">PHP Symfony</option>
-            <option value="2">JavaScript Angular</option>
-            <option value="3">JavaScript React</option>
-            <option value="4">JavaScript VueJS</option>
-            <option value="5">JavaScript NodeJS</option>
-            <option value="6">Java J2EE Android</option>
-          </select>
+          <div class="col-md-2 col-12 button2">
+              <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
+              </select>
+            </div>
         </div>
 
-        <div class="col-lg-4 col-12 mx-auto">
+        <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select selectWidth" id="poste">
             <option selected>Select</option>
             <option value="valeur1">Stagiaire</option>
             <option value="valeur1">Développeur</option>
           </select>
-        </div>
+        </div> -->
 
         <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
@@ -35,7 +31,7 @@
         </div>
         <div class="row mx-auto">
           <div class="col-12 search">
-            <button class="btn btn-primary text-uppercase answerText buttonSearch">Chercher un Développeur</button>
+            <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
           </div>
         </div>
       </form>
@@ -108,8 +104,8 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="/../assets/profil.jpg" alt="">
+        <div class="team-member" *ngIf="student[0]">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ student[0].github }}.png" alt="">
           <h4>Antoine Porée</h4>
           <p class="text-muted">Campus: La Loupe</p>
           <ul class="list-inline social-buttons">
