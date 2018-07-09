@@ -66,6 +66,11 @@
 
   <hr/>
 
+  <div class="row" *ngIf="students && (students.length == 0)">
+    <div class="offset-2 col-8">
+      <h2>Aucun élèves pour ce langage.</h2>
+    </div>
+  </div>
 
 
   <!-- Liste des développeurs -->

@@ -131,6 +131,10 @@ export class PresentationComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
+<<<<<<< HEAD
+=======
+    localStorage.setItem('selectedLangage', this.selectedLangage);
+>>>>>>> b62baa533ba28a1534468b7568510ffd389ead0d
     this.router.navigate(['/list-students']);
   }
   showDev() {

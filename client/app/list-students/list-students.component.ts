@@ -18,19 +18,26 @@ export class ListStudentsComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   selectedLangage: any;
+<<<<<<< HEAD
   langageName: any[] = [{name: "select"}];
+=======
+  isSearched = localStorage.getItem('selectedLangage');
+>>>>>>> b62baa533ba28a1534468b7568510ffd389ead0d
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }
 
   ngOnInit() {
-    this.getStudent();
+    /* this.getStudent(); */
     this.getLangage();
+    this.getLangageBySelectedLangage();
+    console.log(this.isSearched);
   }
 
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
         console.log(data);
+        this.getLangageBySelectedLangage();
         this.students = data;
       },
       error => console.log(error),
@@ -57,6 +64,17 @@ export class ListStudentsComponent implements OnInit {
       },
       error => console.log(error),
       () => this.isLoading = false,
+    );
+  }
+
+  getLangageBySelectedLangage() {
+    this.studentService.getLangageById(Number(this.isSearched)).subscribe(
+      (data) => {
+        console.log(data);
+        this.students = data;
+      },
+      error => console.log(error),
+      () => (this.isLoading = false),
     );
   }
 
