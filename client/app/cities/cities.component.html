@@ -17,45 +17,54 @@
   <div class="card" *ngIf="me && (me.admin == true)">
     <h4 class="card-header backgroundNav">Ajouter un campus</h4>
     <div class="card-body">
-      <form class="form-inline" [formGroup]="addCityForm" (ngSubmit)="addCity()">
-        <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Nom">
-        <input class="form-control mr-2" type="text" name="link" formControlName="link" placeholder="Lien">
-        <input class="form-control mr-2" type="number" name="locationId" formControlName="locationId" placeholder="Id">
-        <button class="btn btn-primary" type="submit" [disabled]="!addCityForm.valid">
-          <i class="fa fa-floppy-o"></i> Ajouter</button>
+      <form [formGroup]="addCityForm" (ngSubmit)="addCity()">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <input class="form-control name" type="text" name="name" formControlName="name" placeholder="Nom">
+            <input class="form-control link" type="text" name="link" formControlName="link" placeholder="Lien">
+            <input class="form-control id" type="number" name="locationId" formControlName="locationId" placeholder="Id">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit" [disabled]="!addCityForm.valid">
+              <i class="fa fa-floppy-o"></i> Ajouter</button>
+          </div>
+        </div>
       </form>
     </div>
     <div class="card mb-3" *ngIf="!isLoading">
       <h4 class="card-header backgroundNav">Campus ({{ cities.length }})</h4>
       <div class="card-body">
-        <table class="table table-bordered" *ngIf="!isEditing">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Nom du campus</th>
-              <!-- <th scope="col">Lien</th> -->
-              <th scope="col">Id</th>
-              <th scope="col">Modifier/Supprimer</th>
-            </tr>
-          </thead>
-          <tbody *ngIf="cities.length === 0">
-            <tr>
-              <td colspan="4">Il n'y a pas de campus ajouter.</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr *ngFor="let city of cities">
-              <td>{{ city.city }}</td>
-             <!--  <td>
-                <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
-              </td> -->
-              <td>{{ city.WCS_ID }}</td>
-              <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
-                <i class="fa fa-pencil"></i> Modifier</button>
-              <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">
-                <i class="fa fa-trash"></i> Supprimer</button>
-            </tr>
-          </tbody>
-          <!-- <tbody *ngIf="isEditing">
+        <div class="table-responsive">
+          <table class="table table-bordered" *ngIf="!isEditing">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nom du campus</th>
+                <th scope="col">Lien</th>
+                <th scope="col">Id</th>
+                <th scope="col">Modifier/Supprimer</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="cities.length === 0">
+              <tr>
+                <td colspan="4">Il n'y a pas de campus ajouter.</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr *ngFor="let city of cities">
+                <td>{{ city.city }}</td>
+                <td>
+                  <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+                </td>
+                <td>{{ city.WCS_ID }}</td>
+                <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
+                  <i class="fa fa-pencil"></i> Modifier</button>
+                <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">
+                  <i class="fa fa-trash"></i> Supprimer</button>
+              </tr>
+            </tbody>
+            <!--<tbody *ngIf="isEditing">
           <tr>
             <td colspan="4">
               <form class="form-inline" #form="ngForm" (ngSubmit)="editCity(city)">
@@ -70,7 +79,8 @@
             </td>
           </tr>
         </tbody> -->
-        </table>
+          </table>
+        </div>
       </div>
     </div>
     <div class="card" *ngIf="isEditing">
@@ -79,9 +89,9 @@
         <form #form="ngForm" (ngSubmit)="editCity(city)">
           <div class="row">
             <div class="col-md-4 col-12">
-              <input class="form-control mr-2" type="text" name="link" [(ngModel)]="city.name" placeholder="Name" required>
-              <input class="form-control mr-2" type="text" name="link" [(ngModel)]="city.link" placeholder="Link" required>
-              <input class="form-control mr-2" type="number" name="locationId" [(ngModel)]="city.locationId" placeholder="Id" required>
+              <input class="form-control name" type="text" name="link" [(ngModel)]="city.name" placeholder="Nom" required>
+              <input class="form-control link" type="text" name="link" [(ngModel)]="city.link" placeholder="Lien" required>
+              <input class="form-control id" type="number" name="locationId" [(ngModel)]="city.locationId" placeholder="Id" required>
             </div>
           </div>
           <div class="row">

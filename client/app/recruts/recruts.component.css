@@ -3,8 +3,7 @@
   width: 25%;
 }
 
-.titleAdmin 
-{
+.titleAdmin {
   font-weight: bold;
 }
 
@@ -28,4 +27,20 @@
 .page{
   padding-top: 5%;
   text-align: center;
+}
+
+.card{
+  background-color:#E8E8E8;
+}
+
+table{
+  background-color: white;
+}
+
+.author{
+  margin-bottom: 2%;
+}
+
+.comment{
+  margin-bottom: 2%;
 }
