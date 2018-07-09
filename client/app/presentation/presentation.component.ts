@@ -131,9 +131,9 @@ export class PresentationComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
+    this.router.navigate(['/list-students']);
   }
   showDev() {
-    this.router.navigate(['/list-students']);
     this.getLangageById();
   }
 }

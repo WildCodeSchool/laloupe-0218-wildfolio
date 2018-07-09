@@ -18,6 +18,7 @@ export class ListStudentsComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   selectedLangage: any;
+  langageName: any[] = [{name: "select"}];
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }
 

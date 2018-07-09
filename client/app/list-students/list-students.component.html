@@ -17,7 +17,7 @@
   <div class="row">
     <div class="col-md-2 offset-md-1 col-12 button1">
 
-      <button type="button" class="btn" data-toggle="modal" >Langages/Frameworks</button>
+      <button type="button" class="btn" data-toggle="modal">Langages/Frameworks</button>
 
       <!-- Modal 1 -->
       <div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -34,13 +34,14 @@
 
     <div class="col-md-2 col-12 button2">
       <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage">
+        <option [ngValue]="null">Select Category</option>
         <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
       </select>
     </div>
 
-        <div class="col-md-2 col-12 search">
-          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Rechercher</button>
-        </div>
+    <div class="col-md-2 col-12 search">
+      <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Rechercher</button>
+    </div>
     <!-- <div class="col-md-2 col-12 button2">
       <button type="button" class="btn " data-toggle="modal" data-target=".modal2">Poste Actuel</button>
 
@@ -76,8 +77,9 @@
           <tbody *ngIf="students">
             <tr *ngFor="let student of students">
               <td>
-                  <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined" src="https://cdn.xl.thumbs.canstockphoto.fr/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg" alt="">
-                <img class="rounded-circle"  src="https://github.com/{{ student.github }}.png" alt="">
+                <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined" src="https://cdn.xl.thumbs.canstockphoto.fr/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg"
+                  alt="">
+                <img class="rounded-circle" src="https://github.com/{{ student.github }}.png" alt="">
               </td>
               <td>{{ student.name }}</td>
               <td>{{ student.lastname }}</td>
@@ -103,7 +105,8 @@
     <!-- Maps-->
 
     <div class="col-md-4 offset-md-1 col-12 maps">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10581.282816328998!2d1.002309324267578!3d48.4695618160079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1530193226265" width="350" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10581.282816328998!2d1.002309324267578!3d48.4695618160079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1530193226265"
+        width="350" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
