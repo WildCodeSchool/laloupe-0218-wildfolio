@@ -34,7 +34,6 @@
 
     <div class="col-md-2 col-12 button2">
       <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage">
-        <option [ngValue]="null">Select Category</option>
         <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
       </select>
     </div>

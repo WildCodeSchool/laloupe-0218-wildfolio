@@ -18,11 +18,7 @@ export class ListStudentsComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   selectedLangage: any;
-<<<<<<< HEAD
-  langageName: any[] = [{name: "select"}];
-=======
   isSearched = localStorage.getItem('selectedLangage');
->>>>>>> b62baa533ba28a1534468b7568510ffd389ead0d
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }
 
