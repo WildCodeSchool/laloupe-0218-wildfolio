@@ -81,7 +81,7 @@
           <tbody *ngIf="students">
             <tr *ngFor="let student of students">
               <td>
-                <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined" src="https://cdn.xl.thumbs.canstockphoto.fr/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg"
+                <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined " src="../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg"
                   alt="">
                 <img class="rounded-circle" src="https://github.com/{{ student.github }}.png" alt="">
               </td>
