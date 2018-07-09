@@ -99,7 +99,9 @@ section h3.section-subheading {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
-
+.button2 {
+  max-width: 100%;
+}
 .btn-xl {
   font-size: 18px;
   padding: 20px 40px;

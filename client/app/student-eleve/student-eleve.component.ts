@@ -27,9 +27,9 @@ export class StudentEleveComponent implements OnInit {
 
   ngOnInit() {
     /*  this.wcsService.getMe().subscribe((data => {
-       this.wcsService.student = data;
-       this.student = this.wcsService.student
-       console.log(this.student);
+      this.wcsService.student = data;
+      this.student = this.wcsService.student
+      console.log(this.student);
      })) */
     this.id = this.route.snapshot.paramMap.get('id');
     this.getStudent();
@@ -39,11 +39,23 @@ export class StudentEleveComponent implements OnInit {
     this.studentService.getStudent(this.id).subscribe(
       (data) => {
         this.student = data;
+        this.getBlogProjetIfNotAdmin();
         console.log(this.student);
       },
     );
   }
 
+  getBlogProjetIfNotAdmin() {
+    this.blogProjetService.getBlogProjetsByUser(this.student._id).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(this.blogProjets);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+
+  }
   // displayPhone() {
   //   this.phone = true;
   // }

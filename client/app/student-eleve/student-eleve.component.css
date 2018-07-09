@@ -151,6 +151,9 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   font-size: 2.6vh;
 }
 
+.list-inline {
+  margin-top: 2vh;
+}
 /* Palmares */
 
 .palmares{
@@ -246,4 +249,15 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   #portfolio .portfolio-item {
     margin: 0 0 30px;
   }
+}
+@media (max-width: 767px) {
+  
+  .specialities{
+    margin-top: 6vh;
+  }
+}
+
+.img-fluid {
+width: 100%;
+height: 100%;
 }
