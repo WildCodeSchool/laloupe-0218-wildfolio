@@ -46,11 +46,11 @@
             <tr *ngFor="let city of cities">
               <td>{{ city.city }}</td>
               <td>
-                <a href="{{ city.link }}" target="_blank">{{ city.name }}</a>
+                <a href="{{ city.link }}" target="_blank">{{ city.link }}</a>
               </td> 
               <td>{{ city.WCS_ID }}</td>
               <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(city)">
-                <i class="fa fa-pencil"></i> Modifier</button>
+                <i class="fa fa-pencil"></i> Ajouter/Modifier</button>
               <button class="btn btn-sm btn-danger mr-2" (click)="deleteCity(city)">
                 <i class="fa fa-trash"></i> Supprimer</button>
             </tr>
@@ -74,14 +74,14 @@
       </div>
     </div>
     <div class="card" *ngIf="isEditing">
-      <h4 class="card-header backgroundNav">Modifier un campus</h4>
+      <h4 class="card-header backgroundNav">Modifier</h4>
       <div class="card-body">
         <form #form="ngForm" (ngSubmit)="editCity(city)">
           <div class="row">
             <div class="col-md-4 col-12">
-              <input class="form-control mr-2" type="text" name="link" [(ngModel)]="city.name" placeholder="Name" required>
-              <input class="form-control mr-2" type="text" name="link" [(ngModel)]="city.link" placeholder="Link" required>
-              <input class="form-control mr-2" type="number" name="locationId" [(ngModel)]="city.locationId" placeholder="Id" required>
+              <input class="form-control mr-2" type="text" name="city" [(ngModel)]="city.city" placeholder="Ajouter une ville">
+              <input class="form-control mr-2" type="text" name="link" [(ngModel)]="city.link" placeholder="Ajouter un lien">
+              <input class="form-control mr-2" type="number" name="locationId" [(ngModel)]="city.WCS_ID" placeholder="ID de la ville">
             </div>
           </div>
           <div class="row">
