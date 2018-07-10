@@ -29,7 +29,7 @@ export class LoginCallbackComponent implements OnInit {
     private sessionService: SessionService,
     private langageService: LangageService,
   ) { }
-
+//  Envoyer les données de l'utilisateur au back
   ngOnInit() {
     const token = this.route.snapshot.paramMap.get('token');
     localStorage.setItem('token_wcs', token);
@@ -48,7 +48,7 @@ export class LoginCallbackComponent implements OnInit {
       student.WCS_ID = data['id'];
       student.github = data['github'];
       /* student.banished = data['banished']; */
-      student.members = data['current_crew'].users;
+      // student.members = data['current_crew'].users;
       city.city = data['current_crew'].location.city;
       city.WCS_ID = data['current_crew'].location.id;
       langage.name = data['current_crew'].program_type.name;
@@ -95,7 +95,7 @@ export class LoginCallbackComponent implements OnInit {
                       student.sessionId = session.WCS_ID;
                       student.langageName = langage.name;
                       student.langageId = langage.WCS_ID;
-                      student.members = data['current_crew'].users;
+                      // student.members = data['current_crew'].users;
                       console.log('Student', this.students);
                     },
                     error => console.log(error),

@@ -8,4 +8,5 @@ export class BlogProjet {
   locationId?: number;
   session?: string;
   sessionId?: number;
+  eleves?;
 }
