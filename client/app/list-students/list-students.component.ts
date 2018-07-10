@@ -32,7 +32,7 @@ export class ListStudentsComponent implements OnInit {
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.getLangageBySelectedLangage();
         this.students = data;
       },
@@ -44,7 +44,7 @@ export class ListStudentsComponent implements OnInit {
   getLangage() {
     this.langageService.getLangages().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.langages = data;
       },
       error => console.log(error),
@@ -56,7 +56,7 @@ export class ListStudentsComponent implements OnInit {
     this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
         this.students = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -66,7 +66,7 @@ export class ListStudentsComponent implements OnInit {
   getLangageBySelectedLangage() {
     this.studentService.getLangageById(Number(this.isSearched)).subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.students = data;
       },
       error => console.log(error),

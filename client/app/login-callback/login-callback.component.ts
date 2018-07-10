@@ -36,7 +36,7 @@ export class LoginCallbackComponent implements OnInit {
     this.wcsService.getMe().subscribe((data) => {
       localStorage.setItem('WCS_ID', data['id']);
       this.wcsService.student = data;
-      console.log(this.wcsService.student);
+      // console.log(this.wcsService.student);
       const student = new Student();
       const city = new City();
       const langage = new Langage();
@@ -61,10 +61,10 @@ export class LoginCallbackComponent implements OnInit {
       // console.log(this.students);
       this.langageService.addIfNotExist(langage).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.sessionService.addIfNotExist(session).subscribe(
             () => {
-              console.log(res);
+              // console.log(res);
               this.cityService.addIfNotExist(city).subscribe(
                 () => {
                   /*  console.log(res); */

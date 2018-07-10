@@ -74,7 +74,7 @@ export class ProfilComponent implements OnInit {
       (data) => {
         this.me = data,
         this.getBlogProjetIfNotAdmin();
-        console.log(this.me);
+        // console.log(this.me);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -151,7 +151,7 @@ export class ProfilComponent implements OnInit {
     this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
+        // console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,

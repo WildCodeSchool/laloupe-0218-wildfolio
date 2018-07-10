@@ -87,7 +87,7 @@ export class ProjetResearchComponent implements OnInit {
     this.getBlogProjetBySession();
   }
   somethingChanged(change) {
-    console.log('change', change);
+    // console.log('change', change);
     this.sessionService.getAllbyLocationId(change).subscribe(
       (data) => {
         this.sessions = data;

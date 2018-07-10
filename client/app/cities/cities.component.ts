@@ -52,8 +52,7 @@ export class CitiesComponent implements OnInit {
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
-        this.me = data,
-          console.log(this.me);
+        this.me = data;
       },
       error => console.log(error),
       () => this.isLoading = false,

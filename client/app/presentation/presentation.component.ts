@@ -58,7 +58,7 @@ export class PresentationComponent implements OnInit {
   getLangage() {
     this.langageService.getLangages().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.langages = data;
       },
       error => console.log(error),
@@ -83,7 +83,7 @@ export class PresentationComponent implements OnInit {
       (data) => {
         this.blogProjets = data;
         this.ramdomProjets = this.shuffle(this.blogProjets);
-        console.log(this.ramdomProjets);
+        // console.log(this.ramdomProjets);
         this.isCharged = true;
         // for (let i = 0; i < this.blogProjets.length; i++) {
         //   let num = Math.floor(Math.random() * 3);
@@ -116,7 +116,7 @@ export class PresentationComponent implements OnInit {
         //   }
         //   this.ramdomProfil.push(this.students[this.math]);
         // }
-        console.log(this.ramdomProfil);
+        // console.log(this.ramdomProfil);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -126,7 +126,7 @@ export class PresentationComponent implements OnInit {
     this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
         this.students = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,

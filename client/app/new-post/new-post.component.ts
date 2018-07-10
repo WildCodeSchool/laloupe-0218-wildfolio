@@ -45,8 +45,8 @@ export class NewPostComponent implements OnInit {
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
-        this.me = data,
-          console.log(this.me);
+        this.me = data;
+          // console.log(this.me);
         if (this.me.admin === true || this.me.roles.length >= 1) {
           this.getBlogProjet();
         } else {
