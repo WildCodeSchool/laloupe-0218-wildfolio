@@ -47,3 +47,7 @@ table{
   background-color: #F9A02E;
   color: white;
 }
+
+.padding-nav {
+  margin-top: 70px!important;
+}

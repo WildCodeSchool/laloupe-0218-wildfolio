@@ -3,10 +3,10 @@
 <!-- Bannière/Barre de recherche -->
 
 <header class="masthead">
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="intro-text">
-      <form class="form-inline row">
-        <div class="col-lg-4 col-12 mx-auto">
+      <div class="row">
+        <div class="mx-auto">
           <h3>Langages/Frameworks</h3>
           <div class="col-md-2 col-12 button2">
             <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
@@ -14,8 +14,9 @@
             </select>
           </div>
         </div>
+      </div>
 
-        <!-- <div class="col-lg-4 col-12 mx-auto">
+      <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select selectWidth" id="poste">
             <option selected>Select</option>
@@ -24,17 +25,16 @@
           </select>
         </div> -->
 
-        <div class="col-lg-4 col-12 mx-auto">
+      <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
           <label class="sr-only selectWidth" form="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
+        </div> -->
+      <div class="row">
+        <div class="mx-auto search">
+          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
         </div>
-        <div class="row mx-auto">
-          <div class="col-12 search">
-            <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </header>
@@ -61,7 +61,7 @@
 
 <section class="bg-light" id="portfolio">
   <div class="container" *ngIf="isCharged">
-    <div class="row" >
+    <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Nos derniers projets</h2>
         <hr/>
@@ -81,32 +81,32 @@
           <h4>{{ ramdomProjets[0].name }}</h4>
         </div>
       </div>
-      <div class="col-md-4  col-sm-6 portfolio-item" >
-          <a class="portfolio-link"  [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-chevron-down fa-3x"></i>
-              </div>
+      <div class="col-md-4  col-sm-6 portfolio-item">
+        <a class="portfolio-link" [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fa fa-chevron-down fa-3x"></i>
             </div>
-            <img class="img-fluid" src="{{ ramdomProjets[1].imageUrl }}" alt="projet">
-          </a>
-          <div class="portfolio-caption">
-            <h4 >{{ ramdomProjets[1].name }}</h4>
           </div>
+          <img class="img-fluid" src="{{ ramdomProjets[1].imageUrl }}" alt="projet">
+        </a>
+        <div class="portfolio-caption">
+          <h4>{{ ramdomProjets[1].name }}</h4>
         </div>
-        <div class="col-md-4  col-sm-6 portfolio-item" >
-            <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-chevron-down fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{{ ramdomProjets[2].imageUrl }}" alt="projet">
-            </a>
-            <div class="portfolio-caption">
-              <h4>{{ ramdomProjets[2].name }}</h4>
+      </div>
+      <div class="col-md-4  col-sm-6 portfolio-item">
+        <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fa fa-chevron-down fa-3x"></i>
             </div>
           </div>
+          <img class="img-fluid" src="{{ ramdomProjets[2].imageUrl }}" alt="projet">
+        </a>
+        <div class="portfolio-caption">
+          <h4>{{ ramdomProjets[2].name }}</h4>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
@@ -195,7 +195,8 @@
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
+  </div>
 </section>
 
 <!-- Section Oeil du recruteur -->
