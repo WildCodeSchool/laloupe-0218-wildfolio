@@ -96,7 +96,10 @@ export class ListStudentsComponent implements OnInit {
           }
           return 0;
         });
+<<<<<<< HEAD
+=======
         // console.log(data);
+>>>>>>> d2b12ba3e0d3e0c09b2352c347fde672da39dc08
         this.students = data;
       },
       error => console.log(error),
