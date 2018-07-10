@@ -28,7 +28,19 @@ export class ListStudentsComponent implements OnInit {
     this.getLangageBySelectedLangage();
     console.log(this.isSearched);
   }
-
+  // getCity() {
+  //   this.cityService.getCities().subscribe((data) => {
+  //     this.cities = data.sort((a, b) => {
+  //       if (a.city < b.city) {
+  //         return -1;
+  //       }
+  //       if (a.city > b.city) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     });
+  //   });
+  // }
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
@@ -55,6 +67,15 @@ export class ListStudentsComponent implements OnInit {
   getLangageById() {
     this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
+        this.students = data.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
         this.students = data;
         // console.log(data);
       },
@@ -66,7 +87,20 @@ export class ListStudentsComponent implements OnInit {
   getLangageBySelectedLangage() {
     this.studentService.getLangageById(Number(this.isSearched)).subscribe(
       (data) => {
+<<<<<<< HEAD
         // console.log(data);
+=======
+        this.students = data.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+        console.log(data);
+>>>>>>> b3e4e123c7c863df221f6b061f868eeea078b8bb
         this.students = data;
       },
       error => console.log(error),
