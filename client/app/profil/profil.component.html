@@ -15,7 +15,11 @@
                     <form>
                     <button class="btn btn-outline-warning" (click)="showEdit()" *ngIf="!edit">Edit</button>
                     <button class="btn btn-outline-warning" (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
+<<<<<<< HEAD
+                    <input type="button" class="btn btn-outline-info" value="Mon espace" [routerLink]="['/admin']" />
+=======
                     <input type="button" class="btn btn-outline-info" value="Mes projets" [routerLink]="['/newPost']" />
+>>>>>>> 40ac72d11eccc1cdc24054bf3b9110ec0026e6de
                     </form></h1>
                 <!-- <h2 class="poste">{{me.poste}}</h2> -->
                 
@@ -189,9 +193,9 @@
                 <!-- <input class="form-control mr-2" type="text" name="poste" [(ngModel)]="me.poste" placeholder="Poste">
                 <input class="form-control mr-2" type="text" name="specialites" [(ngModel)]="me.specialites" placeholder="spécialités"> -->
                 <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
-                  <i class="fa fa-floppy-o"></i> Save</button>
+                  <i class="fa fa-floppy-o"></i> Enregistrer</button>
                 <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
-                  <i class="fa fa-times"></i> Cancel</button>
+                  <i class="fa fa-times"></i> Annuler</button>
               </form>
             </td>
           </tr>
@@ -200,3 +204,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

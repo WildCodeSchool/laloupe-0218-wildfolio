@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <app-loading [condition]="isLoading">
 </app-loading>
 
@@ -5,11 +7,9 @@
 
 <div class="container-fluid">
   <!-- Title -->
-  <div class="row">
+  <div class="row mt-2 mb-2 padding-nav">
     <div class="col-12">
-      <h2 class="titleAdmin mt-2 ml-2 col-12">Bienvenue dans la partie administration
-        <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Admin Home</button>
-      </h2>
+        <button type="button" class="btn btn-primary btn-rounded" routerLink="/admin">Retour</button>
     </div>
   </div>
 
@@ -41,9 +41,9 @@
         </div>
       </form>
     </div>
-    <div class="card mb-3" *ngIf="!isLoading">
+    <div class="card" *ngIf="!isLoading">
       <div>
-        <h4 class="card-header backgroundNav">Projets ({{ blogProjets.length }})</h4>
+        <h4 class="card-header backgroundNav">Vous avez {{ blogProjets.length }} Projet</h4>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" *ngIf="!isEditing">
@@ -71,9 +71,9 @@
                     <a href="{{ blogProjet.link }}" target="_blank">{{ blogProjet.link }}</a>
                   </td>
                   <td>{{ blogProjet.description }}</td>
-                  <button class="btn btn-sm btn-primary ml-2 mr-2" (click)="enableEditing(blogProjet)">
+                  <button class="btn btn-sm btn-primary ml-2 mr-2 mt-2 mb-2" (click)="enableEditing(blogProjet)">
                     <i class="fa fa-pencil"></i> Modifier</button>
-                  <button class="btn btn-sm btn-danger mr-2" (click)="deleteBlogProjet(blogProjet)">
+                  <button class="btn btn-sm btn-danger ml-2 mr-2 mt-2 mb-2" (click)="deleteBlogProjet(blogProjet)">
                     <i class="fa fa-trash"></i> Supprimer</button>
                 </tr>
               </tbody>
