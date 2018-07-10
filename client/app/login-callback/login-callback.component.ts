@@ -36,7 +36,7 @@ export class LoginCallbackComponent implements OnInit {
     this.wcsService.getMe().subscribe((data) => {
       localStorage.setItem('WCS_ID', data['id']);
       this.wcsService.student = data;
-      // console.log(this.wcsService.student);
+      console.log('first', this.wcsService.student);
       const student = new Student();
       const city = new City();
       const langage = new Langage();
@@ -48,7 +48,7 @@ export class LoginCallbackComponent implements OnInit {
       student.WCS_ID = data['id'];
       student.github = data['github'];
       /* student.banished = data['banished']; */
-      // student.members = data['current_crew'].users;
+      student.members = data['current_crew'].users;
       city.city = data['current_crew'].location.city;
       city.WCS_ID = data['current_crew'].location.id;
       langage.name = data['current_crew'].program_type.name;
@@ -95,7 +95,8 @@ export class LoginCallbackComponent implements OnInit {
                       student.sessionId = session.WCS_ID;
                       student.langageName = langage.name;
                       student.langageId = langage.WCS_ID;
-                      /*  console.log('connecter'); */
+                      student.members = data['current_crew'].users;
+                      console.log('Student', this.students);
                     },
                     error => console.log(error),
                   );

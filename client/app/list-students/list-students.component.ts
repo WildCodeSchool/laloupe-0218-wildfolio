@@ -87,9 +87,6 @@ export class ListStudentsComponent implements OnInit {
   getLangageBySelectedLangage() {
     this.studentService.getLangageById(Number(this.isSearched)).subscribe(
       (data) => {
-<<<<<<< HEAD
-        // console.log(data);
-=======
         this.students = data.sort((a, b) => {
           if (a.name < b.name) {
             return -1;
@@ -99,8 +96,7 @@ export class ListStudentsComponent implements OnInit {
           }
           return 0;
         });
-        console.log(data);
->>>>>>> b3e4e123c7c863df221f6b061f868eeea078b8bb
+        // console.log(data);
         this.students = data;
       },
       error => console.log(error),

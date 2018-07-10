@@ -17,6 +17,7 @@ const studentSchema = new mongoose.Schema({
   locationId: Number,
   langageId: Number,
   langageName: String,
+  members: [],
  /*  palmares: Array,
   poste: String,
   specialites: Array, */
