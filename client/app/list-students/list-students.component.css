@@ -26,9 +26,9 @@
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
   }
 
-  .button1{
+  /* .button1{
       margin-right: 3%;
-  }
+  } */
 
 
   .btn2{
@@ -49,12 +49,12 @@
 
 /*Modal*/
 
-.modal1{
+/* .modal1{
     margin-top: 17%;
     margin-left: -40%;
-}
+} */
 
-.modal2{
+/* .modal2{
     margin-top: 17%;
     margin-left: -1%;
 }
@@ -63,7 +63,7 @@
     padding: 3% 0% 3% 4%;
     width: 50%;
     border-color: gray;
-}
+} */
 
 .devMaps{
     padding-bottom: 10%;
