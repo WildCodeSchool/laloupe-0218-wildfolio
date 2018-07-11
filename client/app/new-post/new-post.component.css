@@ -51,3 +51,11 @@ table{
 .padding-nav {
   margin-top: 70px!important;
 }
+.add {
+  float: right;
+}
+.div {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+}

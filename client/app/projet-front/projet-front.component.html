@@ -5,19 +5,29 @@
     <!-- Image du projet -->
     <div class="col-md-6" *ngIf='blogProjet'>
       <figure>
-          <img alt="Project img" src="{{ blogProjet.imageUrl }}" class="imgProjet" />
+        <img alt="Project img" src="{{ blogProjet.imageUrl }}" class="imgProjet" />
         <figcaption>
-            <div class="button mx-auto">
-                <div class="front">
-                  <p>Partager <i class="fa fa-share-alt" aria-hidden="true"></i></p>
-                </div>
-                <div class="links">
-                  <a href="#"><i class="fab fa-facebook-f fa-fw"></i></a>
-                  <a href="#"><i class="fab fa-twitter fa-fw"></i></a>
-                  <a href="#"><i class="fab fa-instagram fa-fw"></i></a>
-                  <a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a>
-                </div>
-              </div>
+          <div class="button mx-auto">
+            <div class="front">
+              <p>Partager
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div class="links">
+              <a href="#">
+                <i class="fab fa-facebook-f fa-fw"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter fa-fw"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram fa-fw"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in fa-fw"></i>
+              </a>
+            </div>
+          </div>
         </figcaption>
       </figure>
     </div>
@@ -26,17 +36,15 @@
       <h3 class="paragraphe nameProject">{{ blogProjet.name }}</h3>
       <p class="paragraphe descriptionProject">{{ blogProjet.description }}</p>
       <ul>
-        <li class="list-item">
-          <a href="">
-            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Bastien Escroc</a>
+        <!-- Creator of projet -->
+        <li class="list-item" >
+          <a target="_blank" [routerLink]="['/student-eleve', blogProjet.studentId]">
+            <i class="fa fa-arrow-circle-right"  style="font-size:24px"></i>{{ blogProjet.studentName }}</a>
         </li>
-        <li class="list-item">
-          <a href="">
-            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Alexander</a>
-        </li>
-        <li class="list-item">
-          <a href="">
-            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> Antoine</a>
+        <!-- Student who participate for the projet -->
+        <li class="list-item" *ngFor="let eleve of blogProjet.eleves">
+          <a target="_blank" [routerLink]="['/student-eleve', eleve._id]">
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ eleve.name }}</a>
         </li>
       </ul>
     </div>

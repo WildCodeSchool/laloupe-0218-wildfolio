@@ -1,6 +1,7 @@
 export class BlogProjet {
   _id?: string;
   studentId?: string;
+  studentName?: string;
   name?: string;
   link?: string;
   imageUrl?: string;

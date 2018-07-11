@@ -7,6 +7,7 @@ const blogProjetSchema = new mongoose.Schema({
   imageUrl: String,
   description: String,
   studentId: String,
+  studentName: String,
   locationId: Number,
   session: String,
   sessionId: Number,
