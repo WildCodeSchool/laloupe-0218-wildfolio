@@ -20,7 +20,7 @@
       <form [formGroup]="addBlogProjetForm" (ngSubmit)="addBlogProjet()">
         <div class="row">
           <div class="col-md-6 col-12">
-            <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nom du Projet">
+            <input class="form-control" type="tex" name="name" formControlName="name" placeholder="Nom du Projet">
             <input class="form-control imageUrl" type="text" name="imageUrl" formControlName="imageUrl" placeholder="Url Image">
             <input class="form-control link" type="text" name="link" formControlName="link" placeholder="Lien">
             <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedStudent" (ngModelChange)="getStudentById()"
