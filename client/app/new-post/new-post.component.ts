@@ -22,7 +22,7 @@ export class NewPostComponent implements OnInit {
   isLoading = true;
   isEditing = false;
   student = new Student();
-  selectedStudent;
+  selectedStudent: any = -1;
   arrayStudent = [];
 
   addBlogProjetForm: FormGroup;
