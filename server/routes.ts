@@ -42,8 +42,11 @@ export default function routes(app) {
   router.route('/student/ifNotExists').post(student.insertIfNotExists);
   router.route('/student/:id').get(student.get);
   router.route('/student/wcs/:id').get(student.getbyWCSID);
+  router.route('/student/:id').get(student.getOneByWCSID);
   router.route('/student/:id').put(student.update);
   router.route('/student/:id').delete(student.delete);
+  // Get student by ID in blogProjet
+  router.route('/student/session/:id').get(student.getAllBySessionId);
 
   // Langages
   router.route('/langages').get(langage.getAll);

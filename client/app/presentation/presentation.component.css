@@ -224,7 +224,9 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: relative;
 }
+
 
 @media only screen and (max-device-width: 1366px) {
   .parallax {
@@ -280,10 +282,6 @@ header.masthead .intro-text .intro-heading {
     margin-bottom: 50px;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-}
-
-.search{
- padding-top: 10%;
 }
 
 .buttonSearch{

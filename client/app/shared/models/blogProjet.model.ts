@@ -1,6 +1,7 @@
 export class BlogProjet {
   _id?: string;
   studentId?: string;
+  studentName?: string;
   name?: string;
   link?: string;
   imageUrl?: string;
@@ -8,4 +9,5 @@ export class BlogProjet {
   locationId?: number;
   session?: string;
   sessionId?: number;
+  eleves?;
 }

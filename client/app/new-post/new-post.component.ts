@@ -7,7 +7,7 @@ import { WcsService } from '../wcs.service';
 import { StudentService } from '../services/student.service';
 import { UploadComponent } from './../upload/upload.component';
 import { FileClass } from '../shared/models/fileClass.model';
-
+import { Student } from '../shared/models/student.model';
 
 @Component({
   selector: 'app-new-post',
@@ -16,18 +16,23 @@ import { FileClass } from '../shared/models/fileClass.model';
 })
 export class NewPostComponent implements OnInit {
 
+  students: Student[];
   newBlogProjet: BlogProjet = new BlogProjet();
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
   me;
   isLoading = true;
   isEditing = false;
+  student = new Student();
+  selectedStudent: any = -1;
+  arrayStudent = [];
 
   addBlogProjetForm: FormGroup;
   name = new FormControl('', Validators.required);
   imageUrl = new FormControl('');
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
+  eleves = new FormControl('');
 
   filename: string;
   uploadOk: boolean;
@@ -40,20 +45,26 @@ export class NewPostComponent implements OnInit {
   ngOnInit() {
     
     this.getMe();
-
+    this.getStudent();
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
       link: this.link,
       description: this.description,
+      eleves: this.eleves,
     });
   }
 
+  addStudentToProject() {
+    console.log(this.selectedStudent);
+    this.arrayStudent.push(this.selectedStudent);
+    console.log(this.arrayStudent);
+  }
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
-        this.me = data,
-          console.log(this.me);
+        this.me = data;
+        console.log('me', this.me);
         if (this.me.admin === true || this.me.roles.length >= 1) {
           this.getBlogProjet();
         } else {
@@ -64,6 +75,38 @@ export class NewPostComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
+  getStudent() {
+    this.studentService.getStudents().subscribe(
+      (data) => {
+        console.log('student', data);
+        this.students = data;
+        this.getStudentBySession();
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+  getStudentBySession() {
+    this.studentService.getStudentBySession(this.me.sessionId).subscribe(
+      (data) => {
+        this.students = data.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+        console.log('studentBySessions', data);
+        this.students = data;
+      },
+      error => console.log(error),
+      () => (this.isLoading = false),
+    );
+  }
+
+  // Projets
 
   onFileUploaded = (filename) => {
     this.filename = filename;
@@ -82,11 +125,13 @@ export class NewPostComponent implements OnInit {
 
   }
 
+  // Show my project
+
   getBlogProjetIfNotAdmin() {
     this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
+        console.log('Les projets', this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -94,14 +139,7 @@ export class NewPostComponent implements OnInit {
 
   }
 
-  /* addProjet() {
-    console.log(this.newBlogProjet);
-    this.blogProjetService.addBlogProjet(this.newBlogProjet)
-      .subscribe((blogProjet) => {
-        console.log(blogProjet);
-        this.newBlogProjet = new BlogProjet;
-      });
-  } */
+  // Add a project
 
   addBlogProjet() {
     if (this.canAddBlogProjet()) {
@@ -112,6 +150,9 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.sessionId = me.sessionId;
         this.addBlogProjetForm.value.imageUrl = this.filename;
         console.log(me);
+        this.addBlogProjetForm.value.studentName = me.name;
+        this.addBlogProjetForm.value.eleves = this.arrayStudent;
+        console.log(' add projet', me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
             this.newBlogProjet = new BlogProjet;
@@ -128,6 +169,8 @@ export class NewPostComponent implements OnInit {
       this.toast.setMessage('projet already exist.', 'warning');
     }
   }
+
+  // Edit Project
 
   enableEditing(blogProjet: BlogProjet) {
     this.isEditing = true;
@@ -154,6 +197,8 @@ export class NewPostComponent implements OnInit {
     );
   }
 
+  // Delete Projet
+
   deleteBlogProjet(blogProjet: BlogProjet) {
     if (window.confirm('Are you sure you want to permanently delete this item?')) {
       this.blogProjetService.deleteBlogProjet(blogProjet).subscribe(
@@ -167,6 +212,8 @@ export class NewPostComponent implements OnInit {
     }
   }
 
+  // Verify I can add
+
   canAddBlogProjet() {
     for (let i = 0; i < this.blogProjets.length; i += 1) {
       if (this.blogProjets[i].name === this.addBlogProjetForm.value.name) {
@@ -175,24 +222,17 @@ export class NewPostComponent implements OnInit {
     }
     return true;
   }
-/* tslint:disable:one-variable-per-declaration */
 
-  shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
+  // Get one Student by selected dropdown
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
+  getStudentById() {
+    this.studentService.getStudentById(this.selectedStudent).subscribe(
+      (data) => {
+        this.students = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
   }
 }

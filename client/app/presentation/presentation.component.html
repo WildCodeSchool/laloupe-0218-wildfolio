@@ -3,19 +3,21 @@
 <!-- Bannière/Barre de recherche -->
 
 <header class="masthead">
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="intro-text">
-      <form class="form-inline row">
-        <div class="col-lg-4 col-12 mx-auto">
+      <div class="row">
+        <div class="mx-auto">
           <h3>Langages/Frameworks</h3>
           <div class="col-md-2 col-12 button2">
             <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage" [ngModelOptions]="{standalone: true}">
+              <option value="-1">Choisir</option>
               <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
             </select>
           </div>
         </div>
+      </div>
 
-        <!-- <div class="col-lg-4 col-12 mx-auto">
+      <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Poste Actuel</h3>
           <select class="custom-select selectWidth" id="poste">
             <option selected>Select</option>
@@ -24,17 +26,16 @@
           </select>
         </div> -->
 
-        <div class="col-lg-4 col-12 mx-auto">
+      <!-- <div class="col-lg-4 col-12 mx-auto">
           <h3>Zone géographique</h3>
           <label class="sr-only selectWidth" form="inlineFormInput">Zone géographique</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Ville, Département, Région...">
+        </div> -->
+      <div class="row">
+        <div class="mx-auto search">
+          <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
         </div>
-        <div class="row mx-auto">
-          <div class="col-12 search">
-            <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showDev()">Chercher un Développeur</button>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </header>
@@ -61,7 +62,7 @@
 
 <section class="bg-light" id="portfolio">
   <div class="container" *ngIf="isCharged">
-    <div class="row" >
+    <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Nos derniers projets</h2>
         <hr/>
@@ -81,41 +82,41 @@
           <h4>{{ ramdomProjets[0].name }}</h4>
         </div>
       </div>
-      <div class="col-md-4  col-sm-6 portfolio-item" >
-          <a class="portfolio-link"  [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
+      <div class="col-md-4  col-sm-6 portfolio-item">
+        <a class="portfolio-link" [routerLink]="['/projetFront', ramdomProjets[1]._id]" target="blank">
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fa fa-chevron-down fa-3x"></i>
+            </div>
+            </div>
+            <img class="img-fluid" src="api/file/{{ ramdomProjets[1].imageUrl }}" alt="projet">
+          </a>
+        <div class="portfolio-caption">
+          <h4>{{ ramdomProjets[1].name }}</h4>
+        </div>
+        </div>
+        <div class="col-md-4  col-sm-6 portfolio-item">
+          <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fa fa-chevron-down fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="api/file/{{ ramdomProjets[1].imageUrl }}" alt="projet">
+            <img class="img-fluid" src="api/file/{{ ramdomProjets[2].imageUrl }}" alt="projet">
           </a>
           <div class="portfolio-caption">
-            <h4 >{{ ramdomProjets[1].name }}</h4>
+            <h4>{{ ramdomProjets[2].name }}</h4>
           </div>
         </div>
-        <div class="col-md-4  col-sm-6 portfolio-item" >
-            <a class="portfolio-link" *ngIf="ramdomProjets[2]" [routerLink]="['/projetFront', ramdomProjets[2]._id]" target="blank">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-chevron-down fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="api/file/{{ ramdomProjets[2].imageUrl }}" alt="projet">
-            </a>
-            <div class="portfolio-caption">
-              <h4>{{ ramdomProjets[2].name }}</h4>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="project_button">
+            <a class="btn btn-primary btn-lg answerText" [routerLink]="['/projet']">Plus de projets</a>
           </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="project_button">
-          <a class="btn btn-primary btn-lg answerText" [routerLink]="['/projet']">Plus de projets</a>
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- Section Développeurs -->
@@ -131,7 +132,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="team-member" *ngIf="students">
-          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[0].github }}.png" alt="">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[0].github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';"
+            alt="Impossible de se connecter au serveur">
           <h4>{{ ramdomProfil[0].name }}</h4>
           <p class="text-muted">{{ ramdomProfil[0].campus }}</p>
           <ul class="list-inline social-buttons">
@@ -151,7 +153,8 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member" *ngIf="students">
-          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[1].github }}.png" alt="">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[1].github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';"
+            alt="">
           <h4>{{ ramdomProfil[1].name }}</h4>
           <p class="text-muted">{{ ramdomProfil[1].campus }}</p>
           <ul class="list-inline social-buttons">
@@ -171,7 +174,8 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member" *ngIf="students">
-          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[2].github }}.png" alt="">
+          <img class="mx-auto rounded-circle" src="https://github.com/{{ ramdomProfil[2].github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';"
+            alt="">
           <h4>{{ ramdomProfil[2].name }}</h4>
           <p class="text-muted">{{ ramdomProfil[2].campus }}</p>
           <ul class="list-inline social-buttons">
@@ -195,7 +199,8 @@
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
+  </div>
 </section>
 
 <!-- Section Oeil du recruteur -->

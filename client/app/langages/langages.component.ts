@@ -53,7 +53,7 @@ export class LangagesComponent implements OnInit {
   getLangage() {
     this.langageService.getLangages().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.langages = data;
       },
       error => console.log(error),

@@ -51,7 +51,7 @@ export class SessionComponent implements OnInit {
   getSession() {
     this.sessionService.getSessions().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.sessions = data;
       },
       error => console.log(error),
@@ -64,7 +64,7 @@ export class SessionComponent implements OnInit {
       this.addSessionForm.value.date = me.session;
       this.addSessionForm.value.WCS_ID = me.sessionId;
       this.addSessionForm.value.locationId = me.locationId;
-      console.log(me);
+      // console.log(me);
       this.sessionService.addIfNotExist(this.addSessionForm.value).subscribe(
         (session) => {
           this.newSession = new Session;
@@ -85,7 +85,7 @@ export class SessionComponent implements OnInit {
             this.newSession = new Session;
             this.sessions.push(session);
             this.addSessionForm.reset();
-            console.log(session);
+            // console.log(session);
             this.toast.setMessage('item added successfully.', 'success');
           },
           error => console.log(error),
