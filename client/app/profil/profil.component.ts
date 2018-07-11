@@ -96,6 +96,7 @@ export class ProfilComponent implements OnInit {
 
   cancelEditing() {
     this.isEditing = false;
+    this.edit = false;
     this.student = new Student();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cats to reset the editing
@@ -106,6 +107,7 @@ export class ProfilComponent implements OnInit {
     this.studentService.editStudent(student).subscribe(
       () => {
         this.isEditing = false;
+        this.edit = false;
         this.student = student;
         this.toast.setMessage('item edited successfully.', 'success');
       },

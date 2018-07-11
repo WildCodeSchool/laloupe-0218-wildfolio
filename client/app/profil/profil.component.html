@@ -7,7 +7,7 @@
 <div class="container-fluid" *ngIf="me">
     <div class="row justify-content-start profil">
         <div class="col-md-3 col-sm-12 mx-auto photo">
-            <img class="rounded-circle" src="https://github.com/{{ me.github }}.png" alt="photoDev">
+            <img class="rounded-circle" src="https://github.com/{{ student.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';">
         </div>
         <div class="col-md-8 col-sm-12 mx-auto">
             <div class="nameDev">
@@ -15,11 +15,7 @@
                     <form>
                     <button class="btn btn-outline-warning" (click)="showEdit()" *ngIf="!edit">Edit</button>
                     <button class="btn btn-outline-warning" (click)="hiddenEdit()" *ngIf="edit">Cancel</button>
-<<<<<<< HEAD
                     <input type="button" class="btn btn-outline-info" value="Mon espace" [routerLink]="['/admin']" />
-=======
-                    <input type="button" class="btn btn-outline-info" value="Mes projets" [routerLink]="['/newPost']" />
->>>>>>> 40ac72d11eccc1cdc24054bf3b9110ec0026e6de
                     </form></h1>
                 <!-- <h2 class="poste">{{me.poste}}</h2> -->
                 
@@ -70,7 +66,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="me.phone !== undefined">
                     <div class="col-12">
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
@@ -130,8 +126,8 @@
     
 
 
-<div class="card" *ngIf="edit">
-  <div class="card mb-3" *ngIf="!isLoading">
+<div class="card mb-5" *ngIf="edit">
+  <div class="card" *ngIf="!isLoading">
     <h4 class="card-header backgroundNav" *ngIf="me">{{ me.name }}</h4>
     <div class="card-body">
       <table class="table table-bordered">
@@ -194,7 +190,7 @@
                 <input class="form-control mr-2" type="text" name="specialites" [(ngModel)]="me.specialites" placeholder="spécialités"> -->
                 <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
                   <i class="fa fa-floppy-o"></i> Enregistrer</button>
-                <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+                <button class="btn btn-sm btn-warning" (click)="cancelEditing() && hiddenEdit()">
                   <i class="fa fa-times"></i> Annuler</button>
               </form>
             </td>

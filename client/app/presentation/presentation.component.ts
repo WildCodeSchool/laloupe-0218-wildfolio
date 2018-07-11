@@ -27,7 +27,7 @@ export class PresentationComponent implements OnInit {
   recruts: Recrut[] = [];
   students: Student[];
   student = new Student();
-  selectedLangage: any;
+  selectedLangage = -1;
   langage = new Langage();
   langages: Langage[] = [];
   math;
