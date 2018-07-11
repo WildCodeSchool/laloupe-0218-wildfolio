@@ -187,7 +187,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
-
+  display: block;
   max-width: 400px;
   margin: 0 auto;
   cursor: pointer;
@@ -248,12 +248,17 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   #portfolio .portfolio-item {
     margin: 0 0 30px;
   }
+  
 }
 @media (max-width: 767px) {
   
   .specialities{
     margin-top: 6vh;
   }
+  .img-fluid {
+    width: 100%;
+    height: 180px!important;
+    }
 }
 .form-control {
 width: 80vh;
@@ -264,5 +269,5 @@ margin-top: 2vh;
 }
 .img-fluid {
 width: 100%;
-height: 100%;
+height: 230px;
 }
