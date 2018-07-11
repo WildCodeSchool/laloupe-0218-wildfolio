@@ -37,9 +37,9 @@
       <p class="paragraphe descriptionProject">{{ blogProjet.description }}</p>
       <ul>
         <!-- Creator of projet -->
-        <li class="list-item" >
+        <li class="list-item">
           <a target="_blank" [routerLink]="['/student-eleve', blogProjet.studentId]">
-            <i class="fa fa-arrow-circle-right"  style="font-size:24px"></i>{{ blogProjet.studentName }}</a>
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ blogProjet.studentName }}</a>
         </li>
         <!-- Student who participate for the projet -->
         <li class="list-item" *ngFor="let eleve of blogProjet.eleves">
@@ -47,10 +47,15 @@
             <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ eleve.name }}</a>
         </li>
       </ul>
+      <a class="btn btn-primary btn-xs answerText" href="{{ blogProjet.link }}" target="blank">Projet</a>
     </div>
   </div>
+ <!--  <div class="row linktext">
+    <div class="mx-auto">
+    </div>
+  </div> -->
 
-  <section class="linkfoot">
+ <!--  <section class="linkfoot">
     <div class="row linktext">
       <div class="mx-auto">
         <h3 class="h3Projet">
@@ -65,7 +70,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 </div>
 
