@@ -26,7 +26,12 @@ export class StudentService {
   getLangageById(langageId: number): Observable<Student[]> {
     return this.http.get<Student[]>(`/api/student/langage/${langageId}`);
   }
-
+  getStudentById(WCS_ID: number): Observable<Student[]> {
+    return this.http.get<Student[]>(`/api/student/${WCS_ID}`);
+  }
+  getStudentBySession(sessionId: number): Observable<Student[]> {
+    return this.http.get<Student[]>(`/api/student/session/${sessionId}`);
+  }
   countStudents(): Observable<number> {
     return this.http.get<number>('/api/students/count');
   }

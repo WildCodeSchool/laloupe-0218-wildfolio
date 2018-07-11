@@ -5,6 +5,7 @@ import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms'
 import { ToastComponent } from '../shared/toast/toast.component';
 import { WcsService } from '../wcs.service';
 import { StudentService } from '../services/student.service';
+import { Student } from '../shared/models/student.model';
 
 @Component({
   selector: 'app-new-post',
@@ -13,18 +14,23 @@ import { StudentService } from '../services/student.service';
 })
 export class NewPostComponent implements OnInit {
 
+  students: Student[];
   newBlogProjet: BlogProjet = new BlogProjet();
   blogProjet = new BlogProjet();
   blogProjets: BlogProjet[] = [];
   me;
   isLoading = true;
   isEditing = false;
+  student = new Student();
+  selectedStudent;
+  arrayStudent = [];
 
   addBlogProjetForm: FormGroup;
   name = new FormControl('', Validators.required);
   imageUrl = new FormControl('', Validators.required);
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
+  eleves = new FormControl('');
 
   constructor(private blogProjetService: BlogProjetService,
               private formBuilder: FormBuilder,
@@ -33,20 +39,26 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit() {
     this.getMe();
-
+    this.getStudent();
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
       link: this.link,
       description: this.description,
+      eleves: this.eleves,
     });
   }
 
+  test() {
+    console.log(this.selectedStudent);
+    this.arrayStudent.push(this.selectedStudent);
+    console.log(this.arrayStudent);
+  }
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
         this.me = data;
-          // console.log(this.me);
+        console.log('me', this.me);
         if (this.me.admin === true || this.me.roles.length >= 1) {
           this.getBlogProjet();
         } else {
@@ -57,7 +69,46 @@ export class NewPostComponent implements OnInit {
       () => this.isLoading = false,
     );
   }
-
+  getStudent() {
+    this.studentService.getStudents().subscribe(
+      (data) => {
+        console.log('student', data);
+        this.students = data;
+        this.getStudentBySession();
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+  getStudentBySession() {
+    this.studentService.getStudentBySession(this.me.sessionId).subscribe(
+      (data) => {
+        this.students = data.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+        console.log('studentBySessions', data);
+        this.students = data;
+      },
+      error => console.log(error),
+      () => (this.isLoading = false),
+    );
+  }
+  // getStudentById() {
+  //   this.studentService.getStudentById(this.selectedStudent).subscribe(
+  //     (data) => {
+  //       this.students = data;
+  //       console.log(data);
+  //     },
+  //     error => console.log(error),
+  //     () => this.isLoading = false,
+  //   );
+  // }
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
@@ -74,7 +125,7 @@ export class NewPostComponent implements OnInit {
     this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
+        console.log('Les projets', this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -98,7 +149,8 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.locationId = me.locationId;
         this.addBlogProjetForm.value.session = me.session;
         this.addBlogProjetForm.value.sessionId = me.sessionId;
-        console.log(me);
+        this.addBlogProjetForm.value.eleves = this.arrayStudent;
+        console.log(' add projet', me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
             this.newBlogProjet = new BlogProjet;
@@ -180,5 +232,16 @@ export class NewPostComponent implements OnInit {
     }
 
     return array;
+  }
+
+  getStudentById() {
+    this.studentService.getStudentById(this.selectedStudent).subscribe(
+      (data) => {
+        this.students = data;
+        console.log(data);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
   }
 }

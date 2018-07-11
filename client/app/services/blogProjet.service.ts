@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { BlogProjet } from '../shared/models/blogProjet.model';
 import { Session } from '../shared/models/session.model';
+import { Student } from '../shared/models/student.model';
 
 @Injectable()
 export class BlogProjetService {
