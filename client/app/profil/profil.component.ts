@@ -150,13 +150,13 @@ export class ProfilComponent implements OnInit {
 
   }
   getBlogProjetIfNotAdmin() {
-    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
-      (data) => {
-        this.blogProjets = data;
+    this.blogProjetService.getBlogProjetsByCreator(this.me._id).subscribe(
+          (data) => {
+            this.blogProjets = data;
         // console.log(this.blogProjets);
-      },
-      error => console.log(error),
-      () => this.isLoading = false,
+          },
+          error => console.log(error),
+          () => this.isLoading = false,
     );
 
   }

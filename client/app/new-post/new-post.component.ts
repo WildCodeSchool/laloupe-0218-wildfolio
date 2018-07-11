@@ -117,7 +117,7 @@ export class NewPostComponent implements OnInit {
   // Show my project
 
   getBlogProjetIfNotAdmin() {
-    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
+    this.blogProjetService.getBlogProjetsByCreator(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
         console.log('Les projets', this.blogProjets);
@@ -138,7 +138,7 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.session = me.session;
         this.addBlogProjetForm.value.sessionId = me.sessionId;
         this.addBlogProjetForm.value.studentName = me.name;
-        this.addBlogProjetForm.value.eleves = this.arrayStudent;
+        this.addBlogProjetForm.value.eleves = this.arrayStudent.map(student => student._id);
         console.log(' add projet', me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
