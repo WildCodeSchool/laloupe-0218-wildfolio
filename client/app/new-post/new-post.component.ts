@@ -49,7 +49,7 @@ export class NewPostComponent implements OnInit {
     });
   }
 
-  test() {
+  addStudentToProject() {
     console.log(this.selectedStudent);
     this.arrayStudent.push(this.selectedStudent);
     console.log(this.arrayStudent);
@@ -99,16 +99,9 @@ export class NewPostComponent implements OnInit {
       () => (this.isLoading = false),
     );
   }
-  // getStudentById() {
-  //   this.studentService.getStudentById(this.selectedStudent).subscribe(
-  //     (data) => {
-  //       this.students = data;
-  //       console.log(data);
-  //     },
-  //     error => console.log(error),
-  //     () => this.isLoading = false,
-  //   );
-  // }
+
+  // Projets
+
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
@@ -120,6 +113,8 @@ export class NewPostComponent implements OnInit {
     );
 
   }
+
+  // Show my project
 
   getBlogProjetIfNotAdmin() {
     this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
@@ -133,14 +128,7 @@ export class NewPostComponent implements OnInit {
 
   }
 
-  /* addProjet() {
-    console.log(this.newBlogProjet);
-    this.blogProjetService.addBlogProjet(this.newBlogProjet)
-      .subscribe((blogProjet) => {
-        console.log(blogProjet);
-        this.newBlogProjet = new BlogProjet;
-      });
-  } */
+  // Add a project
 
   addBlogProjet() {
     if (this.canAddBlogProjet()) {
@@ -168,6 +156,8 @@ export class NewPostComponent implements OnInit {
     }
   }
 
+  // Edit Project
+
   enableEditing(blogProjet: BlogProjet) {
     this.isEditing = true;
     this.blogProjet = blogProjet;
@@ -192,6 +182,8 @@ export class NewPostComponent implements OnInit {
     );
   }
 
+  // Delete Projet
+
   deleteBlogProjet(blogProjet: BlogProjet) {
     if (window.confirm('Are you sure you want to permanently delete this item?')) {
       this.blogProjetService.deleteBlogProjet(blogProjet).subscribe(
@@ -205,6 +197,8 @@ export class NewPostComponent implements OnInit {
     }
   }
 
+  // Verify I can add
+
   canAddBlogProjet() {
     for (let i = 0; i < this.blogProjets.length; i += 1) {
       if (this.blogProjets[i].name === this.addBlogProjetForm.value.name) {
@@ -213,26 +207,8 @@ export class NewPostComponent implements OnInit {
     }
     return true;
   }
-/* tslint:disable:one-variable-per-declaration */
 
-  shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
+  // Get one Student by selected dropdown
 
   getStudentById() {
     this.studentService.getStudentById(this.selectedStudent).subscribe(

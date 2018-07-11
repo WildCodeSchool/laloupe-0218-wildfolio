@@ -1,15 +1,13 @@
 import { LangageService } from './../services/langage.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Recrut } from '../shared/models/recrut.model';
 import { RecrutService } from '../services/recrut.service';
 import * as AOS from 'aos';
 import { StudentService } from '../services/student.service';
 import { Student } from '../shared/models/student.model';
-import { WcsService } from '../wcs.service';
 import { BlogProjetService } from '../services/blogProjet.service';
 import { BlogProjet } from '../shared/models/blogProjet.model';
-import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser/src/dom/debug/ng_probe';
 import { Langage } from '../shared/models/langage.model';
 
 @Component({
@@ -27,7 +25,7 @@ export class PresentationComponent implements OnInit {
   recruts: Recrut[] = [];
   students: Student[];
   student = new Student();
-  selectedLangage = -1;
+  selectedLangage: any = -1;
   langage = new Langage();
   langages: Langage[] = [];
   math;
@@ -36,7 +34,6 @@ export class PresentationComponent implements OnInit {
   isCharged = false;
 
   constructor(
-    route: ActivatedRoute,
     private recrutService: RecrutService,
     private studentService: StudentService,
     private blogProjetService: BlogProjetService,
@@ -55,6 +52,7 @@ export class PresentationComponent implements OnInit {
     });
 
   }
+
   getLangage() {
     this.langageService.getLangages().subscribe(
       (data) => {
@@ -65,6 +63,7 @@ export class PresentationComponent implements OnInit {
       () => (this.isLoading = false),
     );
   }
+
   // Oeil du recruteur
 
   getRecrut() {
@@ -76,6 +75,7 @@ export class PresentationComponent implements OnInit {
   isSearched() {
     this.isClick = true;
   }
+
   // Projets
 
   getBlogProjet() {
@@ -85,17 +85,14 @@ export class PresentationComponent implements OnInit {
         this.ramdomProjets = this.shuffle(this.blogProjets);
         // console.log(this.ramdomProjets);
         this.isCharged = true;
-        // for (let i = 0; i < this.blogProjets.length; i++) {
-        //   let num = Math.floor(Math.random() * 3);
-        //   console.log(this.blogProjets[i].WCS_id);
-        // }
       },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
 
-  // Développeurs
+  // Random Array
+
   shuffle(a) {
     for (let i = a.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -104,24 +101,21 @@ export class PresentationComponent implements OnInit {
     return a;
   }
 
+  // Développeurs
+
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
         this.students = data;
         this.ramdomProfil = this.shuffle(this.students);
-        // for (let i = 0; i < 3; i += 1) {
-        //   this.math = Math.floor(Math.random() * this.students.length);
-        //   if (this.ramdomProfil[i] === this.ramdomProfil[i - 1] || this.ramdomProfil[i] === this.ramdomProfil[i - 2]) {
-        //     this.math = Math.floor(Math.random() * this.students.length);
-        //   }
-        //   this.ramdomProfil.push(this.students[this.math]);
-        // }
-        // console.log(this.ramdomProfil);
       },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
+
+  // Langages
+
   getLangageById() {
     this.studentService.getLangageById(this.selectedLangage).subscribe(
       (data) => {
@@ -134,6 +128,7 @@ export class PresentationComponent implements OnInit {
     localStorage.setItem('selectedLangage', this.selectedLangage);
     this.router.navigate(['/list-students']);
   }
+  
   showDev() {
     this.getLangageById();
   }
