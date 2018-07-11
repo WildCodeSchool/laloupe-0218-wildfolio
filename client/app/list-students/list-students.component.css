@@ -2,9 +2,8 @@
     margin-top: 13vh;
 }
 
+
 /*Recherche zone géographique*/
-
-
 
 /*Buttons*/
 
@@ -44,6 +43,18 @@
   
   .btn2:active, .btn2:focus {
     box-shadow: 0 0 0 0.2rem #1fa597;
+  }
+
+  @media (max-width: 768px) {
+    .button1{
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    .search{
+        padding-top: 3%;
+        text-align: center;
+    }
   }
 
 
@@ -90,10 +101,21 @@ td{
 }
 /*Maps*/
 
+.devMaps{
+    height: 620vh;
+}
+
+@media (max-width: 768px) {
+    .devmaps {
+        padding-bottom: 1%; 
+    }
+  }
+
 .maps{
     position: sticky;
     left: 0;
-    top: 0;
+    top: 190px;
+    height: 10px;
 }
 
 @media (max-width: 768px) {

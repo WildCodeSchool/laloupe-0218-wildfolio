@@ -17,6 +17,7 @@ import { ProjetResearchComponent } from './projet-research/projet-research.compo
 import { NewPostComponent } from './new-post/new-post.component';
 import { LangagesComponent } from './langages/langages.component';
 import { SessionComponent } from './session/session.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'list-students', component: ListStudentsComponent },
   { path: 'newPost', component: NewPostComponent },
   { path: 'langages', component: LangagesComponent },
+  { path: 'upload', component: UploadComponent },
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'profil', component: ProfilComponent },

@@ -5,6 +5,9 @@ import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms'
 import { ToastComponent } from '../shared/toast/toast.component';
 import { WcsService } from '../wcs.service';
 import { StudentService } from '../services/student.service';
+import { UploadComponent } from './../upload/upload.component';
+import { FileClass } from '../shared/models/fileClass.model';
+
 
 @Component({
   selector: 'app-new-post',
@@ -22,16 +25,20 @@ export class NewPostComponent implements OnInit {
 
   addBlogProjetForm: FormGroup;
   name = new FormControl('', Validators.required);
-  imageUrl = new FormControl('', Validators.required);
+  imageUrl = new FormControl('');
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
 
+  filename: string;
+  uploadOk: boolean;
+ 
   constructor(private blogProjetService: BlogProjetService,
               private formBuilder: FormBuilder,
               public toast: ToastComponent,
               private studentService: StudentService) { }
 
   ngOnInit() {
+    
     this.getMe();
 
     this.addBlogProjetForm = this.formBuilder.group({
@@ -56,6 +63,11 @@ export class NewPostComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
     );
+  }
+
+  onFileUploaded = (filename) => {
+    this.filename = filename;
+    console.log(filename);    
   }
 
   getBlogProjet() {
@@ -98,6 +110,7 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.locationId = me.locationId;
         this.addBlogProjetForm.value.session = me.session;
         this.addBlogProjetForm.value.sessionId = me.sessionId;
+        this.addBlogProjetForm.value.imageUrl = this.filename;
         console.log(me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
@@ -130,6 +143,7 @@ export class NewPostComponent implements OnInit {
   }
 
   editBlogProjet(blogProjet: BlogProjet) {
+    blogProjet.imageUrl = this.filename;
     this.blogProjetService.editBlogProjet(blogProjet).subscribe(
       () => {
         this.isEditing = false;
