@@ -166,7 +166,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 /* Projets */
-
+  
 .projets{
   border: solid 2px #1fa597;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -176,13 +176,10 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 .projects{
   padding-right: 2%;
   padding-left: 2%;
-} 
-.portfolio-item {
-  width: 100%;
-  height: 100%;
   min-width: 100%;
   min-height: 100%;
-}
+} 
+
 #portfolio .portfolio-item {
   right: 0;
   margin: 0 0 15px;
@@ -190,7 +187,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
-  display: block;
+
   max-width: 400px;
   margin: 0 auto;
   cursor: pointer;
@@ -251,4 +248,21 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   #portfolio .portfolio-item {
     margin: 0 0 30px;
   }
+}
+@media (max-width: 767px) {
+  
+  .specialities{
+    margin-top: 6vh;
+  }
+}
+.form-control {
+width: 80vh;
+float: left;
+}
+.list-inline {
+margin-top: 2vh;
+}
+.img-fluid {
+width: 100%;
+height: 100%;
 }
