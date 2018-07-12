@@ -8,6 +8,7 @@ import StudentController from './controllers/StudentController';
 import LocationController from './controllers/LocationController';
 import SessionController from './controllers/Session.Controller';
 import LangageController from './controllers/LangageController';
+import MailController from './controllers/Mail.Controller';
 // import city from './models/city';
 // import user from './models/user';
 
@@ -20,6 +21,7 @@ export default function routes(app) {
   const city = new CityController();
   const user = new UserController();
   const student = new StudentController();
+  const mail = new MailController();
   const location = new LocationController();
   const session = new SessionController();
   const langage = new LangageController();
@@ -45,6 +47,14 @@ export default function routes(app) {
   router.route('/student/:id').delete(student.delete);
   // Get student by ID in blogProjet
   router.route('/student/session/:id').get(student.getAllBySessionId);
+
+   // mails
+   router.route('/mails').get(mail.getAll);
+   router.route('/mails/count').get(mail.count);
+   router.route('/mail').post(mail.insert);
+   router.route('/mail/:id').get(mail.get);
+   router.route('/mail/:id').put(mail.update);
+   router.route('/mail/:id').delete(mail.delete);
 
   // Langages
   router.route('/langages').get(langage.getAll);

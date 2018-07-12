@@ -43,6 +43,14 @@ li a:hover {
   padding: 40px 20px 10px 20px;
 }
 
+#share-buttons img {
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+  }
+
 .button .front {
   border-radius: 200px;
   width: 100%;
