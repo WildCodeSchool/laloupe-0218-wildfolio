@@ -5,7 +5,7 @@
     <!-- Image du projet -->
     <div class="col-md-6" *ngIf='blogProjet'>
       <figure>
-        <img alt="Project img" src="{{ blogProjet.imageUrl }}" class="imgProjet" />
+        <img alt="Project img" src="api/file/{{ blogProjet.imageUrl }}" class="imgProjet" />
         <figcaption>
           <div class="button mx-auto">
             <div class="front">
@@ -17,7 +17,7 @@
               <a href="#">
                 <i class="fab fa-facebook-f fa-fw"></i>
               </a>
-              <a href="#">
+              <a href="https://twitter.com/home?status=This%20project%20is%20awesome!%20Check%20it%20out:api/file/{{ blogProjet.imageUrl }}">
                 <i class="fab fa-twitter fa-fw"></i>
               </a>
               <a href="#">
@@ -74,4 +74,4 @@
 
 </div>
 
-<app-footer></app-footer>
+<app-footer *ngIf="blogProjet"></app-footer>

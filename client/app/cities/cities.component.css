@@ -29,3 +29,20 @@
   padding-top: 5%;
   text-align: center;
 }
+
+table{
+  background-color: white;
+}
+
+.link{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.id{
+  margin-bottom: 2%;
+}
+
+.card{
+  background-color:#E8E8E8;
+}

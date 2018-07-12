@@ -5,6 +5,8 @@ import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms'
 import { ToastComponent } from '../shared/toast/toast.component';
 import { WcsService } from '../wcs.service';
 import { StudentService } from '../services/student.service';
+import { UploadComponent } from './../upload/upload.component';
+import { FileClass } from '../shared/models/fileClass.model';
 import { Student } from '../shared/models/student.model';
 
 @Component({
@@ -27,10 +29,13 @@ export class NewPostComponent implements OnInit {
 
   addBlogProjetForm: FormGroup;
   name = new FormControl('', Validators.required);
-  imageUrl = new FormControl('', Validators.required);
+  imageUrl = new FormControl('');
   link = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
   eleves = new FormControl('');
+
+  filename: string;
+  uploadOk: boolean;
 
   constructor(private blogProjetService: BlogProjetService,
               private formBuilder: FormBuilder,
@@ -102,6 +107,11 @@ export class NewPostComponent implements OnInit {
 
   // Projets
 
+  onFileUploaded = (filename) => {
+    this.filename = filename;
+    console.log(filename);
+  }
+
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
@@ -137,6 +147,8 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.locationId = me.locationId;
         this.addBlogProjetForm.value.session = me.session;
         this.addBlogProjetForm.value.sessionId = me.sessionId;
+        this.addBlogProjetForm.value.imageUrl = this.filename;
+        console.log(me);
         this.addBlogProjetForm.value.studentName = me.name;
         this.addBlogProjetForm.value.eleves = this.arrayStudent.map(student => student._id);
         console.log(' add projet', me);
@@ -173,6 +185,7 @@ export class NewPostComponent implements OnInit {
   }
 
   editBlogProjet(blogProjet: BlogProjet) {
+    blogProjet.imageUrl = this.filename;
     this.blogProjetService.editBlogProjet(blogProjet).subscribe(
       () => {
         this.isEditing = false;

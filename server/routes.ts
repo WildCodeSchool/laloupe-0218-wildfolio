@@ -8,6 +8,7 @@ import StudentController from './controllers/StudentController';
 import LocationController from './controllers/LocationController';
 import SessionController from './controllers/Session.Controller';
 import LangageController from './controllers/LangageController';
+import UploadController from './controllers/UploadController';
 // import city from './models/city';
 // import user from './models/user';
 
@@ -23,6 +24,7 @@ export default function routes(app) {
   const location = new LocationController();
   const session = new SessionController();
   const langage = new LangageController();
+  const upload = new UploadController();
 
   // recruts
   router.route('/recruts').get(recrut.getAll);
@@ -94,6 +96,10 @@ export default function routes(app) {
   router.route('/user/:id').get(user.get);
   router.route('/user/:id').put(user.update);
   router.route('/user/:id').delete(user.delete);
+
+  // upload
+  router.route('/upload').post(upload.upload);
+  router.route('/file/:filename').get(upload.getFile);
 
   // Apply the routes to our application with the prefix /api
   app.use('/api', router);

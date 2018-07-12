@@ -32,6 +32,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { LangagesComponent } from './langages/langages.component';
 import { SessionComponent } from './session/session.component';
 import { SessionService } from './services/session.service';
+import { UploadComponent } from './upload/upload.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -59,6 +60,7 @@ export function tokenGetter() {
     ListStudentsComponent,
     ProfilComponent,
     LangagesComponent,
+    UploadComponent,
   ],
   imports: [
     RoutingModule,
