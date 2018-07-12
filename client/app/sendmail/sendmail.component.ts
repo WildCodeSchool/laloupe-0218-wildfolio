@@ -66,8 +66,7 @@ export class SendMailComponent implements OnInit {
   getMe() {
     this.mailService.getMe().subscribe(
       (data) => {
-        this.me = data,
-          this.getBlogProjetIfNotAdmin();
+        this.me = data;
         // console.log(this.me);
       },
       error => console.log(error),
