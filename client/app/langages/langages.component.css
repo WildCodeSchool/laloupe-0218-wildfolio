@@ -41,3 +41,7 @@ table{
   .id{
     margin-bottom: 2%;
   }
+.span-auto {
+  float: right;
+  font-size: 18px;
+}
