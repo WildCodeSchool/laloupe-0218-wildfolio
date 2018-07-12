@@ -523,7 +523,11 @@ header.masthead .intro-text .intro-heading {
   height: 225px;
   border: 7px solid #fff;
 }
-
+.team-member img:hover {
+  border-width: 3px;
+  border-style: solid;
+  background-color: #ffdea5;
+}
 /* Fin section Développeurs*/
 
 .portfolio-modal .modal-content img {
