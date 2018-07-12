@@ -41,7 +41,7 @@
     <div class="col-md-6 description" *ngIf='blogProjet'>
       <h3 class="paragraphe nameProject">{{ blogProjet.name }}</h3>
       <p class="paragraphe descriptionProject">{{ blogProjet.description }}</p>
-      <ul>
+      <ul class="list-item-ul">
         <!-- Creator of projet -->
         <li class="list-item">
           <a target="_blank" [routerLink]="['/student-eleve', blogProjet.studentId]">
