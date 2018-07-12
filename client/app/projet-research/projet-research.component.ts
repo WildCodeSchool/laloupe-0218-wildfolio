@@ -21,8 +21,8 @@ export class ProjetResearchComponent implements OnInit {
 
   cities = [];
   sessions = [];
-  selectedCityId: any;
-  selectedSession: any;
+  selectedCityId: any = -1 ;
+  selectedSession: any = -1;
 
   constructor(
     private cityService: CityService,

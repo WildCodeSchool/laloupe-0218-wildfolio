@@ -44,7 +44,6 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit() {
     this.getMe();
-    this.getStudent();
     this.addBlogProjetForm = this.formBuilder.group({
       name: this.name,
       imageUrl: this.imageUrl,
@@ -63,6 +62,7 @@ export class NewPostComponent implements OnInit {
     this.studentService.getMe().subscribe(
       (data) => {
         this.me = data;
+        this.getStudent();
         console.log('me', this.me);
         if (this.me.admin === true || this.me.roles.length >= 1) {
           this.getBlogProjet();

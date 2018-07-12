@@ -37,7 +37,9 @@
             <textarea class="form-control" type="text" name="description" formControlName="description" placeholder="Description du Projet"
               rows="5"></textarea>
               <ul class="list-student-added" *ngFor="let eleves of arrayStudent">
-                <li>{{ eleves.name }}</li>
+                <li>{{ eleves.name }} 
+                    <img *ngIf="eleves" class="rounded-circle" src="https://github.com/{{ eleves.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';">
+                </li>
               </ul>
           </div>
         </div>

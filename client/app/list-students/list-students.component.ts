@@ -13,11 +13,11 @@ import { Langage } from '../shared/models/langage.model';
 
 export class ListStudentsComponent implements OnInit {
   students: Student[];
+  selectedLangage: any = -1;
   langage = new Langage();
   langages: Langage[] = [];
   isLoading = true;
   isEditing = false;
-  selectedLangage: any;
   isSearched = localStorage.getItem('selectedLangage');
 
   constructor(private studentService: StudentService, private langageService: LangageService) { }

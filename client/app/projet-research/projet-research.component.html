@@ -16,12 +16,14 @@
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Campus</h3>
         <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedCityId" (ngModelChange)="somethingChanged($event)">
+          <option value="-1">Choisir un campus</option>
           <option *ngFor="let city of cities" target="_blank" [ngValue]="city.WCS_ID" >{{ city.city }}</option>
         </select>
       </div>
       <div class="col-lg-4 col-12 mx-auto mt-4">
         <h3>Sessions</h3>
         <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedSession">
+          <option value="-1">Choisir une session</option>
           <option *ngFor="let session of sessions" target="_blank" [ngValue]="session.WCS_ID">{{ session.date }}</option>
         </select>
       </div>
