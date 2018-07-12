@@ -31,6 +31,8 @@ import { LangageService } from './services/langage.service';
 import { ProfilComponent } from './profil/profil.component';
 import { LangagesComponent } from './langages/langages.component';
 import { SessionComponent } from './session/session.component';
+import { SendMailComponent } from './sendmail/sendmail.component';
+import { MailService } from './services/mail.service';
 import { SessionService } from './services/session.service';
 import { UploadComponent } from './upload/upload.component';
 
@@ -59,6 +61,7 @@ export function tokenGetter() {
     NewPostComponent,
     ListStudentsComponent,
     ProfilComponent,
+    SendMailComponent,
     LangagesComponent,
     UploadComponent,
   ],
@@ -84,6 +87,7 @@ export function tokenGetter() {
     RecrutService,
     BlogProjetService,
     WcsService,
+    MailService,
     LangageService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

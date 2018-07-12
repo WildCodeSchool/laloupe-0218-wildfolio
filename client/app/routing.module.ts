@@ -18,6 +18,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { LangagesComponent } from './langages/langages.component';
 import { SessionComponent } from './session/session.component';
 import { UploadComponent } from './upload/upload.component';
+import { SendMailComponent } from './sendmail/sendmail.component';
 
 const routes: Routes = [
   { path: '', component: PresentationComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'student', component: StudentsComponent }, // Modification
   { path: 'student-eleve/:id', component: StudentEleveComponent },
   { path: 'profil', component: ProfilComponent },
+  { path: 'mail', component: SendMailComponent },
   { path: 'recruts', component: RecrutsComponent },
   { path: 'login/callback/:token', component: LoginCallbackComponent },
   { path: 'oauth', component: OauthComponent },

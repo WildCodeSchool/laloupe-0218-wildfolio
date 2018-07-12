@@ -6,7 +6,7 @@
     <div class="col-md-6" *ngIf='blogProjet'>
       <figure>
         <img alt="Project img" src="api/file/{{ blogProjet.imageUrl }}" class="imgProjet" />
-        <figcaption>
+        <figcaption id="share">
           <div class="button mx-auto">
             <div class="front">
               <p>Partager
@@ -27,7 +27,11 @@
                 <i class="fab fa-linkedin-in fa-fw"></i>
               </a>
             </div>
-          </div>
+          </div> 
+          <!-- Facebook -->
+          <!--  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+          </a> -->
         </figcaption>
       </figure>
     </div>
@@ -50,12 +54,12 @@
       <a class="btn btn-primary btn-xs answerText" href="{{ blogProjet.link }}" target="blank">Projet</a>
     </div>
   </div>
- <!--  <div class="row linktext">
+  <!--  <div class="row linktext">
     <div class="mx-auto">
     </div>
   </div> -->
 
- <!--  <section class="linkfoot">
+  <!--  <section class="linkfoot">
     <div class="row linktext">
       <div class="mx-auto">
         <h3 class="h3Projet">
