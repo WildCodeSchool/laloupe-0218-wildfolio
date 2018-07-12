@@ -45,14 +45,14 @@
         <!-- Creator of projet -->
         <li class="list-item">
           <a target="_blank" [routerLink]="['/student-eleve', blogProjet.studentId]">
-            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ blogProjet.studentName }}</a>
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> {{ blogProjet.studentName }}</a>
                     <!-- Photo créateur projet presente à coté du nom -->
             <!-- <img class="img-profil" src="https://github.com/{{ blogProjet.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';" alt="zzz"> -->
         </li>
         <!-- Student who participate for the projet -->
         <li class="list-item" *ngFor="let eleve of blogProjet.eleves">
           <a target="_blank" [routerLink]="['/student-eleve', eleve._id]">
-            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ eleve.name }}</a>
+            <i class="fa fa-arrow-circle-right" style="font-size:24px"></i> {{ eleve.name }}</a>
             <!-- Photo élève presente à coté du nom -->
             <!-- <img class="img-profil" src="https://github.com/{{ eleve.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';" alt="zzz"> -->
         </li>
