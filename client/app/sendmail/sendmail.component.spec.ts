@@ -9,7 +9,6 @@ describe('SendMailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SendMailComponent],
-      
     })
     .compileComponents();
   }));

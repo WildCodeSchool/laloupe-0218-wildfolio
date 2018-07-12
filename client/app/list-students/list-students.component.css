@@ -78,6 +78,7 @@
 
 .devMaps{
     padding-bottom: 10%;
+    height: 620vh;
 }
 
 /*Liste des élèves*/
@@ -100,10 +101,6 @@ td{
     color: #F9A02E;
 }
 /*Maps*/
-
-.devMaps{
-    height: 620vh;
-}
 
 @media (max-width: 768px) {
     .devmaps {

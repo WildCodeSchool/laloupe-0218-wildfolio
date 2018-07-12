@@ -6,7 +6,9 @@
     <div class="col-md-6" *ngIf='blogProjet'>
       <figure>
         <img alt="Project img" src="api/file/{{ blogProjet.imageUrl }}" class="imgProjet" />
-        <figcaption id="share">
+        <a class="btn btn-primary btn-xs answerText mx-auto" href="{{ blogProjet.link }}" target="blank">Accéder au projet</a>
+        <!-- Button partager / désactiver -->
+        <!-- <figcaption id="share">
           <div class="button mx-auto">
             <div class="front">
               <p>Partager
@@ -28,11 +30,11 @@
               </a>
             </div>
           </div> 
-          <!-- Facebook -->
-          <!--  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+          Facebook 
+           <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
             <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-          </a> -->
-        </figcaption>
+          </a> 
+        </figcaption> -->
       </figure>
     </div>
     <!-- Description Projet et Liste des élèves -->
@@ -44,14 +46,17 @@
         <li class="list-item">
           <a target="_blank" [routerLink]="['/student-eleve', blogProjet.studentId]">
             <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ blogProjet.studentName }}</a>
+                    <!-- Photo créateur projet presente à coté du nom -->
+            <!-- <img class="img-profil" src="https://github.com/{{ blogProjet.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';" alt="zzz"> -->
         </li>
         <!-- Student who participate for the projet -->
         <li class="list-item" *ngFor="let eleve of blogProjet.eleves">
           <a target="_blank" [routerLink]="['/student-eleve', eleve._id]">
             <i class="fa fa-arrow-circle-right" style="font-size:24px"></i>{{ eleve.name }}</a>
+            <!-- Photo élève presente à coté du nom -->
+            <!-- <img class="img-profil" src="https://github.com/{{ eleve.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';" alt="zzz"> -->
         </li>
       </ul>
-      <a class="btn btn-primary btn-xs answerText" href="{{ blogProjet.link }}" target="blank">Projet</a>
     </div>
   </div>
   <!--  <div class="row linktext">

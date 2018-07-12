@@ -15,6 +15,9 @@
   height: 100%;
   padding-left: 5%;
 }
+.imgProjet:hover {
+  opacity: 0.8;
+}
 
 figcaption{
   padding-left: 5%;
@@ -44,7 +47,7 @@ li a:hover {
 }
 
 #share-buttons img {
-  width: 35px;
+  /* width: 35px; */
   padding: 5px;
   border: 0;
   box-shadow: 0;
@@ -126,6 +129,7 @@ hr {
 
 .list-item {
   list-style: none;
+  margin-top: 10px;
 }
 
 .nameProject{
@@ -183,12 +187,14 @@ hr {
 
 .btn-primary {
   color: white;
-  background-color: #FBA858;
-  border-color: #FBA858;
+  background-color:#b9184d;
+  border-color: #b9184d;
+  max-width: 50%;
+  margin-top: 20px;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #F9A02E !important;
+  background-color: #ffdea5 !important;
   border-color: #F9A02E !important;
   color: white;
 }
@@ -197,7 +203,8 @@ hr {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
-
+/* Fin button
+Commencement media query */
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .imgProjet {

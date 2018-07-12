@@ -158,7 +158,7 @@ export class SendMailComponent implements OnInit {
 
   }
   getBlogProjetIfNotAdmin() {
-    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
+    this.blogProjetService.getBlogProjetsByCreator(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
         // console.log(this.blogProjets);

@@ -26,7 +26,7 @@ export class MailService {
   getLangageById(langageId: number): Observable<Mail[]> {
     return this.http.get<Mail[]>(`/api/mail/langage/${langageId}`);
   }
-  
+
   getMailById(WCS_ID: number): Observable<Mail[]> {
     return this.http.get<Mail[]>(`/api/mail/${WCS_ID}`);
   }

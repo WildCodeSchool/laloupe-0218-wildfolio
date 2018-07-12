@@ -55,9 +55,9 @@ export class NewPostComponent implements OnInit {
   }
 
   addStudentToProject() {
-    console.log(this.selectedStudent);
+    // console.log(this.selectedStudent);
     this.arrayStudent.push(this.selectedStudent);
-    console.log(this.arrayStudent);
+    // console.log(this.arrayStudent);
   }
   getMe() {
     this.studentService.getMe().subscribe(
@@ -77,7 +77,7 @@ export class NewPostComponent implements OnInit {
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
-        console.log('student', data);
+        // console.log('student', data);
         this.students = data;
         this.getStudentBySession();
       },
@@ -109,14 +109,14 @@ export class NewPostComponent implements OnInit {
 
   onFileUploaded = (filename) => {
     this.filename = filename;
-    console.log(filename);
+    // console.log(filename);
   }
 
   getBlogProjet() {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
+        // console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -130,7 +130,7 @@ export class NewPostComponent implements OnInit {
     this.blogProjetService.getBlogProjetsByCreator(this.me._id).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log('Les projets', this.blogProjets);
+        // console.log('Les projets', this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -148,16 +148,16 @@ export class NewPostComponent implements OnInit {
         this.addBlogProjetForm.value.session = me.session;
         this.addBlogProjetForm.value.sessionId = me.sessionId;
         this.addBlogProjetForm.value.imageUrl = this.filename;
-        console.log(me);
+        // console.log(me);
         this.addBlogProjetForm.value.studentName = me.name;
         this.addBlogProjetForm.value.eleves = this.arrayStudent.map(student => student._id);
-        console.log(' add projet', me);
+        // console.log(' add projet', me);
         this.blogProjetService.addBlogProjet(this.addBlogProjetForm.value).subscribe(
           (blogProjet) => {
             this.newBlogProjet = new BlogProjet;
             this.blogProjets.push(blogProjet);
             this.addBlogProjetForm.reset();
-            console.log(blogProjet);
+            // console.log(blogProjet);
             this.toast.setMessage('item added successfully.', 'success');
           },
           error => console.log(error),
@@ -228,7 +228,7 @@ export class NewPostComponent implements OnInit {
     this.studentService.getStudentById(this.selectedStudent).subscribe(
       (data) => {
         this.students = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,

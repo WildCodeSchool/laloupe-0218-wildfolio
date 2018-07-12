@@ -6,10 +6,9 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  styleUrls: ['./upload.component.css'],
 })
 export class UploadComponent implements OnInit {
-
 
   fileToUpload: File = null;
   @Input('callback') callback;
