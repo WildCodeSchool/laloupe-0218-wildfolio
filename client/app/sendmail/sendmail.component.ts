@@ -66,8 +66,7 @@ export class SendMailComponent implements OnInit {
   getMe() {
     this.mailService.getMe().subscribe(
       (data) => {
-        this.me = data,
-          this.getBlogProjetIfNotAdmin();
+        this.me = data;
         // console.log(this.me);
       },
       error => console.log(error),
@@ -137,43 +136,5 @@ export class SendMailComponent implements OnInit {
       );
     }
   }
-
-  /*  addMail() {
-     for (let i = 0; i < this.me.length; i += 1) {
-       if (this.mails[i].description === this.addMailForm.value.decription) {
-         return false;
-       }
-     }
-     return true;
-   } */
-
-  showEdit() {
-    this.edit = true;
-    this.isEditing = true;
-  }
-
-  hiddenEdit() {
-    this.edit = false;
-    this.isEditing = false;
-
-  }
-  getBlogProjetIfNotAdmin() {
-    this.blogProjetService.getBlogProjetsByUser(this.me._id).subscribe(
-      (data) => {
-        this.blogProjets = data;
-        // console.log(this.blogProjets);
-      },
-      error => console.log(error),
-      () => this.isLoading = false,
-    );
-
-  }
-  // isAdmin() {
-  //   return this.mail.admin = true;
-  // }
-
-  // isNotAdmin() {
-  //   return this.mail.admin = false;
-  // }
 
 }
