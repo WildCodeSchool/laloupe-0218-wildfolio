@@ -11,7 +11,7 @@ const blogProjetSchema = new mongoose.Schema({
   locationId: Number,
   session: String,
   sessionId: Number,
-  eleves: Array,
+  eleves: [String],
 });
 
 const blogProjetModel = mongoose.model('blogProjet', blogProjetSchema);

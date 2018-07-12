@@ -9,5 +9,5 @@ export class BlogProjet {
   locationId?: number;
   session?: string;
   sessionId?: number;
-  eleves?;
+  eleves?: any[];
 }

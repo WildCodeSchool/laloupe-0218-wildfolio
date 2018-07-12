@@ -128,6 +128,7 @@ export class PresentationComponent implements OnInit {
     localStorage.setItem('selectedLangage', this.selectedLangage);
     this.router.navigate(['/list-students']);
   }
+
   showDev() {
     this.getLangageById();
   }

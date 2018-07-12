@@ -22,11 +22,14 @@ export class BlogProjetService {
   getBlogProjetsBySession(sessionId: number): Observable<BlogProjet[]> {
     return this.http.get<BlogProjet[]>(`/api/blogProjets/session/${sessionId}`);
   }
-
-  getBlogProjetsByUser(studentId: number): Observable<BlogProjet[]> {
-    return this.http.get<BlogProjet[]>(`/api/blogProjets/all/${studentId}`);
+  // All projets that this user created
+  getBlogProjetsByCreator(id: number): Observable<BlogProjet[]> {
+    return this.http.get<BlogProjet[]>(`/api/blogProjets/all/creator/${id}`);
   }
-
+  // All projets where user participated (not necessarily the creator)
+  getBlogProjetsByParticipant(_id: string): Observable<BlogProjet[]> {
+    return this.http.get<BlogProjet[]>(`/api/blogProjets/all/participant/${_id}`);
+  }
   countBlogProjets(): Observable<number> {
     return this.http.get<number>('/api/blogProjets/count');
   }

@@ -40,22 +40,33 @@ export class StudentEleveComponent implements OnInit {
       (data) => {
         this.student = data;
         this.getBlogProjetIfNotAdmin();
-        console.log(this.student);
+        this.getBlogProjetWhenLinkByAllies();
+        // console.log('Cet élève', this.student);
       },
     );
   }
-
-  getBlogProjetIfNotAdmin() {
-    this.blogProjetService.getBlogProjetsByUser(this.student._id).subscribe(
+  getBlogProjetWhenLinkByAllies() {
+    this.blogProjetService.getBlogProjetsByParticipant(this.student._id).subscribe(
       (data) => {
+        // console.log('Eleves/_id', this.blogProjet);
         this.blogProjets = data;
-        console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,
-    );
-
+      );
   }
+
+  getBlogProjetIfNotAdmin() {
+    this.blogProjetService.getBlogProjetsByCreator(this.student._id).subscribe(
+      (data) => {
+        this.blogProjets = data;
+        // console.log('blogProjet', this.blogProjets);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+      );
+  }
+
   // displayPhone() {
   //   this.phone = true;
   // }
