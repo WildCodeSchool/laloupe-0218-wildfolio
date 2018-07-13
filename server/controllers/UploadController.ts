@@ -123,10 +123,10 @@ export default class UploadController extends BaseController {
           console.log('An error occurred!', err2);
           throw err2;
         });
-        // readstream.on('close', (file) => {
-        //   // do something with `file`
-        //   console.log('close :', file.filename);
-        // });
+        readstream.on('close', (file) => {
+          client.close();
+          console.log('close :', file.filename);
+        });
       },
     );
   }
