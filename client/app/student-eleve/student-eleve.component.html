@@ -59,10 +59,11 @@
                     <div class="col-12">
                         <ul class="list-inline social-buttons" *ngIf="student.phone !== undefined">
                             <li class="list-inline-item">
-                                <a>
+                                <a href="tel:{{ student.phone }}">
                                     <i class="fa fa-phone"></i>
                                 </a>
                             </li>
+
                             <li class="list-inline-item linksocial phone">{{ student.phone }}</li>
                         </ul>
                     </div>
