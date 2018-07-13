@@ -125,7 +125,7 @@ export default class UploadController extends BaseController {
         });
         readstream.on('close', (file) => {
           client.close();
-          console.log('close :', file.filename);
+          console.log('close :', __filename);
         });
       },
     );
