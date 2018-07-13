@@ -47,7 +47,7 @@
 
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
-                                <a routerLink="/mail">
+                                <a (click)="sendMail(student.email, student.name)">
                                     <i class="fa fa-envelope"></i>
                                 </a>
                             </li>
