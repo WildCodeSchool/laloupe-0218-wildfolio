@@ -1,23 +1,25 @@
-<div class="container-fluid">
+<app-navbar></app-navbar>
+<div class="container-fluid topNavbar">
     <div class="row">
-        <form [formGroup]="addMailForm" (ngSubmit)="addMail()">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <input class="form-control" type="email" name="author" formControlName="author" placeholder="Votre email">
-                    <input class="form-control imageUrl" type="email" name="to" formControlName="to" placeholder="Email de l'étudiant">
-                    <input class="form-control link" type="text" name="subject" formControlName="subject" placeholder="Objet">
-                </div>
-                <div class="col-md-6 col-12 div">
-                    <textarea class="form-control" type="text" name="description" formControlName="description" placeholder="Description du mail"
-                        rows="5"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 mx-auto">
-                    <button class="btn btn-primary add" type="submit" [disabled]="!addMailForm.valid">
-                        <i class="fa fa-floppy-o"></i> Ajouter</button>
-                </div>
-            </div>
-        </form>
+        <div class="mx-auto">
+            <h2>Envoyer un mail au candidat:</h2>
+        </div>
     </div>
+    <form [formGroup]="addMailForm" (ngSubmit)="addMail()">
+        <div class="row">
+            <div class="col-md-6 col-12 mx-auto">
+                <input class="form-control mt-2" type="email" name="author" formControlName="author" placeholder="Votre email">
+                <input class="form-control mt-2 imageUrl" type="email" name="to" formControlName="to" placeholder="Email de l'étudiant">
+                <input class="form-control mt-2 link" type="text" name="subject" formControlName="subject" placeholder="Objet">
+                <textarea class="form-control mt-2" type="text" name="description" formControlName="description" placeholder="Description du mail"
+                    rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row bottomFooter mt-2">
+            <div class="mx-auto">
+                <button class="btn btn-primary add" type="submit" [disabled]="!addMailForm.valid">Envoyer</button>
+            </div>
+        </div>
+    </form>
 </div>
+<app-footer></app-footer>
