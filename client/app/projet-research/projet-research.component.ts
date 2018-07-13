@@ -85,6 +85,8 @@ export class ProjetResearchComponent implements OnInit {
   showProject() {
     this.getBlogProjet();
     this.getBlogProjetBySession();
+    const elmnt = document.getElementById('research');
+    elmnt.scrollIntoView();
   }
   somethingChanged(change) {
     // console.log('change', change);

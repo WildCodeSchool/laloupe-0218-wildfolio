@@ -1,62 +1,59 @@
 .container-fluid {
-    margin-top: 13vh;
+  margin-top: 13vh;
 }
-
-
-/*Recherche zone géographique*/
 
 /*Buttons*/
 
 .btn {
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    color: white;
-    background-color: #FBA858;
-    border-color: #FBA858;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: #fba858;
+  border-color: #fba858;
+}
+
+.btn:active,
+.btn:focus,
+.btn:hover {
+  background-color: #f9a02e;
+  border-color: #f9a02e;
+  color: white;
+}
+
+.btn:active,
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+.btn2 {
+  background-color: #58c4b8;
+  border-color: transparent;
+}
+
+.btn2:active,
+.btn2:focus,
+.btn2:hover {
+  background-color: #1fa597;
+  border-color: #1fa597;
+  color: white;
+}
+
+.btn2:active,
+.btn2:focus {
+  box-shadow: 0 0 0 0.2rem #1fa597;
+}
+
+@media (max-width: 768px) {
+  .button1 {
+    text-align: center;
+    padding-bottom: 3%;
   }
 
-  .btn:active, .btn:focus, .btn:hover {
-    background-color: #F9A02E;
-    border-color: #F9A02E;
-    color: white;
+  .search {
+    padding-top: 3%;
+    text-align: center;
   }
-  
-  .btn:active, .btn:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
-  }
-
-  /* .button1{
-      margin-right: 3%;
-  } */
-
-
-  .btn2{
-    background-color: #58c4b8;
-    border-color: transparent;
-  }
-
-  .btn2:active, .btn2:focus, .btn2:hover {
-    background-color: #1fa597;
-    border-color: #1fa597;
-    color: white;
-  }
-  
-  .btn2:active, .btn2:focus {
-    box-shadow: 0 0 0 0.2rem #1fa597;
-  }
-
-  @media (max-width: 768px) {
-    .button1{
-        text-align: center;
-        padding-bottom: 3%;
-    }
-
-    .search{
-        padding-top: 3%;
-        text-align: center;
-    }
-  }
-
+}
 
 /*Modal*/
 
@@ -76,47 +73,59 @@
     border-color: gray;
 } */
 
-.devMaps{
-    padding-bottom: 10%;
+.devMaps {
+  padding-bottom: 10%;
 }
 
 /*Liste des élèves*/
 
 td img {
-    width: 100px;
-    height: 100px;
-    border: 7px solid #fff;
-  }
-
-td{
-    vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border: 7px solid #fff;
 }
 
-.socialLink{
-    color: #58c4b8;
-    font-size: 20px;
+td img:hover {
+    border-width: 3px;
+    border-style: solid;
+}
+td {
+  vertical-align: middle;
+}
+
+.socialLink {
+  color: #58c4b8;
+  font-size: 20px;
 }
 .socialLink:hover {
-    color: #F9A02E;
+  color: #f9a02e;
 }
 /*Maps*/
 
 @media (max-width: 768px) {
-    .devmaps {
-        padding-bottom: 1%; 
-    }
+  .devmaps {
+    padding-bottom: 1%;
   }
+}
 
-.maps{
-    position: sticky;
-    left: 0;
-    top: 190px;
-    height: 10px;
+.maps {
+  position: sticky;
+  left: 0;
+  top: 190px;
+  height: 10px;
 }
 
 @media (max-width: 768px) {
-    .maps {
-        display: none
-    }
+  .maps {
+    display: none;
   }
-
+}
+/* link */
+a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover {
+    color: #58c4b8;
+}

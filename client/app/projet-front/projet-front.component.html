@@ -5,7 +5,8 @@
     <!-- Image du projet -->
     <div class="col-md-6" *ngIf='blogProjet'>
       <figure>
-        <img alt="Project img" src="api/file/{{ blogProjet.imageUrl }}" class="imgProjet" />
+          <a href="{{ blogProjet.link }}" target="blank">
+        <img alt="Project img" src="api/file/{{ blogProjet.imageUrl }}" class="imgProjet" /></a>
         <a class="btn btn-primary btn-xs answerText mx-auto" href="{{ blogProjet.link }}" target="blank">Accéder au projet</a>
         <!-- Button partager / désactiver -->
         <!-- <figcaption id="share">
