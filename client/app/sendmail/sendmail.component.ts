@@ -48,7 +48,7 @@ export class SendMailComponent implements OnInit {
     private formBuilder: FormBuilder,
     public toast: ToastComponent,
     private wcsService: WcsService,
-    private studentService: StudentService,
+    public studentService: StudentService,
     private route: ActivatedRoute,
     private http: HttpClient,
     private blogProjetService: BlogProjetService,
