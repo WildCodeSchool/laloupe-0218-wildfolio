@@ -1,21 +1,21 @@
 <app-navbar></app-navbar>
-<div class="container-fluid topNavbar">
-    <div class="row">
+<div class="container-fluid">
+    <div class="row topNavbar">
         <div class="mx-auto">
-            <h2>Envoyer un mail au candidat:</h2>
+            <h2>Envoyer un mail au developpeur:</h2>
         </div>
     </div>
     <form [formGroup]="addMailForm" (ngSubmit)="addMail()">
         <div class="row">
             <div class="col-md-6 col-12 mx-auto">
                 <input class="form-control mt-2" type="email" name="author" formControlName="author" placeholder="Votre email">
-                <input class="form-control mt-2 imageUrl" type="email" name="to" formControlName="to" placeholder="Email de l'étudiant">
+                <input class="form-control mt-2 imageUrl" type="email" name="to" formControlName="to" placeholder="Email du developpeur">
                 <input class="form-control mt-2 link" type="text" name="subject" formControlName="subject" placeholder="Objet">
                 <textarea class="form-control mt-2" type="text" name="description" formControlName="description" placeholder="Description du mail"
                     rows="5"></textarea>
             </div>
         </div>
-        <div class="row bottomFooter mt-2">
+        <div class="row mt-4 bottomNavbar">
             <div class="mx-auto">
                 <button class="btn btn-primary add" type="submit" [disabled]="!addMailForm.valid">Envoyer</button>
             </div>
