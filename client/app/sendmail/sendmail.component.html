@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row topNavbar">
         <div class="mx-auto">
-            <h2>Envoyer un mail au developpeur:</h2>
+            <h2>Envoyer un mail à {{ studentService.name }} :</h2>
         </div>
     </div>
     <form [formGroup]="addMailForm" (ngSubmit)="addMail()">

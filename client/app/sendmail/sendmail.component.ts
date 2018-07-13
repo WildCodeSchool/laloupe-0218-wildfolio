@@ -15,6 +15,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { Mail } from '../shared/models/mail.model';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-sendmail',
@@ -38,7 +39,7 @@ export class SendMailComponent implements OnInit {
 
   addMailForm: FormGroup;
   author = new FormControl('', Validators.required);
-  to = new FormControl('', Validators.required);
+  to = new FormControl(this.studentService.mail, Validators.required);
   subject = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
 
@@ -47,6 +48,7 @@ export class SendMailComponent implements OnInit {
     private formBuilder: FormBuilder,
     public toast: ToastComponent,
     private wcsService: WcsService,
+    private studentService: StudentService,
     private route: ActivatedRoute,
     private http: HttpClient,
     private blogProjetService: BlogProjetService,

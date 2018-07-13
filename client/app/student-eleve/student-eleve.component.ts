@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WcsService } from '../wcs.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from '../shared/models/student.model';
 import { StudentService } from '../services/student.service';
 import { BlogProjetService } from '../services/blogProjet.service';
@@ -21,7 +21,8 @@ export class StudentEleveComponent implements OnInit {
   // phone = false;
 
   constructor(private wcsService: WcsService,
-              private route: ActivatedRoute,
+    private route: ActivatedRoute,
+    private router: Router,
               private studentService: StudentService,
               private blogProjetService: BlogProjetService) { }
 
@@ -65,6 +66,12 @@ export class StudentEleveComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false,
       );
+  }
+
+  sendMail(email, name) {
+    this.studentService.mail = email;
+    this.studentService.name = name;
+    this.router.navigate(['/mail']);
   }
 
   // displayPhone() {
