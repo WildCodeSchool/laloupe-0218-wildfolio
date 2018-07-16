@@ -11,10 +11,10 @@
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
 ## Le Wildfolio sert à rechercher les wilders et de présenter leurs projets
 ![Image](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/ChangeFront.png)
-
+<br />
 ###  Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Projetschange.png)
-
+<br />
 ### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Devschange.png)
 <!-- 
@@ -36,8 +36,7 @@ Other tools and technologies used:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
- <h2><center>Author</center></h2>
-
+<br />
 ### Author
 | [<img src="https://avatars3.githubusercontent.com/u/36339268?v=4" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://github.com/AntoinePoree)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/35773862?s=400&v=4" width="100px;"/><br /><sub><b>Alexandre Teyssier</b></sub>](https://github.com/Alex-Teyss)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars2.githubusercontent.com/u/36480928?s=400&v=4" width="100px;"/><br /><sub><b>Bastien Champion</b></sub>](https://github.com/BastienChampion)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/4113162?s=400&v=4" width="100px;"/><br /><sub><b>Victor Leduc</b></sub>](https://github.com/VictorLeduc)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools")  | [<img src="https://avatars1.githubusercontent.com/u/4084527?s=400&v=4" width="100px;"/><br /><sub><b>Martin Donadieu</b></sub>](https://github.com/riderx)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools") | 
 | :---: | :---: | :---: | :---: | :---: |
