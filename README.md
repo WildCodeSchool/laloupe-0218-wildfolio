@@ -10,13 +10,13 @@
 <!-- 
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
 
- Le Wildfolio sert à rechercher les developpeurs wilder et de présenter leurs projets
+## Le Wildfolio sert à rechercher les developpeurs wilder et de présenter leurs projets
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/ChangFront.png)
 
-Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
+### Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/Projetschange.png)
 
-Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
+### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/Devschange.png)
 <!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
