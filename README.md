@@ -13,10 +13,10 @@ The frontend is generated with [Angular CLI](https://github.com/angular/angular-
 ![Image](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/ChangeFront.png)
 
 ###  Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
-![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/test/client/assets/Projetschange.png)
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Projetschange.png)
 
 ### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
-![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/test/client/assets/Devschange.png)
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Devschange.png)
 <!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
