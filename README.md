@@ -7,10 +7,18 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/riderx/Angular-Full-Stack.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/riderx/Angular-Full-Stack.svg?branch=master)](https://travis-ci.org/riderx/Angular-Full-Stack)
 [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
+<!-- 
+The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
 
-The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org).
+ Le Wildfolio sert à rechercher les developpeurs wilder et de présenter leurs projets
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/ChangFront.png)
 
+Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/Projetschange.png)
+
+Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/master/client/assets/Devschange.png)
+<!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
 * [**E**xpress.js](http://expressjs.com): backend framework
@@ -25,16 +33,20 @@ Other tools and technologies used:
 * [Angular 2 JWT](https://github.com/auth0/angular2-jwt/tree/v1.0): JWT helper for Angular
 * [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
 * [stylelint](https://github.com/stylelint/stylelint): style linter
-* [htmllint](https://github.com/htmllint/htmllint): html linter
+* [htmllint](https://github.com/htmllint/htmllint): html linter -->
 
-## Prerequisites
+## Prerequisites if want want to install
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
 2. Install Angular CLI: `npm i -g @angular/cli`
-3. From project root folder install all the dependencies: `npm i`
+3. From project root folder install all the dependencies: `npm i` or `yarn`
 
 ## Run
 ### Development mode
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
+
+### Or
+
+`yarn run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
 A window will automatically open at [localhost:4200](http://localhost:4200). Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
 
@@ -67,6 +79,7 @@ A window will automatically open at [localhost:4200](http://localhost:4200). Ang
 * you noticed any problem or error
 
 ## To do
+* Write tests
 * More tests
 
 ## Running frontend unit tests
