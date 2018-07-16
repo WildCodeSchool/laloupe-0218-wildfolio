@@ -59,25 +59,19 @@
     "simple-oauth2": "^1.6.0",
     "startbootstrap-creative": "^4.0.0",
     "tether": "1.4.4",
-    "zone.js": "^0.8.19",
-
+    "zone.js": "^0.8.19"
+  },
+  "devDependencies": {
+    "@angular/language-service": "^5.2.0",
+    "@types/express": "^4.11.0",
+    "@types/jasminewd2": "~2.0.2",
     "@angular/cli": "~1.7.3",
     "@angular/compiler-cli": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/node": "~9.6.5",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "typescript": "~2.8.1"
-  },
-  "devDependencies": {
-    
-    "@angular/language-service": "^5.2.0",
-    "@types/express": "^4.11.0",
-    
-    "@types/jasminewd2": "~2.0.2",
-    
-    
-    
+    "typescript": "~2.8.1",
     "codelyzer": "~4.2.1",
     "concurrently": "^3.5.1",
     "htmllint-cli": "^0.0.7",
