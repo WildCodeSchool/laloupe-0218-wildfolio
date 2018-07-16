@@ -1,12 +1,19 @@
 export class Student {
-  _id?: string;
+  _id?: any;
+  admin?: boolean;
   WCS_ID?: number;
   name?: string;
   lastname?: string;
   email?: string;
   github?: string;
+  linkedin?: string;
+  lienlinkedin?: string;
+  image?: string;
   roles?: string;
-  admin?: boolean;
-  banished?: boolean;
-  crew?: object;
+  locationId?: number;
+  campus?: string;
+  session?: string;
+  sessionId?: number;
+  langageId?: number;
+  langageName?: string;
 }

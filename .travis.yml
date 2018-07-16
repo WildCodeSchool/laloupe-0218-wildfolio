@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "9.11.1"
+  - "10.6.0"
 script:
   - npm run lint:front
   - npm run lint:back

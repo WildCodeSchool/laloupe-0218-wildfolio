@@ -1,67 +1,145 @@
-<!-- <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Registered users ({{ users.length }})</h4>
-  <div class="card-body">
-    <table class="table table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">Role</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="users.length === 0">
-        <tr>
-          <td colspan="4">There are no registered users.</td>
-        </tr>  
-      </tbody>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
-          <td>
-            <button class="btn btn-sm btn-danger" (click)="deleteUser(user)" [disabled]="auth.currentUser.id === user.id">
-              <i class="fa fa-trash"></i>
-            </button>
-          </td>
-        </tr>  
-      </tbody>
-    </table>
-  </div>
-</div> -->
 <app-navbar></app-navbar>
 
 <div class="container-fluid">
   <section id="services">
     <div class="container">
-      <div class="row">
+      <div class="row title">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">Bienvenue dans la partie administration</h2>
-          <hr/>
-          <h3 class="section-subheading text-muted">
-            Gérer les
-            <a href="student">Éléves</a>
-            <a routerLink="/student"><i class="fas fa-cog"></i></a>
-          </h3>
-          <hr/>
-          <h3 class="section-subheading text-muted">
-            Gérer les
-            <a href="newPost">Projets</a>
-            <a routerLink="/newPost"><i class="fas fa-cog"></i></a>
-          </h3>
-          <hr/>
-          <h3 class="section-subheading text-muted">
-            Gérer les
-            <a href="cities">Campus</a>
-            <a routerLink="/cities"><i class="fas fa-cog"></i></a>
-          </h3>
-          <hr/>
-          <h3 class="section-subheading text-muted">
-            Gérer l'<a href="recruts">oeil du recruteur</a>
-            <a routerLink="/recruts"><i class="fas fa-cog"></i></a>
-          </h3>
-          <hr/>
+        </div>
+      </div>
+      <!-- Icon Cards-->
+      <div class="row list1 mx-auto" *ngIf="me && (me.admin == true || me.roles.length >= 1)">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card1 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="mr-5">Gérer les élèves</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/student">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/student">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card2 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fab fa-angular"></i>
+                <i class="fab fa-js-square"></i>
+              </div>
+              <div class="mr-5">Gérer les langages</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/langages">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/langages">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card3 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="far fa-folder"></i>
+              </div>
+              <div class="mr-5">Gérer les projets</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/newPost">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/newPost">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row list2 mx-auto" *ngIf="me && (me.admin == true || me.roles.length >= 1)">
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card4 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <div class="mr-5">Gérer les campus</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/cities">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/cities">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card5 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <div class="mr-5">Gérer l'oeil du recruteur</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/recruts">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/recruts">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 cards">
+          <div class="card card6 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="mr-5">Gérer les sessions</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/sessions">
+              <span class="float-left">Plus de details</span>
+              <a routerLink="/sessions">
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-sm-6 cards mx-auto" *ngIf="me && (me.admin == false)">
+          <div class="card card3 text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="far fa-folder"></i>
+              </div>
+              <div class="mr-5">Gérer mes projets</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" routerLink="/newPost">
+              <span class="float-left">View Details</span>
+              <a routerLink="/newPost">
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>

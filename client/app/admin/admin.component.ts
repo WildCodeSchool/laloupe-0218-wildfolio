@@ -1,9 +1,11 @@
+import { BlogProjetService } from './../services/blogProjet.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { ToastComponent } from '../shared/toast/toast.component';
-import { AuthService } from '../services/auth.service';
-import { UserService } from '../services/user.service';
 import { User } from '../shared/models/user.model';
+import { StudentService } from '../services/student.service';
+import { BlogProjet } from '../shared/models/blogProjet.model';
 
 @Component({
   selector: 'app-admin',
@@ -14,31 +16,49 @@ export class AdminComponent implements OnInit {
 
   users: User[] = [];
   isLoading = true;
-
-  constructor(public auth: AuthService,
-              public toast: ToastComponent,
-              private userService: UserService) { }
+  id: string;
+  me;
+  // newBlogProjet: BlogProjet = new BlogProjet();
+  blogProjet = new BlogProjet();
+  blogProjets: BlogProjet[] = [];
+  constructor(
+    public toast: ToastComponent,
+    private studentService: StudentService,
+    private route: ActivatedRoute,
+    private blogProjetService: BlogProjetService,
+  ) { }
 
   ngOnInit() {
-    /* this.getUsers(); */
+    this.getBlogProjet();
+    this.getMe();
+    // this.id = this.route.snapshot.paramMap.get('id');
   }
-
-  /* getUsers() {
-    this.userService.getUsers().subscribe(
-      data => this.users = data,
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+        console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
+  }
+  getBlogProjet() {
+    this.blogProjetService.getBlogProjets().subscribe(
+      (data) => {
+        this.blogProjets = data;
+        console.log(this.blogProjets);
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
   }
 
-  deleteUser(user: User) {
-    if (window.confirm('Are you sure you want to delete ' + user.username + '?')) {
-      this.userService.deleteUser(user).subscribe(
-        data => this.toast.setMessage('user deleted successfully.', 'success'),
-        error => console.log(error),
-        () => this.getUsers(),
-      );
-    }
-  } */
-
+  // verifyRoles() {
+  //   if (this.me.admin === true || this.me.roles.length <= 1 || this.me.sessionId === this.blogProjet.sessionId ||
+  //     this.me._id === this.blogProjet.studentId) {
+  //     console.log(this.me.sessionId, this.blogProjets.sessionId, this.me._id, this.blogProjets.studentId);
+  //     return 1 ;
+  //   }
+  // }
 }

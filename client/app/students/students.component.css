@@ -3,14 +3,13 @@
   width: 25%;
 }
 
-.titleAdmin 
-{
+.titleAdmin {
   font-weight: bold;
 }
 
-.backgroundNav 
-{
-  background-color: #F9A02E;
+.backgroundNav {
+  background-image:linear-gradient(to right, black, grey);
+  color: white;
 }
 
 .btn-primary {
@@ -23,4 +22,13 @@
   border: 1px solid #F9A02E;
   background-color: #F9A02E;
   color: white;
+}
+
+.page{
+  padding-top: 5%;
+  text-align: center;
+}
+
+.github{
+  padding-bottom: 2%;
 }

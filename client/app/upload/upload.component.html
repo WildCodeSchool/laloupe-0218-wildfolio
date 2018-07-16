@@ -1,0 +1,9 @@
+<div class="form-group">
+  <input class="hidden" type="file" id="file" (change)="handleFileInput($event.target.files)" #fileInp class="btn btn-primary">
+  <div [ngClass]="{download: !uploadOk, isUpload: uploadOk}" (click)="onClickFile(); uploadOk = true" ><!--Télecharger
+  <img src="../../../assets/images/downloadIcon.png" alt="icon" class="icon img-fluid">  -->
+  </div>
+  <div *ngIf="!filename && uploadOk == true">
+    <i class="fas fa-spinner"></i>
+  </div>
+</div>
