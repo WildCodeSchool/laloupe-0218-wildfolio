@@ -9,8 +9,7 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 <!-- 
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
-
-## Le Wildfolio sert à rechercher les developpeurs wilder et de présenter leurs projets
+## Le Wildfolio sert à rechercher les developpeurs wilder et de présenter leurs projets
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/tree/test/client/assets/ChangeFront.png)
 
 ### Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
