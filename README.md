@@ -98,4 +98,4 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://github/AntoinePoree.png" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://linkedin/antoine-porée.com)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") |
+| [<img src="https://avatars3.githubusercontent.com/u/36339268?v=4" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://linkedin/antoine-porée.com)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") |
