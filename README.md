@@ -34,6 +34,14 @@ Other tools and technologies used:
 * [stylelint](https://github.com/stylelint/stylelint): style linter
 * [htmllint](https://github.com/htmllint/htmllint): html linter -->
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+### Author
+| [<img src="https://avatars3.githubusercontent.com/u/36339268?v=4" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://github.com/AntoinePoree)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/35773862?s=400&v=4" width="100px;"/><br /><sub><b>Alexandre Teyssier</b></sub>](https://github.com/Alex-Teyss)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars2.githubusercontent.com/u/36480928?s=400&v=4" width="100px;"/><br /><sub><b>Bastien Champion</b></sub>](https://github.com/BastienChampion)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/4113162?s=400&v=4" width="100px;"/><br /><sub><b>Victor Leduc</b></sub>](https://github.com/VictorLeduc)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools")  | [<img src="https://avatars1.githubusercontent.com/u/4084527?s=400&v=4" width="100px;"/><br /><sub><b>Martin Donadieu</b></sub>](https://github.com/riderx)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools") | 
+| :---: | :---: | :---: | :---: | :---: |
+
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 ## Prerequisites if want want to install
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
 2. Install Angular CLI: `npm i -g @angular/cli`
@@ -109,9 +117,3 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * [Antoine Porée](https://github.com/AntoinePoree)
 * [Bastien Champion](https://github.com/BastienChampion)
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars3.githubusercontent.com/u/36339268?v=4" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://github.com/AntoinePoree)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/35773862?s=400&v=4" width="100px;"/><br /><sub><b>Alexandre Teyssier</b></sub>](https://github.com/Alex-Teyss)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars2.githubusercontent.com/u/36480928?s=400&v=4" width="100px;"/><br /><sub><b>Bastien Champion</b></sub>](https://github.com/BastienChampion)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/4113162?s=400&v=4" width="100px;"/><br /><sub><b>Victor Leduc</b></sub>](https://github.com/VictorLeduc)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools")  | [<img src="https://avatars1.githubusercontent.com/u/4084527?s=400&v=4" width="100px;"/><br /><sub><b>Martin Donadieu</b></sub>](https://github.com/riderx)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools") | 
-| :---: | :---: | :---: | :---: | :---: |
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
