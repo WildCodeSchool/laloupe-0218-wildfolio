@@ -7,9 +7,17 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/riderx/Angular-Full-Stack.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/riderx/Angular-Full-Stack.svg?branch=master)](https://travis-ci.org/riderx/Angular-Full-Stack)
 [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
-
-The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org).
-
+<!-- 
+The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
+## Le Wildfolio sert à rechercher les wilders et de présenter leurs projets
+![Image](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/ChangeFront.png)
+<br />
+###  Sur la page principale du Wildfolio, trois projets choisis aléatoirement sont présentés pour montrer attirer l'oeil et voir les compétences que les wilders ont acquis lors de la formation !
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Projetschange.png)
+<br />
+### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Devschange.png)
+<!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
 * [**E**xpress.js](http://expressjs.com): backend framework
@@ -24,16 +32,29 @@ Other tools and technologies used:
 * [Angular 2 JWT](https://github.com/auth0/angular2-jwt/tree/v1.0): JWT helper for Angular
 * [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
 * [stylelint](https://github.com/stylelint/stylelint): style linter
-* [htmllint](https://github.com/htmllint/htmllint): html linter
+* [htmllint](https://github.com/htmllint/htmllint): html linter -->
 
-## Prerequisites
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+
+### Author
+| [<img src="https://avatars3.githubusercontent.com/u/36339268?v=4" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://github.com/AntoinePoree)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/35773862?s=400&v=4" width="100px;"/><br /><sub><b>Alexandre Teyssier</b></sub>](https://github.com/Alex-Teyss)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars2.githubusercontent.com/u/36480928?s=400&v=4" width="100px;"/><br /><sub><b>Bastien Champion</b></sub>](https://github.com/BastienChampion)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation")  [📢](#talk-kentcdodds "Talks") | [<img src="https://avatars0.githubusercontent.com/u/4113162?s=400&v=4" width="100px;"/><br /><sub><b>Victor Leduc</b></sub>](https://github.com/VictorLeduc)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools")  | [<img src="https://avatars1.githubusercontent.com/u/4084527?s=400&v=4" width="100px;"/><br /><sub><b>Martin Donadieu</b></sub>](https://github.com/riderx)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") [🔧](#tool-jfmengels "Tools") | 
+| :---: | :---: | :---: | :---: | :---: |
+
+<br /><br /><br /><br />
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+## Prerequisites if want want to install
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
 2. Install Angular CLI: `npm i -g @angular/cli`
-3. From project root folder install all the dependencies: `npm i`
+3. From project root folder install all the dependencies: `npm i` or `yarn`
 
 ## Run
 ### Development mode
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
+
+### Or
+
+`yarn run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
 A window will automatically open at [localhost:4200](http://localhost:4200). Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
 
@@ -66,6 +87,7 @@ A window will automatically open at [localhost:4200](http://localhost:4200). Ang
 * you noticed any problem or error
 
 ## To do
+* Write tests
 * More tests
 
 ## Running frontend unit tests
@@ -92,4 +114,7 @@ To get more help about this project, [visit the official wiki](https://github.co
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ### Author
-* [Davide Violante](https://github.com/DavideViolante)
+* [Alexandre Teyssier](https://github.com/Alex-teyss)
+* [Antoine Porée](https://github.com/AntoinePoree)
+* [Bastien Champion](https://github.com/BastienChampion)
+

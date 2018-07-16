@@ -21,8 +21,8 @@ export class StudentEleveComponent implements OnInit {
   // phone = false;
 
   constructor(private wcsService: WcsService,
-    private route: ActivatedRoute,
-    private router: Router,
+              private route: ActivatedRoute,
+              private router: Router,
               private studentService: StudentService,
               private blogProjetService: BlogProjetService) { }
 

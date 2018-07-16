@@ -8,8 +8,8 @@ import { Langage } from '../shared/models/langage.model';
 @Injectable()
 export class StudentService {
 
-  mail = "";
-  name= "";
+  mail = '';
+  name = '';
 
   constructor(private http: HttpClient) { }
 

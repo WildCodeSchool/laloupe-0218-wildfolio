@@ -39,7 +39,7 @@ export class ProjetResearchComponent implements OnInit {
   getCity() {
     this.cityService.getCities().subscribe(
       (data) => {
-        console.log('city', data),
+        // console.log('city', data),
         this.cities = data.sort((a, b) => {
           if (a.city < b.city) { return - 1; }
           if (a.city > b.city) { return 1; }
@@ -52,7 +52,7 @@ export class ProjetResearchComponent implements OnInit {
   getSession() {
     this.sessionService.getSessions().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.sessions = data;
       },
       error => console.log(error),
@@ -64,7 +64,7 @@ export class ProjetResearchComponent implements OnInit {
     this.blogProjetService.getBlogProjetsByLocationId(this.selectedCityId).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -75,7 +75,7 @@ export class ProjetResearchComponent implements OnInit {
     this.blogProjetService.getBlogProjetsBySession(this.selectedSession).subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -93,7 +93,7 @@ export class ProjetResearchComponent implements OnInit {
     this.sessionService.getAllbyLocationId(change).subscribe(
       (data) => {
         this.sessions = data;
-        console.log(data);
+        // console.log(data);
       },
       error => console.log(error),
       () => this.isLoading = false,
