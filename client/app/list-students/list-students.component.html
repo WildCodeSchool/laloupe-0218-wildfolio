@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container-fluid">
-  <div class="row">
+  <!-- <div class="row">
     <div class="input-group col-md-3 offset-md-1 col-12">
       <span class="input-group-append">
         <button class="btn btn-outline-secondary" type="button">
@@ -10,52 +10,42 @@
       </span>
       <input class="form-control py-2" type="search" placeholder="Localisation" id="searchZone">
     </div>
-  </div>
+  </div> -->
 
-  <hr/>
+  <!-- <hr/> -->
 
   <div class="row">
-    <div class="col-md-2 offset-md-1 col-12 button1">
+    <div class="col-lg-2 offset-lg-1 col-12">
 
-      <button type="button" class="btn" data-toggle="modal" data-target=".modal1">Langages/Frameworks</button>
+      <button type="button" class="btn" data-toggle="modal">Langages/Frameworks</button>
 
       <!-- Modal 1 -->
-      <div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <!-- <div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
           <div class="modal-content">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> PHP Symfony</label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> JavaScript Angular</label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> JavaScript React</label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> JavaScript VueJS</label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> JavaScript NodeJS</label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value=""> Java J2EE Android</label>
-            </div>
+            <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage">
+              <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
+            </select>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Fin Modal 1 -->
     </div>
-    <div class="col-md-2 col-12 button2">
+
+    <div class="col-lg-2 col-12 button2">
+      <select class="custom-select selectWidth" id="session" [(ngModel)]="selectedLangage">
+        <option value="-1">Choisir un langage</option>
+        <option *ngFor="let langage of langages" target="_blank" [ngValue]="langage.WCS_ID">{{ langage.name }}</option>
+      </select>
+    </div>
+
+    <div class="col-lg-2 col-12 search">
+      <button class="btn btn-primary text-uppercase answerText buttonSearch" (click)="showProject()">Rechercher</button>
+    </div>
+    <!-- <div class="col-md-2 col-12 button2">
       <button type="button" class="btn " data-toggle="modal" data-target=".modal2">Poste Actuel</button>
 
-      <!-- Modal 2 -->
+
       <div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
           <div class="modal-content">
@@ -70,39 +60,49 @@
           </div>
         </div>
       </div>
-      <!-- Fin Modal 2 -->
-    </div>
+
+    </div> -->
   </div>
 
   <hr/>
 
+  <div class="row" *ngIf="students && (students.length == 0)">
+    <div class="offset-2 col-8">
+      <h2>Aucun élèves pour ce langage.</h2>
+    </div>
+  </div>
 
 
   <!-- Liste des développeurs -->
 
-  <div class="row">
-    <div class="col-md-6 offset-md-1 col-12">
+  <div class="row devMaps">
+    <div class="col-md-6 offset-md-1 col-12 devs">
       <div class="table-responsive-md">
         <table class="table">
           <tbody *ngIf="students">
             <tr *ngFor="let student of students">
               <td>
-                <img class="rounded-circle" src="/../assets/profil.jpg" alt="">
+                <!-- <img class="rounded-circle" *ngIf="student.github == null || student.github == undefined" src="../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg"
+                  alt="">
+                <img class="rounded-circle" src="https://github.com/{{ student.github }}.png" alt=""> -->
+                <a [routerLink]="['/student-eleve', student._id]" target="_blank">
+                  <img class="rounded-circle" src="https://github.com/{{ student.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';">
+                </a>
               </td>
-              <td>{{ student.name }}</td>
+              <td> <a [routerLink]="['/student-eleve', student._id]" target="_blank">{{ student.name }}</a></td>
               <td>{{ student.lastname }}</td>
               <td>
-                <a class="socialLink" href="#">
+                <a class="socialLink" href="https://linkedin.com/{{ student.linkedin }}">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </td>
               <td>
-                <a class="socialLink" href="#">
+                <a class="socialLink" href="https://github.com/{{ student.github }}" target="_blank">
                   <i class="fa fa-github"></i>
                 </a>
               </td>
               <td>
-                <a href="#" class="btn btn2 btn-lg active" role="button" aria-pressed="true" [routerLink]="['/student-eleve', student._id]">Profil</a>
+                <a class="btn btn2 btn-lg active" role="button" aria-pressed="true" target="_blank" [routerLink]="['/student-eleve', student._id]">Profil</a>
               </td>
             </tr>
           </tbody>
@@ -110,13 +110,13 @@
       </div>
     </div>
 
+
+
     <!-- Maps-->
 
-    <div class="col-md-5 col-12">
-
+    <div class="col-md-4 offset-md-1 col-12 maps">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10581.282816328998!2d1.002309324267578!3d48.4695618160079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1530193226265"
+        width="350" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
-
-
 </div>
-<app-footer></app-footer>

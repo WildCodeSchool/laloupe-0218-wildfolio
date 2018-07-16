@@ -58,7 +58,9 @@ h6 {
   font-weight: 700;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
+.portfolio-caption h4{
+  color: black;
+}
 section {
   padding: 80px 0;
 }
@@ -97,7 +99,9 @@ section h3.section-subheading {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
-
+.button2 {
+  max-width: 100%;
+}
 .btn-xl {
   font-size: 18px;
   padding: 20px 40px;
@@ -220,7 +224,9 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: relative;
 }
+
 
 @media only screen and (max-device-width: 1366px) {
   .parallax {
@@ -276,10 +282,6 @@ header.masthead .intro-text .intro-heading {
     margin-bottom: 50px;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-}
-
-.search{
- padding-top: 10%;
 }
 
 .buttonSearch{
@@ -521,7 +523,11 @@ header.masthead .intro-text .intro-heading {
   height: 225px;
   border: 7px solid #fff;
 }
-
+.team-member img:hover {
+  border-width: 3px;
+  border-style: solid;
+  background-color: #ffdea5;
+}
 /* Fin section Développeurs*/
 
 .portfolio-modal .modal-content img {
@@ -573,6 +579,13 @@ header.masthead .intro-text .intro-heading {
 
 .project_button{
 color:white;
+}
+
+.img-fluid {
+  display: block;
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
 }
 
 /* Section Développeurs*/

@@ -1,3 +1,4 @@
+import { StudentService } from './../services/student.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -16,21 +17,34 @@ export class RecrutsComponent implements OnInit {
   recruts: Recrut[] = [];
   isLoading = true;
   isEditing = false;
+  me;
 
   addRecrutForm: FormGroup;
   authname = new FormControl('', Validators.required);
   description = new FormControl('', Validators.required);
 
-  constructor(private recrutService: RecrutService, private formBuilder: FormBuilder, public toast: ToastComponent) { }
+  constructor(private recrutService: RecrutService, private formBuilder: FormBuilder, public toast: ToastComponent,
+              private studentService: StudentService,
+  ) { }
 
   ngOnInit() {
     this.getRecrut();
+    this.getMe();
     this.addRecrutForm = this.formBuilder.group({
       authname: this.authname,
       description: this.description,
     });
   }
-
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+        console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
+  }
   getRecrut() {
     this.recrutService.getRecruts().subscribe(
       (data) => {

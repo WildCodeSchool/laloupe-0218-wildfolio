@@ -6,6 +6,12 @@ const blogProjetSchema = new mongoose.Schema({
   link: String,
   imageUrl: String,
   description: String,
+  studentId: String,
+  studentName: String,
+  locationId: Number,
+  session: String,
+  sessionId: Number,
+  eleves: [String],
 });
 
 const blogProjetModel = mongoose.model('blogProjet', blogProjetSchema);

@@ -11,6 +11,8 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { Student } from '../shared/models/student.model';
 import { WcsService } from '../wcs.service';
 import { ActivatedRoute } from '@angular/router';
+import { LangageService } from '../services/langage.service';
+import { Langage } from '../shared/models/langage.model';
 
 @Component({
   selector: 'app-students',
@@ -18,11 +20,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent implements OnInit {
+
   student = new Student();
   students: Student[];
+  members: Student[];
   isLoading = true;
   isEditing = false;
-
+  me;
+  langage = new Langage();
+  langages: Langage[];
   addStudentForm: FormGroup;
   name = new FormControl('', Validators.required);
   lastname = new FormControl('', Validators.required);
@@ -37,10 +43,13 @@ export class StudentsComponent implements OnInit {
     public toast: ToastComponent,
     private wcsService: WcsService,
     private route: ActivatedRoute,
+    private langageService: LangageService,
   ) {}
 
   ngOnInit() {
     this.getStudent();
+    this.getMe();
+    this.getLanguage();
   }
 
   /* getStudent() {
@@ -62,15 +71,37 @@ export class StudentsComponent implements OnInit {
       this.students = student
     });
   } */
+  getMe() {
+    this.studentService.getMe().subscribe(
+      (data) => {
+        this.me = data,
+        console.log(this.me);
+      },
+      error => console.log(error),
+      () => this.isLoading = false,
+  );
+  }
 
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
         console.log(data);
         this.students = data;
+        this.members = this.students;
       },
       error => console.log(error),
       () => this.isLoading = false,
+    );
+  }
+
+  getLanguage() {
+    this.langageService.getLangages().subscribe(
+      (data) => {
+        console.log(data);
+        this.langages = data;
+      },
+      error => console.log(error),
+      () => (this.isLoading = false),
     );
   }
 
@@ -122,12 +153,12 @@ export class StudentsComponent implements OnInit {
     return true;
   }
 
-  isAdmin() {
+/*   isAdmin() {
     return this.student.admin = true;
   }
 
   isNotAdmin() {
     return this.student.admin = false;
   }
-
+ */
 }

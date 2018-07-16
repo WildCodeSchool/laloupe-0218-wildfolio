@@ -59,6 +59,13 @@ abstract class BaseController {
   }
 
   // Get by id
+  getbyWCSID = (req, res) => {
+    this.model.findOne({ WCS_ID: req.params.id }, (err, item) => {
+      if (err) { return console.error(err); }
+      res.status(200).json(item);
+    });
+  }
+  // Get by id
   get = (req, res) => {
     this.model.findOne({ _id: req.params.id }, (err, item) => {
       if (err) { return console.error(err); }

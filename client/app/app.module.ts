@@ -4,17 +4,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CityService } from './services/city.service';
-import { UserService } from './services/user.service';
-import { AuthService } from './services/auth.service';
-import { AuthGuardLogin } from './services/auth-guard-login.service';
-import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { AppComponent } from './app.component';
 import { CitiesComponent } from './cities/cities.component';
-import { AboutComponent } from './about/about.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -36,6 +27,14 @@ import { ProjetResearchComponent } from './projet-research/projet-research.compo
 import { NewPostComponent } from './new-post/new-post.component';
 import { BlogProjetService } from './services/blogProjet.service';
 import { ListStudentsComponent } from './list-students/list-students.component';
+import { LangageService } from './services/langage.service';
+import { ProfilComponent } from './profil/profil.component';
+import { LangagesComponent } from './langages/langages.component';
+import { SessionComponent } from './session/session.component';
+import { SendMailComponent } from './sendmail/sendmail.component';
+import { MailService } from './services/mail.service';
+import { SessionService } from './services/session.service';
+import { UploadComponent } from './upload/upload.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -45,11 +44,7 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     CitiesComponent,
-    AboutComponent,
-    RegisterComponent,
-    LoginComponent,
-    LogoutComponent,
-    AccountComponent,
+    SessionComponent,
     AdminComponent,
     NotFoundComponent,
     NavbarComponent,
@@ -65,6 +60,10 @@ export function tokenGetter() {
     ProjetResearchComponent,
     NewPostComponent,
     ListStudentsComponent,
+    ProfilComponent,
+    SendMailComponent,
+    LangagesComponent,
+    UploadComponent,
   ],
   imports: [
     RoutingModule,
@@ -82,15 +81,14 @@ export function tokenGetter() {
       useClass: TokenInterceptor,
       multi: true,
     },
-    AuthService,
-    AuthGuardLogin,
-    AuthGuardAdmin,
     CityService,
+    SessionService,
     StudentService,
     RecrutService,
     BlogProjetService,
-    UserService,
     WcsService,
+    MailService,
+    LangageService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

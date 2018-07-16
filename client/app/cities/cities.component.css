@@ -8,9 +8,9 @@
   font-weight: bold;
 }
 
-.backgroundNav 
-{
-  background-color: #F9A02E;
+.backgroundNav {
+  background-image:linear-gradient(to right, black, grey);
+  color: white;
 }
 
 .btn-primary {
@@ -23,4 +23,26 @@
   border: 1px solid #F9A02E;
   background-color: #F9A02E;
   color: white;
+}
+
+.page{
+  padding-top: 5%;
+  text-align: center;
+}
+
+table{
+  background-color: white;
+}
+
+.link{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.id{
+  margin-bottom: 2%;
+}
+
+.card{
+  background-color:#E8E8E8;
 }

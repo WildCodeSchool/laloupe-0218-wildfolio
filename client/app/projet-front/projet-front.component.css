@@ -13,7 +13,11 @@
 .imgProjet {
   width: 100%;
   height: 100%;
+  max-height: 69vh;
   padding-left: 5%;
+}
+.imgProjet:hover {
+  opacity: 0.8;
 }
 
 figcaption{
@@ -30,20 +34,29 @@ li a:hover {
   font-weight: bold;
   text-decoration:none;
 }
+
 .button {
   background: #fff;
   display: flex;
   align-items: center;
   min-width: 160px;
-  border-radius: 300px;
+  border-radius: 200px;
   overflow: hidden;
   position: relative;
-  padding: 20px 20px;
-  padding-top: 7%;
   width: 3.5vh;
+  padding: 40px 20px 10px 20px;
 }
+
+#share-buttons img {
+  /* width: 35px; */
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+  }
+
 .button .front {
-  border-radius: 300px;
+  border-radius: 200px;
   width: 100%;
   height: 100%;
   background:black;
@@ -57,9 +70,11 @@ li a:hover {
   justify-content: center;
   align-items: center;
 }
+
 .button:hover .front {
   transform: translateX(-100%);
 }
+
 .button .links a {
   opacity: 0;
   transform: scale(0.1);
@@ -74,7 +89,7 @@ li a:hover {
 }
 
 .button .links {
-  border-radius: 300px;
+  border-radius: 200px;
   width: 100%;
   height: 100%;
   background: #fff;
@@ -105,7 +120,7 @@ h3{
 .paragraphe {
   margin-top: 2vh;
   margin-bottom: 2vh;
-  max-width: 50vh;
+  word-break: break-word;
 }
 
 hr {
@@ -115,6 +130,18 @@ hr {
 
 .list-item {
   list-style: none;
+  margin-top: 10px;
+}
+
+.nameProject{
+  text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.descriptionProject{
+  padding-top: 5%;
+  padding-bottom: 6%;
 }
 
 /* Link Project */
@@ -128,7 +155,6 @@ hr {
 
 .linktext {
   min-height: 15vh;
-  background-color: #ced4da;
 }
 
 .linkButton {
@@ -162,12 +188,14 @@ hr {
 
 .btn-primary {
   color: white;
-  background-color: #FBA858;
-  border-color: #FBA858;
+  background-color:#b9184d;
+  border-color: #b9184d;
+  max-width: 50%;
+  margin-top: 20px;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #F9A02E !important;
+  background-color: #ffdea5 !important;
   border-color: #F9A02E !important;
   color: white;
 }
@@ -176,7 +204,8 @@ hr {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
-
+/* Fin button
+Commencement media query */
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
   .imgProjet {
@@ -191,10 +220,12 @@ hr {
   .imgProjet {
     width: 65%;
     height: 65%;
-    margin-left: 8vh;
+    margin-left: 6vh;
     margin-top: 5vh;
   }
-  
+  .list-item-ul {
+    margin-bottom: 5rem;
+  }
 }
 @media (min-width: 992px) {
     .paragraphe {
@@ -202,7 +233,7 @@ hr {
     }
 
     ul {
-      margin-left: 20vh;
+      margin-left: 15vh;
     }
   }
   
