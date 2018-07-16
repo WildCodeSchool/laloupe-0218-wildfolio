@@ -40,12 +40,12 @@
             <th scope="col">Framework</th>
             <th scope="col">Admin</th> -->
                 <th scope="col">Modifier/Supprimer</th>
-                <th scope="col">Profile</th>
+                <th scope="col">Profil</th>
               </tr>
             </thead>
             <tbody *ngIf="members.length === 0">
               <tr>
-                <td colspan="4">Il n'y a pas d'eleves ajouter.</td>
+                <td colspan="4">Il n'y a pas d'élèves ajoutés.</td>
               </tr>
             </tbody>
             <tbody>
@@ -63,7 +63,7 @@
                     <i class="fa fa-trash"></i> Supprimer</button>
                 </td>
                 <td>
-                  <button class="btn btn-sm btn-primary" [routerLink]="['/student-eleve', member._id]">Profile</button>
+                  <button class="btn btn-sm btn-primary" [routerLink]="['/student-eleve', member._id]">Profil</button>
                 </td>
               </tr>
             </tbody>

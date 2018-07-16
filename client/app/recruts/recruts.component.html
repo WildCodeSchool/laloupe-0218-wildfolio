@@ -15,7 +15,7 @@
   </div>
   <!-- Administration -->
   <div class="card" *ngIf="me && (me.admin == true)">
-    <h4 class="card-header backgroundNav">Ajouter un  <span class="span-auto">Veuillez ne pas laissez un commentaire trop volumineux</span></h4>
+    <h4 class="card-header backgroundNav">Ajouter un commentaire  <span class="span-auto">Veuillez ne pas laissez un commentaire trop volumineux</span></h4>
     <div class="card-body">
       <form [formGroup]="addRecrutForm" (ngSubmit)="addRecrut()">
         <div class="row">
