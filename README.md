@@ -92,4 +92,10 @@ To get more help about this project, [visit the official wiki](https://github.co
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ### Author
-* [Davide Violante](https://github.com/DavideViolante)
+* [Alexandre Teyssier](https://github.com/Alex-teyss)
+* [Antoine Porée](https://github.com/AntoinePoree)
+* [Bastien Champion](https://github.com/BastienChampion)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://github/AntoinePoree.png" width="100px;"/><br /><sub><b>Antoine</b></sub>](https://linkedin/antoine-porée.com)<br />[💬](#question-kentcdodds "Answering Questions") [📖](https://github.com/kentcdodds/all-contributors/commits?author=kentcdodds "Documentation") [👀](#review-kentcdodds "Reviewed Pull Requests") [📢](#talk-kentcdodds "Talks") |
