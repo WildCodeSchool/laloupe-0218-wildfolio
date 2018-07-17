@@ -74,8 +74,8 @@ export class StudentsComponent implements OnInit {
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
-        this.me = data,
-        console.log(this.me);
+        this.me = data;
+        // console.log(this.me);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -85,7 +85,7 @@ export class StudentsComponent implements OnInit {
   getStudent() {
     this.studentService.getStudents().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.students = data;
         this.members = this.students;
       },
@@ -97,7 +97,7 @@ export class StudentsComponent implements OnInit {
   getLanguage() {
     this.langageService.getLangages().subscribe(
       (data) => {
-        console.log(data);
+        // console.log(data);
         this.langages = data;
       },
       error => console.log(error),

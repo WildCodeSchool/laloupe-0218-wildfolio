@@ -10,7 +10,7 @@ export default class CityController extends BaseController {
       if (err) {
         return console.error(err);
       }
-      console.log(item);
+      // console.log(item);
       if (item == null) {
         const obj = new this.model(req.body);
         obj.save((objerr, objitem) => {

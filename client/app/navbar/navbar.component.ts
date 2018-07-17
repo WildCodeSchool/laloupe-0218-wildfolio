@@ -97,7 +97,7 @@ export class NavbarComponent implements OnInit {
     if (localStorage.getItem('token_wcs')) {
       return this.isconnect = true;
     }  {
-      console.log('No');
+      // console.log('No');
     }
   }
   getCity() {

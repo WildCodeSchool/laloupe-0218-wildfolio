@@ -38,7 +38,7 @@ export class UploadComponent implements OnInit {
   }
 
   postFile(fileToUpload: File): Observable<{}> {
-    console.log('postfile');
+    // console.log('postfile');
     const endpoint = '/api/upload';
     const formData: FormData = new FormData();
     formData.append('myImage', fileToUpload, fileToUpload.name);
