@@ -6,6 +6,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/riderx/Angular-Full-Stack.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/riderx/Angular-Full-Stack.svg?branch=master)](https://travis-ci.org/riderx/Angular-Full-Stack)
+[![Build Status](https://travis-ci.org/WildCodeSchool/laloupe-0218-wildfolio.svg?branch=master)](https://travis-ci.org/WildCodeSchool/laloupe-0218-wildfolio)
 [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 <!-- 
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
