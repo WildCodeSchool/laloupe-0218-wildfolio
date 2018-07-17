@@ -20,8 +20,8 @@
       <form [formGroup]="addBlogProjetForm" (ngSubmit)="addBlogProjet()">
         <div class="row">
           <div class="col-md-6 col-12">
-            <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nom du Projet">
-            <input class="form-control link" type="text" name="link" formControlName="link" placeholder="Lien">
+            <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nom du projet">
+            <input class="form-control link" type="text" name="link" formControlName="link" placeholder="Lien du projet">
             <div class="row col-12">
               <div class="col-12 col-md-7" *ngIf="!filename" class="textUpload">Veuillez cliquer sur télécharger pour ajouter une image</div>
               <div class="col-12 col-md-7" *ngIf="filename" class="textUpload">Image ajoutée avec succès</div>
@@ -34,7 +34,7 @@
             </select>
           </div>
           <div class="col-md-6 col-12 div">
-            <textarea class="form-control" type="text" name="description" formControlName="description" placeholder="Description du Projet"
+            <textarea class="form-control" type="text" name="description" formControlName="description" placeholder="Description du projet"
               rows="5"></textarea>
               <ul class="list-student-added" *ngFor="let eleves of arrayStudent">
                 <li>{{ eleves.name }} 
