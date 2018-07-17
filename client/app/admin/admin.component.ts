@@ -36,8 +36,8 @@ export class AdminComponent implements OnInit {
   getMe() {
     this.studentService.getMe().subscribe(
       (data) => {
-        this.me = data,
-        console.log(this.me);
+        this.me = data;
+        // console.log(this.me);
       },
       error => console.log(error),
       () => this.isLoading = false,
@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
     this.blogProjetService.getBlogProjets().subscribe(
       (data) => {
         this.blogProjets = data;
-        console.log(this.blogProjets);
+        // console.log(this.blogProjets);
       },
       error => console.log(error),
       () => this.isLoading = false,

@@ -24,6 +24,7 @@
     "lint:autofix": "ng lint --fix && tslint --project tsconfig.json server/**/**.ts{,x} --fix && stylelint 'client/**/*{.css,.scss}' --fix",
     "test:front": "ng test --watch=false",
     "test:back": "tsc -p server && mocha dist/server/test --exit",
+    "postinstall": "tsc -p server && ng build -aot -prod",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -41,7 +42,7 @@
     "aos": "^2.3.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "core-js": "^2.4.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
@@ -61,15 +62,16 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "~1.7.3",
-    "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/express": "^4.11.0",
-    "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
+    "@angular/cli": "~1.7.3",
+    "@angular/compiler-cli": "^5.2.0",
+    "@types/jasmine": "~2.8.3",
     "@types/node": "~9.6.5",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "typescript": "~2.8.1",
     "codelyzer": "~4.2.1",
     "concurrently": "^3.5.1",
     "htmllint-cli": "^0.0.7",
@@ -87,7 +89,6 @@
     "stylelint-config-standard": "^18.2.0",
     "ts-node": "~6.0.0",
     "tslint": "~5.9.1",
-    "tslint-config-airbnb": "^5.8.0",
-    "typescript": "~2.8.1"
+    "tslint-config-airbnb": "^5.8.0"
   }
 }

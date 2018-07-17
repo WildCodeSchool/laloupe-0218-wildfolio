@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   setCurrentUser(decodedUser) {
-    console.log('decode', decodedUser);
+    // console.log('decode', decodedUser);
 
     this.loggedIn = true;
     this.currentUser._id = decodedUser._id;

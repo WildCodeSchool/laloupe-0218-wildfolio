@@ -7,7 +7,7 @@ export default class MailController extends BaseController {
 
   // Insert
   insert = (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const obj = new this.model(req.body);
     obj.save((err, item) => {
       // 11000 is the code for duplicate key error
@@ -29,7 +29,7 @@ export default class MailController extends BaseController {
   }
 
   sendMail = (to, subject, description, author) => {
-    console.log('ok');
+    // console.log('ok');
     const smtpTransport = nodemailer.createTransport({
       service: 'gmail',
       auth: {
