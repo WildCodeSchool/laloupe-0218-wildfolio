@@ -52,14 +52,14 @@ export default class BlogProjetController extends BaseController {
 
   // All projets where user participated (not necessarily the creator)
   getAllByUser = (req, res) => {
-    console.log(req.params),
-      this.model.find({ eleves: req.params.id }, (err, docs) => {
-        if (err) {
-          return console.error(err);
-        }
+    // console.log(req.params),
+    this.model.find({ eleves: req.params.id }, (err, docs) => {
+      if (err) {
+        return console.error(err);
+      }
         // console.log(docs);
-        res.status(200).json(docs);
-      });
+      res.status(200).json(docs);
+    });
   }
 
   getAllBySessionId = (req, res) => {
