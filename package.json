@@ -65,7 +65,7 @@
     "simple-oauth2": "^1.6.0",
     "startbootstrap-creative": "^4.0.0",
     "tether": "1.4.4",
-    "typescript": "~2.8.1",
+    "typescript": "2.7.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
