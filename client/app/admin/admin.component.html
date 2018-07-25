@@ -28,7 +28,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6 cards">
+        <div class="col-xl-4 col-sm-6 cards" *ngIf="me && (me.admin == true)">
           <div class="card card2 text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -85,7 +85,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6 cards">
+        <div class="col-xl-4 col-sm-6 cards" *ngIf="me && (me.admin == true)">
           <div class="card card5 text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
