@@ -157,6 +157,7 @@ export class NewPostComponent implements OnInit {
             this.newBlogProjet = new BlogProjet;
             this.blogProjets.push(blogProjet);
             this.addBlogProjetForm.reset();
+            this.arrayStudent = [];
             // console.log(blogProjet);
             this.toast.setMessage('item added successfully.', 'success');
           },
@@ -165,6 +166,7 @@ export class NewPostComponent implements OnInit {
       });
     } else {
       this.addBlogProjetForm.reset();
+      this.arrayStudent = [];
       this.toast.setMessage('projet already exist.', 'warning');
     }
   }
@@ -181,7 +183,7 @@ export class NewPostComponent implements OnInit {
     this.blogProjet = new BlogProjet();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cats to reset the editing
-    this.getBlogProjet();
+    this.getBlogProjetIfNotAdmin();
   }
 
   editBlogProjet(blogProjet: BlogProjet) {
