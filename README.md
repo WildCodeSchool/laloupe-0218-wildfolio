@@ -19,7 +19,7 @@ The frontend is generated with [Angular CLI](https://github.com/angular/angular-
 ### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Devschange.png)
 <br />
-### Sur la page principale du Wildfolio, la dernière section est alimenté par les recruteurs qui désirent laisser un avis sur le site et donc en informé tout les éventuels recruteurs
+### Sur la page principale du Wildfolio, la dernière section est alimentée par les recruteurs qui désirent laisser un avis sur le site et donc en informer tous les éventuels recruteurs
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/oeil.png)
 <!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):

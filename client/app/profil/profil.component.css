@@ -56,7 +56,22 @@
   .photo{
     text-align:center;
   }
-  
+  .textImg {
+    display: none;
+    position: absolute;
+    top: -95px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: black;
+    font-size: 27px;
+    z-index: 500;
+  }
+
+  .photo:hover> .textImg {
+  display: block;
+  }
   .rounded-circle {
     width: 200px;
     height: 200px;
@@ -273,7 +288,7 @@
 }
 .img-fluid {
   width: 100%;
-  height: 230.5px;
+  height: 100%;
 }
 
 /* Message photo */
