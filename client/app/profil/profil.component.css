@@ -79,6 +79,10 @@
   
   .speciality{
     font-size:3.5vh;
+    margin-right: 1%;
+  }
+  .specialityh4{
+    padding-left: 5%;
   }
   
   .keywords{
@@ -94,6 +98,7 @@
     border-color: #FBA858;
     text-align: center;
     padding: 1% 2% 1% 2%;
+    margin-top: 1%;
   }
   
   /* .keyword:active, .keyword:focus, .keyword:hover {
