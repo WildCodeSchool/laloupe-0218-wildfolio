@@ -5,14 +5,18 @@ import userModel from '../models/userModel';
 import BaseController from './BaseController';
 const simpleOauthModule = require('simple-oauth2');
 const https = require('https');
+const redirectUri = 'https://wild-folio.herokuapp.com/api/oauth/callback';
+const odysseyUrl = 'https://ppody.innoveduc.fr';
+const odysseyId = '5b473f25ae3b81262abce0595e896c5876bb56fd8604863b724ae792aece495e';
+const odysseySecret = '851f080ed080e7aac1a869b47bf5b1a33cfdfbcfd6d1c19ecd886fc41683c85e';
 
 const oauth2 = simpleOauthModule.create({
   client: {
-    id: '5b473f25ae3b81262abce0595e896c5876bb56fd8604863b724ae792aece495e',
-    secret: '851f080ed080e7aac1a869b47bf5b1a33cfdfbcfd6d1c19ecd886fc41683c85e',
+    id: odysseyId,
+    secret: odysseySecret,
   },
   auth: {
-    tokenHost: 'https://ppody.innoveduc.fr',
+    tokenHost: odysseyUrl,
     tokenPath: '/oauth/token',
     authorizePath: '/oauth/authorize',
   },
@@ -20,7 +24,7 @@ const oauth2 = simpleOauthModule.create({
 
 // Authorization uri definition
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
-  redirect_uri: 'http://localhost:4200/api/oauth/callback',
+  redirectUri,
   scope: '',
   state: '',
 });
@@ -51,7 +55,7 @@ export default class UserController extends BaseController {
     const code = req.query.code;
     const options = {
       code,
-      redirect_uri: 'http://localhost:4200/api/oauth/callback',
+      redirectUri,
       scope: '',
       state: '',
     };
@@ -59,7 +63,7 @@ export default class UserController extends BaseController {
     try {
       const result = await oauth2.authorizationCode.getToken(options);
       const token = oauth2.accessToken.create(result);
-      console.log('starfalah', token.token.access_token);
+      // console.log('starfalah', token.token.access_token);
       res.redirect('/login/callback/' + token.token.access_token);
     } catch (error) {
       console.error('Access Token Error', error);
