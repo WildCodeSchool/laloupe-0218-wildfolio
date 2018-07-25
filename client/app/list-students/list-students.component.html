@@ -92,7 +92,7 @@
               <td> <a [routerLink]="['/student-eleve', student._id]" target="_blank">{{ student.name }}</a></td>
               <td>{{ student.lastname }}</td>
               <td>
-                <a class="socialLink" href="https://linkedin.com/{{ student.linkedin }}">
+                <a class="socialLink" href="{{ student.lienLinkedin }}">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </td>

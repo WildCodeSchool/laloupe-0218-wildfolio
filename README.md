@@ -6,6 +6,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/riderx/Angular-Full-Stack.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/riderx/Angular-Full-Stack.svg?branch=master)](https://travis-ci.org/riderx/Angular-Full-Stack)
+[![Build Status](https://travis-ci.org/WildCodeSchool/laloupe-0218-wildfolio.svg?branch=master)](https://travis-ci.org/WildCodeSchool/laloupe-0218-wildfolio)
 [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 <!-- 
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org). -->
@@ -17,6 +18,9 @@ The frontend is generated with [Angular CLI](https://github.com/angular/angular-
 <br />
 ### Sur la page principale du Wildfolio, trois wilders choisis aléatoirement sont présentés pour susciter l'envie de découvrir les profils qui développeront les applis et site web de demain !
 ![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/Devschange.png)
+<br />
+### Sur la page principale du Wildfolio, la dernière section est alimenté par les recruteurs qui désirent laisser un avis sur le site et donc en informé tout les éventuels recruteurs
+![Image of Yaktocat](https://github.com/WildCodeSchool/laloupe-0218-wildfolio/blob/test/client/assets/oeil.png)
 <!-- 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
@@ -52,7 +56,7 @@ Other tools and technologies used:
 ### Development mode
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
-### Or
+###  Or
 
 `yarn run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
@@ -117,4 +121,3 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * [Alexandre Teyssier](https://github.com/Alex-teyss)
 * [Antoine Porée](https://github.com/AntoinePoree)
 * [Bastien Champion](https://github.com/BastienChampion)
-

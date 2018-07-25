@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'cities', component: CitiesComponent }, // Modification
   { path: 'sessions', component: SessionComponent }, // Modification
-  { path: 'projet', component: ProjetResearchComponent },
+  { path: 'projets', component: ProjetResearchComponent },
   { path: 'projetFront/:id', component: ProjetFrontComponent }, // Remplacer par id
   { path: 'list-students', component: ListStudentsComponent },
   { path: 'newPost', component: NewPostComponent },
