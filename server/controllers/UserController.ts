@@ -24,7 +24,7 @@ const oauth2 = simpleOauthModule.create({
 
 // Authorization uri definition
 const authorizationUri = oauth2.authorizationCode.authorizeURL({
-  redirectUri,
+  redirect_uri: redirectUri,
   scope: '',
   state: '',
 });
@@ -55,7 +55,7 @@ export default class UserController extends BaseController {
     const code = req.query.code;
     const options = {
       code,
-      redirectUri,
+      redirect_uri: redirectUri,
       scope: '',
       state: '',
     };

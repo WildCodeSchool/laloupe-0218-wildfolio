@@ -5,7 +5,6 @@ import CityController from './controllers/CityController';
 import UserController from './controllers/UserController';
 import RecrutController from './controllers/RecrutController';
 import StudentController from './controllers/StudentController';
-import LocationController from './controllers/LocationController';
 import SessionController from './controllers/Session.Controller';
 import LangageController from './controllers/LangageController';
 import UploadController from './controllers/UploadController';
@@ -23,7 +22,6 @@ export default function routes(app) {
   const user = new UserController();
   const student = new StudentController();
   const mail = new MailController();
-  const location = new LocationController();
   const session = new SessionController();
   const langage = new LangageController();
   const upload = new UploadController();
