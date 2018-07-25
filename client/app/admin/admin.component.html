@@ -47,7 +47,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6 cards">
+        <div class="col-xl-4 col-sm-6 cards" *ngIf="me && (me.admin == true)">
           <div class="card card3 text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -65,19 +65,19 @@
             </a>
           </div>
         </div>
+
       </div>
-      <div class="row list2 mx-auto" *ngIf="me && (me.admin == true || me.roles.length >= 1)">
-        <div class="col-xl-4 col-sm-6 cards">
-          <div class="card card4 text-white bg-primary o-hidden h-100">
+      <div class="col-xl-4 col-sm-6 cards mx-auto" *ngIf="me && (me.admin == false)">
+          <div class="card card3 text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fas fa-university"></i>
+                <i class="far fa-folder"></i>
               </div>
-              <div class="mr-5">Gérer les campus</div>
+              <div class="mr-5">Gérer mes projets</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" routerLink="/cities">
+            <a class="card-footer text-white clearfix small z-1" routerLink="/newPost">
               <span class="float-left">Plus de details</span>
-              <a routerLink="/cities">
+              <a routerLink="/newPost">
                 <span class="float-right">
                   <i class="fa fa-angle-right"></i>
                 </span>
@@ -85,45 +85,65 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-4 col-sm-6 cards" *ngIf="me && (me.admin == true)">
-          <div class="card card5 text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-eye"></i>
-              </div>
-              <div class="mr-5">Gérer l'oeil du recruteur</div>
+
+    <div class="row list2 mx-auto" *ngIf="me && (me.admin == true || me.roles.length >= 1)">
+      <div class="col-xl-4 col-sm-6 cards">
+        <div class="card card4 text-white bg-primary o-hidden h-100">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="fas fa-university"></i>
             </div>
-            <a class="card-footer text-white clearfix small z-1" routerLink="/recruts">
-              <span class="float-left">Plus de details</span>
-              <a routerLink="/recruts">
-                <span class="float-right">
-                  <i class="fa fa-angle-right"></i>
-                </span>
-              </a>
-            </a>
+            <div class="mr-5">Gérer les campus</div>
           </div>
+          <a class="card-footer text-white clearfix small z-1" routerLink="/cities">
+            <span class="float-left">Plus de details</span>
+            <a routerLink="/cities">
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </a>
         </div>
-        <div class="col-xl-4 col-sm-6 cards">
-          <div class="card card6 text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <div class="mr-5">Gérer les sessions</div>
+      </div>
+      <div class="col-xl-4 col-sm-6 cards" *ngIf="me && (me.admin == true)">
+        <div class="card card5 text-white bg-primary o-hidden h-100">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="fas fa-eye"></i>
             </div>
-            <a class="card-footer text-white clearfix small z-1" routerLink="/sessions">
-              <span class="float-left">Plus de details</span>
-              <a routerLink="/sessions">
-                <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                </span>
-              </a>
-            </a>
+            <div class="mr-5">Gérer l'oeil du recruteur</div>
           </div>
+          <a class="card-footer text-white clearfix small z-1" routerLink="/recruts">
+            <span class="float-left">Plus de details</span>
+            <a routerLink="/recruts">
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </a>
+        </div>
+      </div>
+      <div class="col-xl-4 col-sm-6 cards">
+        <div class="card card6 text-white bg-primary o-hidden h-100">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="mr-5">Gérer les sessions</div>
+          </div>
+          <a class="card-footer text-white clearfix small z-1" routerLink="/sessions">
+            <span class="float-left">Plus de details</span>
+            <a routerLink="/sessions">
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </a>
         </div>
       </div>
     </div>
-  </section>
+</div>
+</section>
 </div>
 
 <app-footer></app-footer>
