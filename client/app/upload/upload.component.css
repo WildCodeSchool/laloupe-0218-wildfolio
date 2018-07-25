@@ -9,3 +9,10 @@
     background-color: #F9A02E;
     color: white;
   }
+  
+  @media (max-width: 767px) {
+  
+    input#file.btn.btn-primary {
+      width: 100%;
+    }
+  }
