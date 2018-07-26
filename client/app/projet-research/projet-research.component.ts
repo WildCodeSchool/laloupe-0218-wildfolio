@@ -21,8 +21,8 @@ export class ProjetResearchComponent implements OnInit {
 
   cities = [];
   sessions = [];
-  selectedCityId: any = -1 ;
-  selectedSession: any = -1;
+  selectedCityId: any = 1 ;
+  selectedSession: any = 56;
 
   constructor(
     private cityService: CityService,
@@ -34,6 +34,7 @@ export class ProjetResearchComponent implements OnInit {
   ngOnInit() {
     this.getCity();
     this.getSession();
+    this.showProject();
   }
 
   getCity() {
