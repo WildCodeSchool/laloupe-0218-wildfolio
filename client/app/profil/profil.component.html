@@ -3,6 +3,7 @@
 <div class="container-fluid" *ngIf="me">
     <div class="row justify-content-start profil">
         <div class="col-md-3 col-sm-12 mx-auto photo">
+            <p class="textImg">Pour changer votre photo de profil, veuillez mettre à jour votre Github</p>
             <img class="rounded-circle"  src="https://github.com/{{ me.github }}.png" onerror="this.onerror=404;this.src='../../assets/homme-avatar-profil-image-vecteur-eps_csp21321880.jpg';">
         </div>
         <div class="col-md-8 col-sm-12 mx-auto">
@@ -20,13 +21,9 @@
             <div class="specialities">
                 <div class="row speciality">
                     <div class="col-sm-12">
-                        <h3>Mes spécialités :</h3>
+                        <h4 class="specialityh4">Mes spécialités : <span class="list-inline-item keyword">{{ me.langageName }}</span></h4>
                     </div>
                 </div>
-                <ul class="list-not-inline keywords">
-                    <li class="list-inline-item keyword">{{ me.langageName }}</li>
-
-                </ul>
             </div>
         </div>
     </div>
