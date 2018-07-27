@@ -271,8 +271,9 @@ float: left;
 
 .img-fluid {
 width: 100%;
-height: 230px;
+height: 100%;
 }
+
 .list-inline-item {
   cursor: pointer;
 }
