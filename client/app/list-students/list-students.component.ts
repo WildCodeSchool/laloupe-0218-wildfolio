@@ -26,6 +26,7 @@ export class ListStudentsComponent implements OnInit {
     /* this.getStudent(); */
     this.getLangage();
     this.getLangageBySelectedLangage();
+    this.getLangageById();
     // console.log(this.isSearched);
   }
   // getCity() {
